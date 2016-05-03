@@ -8,7 +8,7 @@ env:
 before_script:
 - composer install --no-progress
 script:
-- vendor/bin/couscous travis-auto-deploy
+- vendor/bin/couscous generate
 deploy:
   provider: s3
   access_key_id: AKIAJB6LBJTNPKYOFMKA
