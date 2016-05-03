@@ -53,8 +53,8 @@ menu:
                     text: APIs
                     relativeUrl: amcl/milagro-crypto-library-apis.html
 
-        Multi-Factor Authentication:
-            name: '<i class="fa fa-users" aria-hidden="true"></i> Milagro Multi-Factor Authentication'
+        Milagro Multi-Factor Authentication:
+            name: '<i class="fa fa-users" aria-hidden="true"></i> Milagro **M**ulti-**F**actor **A**uthentication'
             items:
                 milagro-mfa-overview:
                     text: Milagro MFA Platform Overview
@@ -90,27 +90,33 @@ menu:
                     text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Updating Milagro MFA Server</span>"
                     relativeUrl: mfa/installation/server/milagro-mfa-server-updating.html
                 milagro-mfa-configuration:
-                    text: "Milagro MFA Platform Configuration"
+                    text: Milagro MFA Platform Configuration
                     relativeUrl: mfa/configuration/milagro-mfa-configuration.html
-                subdirectory:
-                    text: "Subdirectories"
-                    relativeUrl: installation/subdirectory.html
-                proxy:
-                    text: "Using a Reverse Proxy"
-                    relativeUrl: installation/proxy.html
-                manually-editing-data:
-                    text: "Manually Editing Data"
-                    relativeUrl: installation/manually-editing-data.html
+                milagro-mfa-server-configuration:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Server Configuration</span>"
+                    relativeUrl: mfa/configuration/milagro-mfa-server-configuration.html
+                milagro-mfa-d-ta-configuration:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> D-TA Configuration</span>"
+                    relativeUrl: mfa/configuration/milagro-mfa-d-ta-configuration.html
+                milagro-mfa-rps-configuration:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> RPS Configuration</span>"
+                    relativeUrl: mfa/configuration/milagro-mfa-rps-configuration.html
+                milagro-mfa-javascript-client-configuration:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> JavaScript Client Configuration</span>"
+                    relativeUrl: mfa/configuration/milagro-mfa-javascript-client-configuration.html
 
-                upgrading:
-                    text: Upgrading
-                    relativeUrl: upgrading.html
-                contributing:
-                    text: Contributing
-                    relativeUrl: contributing.html
-                translations:
-                    text: Translations
-                    relativeUrl: translations.html
+                milagro-mfa-enabling-native-apps:
+                    text: Enabling Native Apps
+                    relativeUrl: mfa/configuration/milagro-mfa-enabling-native-apps.html
+                milagro-mfa-logging-services:
+                    text: Logging Services
+                    relativeUrl: mfa/configuration/milagro-mfa-logging-services.html
+                milagro-mfa-manually-applying-server-secrets:
+                    text: Applying Server Secrets
+                    relativeUrl: mfa/configuration/milagro-mfa-manually-applying-server-secrets.html
+                milagro-mfa-api-reference:
+                    text: Milagro MFA API Reference
+                    relativeUrl: mfa/configuration/milagro-mfa-api-reference.html
 
         help:
             name: "<i class='fa fa-life-ring'></i> Help"
