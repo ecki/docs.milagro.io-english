@@ -90,7 +90,7 @@ menu:
                     text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Updating Milagro MFA Server</span>"
                     relativeUrl: mfa/installation/server/milagro-mfa-server-updating.html
                 milagro-mfa-configuration:
-                    text: Milagro MFA Platform Configuration
+                    text: Configuration
                     relativeUrl: mfa/configuration/milagro-mfa-configuration.html
                 milagro-mfa-server-configuration:
                     text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Server Configuration</span>"
@@ -130,8 +130,20 @@ menu:
                     text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Managing Identities</span>"
                     relativeUrl: mfa/mobile-apps/milgaro-mfa-mobile-apps-managing-identities.html
                 milagro-mfa-mobile-apps-generating-otps:
-                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Generating One-Time Passwords</span>"
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Generating OTP's</span>"
                     relativeUrl: mfa/mobile-apps/milgaro-mfa-mobile-apps-generating-one-time-passwords.html
+                milagro-mfa-mobile-apps-adding-custom-configurations:
+                    text: Adding Custom Configurations
+                    relativeUrl: mfa/mobile-apps/milgaro-mfa-mobile-apps-adding-custom-configurations.html
+                milgaro-mfa-mobile-apps-adding-configurations-manually:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Manually Adding</span>"
+                    relativeUrl: mfa/mobile-apps/milgaro-mfa-mobile-apps-adding-configurations-manually.html
+                milgaro-mfa-mobile-apps-adding-configurations-from-qr-code:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> From QR Code</span>"
+                    relativeUrl: mfa/mobile-apps/milgaro-mfa-mobile-apps-adding-configurations-from-qr-code.html
+                milgaro-mfa-mobile-apps-selecting-custom-configurations:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Selecting Custom Configs</span>"
+                    relativeUrl: mfa/mobile-apps/milgaro-mfa-mobile-apps-selecting-custom-configurations.html
 
         integration:
             name: "<i class='fa fa-code'></i> Milagro Integration Guides"
