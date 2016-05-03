@@ -1,6 +1,6 @@
 language: php
 php:
-- 5.4
+- 5.5
 sudo: required
 env:
   global:
@@ -8,7 +8,7 @@ env:
 before_script:
 - composer install --no-progress
 script:
-- vendor/bin/couscous travis-auto-deploy
+- vendor/bin/couscous travis-auto-deploy --php-version=5.5
 deploy:
   provider: s3
   access_key_id: AKIAJB6LBJTNPKYOFMKA
