@@ -53,11 +53,11 @@ menu:
                     text: APIs
                     relativeUrl: amcl/milagro-crypto-library-apis.html
 
-        Milagro Multi-Factor Authentication:
-            name: '<i class="fa fa-users" aria-hidden="true"></i> Milagro Multi-Factor Authentication (MFA)'
+        Multi-Factor Authentication:
+            name: '<i class="fa fa-users" aria-hidden="true"></i> Milagro Multi-Factor Authentication'
             items:
                 milagro-mfa-overview:
-                    text: Overview
+                    text: Milagro MFA Platform Overview
                     relativeUrl: mfa/getting-started/milagro-mfa-overview.html
                 milagro-mfa-quick-install:
                     text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Quick Install Guide</span>"
@@ -72,13 +72,13 @@ menu:
                     text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Configuring SSL</span>"
                     relativeUrl: mfa/getting-started/milagro-mfa-configuring-ssl.html
                 milagro-mfa-installation:
-                    text: "Milagro MFA Installation"
+                    text: "Milagro MFA Platform Installation"
                     relativeUrl: mfa/installation/milagro-mfa-installation.html
                 milagro-mfa-system-requirements:
-                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> System Requirements/span>"
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> System Requirements</span>"
                     relativeUrl: mfa/installation/server/milagro-mfa-system-requirements.html
                 milagro-mfa-server-installation:
-                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Server Installation/span>"
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Server Installation</span>"
                     relativeUrl: mfa/installation/server/milagro-mfa-server-installation.html
                 milagro-mfa-server-network-and-deployment:
                     text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Network and Deployment</span>"
@@ -89,9 +89,9 @@ menu:
                 milagro-mfa-server-updating:
                     text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Updating Milagro MFA Server</span>"
                     relativeUrl: mfa/installation/server/milagro-mfa-server-updating.html
-                docker:
-                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Docker</span>"
-                    relativeUrl: installation/server/docker.html
+                milagro-mfa-configuration:
+                    text: "Milagro MFA Platform Configuration"
+                    relativeUrl: mfa/configuration/milagro-mfa-configuration.html
                 subdirectory:
                     text: "Subdirectories"
                     relativeUrl: installation/subdirectory.html
