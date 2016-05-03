@@ -53,6 +53,22 @@ menu:
                     text: APIs
                     relativeUrl: amcl/milagro-crypto-library-apis.html
 
+        Milagro TLS Library:
+            name: '<span class="fa-stack fa-lg">
+                      <i class="fa fa-exchange fa-stack-2x"></i>
+                      <i class="fa fa-lock fa-stack-1x"></i>
+                    </span> Milagro TLS Library'
+            items:
+                milagro-crypto-library-white-paper:
+                    text: White Paper
+                    relativeUrl: amcl/milagro-crypto-library-white-paper.html
+                milagro-crypto-library-benchmarks:
+                    text: Benchmarks
+                    relativeUrl: amcl/milagro-crypto-library-benchmarks.html
+                milagro-crypto-library-apis:
+                    text: APIs
+                    relativeUrl: amcl/milagro-crypto-library-apis.html
+
         Milagro Multi-Factor Authentication:
             name: '<i class="fa fa-cogs" aria-hidden="true"></i> Milagro Multi-Factor Authentication'
             items:
