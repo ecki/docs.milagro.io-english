@@ -8,13 +8,16 @@ env:
 before_script:
 - composer install --no-progress
 script:
-- vendor/bin/couscous travis-auto-deploy
+- vendor/bin/couscous generate
 deploy:
   provider: s3
   access_key_id: AKIAJB6LBJTNPKYOFMKA
   secret_access_key:
     secure: N4UKs2JACR1qobYJ3GuVpvDHLNI9HEC6Idp5fQqaIhD3o1m4bIg2fo2e0oNz7Avc+6eYvKOZHnnqCk9G7BTsXurt9rONhG8wqwodxKn4BQu6bPBnUm5/cT4hMjDYF+LmCeEVLbjK37phahCPV3bqom8yGFTG/+/ELESoQuETWzzoMhQos4TMUQzumiMp96VFssQXI3u17oAeKLlxdFv1j7b3WrvdD1XUC33X5S1VJEQJX6OOOJZtpBIJFj6cue0HIXTTCBQAHPQX/b/2qdL55zvPSXv+Qiw/kyy+8KBh9NZHtQgMt6NJ4wJq9kMygNXCit0FX8c9BqFXmqHp9jU44zTbUHtmaQniXMlVr++rBIcU5WJEgCwO6ybTwO1cmMAXgjO0F7BDcY8iT3FAj7yHuLd9zzA+0OAgHzl81hSWQ5DfAGgLhQ+tnIG4tXGmBuWv+EevA/IaHs/xpE3LtMafJHMrsibYYCljk8zMz7UkSeUET+jXBpiTgE8Bq0rnZpzshqoAv9YAnd2eJQdSeaNJwlaaBSGSAseYIFBFoY5sDVBnPw1fqYIh93wLL0Ja8gPQBA3zcIShb9k+p+EUCkDuWmU2dc6oZlOQuEo9Ez+JM5bfqh3436TY3wYfv8Bx78AlM4UYH8+Wmd/6asDivH+AvgSmy1e0EfhWo9gXrBrQhok=
   bucket: dev.docs.milagro.io
+  skip_cleanup: true
   acl: public_read
+  local_dir: .couscous/generated/
+  region: us-east-1
   on:
     repo: milagro-docs/development
