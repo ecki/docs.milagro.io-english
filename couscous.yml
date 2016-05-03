@@ -54,10 +54,10 @@ menu:
                     relativeUrl: amcl/milagro-crypto-library-apis.html
 
         Milagro Multi-Factor Authentication:
-            name: '<i class="fa fa-users" aria-hidden="true"></i> Milagro MFA'
+            name: '<i class="fa fa-users" aria-hidden="true"></i> Milagro Multi-Factor Authentication (MFA)'
             items:
                 milagro-mfa-overview:
-                    text: Milagro MFA Overview
+                    text: Overview
                     relativeUrl: mfa/getting-started/milagro-mfa-overview.html
                 milagro-mfa-quick-install:
                     text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Quick Install Guide</span>"
@@ -72,23 +72,23 @@ menu:
                     text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Configuring SSL</span>"
                     relativeUrl: mfa/getting-started/milagro-mfa-configuring-ssl.html
                 milagro-mfa-installation:
-                    text: '<i class="fa fa-cog" aria-hidden="true"></i> Milagro MFA Installation'
+                    text: "Milagro MFA Installation"
                     relativeUrl: mfa/installation/milagro-mfa-installation.html
-                server:
-                    text: 5. Server Configuration
-                    relativeUrl: installation/server/index.html
-                linux-osx:
-                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Linux/OSX</span>"
-                    relativeUrl: installation/server/linux-osx.html
-                windows:
-                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Windows</span>"
-                    relativeUrl: installation/server/windows.html
-                wamp:
-                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> WAMP</span>"
-                    relativeUrl: installation/server/wamp.html
-                xampp:
-                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> XAMPP</span>"
-                    relativeUrl: installation/server/xampp.html
+                milagro-mfa-system-requirements:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> System Requirements/span>"
+                    relativeUrl: mfa/installation/server/milagro-mfa-system-requirements.html
+                milagro-mfa-server-installation:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Server Installation/span>"
+                    relativeUrl: mfa/installation/server/milagro-mfa-server-installation.html
+                milagro-mfa-server-network-and-deployment:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Network and Deployment</span>"
+                    relativeUrl: mfa/installation/server/milagro-mfa-server-network-and-deployment.html
+                milagro-mfa-server-services-and-modules:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Services and Modules</span>"
+                    relativeUrl: mfa/installation/server/milagro-mfa-server-services-and-modules.html
+                milagro-mfa-server-updating:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Updating Milagro MFA Server</span>"
+                    relativeUrl: mfa/installation/server/milagro-mfa-server-updating.html
                 docker:
                     text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Docker</span>"
                     relativeUrl: installation/server/docker.html
