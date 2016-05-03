@@ -49,15 +49,15 @@ menu:
                 milagro-crypto-library-benchmarks:
                     text: Benchmarks
                     relativeUrl: amcl/milagro-crypto-library-benchmarks.html
-                milagro-crypto-library-apis:
+                milagro-crypto-library-developer-guide:
+                    text: Developer Guide
+                    relativeUrl: amcl/milagro-crypto-library-developer-guide.html
+                milagro-crypto-library-api-reference:
                     text: APIs
-                    relativeUrl: amcl/milagro-crypto-library-apis.html
+                    relativeUrl: amcl/milagro-crypto-library-api-reference.html
 
         Milagro TLS Library:
-            name: '<span class="fa-stack fa-lg">
-                      <i class="fa fa-exchange fa-stack-2x"></i>
-                      <i class="fa fa-lock fa-stack-1x"></i>
-                    </span> Milagro TLS Library'
+            name: '<span class="fa-stack fa-lg"><i class="fa fa-exchange fa-stack-2x"></i><i class="fa fa-lock fa-stack-1x"></i></span> Milagro TLS Library'
             items:
                 milagro-crypto-library-white-paper:
                     text: White Paper
