@@ -54,7 +54,7 @@ menu:
                     relativeUrl: amcl/milagro-crypto-library-apis.html
 
         Milagro Multi-Factor Authentication:
-            name: '<i class="fa fa-users" aria-hidden="true"></i> Milagro Multi-Factor Authentication'
+            name: '<i class="fa fa-cogs" aria-hidden="true"></i> Milagro Multi-Factor Authentication'
             items:
                 milagro-mfa-overview:
                     text: Milagro MFA Platform Overview
@@ -117,11 +117,33 @@ menu:
                     text: Milagro MFA API Reference
                     relativeUrl: mfa/configuration/milagro-mfa-api-reference.html
 
+        mobile app:
+            name: "<i class='fa fa-mobile'></i> Milagro MFA Mobile Apps"
+            items:
+                milagro-mfa-mobile-apps-overview:
+                    text: Milagro MFA Mobile App Overview
+                    relativeUrl: mfa/mobile-apps/milgaro-mfa-mobile-apps-overview.html
+                milagro-mfa-mobile-apps-registering-and-authenticating:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Registering and Authenticating</span>"
+                    relativeUrl: mfa/mobile-apps/milgaro-mfa-mobile-apps-registering-authenticating.html
+                milagro-mfa-mobile-apps-managing-identities:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Managing Identities</span>"
+                    relativeUrl: mfa/mobile-apps/milgaro-mfa-mobile-apps-managing-identities.html
+                milagro-mfa-mobile-apps-generating-otps:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Generating One-Time Passwords</span>"
+                    relativeUrl: mfa/mobile-apps/milgaro-mfa-mobile-apps-generating-one-time-passwords.html
+
+        integration:
+            name: "<i class='fa fa-code'></i> Milagro Integration Guides"
+            items:
                 milagro-mfa-integration-examples:
                     text: Milagro MFA Integration Examples
                     relativeUrl: mfa/integration/milagro-mfa-integration.html
                 milagro-mfa-integration-pin-pad:
-                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Pin Pad & Web App</span>"
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Pin Pad + Web App</span>"
+                    relativeUrl: mfa/integration/milagro-mfa-integration-pin-pad.html
+                milagro-mfa-integration-username-pin:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Username and Pin + Web App</span>"
                     relativeUrl: mfa/integration/milagro-mfa-integration-pin-pad.html
                 milagro-mfa-integration-apache-web-server:
                     text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Apache Web Server</span>"
@@ -137,8 +159,8 @@ menu:
                     text: JavaScript Username-Pin Client
                     relativeUrl: mfa/manual/milagro-mfa-with-javascript-browser-client-pin-pad.html
                 milagro-mfa-with-native-app-client:
-                    text: JavaScript Username-Pin Client
-                    relativeUrl: mfa/manual/milagro-mfa-with-native-app-client.html
+                    text: Mobile Apps
+                    relativeUrl: mfa/manual/milagro-mfa-mobile-apps.html
 
         misc:
             name:
