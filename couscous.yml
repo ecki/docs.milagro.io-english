@@ -164,4 +164,4 @@ github:
     repo: development
 
 # Set the target branch in which to deploy the generated website
-# branch: master
+branch: master
