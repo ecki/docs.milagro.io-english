@@ -1,22 +1,21 @@
 language: php
-
-sudo: false
-
 php:
-    - 5.4
-    - 5.5
-    - 5.6
-    - 7.0
-    - hhvm
-
-matrix:
-    include:
-        - php: 5.4
-          env: dependencies=lowest
-
+- 5.4
+sudo: required
+env:
+  global:
+    secure: CC9ISxwTSL4TxT0Bi1QZRieU4JysG3DXXxZD0AX2/uk7lTykpJzlN/0X2m1s7Uf1ZgxYnt4rkw5mv7Vgd14X+bC4GFgk58LmluA2ohn2/GztPwhBhz7JJd4YB7odQDcGe/y11q7OZDYDrzOBBty9QtJMXb2HHfznZG3MZBHXY+G7akaO8QsqVO2s4PlRbdbkgbavc9ycqJgHaGOh0cQrHlTOH2ThsrhliA8Ge5OHEFWNhiUX0FDQNhuMXPuj0y23iaEafosqLAasJqcB4C4l3/uRSKGiZos7qMtz4lEGArsvjkTVHBJ74RNmEQjaGVMOv/4NjczV1M2HHz8jSEpCVQK2KrfRaQXuQGkkDnn8OsXT6XtfMNoKq56qqxYBivQC5hRUDC2orSe3oVBO0WuRnl65cNmL98N8lvQ38CDkqY3WeWHfV6QC/elDAIvBXK45UUQI+CNUKoWp+MR5pkzkYCPe7GRaYoltKrN1gNbEO44IOLKJ/4rZk9qbZcf+ypaYEOfpi21HnHQmPELjiIHGHXrFdK6gD3rsBRN0weR85ICOEUscoZvZchNtsEhmbIeT3Kuh8d0yCKPncmlF3Q+3uflKqObjk0/ePbnLhUGyfLuHjc8SWlyKZsQ3/leSxGwnCKJCEp6KwtHhkO/nnV8mJtLJXjHbofPDCnCwqLLzerg=
 before_script:
-    - composer install -n
-    - if [ "$dependencies" = "lowest" ]; then composer update --prefer-lowest --prefer-stable -n; fi;
-
+- composer install --no-progress
 script:
-    - vendor/bin/phpunit
+- vendor/bin/couscous couscous generate
+deploy:
+  provider: s3
+  access_key_id: AKIAJB6LBJTNPKYOFMKA
+  secret_access_key:
+    secure: eeKWcZf28e/T2Xo7ArvLmM8aM5ox/pAXf45ZV9flER3ReBz0/3h+9s4SgbI3LcP+lKcxsWjXfr1YlFIbEnIuyzFdtjn99ztDvhr36P9tBSSf1eWLjGhNu636PZFpACieI16d0SADCnJbRd6DlxUJ+ISMMEg5JeZofErx2QytjAGv3QHus3VAAhln7uIOzxsW65nV8lXYzuW5icJMTU+G6ptKjo8E5kBB7cCrLpp8nSSA/5vObvde0pNKh6Bhy+144L4yzAfj4MgyFFzfOaoxuOuxZb4uHTbvV33N5E+bzUh+NoxQ9Te2ENuNWQtR3yhiLJC+chVJ3LvD76iZXxZifze2hD0zMNYNZy1rHEFJlw/pb62SZ+dc3HuM0eZqJSahSdG65AiEhDx+f72WPw26sl3K9ibjEcDOxgcEMuoLfz0FPSufSMgaL+TjTrQmpJX/p8gzLCJQgkZx9Hqe9/YDr4Gcdhb10/SrkA8VgLYxc2MoXdXBP8eSJ7YbymTkrnlnV4IG01IJkbphhjy6EGx1EUwHw0y/1Ega8VTFTmU1+LWzXk6SIBKi7lT7KTsWUKn3vwXuz541klQhQyTbxzdF0dWdGEilj8WX01oQbOWAQvF3uAJP5OG63Bvd8EpyXaYYOCb/D77rUttS79wKRtEfCBEITNvGbo4bQVIcCeLcQD0=
+  bucket: dev.docs.milagro.io
+  acl: public_read
+  skip_cleanup: true
+  on:
+    repo: milagro-docs/development
