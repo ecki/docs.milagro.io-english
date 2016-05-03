@@ -20,4 +20,4 @@ deploy:
   on:
     repo: milagro-docs/development
   region: us-east-1
-  local_dir: .couscous/generate/
+  local_dir: .couscous/generated/
