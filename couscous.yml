@@ -33,9 +33,9 @@ menu:
                 milagro-concepts:
                     text: Milagro Concepts
                     relativeUrl: milagro-concepts.html
-                pairing-crypto:
+                pairing-crypto-protocols:
                     text: Pairing Crypto Protocols
-                    relativeUrl: pairing-crypto.html
+                    relativeUrl: pairing-crypto-protocols.html
                 distributed-trust:
                     text: A Distributed Trust Ecosystem
                     relativeUrl: distributed-trust.html
@@ -54,7 +54,7 @@ menu:
                     relativeUrl: amcl/milagro-crypto-library-apis.html
 
         Milagro Multi-Factor Authentication:
-            name: '<i class="fa fa-users" aria-hidden="true"></i> Milagro **M**ulti-**F**actor **A**uthentication'
+            name: '<i class="fa fa-users" aria-hidden="true"></i> Milagro Multi-Factor Authentication'
             items:
                 milagro-mfa-overview:
                     text: Milagro MFA Platform Overview
@@ -104,7 +104,6 @@ menu:
                 milagro-mfa-javascript-client-configuration:
                     text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> JavaScript Client Configuration</span>"
                     relativeUrl: mfa/configuration/milagro-mfa-javascript-client-configuration.html
-
                 milagro-mfa-enabling-native-apps:
                     text: Enabling Native Apps
                     relativeUrl: mfa/configuration/milagro-mfa-enabling-native-apps.html
@@ -118,46 +117,28 @@ menu:
                     text: Milagro MFA API Reference
                     relativeUrl: mfa/configuration/milagro-mfa-api-reference.html
 
-        help:
-            name: "<i class='fa fa-life-ring'></i> Help"
-            items:
-                common-issues:
-                    text: Common Issues
-                    relativeUrl: common-issues.html
-                getting-help:
-                    text: "Getting Help"
-                    relativeUrl: getting-help.html
-
+                milagro-mfa-integration-examples:
+                    text: Milagro MFA Integration Examples
+                    relativeUrl: mfa/integration/milagro-mfa-integration.html
+                milagro-mfa-integration-pin-pad:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Pin Pad & Web App</span>"
+                    relativeUrl: mfa/integration/milagro-mfa-integration-pin-pad.html
+                milagro-mfa-integration-apache-web-server:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Apache Web Server</span>"
+                    relativeUrl: mfa/integration/milagro-mfa-integration-apache-web-server.html
 
         manual:
-            name: "<i class='fa fa-book'></i> User's Manual"
+            name: "<i class='fa fa-book'></i> Milagro End User Guides"
             items:
-                manual-home:
-                    text: Basic Concepts
-                    relativeUrl: manual/index.html
-                user-management:
-                    text: "LDAP / User Management"
-                    relativeUrl: manual/user-management/index.html
-                importing-assets:
-                    text: "Importing Assets"
-                    relativeUrl: manual/importing-assets.html
-                importing-licenses:
-                    text: "Importing Licenses"
-                    relativeUrl: manual/importing-licenses.html
-                alerts:
-                    text: "Configuring Alerts"
-                    relativeUrl: manual/alerts.html
-                labels:
-                    text: "Generating Labels"
-                    relativeUrl: manual/labels.html
-                backups:
-                    text: "Backups"
-                    relativeUrl: manual/backups.html
-                custom-fields:
-                    text: Custom Fields and Fieldsets
-                    relativeUrl: manual/custom-fields.html
-
-
+                milagro-mfa-with-javascript-browser-client-pin-pad:
+                    text: JavaScript Pin Pad Client
+                    relativeUrl: mfa/manual/milagro-mfa-with-javascript-browser-client-pin-pad.html
+                milagro-mfa-with-javascript-browser-client-username-password:
+                    text: JavaScript Username-Pin Client
+                    relativeUrl: mfa/manual/milagro-mfa-with-javascript-browser-client-pin-pad.html
+                milagro-mfa-with-native-app-client:
+                    text: JavaScript Username-Pin Client
+                    relativeUrl: mfa/manual/milagro-mfa-with-native-app-client.html
 
         misc:
             name:
