@@ -8,16 +8,13 @@ env:
 before_script:
 - composer install --no-progress
 script:
-- vendor/bin/couscous generate
+- vendor/bin/couscous travis-auto-deploy
 deploy:
   provider: s3
   access_key_id: AKIAJB6LBJTNPKYOFMKA
   secret_access_key:
-    secure: eeKWcZf28e/T2Xo7ArvLmM8aM5ox/pAXf45ZV9flER3ReBz0/3h+9s4SgbI3LcP+lKcxsWjXfr1YlFIbEnIuyzFdtjn99ztDvhr36P9tBSSf1eWLjGhNu636PZFpACieI16d0SADCnJbRd6DlxUJ+ISMMEg5JeZofErx2QytjAGv3QHus3VAAhln7uIOzxsW65nV8lXYzuW5icJMTU+G6ptKjo8E5kBB7cCrLpp8nSSA/5vObvde0pNKh6Bhy+144L4yzAfj4MgyFFzfOaoxuOuxZb4uHTbvV33N5E+bzUh+NoxQ9Te2ENuNWQtR3yhiLJC+chVJ3LvD76iZXxZifze2hD0zMNYNZy1rHEFJlw/pb62SZ+dc3HuM0eZqJSahSdG65AiEhDx+f72WPw26sl3K9ibjEcDOxgcEMuoLfz0FPSufSMgaL+TjTrQmpJX/p8gzLCJQgkZx9Hqe9/YDr4Gcdhb10/SrkA8VgLYxc2MoXdXBP8eSJ7YbymTkrnlnV4IG01IJkbphhjy6EGx1EUwHw0y/1Ega8VTFTmU1+LWzXk6SIBKi7lT7KTsWUKn3vwXuz541klQhQyTbxzdF0dWdGEilj8WX01oQbOWAQvF3uAJP5OG63Bvd8EpyXaYYOCb/D77rUttS79wKRtEfCBEITNvGbo4bQVIcCeLcQD0=
+    secure: N4UKs2JACR1qobYJ3GuVpvDHLNI9HEC6Idp5fQqaIhD3o1m4bIg2fo2e0oNz7Avc+6eYvKOZHnnqCk9G7BTsXurt9rONhG8wqwodxKn4BQu6bPBnUm5/cT4hMjDYF+LmCeEVLbjK37phahCPV3bqom8yGFTG/+/ELESoQuETWzzoMhQos4TMUQzumiMp96VFssQXI3u17oAeKLlxdFv1j7b3WrvdD1XUC33X5S1VJEQJX6OOOJZtpBIJFj6cue0HIXTTCBQAHPQX/b/2qdL55zvPSXv+Qiw/kyy+8KBh9NZHtQgMt6NJ4wJq9kMygNXCit0FX8c9BqFXmqHp9jU44zTbUHtmaQniXMlVr++rBIcU5WJEgCwO6ybTwO1cmMAXgjO0F7BDcY8iT3FAj7yHuLd9zzA+0OAgHzl81hSWQ5DfAGgLhQ+tnIG4tXGmBuWv+EevA/IaHs/xpE3LtMafJHMrsibYYCljk8zMz7UkSeUET+jXBpiTgE8Bq0rnZpzshqoAv9YAnd2eJQdSeaNJwlaaBSGSAseYIFBFoY5sDVBnPw1fqYIh93wLL0Ja8gPQBA3zcIShb9k+p+EUCkDuWmU2dc6oZlOQuEo9Ez+JM5bfqh3436TY3wYfv8Bx78AlM4UYH8+Wmd/6asDivH+AvgSmy1e0EfhWo9gXrBrQhok=
   bucket: dev.docs.milagro.io
   acl: public_read
-  skip_cleanup: true
   on:
     repo: milagro-docs/development
-  region: us-east-1
-  local_dir: .couscous/generated/
