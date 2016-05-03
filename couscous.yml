@@ -21,47 +21,59 @@ title: Milagro Documentation
 # The left menu bar
 menu:
     sections:
-        introduction:
-            name:
+        Introduction:
+            name: '<i class="fa fa-bolt" aria-hidden="true"></i> Milagro Overview'
             items:
                 home:
                     text: Introduction
                     relativeUrl: index.html
-                requirements:
+                why-milagro:
                     text: Why Milagro?
-                    relativeUrl: requirements.html
-                security:
-                    text: About pairing-based cryptography
-                    relativeUrl: security.html
-                test-page:
-                    text: Test Page
-                    relativeUrl: test-pages/test-page.html
+                    relativeUrl: why-milagro.html
+                milagro-concepts:
+                    text: Milagro Concepts
+                    relativeUrl: milagro-concepts.html
+                pairing-crypto:
+                    text: Pairing Crypto Protocols
+                    relativeUrl: pairing-crypto.html
+                distributed-trust:
+                    text: A Distributed Trust Ecosystem
+                    relativeUrl: distributed-trust.html
 
         Milagro Crypto Library:
             name: '<i class="fa fa-key" aria-hidden="true"></i> Milagro Crypto Library'
             items:
                 milagro-crypto-library-white-paper:
-                    text: Milagro Crypto Library White Paper
+                    text: White Paper
                     relativeUrl: amcl/milagro-crypto-library-white-paper.html
+                milagro-crypto-library-benchmarks:
+                    text: Benchmarks
+                    relativeUrl: amcl/milagro-crypto-library-benchmarks.html
+                milagro-crypto-library-apis:
+                    text: APIs
+                    relativeUrl: amcl/milagro-crypto-library-apis.html
 
-        installation:
-            name: '<i class="fa fa-cog"></i> Installation'
+        Milagro Multi-Factor Authentication:
+            name: '<i class="fa fa-users" aria-hidden="true"></i> Milagro MFA'
             items:
-                overview:
-                    text: Overview
-                    relativeUrl: installation/index.html
-                downloading:
-                    text: 1. Downloading
-                    relativeUrl: installation/downloading.html
-                configuration:
-                    text: 2. Configuration
-                    relativeUrl: installation/configuration.html
-                composer:
-                    text: 3. Install Dependencies
-                    relativeUrl: installation/composer.html
-                command-line:
-                    text: 4. The CLI Installer
-                    relativeUrl: installation/command-line.html
+                milagro-mfa-overview:
+                    text: Milagro MFA Overview
+                    relativeUrl: mfa/getting-started/milagro-mfa-overview.html
+                milagro-mfa-quick-install:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Quick Install Guide</span>"
+                    relativeUrl: mfa/getting-started/milagro-mfa-quick-install.html
+                milagro-mfa-email-verification:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Email Verification</span>"
+                    relativeUrl: mfa/getting-started/milagro-mfa-email-verification.html
+                milagro-mfa-mobile-client-testing:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Mobile Client Testing</span>"
+                    relativeUrl: mfa/getting-started/milagro-mfa-mobile-client-testing.html
+                milagro-mfa-configuring-ssl:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Configuring SSL</span>"
+                    relativeUrl: mfa/getting-started/milagro-mfa-configuring-ssl.html
+                milagro-mfa-installation:
+                    text: '<i class="fa fa-cog" aria-hidden="true"></i> Milagro MFA Installation'
+                    relativeUrl: mfa/installation/milagro-mfa-installation.html
                 server:
                     text: 5. Server Configuration
                     relativeUrl: installation/server/index.html

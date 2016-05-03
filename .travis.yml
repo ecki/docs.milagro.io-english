@@ -20,3 +20,7 @@ deploy:
   local_dir: .couscous/generated/
   on:
     repo: milagro-docs/development
+branches:
+  only:
+    - master
+    - development
