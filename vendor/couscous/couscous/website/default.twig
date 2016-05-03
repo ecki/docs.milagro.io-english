@@ -1,168 +1,133 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
-    <link rel="stylesheet" href="{{ baseUrl }}/css/theme.css" type="text/css"/>
-    <link rel="stylesheet" href="{{ baseUrl }}/css/theme-fixes.css" type="text/css"/>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
-    <link href="{{ baseUrl }}/css/tipuesearch.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ baseUrl }}/css/pub.css" type="text/css"/>
+    <title>Couscous! Put your documentation in a website!</title>
+    <meta name="description" content="Couscous! Put your documentation in a website!">
 
+    <link href="{{ baseUrl }}/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ baseUrl }}/bower_components/fontawesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{ baseUrl }}/css/prettify.tomorrow-night-eighties.css" rel="stylesheet">
+    <link href="{{ baseUrl }}/css/all.min.css" rel="stylesheet">
 
+    <!-- Custom Fonts -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
+    <link rel="icon" type="image/png" href="logo/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="logo/favicon-16x16.png" sizes="16x16" />
 
-
+    <!-- Google webmasters verification -->
+    <meta name="google-site-verification" content="bjh41nmytWyBkuM8373PL1j6upqoiAQXSb19vMGJZDY" />
 
 </head>
-<body class="wy-body-for-nav">
 
-    <div class="wy-grid-for-nav">
+<body class="{{ bodyClass }}">
 
-        <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-            <div class="wy-side-nav-search">
-                <a href="{{ baseUrl }}/"><i class="fa fa-home"></i> {{ title|default('The title') }}</a>
+    <div id="menu" class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="{{ baseUrl }}/" class="navbar-brand">Couscous</a>
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
             </div>
-            <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-                {% if menu is defined %}
-
-                <form action="{{ baseUrl }}/search.html">
-                <input type="text" name="q" id="tipue_search_input"  list="search" placeholder="Search the docs" required>
-
-                <datalist id="search">
-                <option>Installation</option>
-                <option>User's Manual</option>
-                <option>Common Issues</option>
-                <option>Getting Help</option>
-                </datalist>
-                </form>
-
-                    {% for section in menu.sections %}
-                        <p class="menu-section">
-                            {{ section.name|raw }}
-                        </p>
-
-                        <ul class="nav nav-pills nav-stacked">
-                            {% for itemId, item in section.items %}
-                                <li class="navitems{{ itemId == currentMenu ? ' active' }}">
-                                    <a href="{{ item.absoluteUrl|default(baseUrl ~ '/' ~ item.relativeUrl) }}">
-                                        {{ item.text|raw }}
-                                    </a>
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    {% endfor %}
-                {% endif %}
+            <div class="navbar-collapse collapse" id="navbar-main">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{{ baseUrl }}/">Home</a></li>
+                    <li><a href="{{ baseUrl }}/docs/getting-started.html">Get started</a></li>
+                    <li><a href="{{ baseUrl }}/templates.html">Templates</a></li>
+                    <li><a href="{{ baseUrl }}/docs/">Documentation</a></li>
+                    <li>
+                        <a href="https://github.com/CouscousPHP/Couscous">
+                            <i class="fa fa-github"></i> GitHub
+                        </a>
+                    </li>
+                </ul>
             </div>
-            &nbsp;
-        </nav>
-
-        <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-            {# MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE #}
-            <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-                <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-                <a href="{{ baseUrl }}/">{{ title|default('The title') }}</a>
-            </nav>
-
-
-            {# PAGE CONTENT #}
-            {% if github is defined %}
-                <a href="https://github.com/{{ github.user }}/{{ github.repo }}">
-                    <img style="position: absolute; top: 0; right: 0; border: 0; max-width: 150px;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
-                </a>
-            {% endif %}
-
-            <div class="wy-nav-content">
-                <div class="rst-content">
-                    <div role="main" class="document">
-                        {{ content|raw }}
-                    </div>
-
-                    <hr/>
-                    <div class="blue-alert">
-                            <div style="float: left; padding-right: 10px">
-                                <i class="fa fa-exclamation-triangle fa-3x"></i>
-                            </div>
-                            <div style="float: left;">
-                            <strong>
-                                See an error in this documentation?
-                            </strong>
-                            <br>Submit a pull request on the <a href="https://github.com/snipe/snipe-it/tree/documentation">documentation branch</a> of <a href="https://github.com/snipe/snipe-it">Snipe-IT</a>.
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-
-
-
-                    <footer>
-                        <small>
-                            <a href="http://snipeitapp.com">Snipe-IT</a> is a free open source project by <a href="https://twitter.com/snipeyhead">@snipeyhead</a>. This documentation was built using <a href="http://couscous.io/">Couscous</a> using a <a href="https://github.com/CouscousPHP/Template-ReadTheDocs">theme</a> inspired by <a href="https://readthedocs.org/">Read the Docs</a>.
-                        </small>
-                    </footer>
-
-                </div>
-            </div>
-
-        </section>
-
+        </div>
     </div>
 
-    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
-    <script src="{{ baseUrl }}/js/theme.js"></script>
-    <script type="text/javascript" src="{{ baseUrl }}/js/generated-toc.js">
+    {% block content %}
 
-    <script>
-        $(function() {
-            // Syntax highlighting
-            hljs.initHighlightingOnLoad();
-        });
-    </script>
+        <div class="container-fluid">
+            <div class="row">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+                <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
 
-    {% if currentMenu == "search" %}
-        <script src="{{ baseUrl }}/js/tipuesearch_set.js"></script>
-        <script src="{{ baseUrl }}/js/tipuesearch.min.js"></script>
+                    <ul class="nav nav-pills nav-stacked">
+                        {% for itemId, item in menu.items %}
+                            <li class="{{ itemId == current_menu ? 'active' }}">
+                                <a href="{{ item.absoluteUrl|default(baseUrl ~ '/' ~ item.relativeUrl) }}">
+                                    {{ item.text|raw }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
 
+                </nav>
+
+                <section class="documentation col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
+                    {{ content|raw }}
+                </section>
+
+            </div>
+        </div>
+
+    {% endblock %}
+
+    {% block footer %}
+        <footer>
+            <div class="container">
+                <p>
+                    <a href="https://github.com/CouscousPHP/Couscous/blob/master/{{ currentFile }}">
+                        Edit this page on GitHub
+                    </a>
+                </p>
+            </div>
+        </footer>
+    {% endblock %}
+
+
+    {% block javascripts %}
+
+        <script src="{{ baseUrl }}/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="{{ baseUrl }}/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="{{ baseUrl }}/bower_components/google-code-prettify/src/prettify.js"></script>
 
         <script>
-        $(document).ready(function() {
-             $('#tipue_search_input').tipuesearch({
-                  'mode': 'live',
-                  'liveDescription': 'h1',
-                  'liveContent': '.document'
-             });
-        });
+            $(function() {
+                $("section h1").wrap('<div class="page-header" />');
+                $("pre").addClass('prettyprint');
+                prettyPrint();
+            });
         </script>
-    {% endif %}
 
-<style TYPE="text/css">
-    code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
-</style>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [['$','$'], ['\\(','\\)']],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] // removed 'code' entry
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i = 0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-# <script type="text/javascript" src="mathjax/MathJax.js"></script>
+        <!-- Piwik -->
+        <script type="text/javascript">
+            var _paq = _paq || [];
+            _paq.push(['trackPageView']);
+            _paq.push(['enableLinkTracking']);
+            (function() {
+                var u=(("https:" == document.location.protocol) ? "https" : "http") + "://mnapoli.piwikpro.com/";
+                _paq.push(['setTrackerUrl', u+'piwik.php']);
+                _paq.push(['setSiteId', 2]);
+                var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+                g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+            })();
+        </script>
+        <noscript><p><img src="http://mnapoli.piwikpro.com/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+        <!-- End Piwik Code -->
+    {% endblock %}
 
 </body>
 </html>
