@@ -136,7 +136,7 @@ menu:
                     text: Milagro MFA API Reference
                     relativeUrl: mfa/configuration/milagro-mfa-api-reference.html
 
-        mobile sdk:
+        Mobile SDK:
             name: '<i class="fa fa-file-code-o" aria-hidden="true"></i> Milagro MFA Mobile SDK'
             items:
                 milagro-mfa-mobile-sdk-developer-guide:
@@ -167,7 +167,7 @@ menu:
                     text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Authentication Methods</span>"
                     relativeUrl: mfa/mobile-apps/milagro-mfa-mobile-sdk-authentication-methods.html
 
-        mobile app:
+        Mobile App:
             name: "<i class='fa fa-mobile'></i> Milagro MFA Mobile Apps"
             items:
                 milagro-mfa-mobile-apps-overview:
@@ -195,7 +195,7 @@ menu:
                     text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Selecting Custom Configs</span>"
                     relativeUrl: mfa/mobile-apps/milgaro-mfa-mobile-apps-selecting-custom-configurations.html
 
-        integration:
+        Integration:
             name: "<i class='fa fa-code'></i> Milagro Integration Guides"
             items:
                 milagro-mfa-integration-examples:
@@ -211,7 +211,7 @@ menu:
                     text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Apache Web Server</span>"
                     relativeUrl: mfa/integration/milagro-mfa-integration-apache-web-server.html
 
-        manual:
+        Manual:
             name: "<i class='fa fa-book'></i> Milagro End User Guides"
             items:
                 milagro-mfa-with-javascript-browser-client-pin-pad:
@@ -224,7 +224,7 @@ menu:
                     text: Mobile Apps
                     relativeUrl: mfa/manual/milagro-mfa-mobile-apps.html
 
-        help:
+        Help:
             name: "<i class='fa fa-life-ring'></i> Help"
             items:
                 common-issues:
@@ -234,7 +234,7 @@ menu:
                     text: "Getting Help"
                     relativeUrl: getting-help.html
 
-        misc:
+        Misc:
             name:
             items:
                 license:
