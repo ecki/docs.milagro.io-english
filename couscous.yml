@@ -156,16 +156,16 @@ menu:
                     relativeUrl: mfa/mobile-sdk/milagro-mfa-mobile-sdk-api-reference.html
                 milagro-mfa-mobile-sdk-init-config-methods:
                     text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Init & Config Methods</span>"
-                    relativeUrl: mfa/mobile-apps/milagro-mfa-mobile-sdk-init-config-methods.html
+                    relativeUrl: mfa/mobile-sdk/milagro-mfa-mobile-sdk-init-config-methods.html
                 milagro-mfa-mobile-sdk-user-management-methods:
                     text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> User Management Methods</span>"
-                    relativeUrl: mfa/mobile-apps/milagro-mfa-mobile-sdk-user-management-methods.html
+                    relativeUrl: mfa/mobile-sdk/milagro-mfa-mobile-sdk-user-management-methods.html
                 milagro-mfa-mobile-sdk-registration-methods:
                     text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Registration Methods</span>"
-                    relativeUrl: mfa/mobile-apps/milagro-mfa-mobile-sdk-registration-methods.html
+                    relativeUrl: mfa/mobile-sdk/milagro-mfa-mobile-sdk-registration-methods.html
                 milagro-mfa-mobile-sdk-user-management-methods:
                     text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Authentication Methods</span>"
-                    relativeUrl: mfa/mobile-apps/milagro-mfa-mobile-sdk-authentication-methods.html
+                    relativeUrl: mfa/mobile-sdk/milagro-mfa-mobile-sdk-authentication-methods.html
 
         Mobile App:
             name: "<i class='fa fa-mobile'></i> Milagro MFA Mobile Apps"
@@ -248,16 +248,14 @@ menu:
                     absoluteUrl: http://milagro.apache.org
 
 
-
-
 # Base URL of the published website (no "/" at the end!)
 # You are advised to set and use this variable to write your links in the HTML layouts
-baseUrl: http://dev.docs.milagro.io.s3-website-us-east-1.amazonaws.com
+baseUrl: http://docs.milagro.io.s3-website-us-east-1.amazonaws.com/en
 
 # Used to link to the GitHub project
 github:
     user: milagro-docs
-    repo: development
+    repo: docs
 
 # Set the target branch in which to deploy the generated website
 # branch: master
