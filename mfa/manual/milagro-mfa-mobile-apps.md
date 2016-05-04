@@ -1,5 +1,5 @@
 ---
-currentMenu: Mobile Apps
+currentMenu: milagro-mfa-mobile-apps
 ---
 
 ## TBC

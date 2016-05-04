@@ -200,13 +200,13 @@ menu:
             items:
                 milagro-mfa-integration-examples:
                     text: Milagro MFA Integration Examples
-                    relativeUrl: mfa/integration/milagro-mfa-integration.html
+                    relativeUrl: mfa/integration/milagro-mfa-integration-examples.html
                 milagro-mfa-integration-pin-pad:
                     text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Pin Pad + Web App</span>"
                     relativeUrl: mfa/integration/milagro-mfa-integration-pin-pad.html
                 milagro-mfa-integration-username-pin:
                     text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Username and Pin + Web App</span>"
-                    relativeUrl: mfa/integration/milagro-mfa-integration-pin-pad.html
+                    relativeUrl: mfa/integration/milagro-mfa-integration-username-pin.html
                 milagro-mfa-integration-apache-web-server:
                     text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Apache Web Server</span>"
                     relativeUrl: mfa/integration/milagro-mfa-integration-apache-web-server.html
@@ -220,7 +220,7 @@ menu:
                 milagro-mfa-with-javascript-browser-client-username-pin:
                     text: JavaScript Username-Pin Client
                     relativeUrl: mfa/manual/milagro-mfa-with-javascript-browser-client-username-pin.html
-                milagro-mfa-with-native-app-client:
+                milagro-mfa-mobile-apps:
                     text: Mobile Apps
                     relativeUrl: mfa/manual/milagro-mfa-mobile-apps.html
 
