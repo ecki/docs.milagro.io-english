@@ -250,12 +250,12 @@ menu:
 
 # Base URL of the published website (no "/" at the end!)
 # You are advised to set and use this variable to write your links in the HTML layouts
-baseUrl: http://dev.docs.milagro.io.s3-website-us-east-1.amazonaws.com/en
+baseUrl: http://docs.milagro.io.s3-website-us-east-1.amazonaws.com/en
 
 # Used to link to the GitHub project
 github:
     user: milagro-docs
-    repo: development
+    repo: docs.milagro.io-english
 
 # Set the target branch in which to deploy the generated website
 # branch: master
