@@ -1,9 +1,4 @@
 sudo: required
-# whitelist
-branches:
-  only:
-    - master
-    - develop
 language: php
 php:
 - 5.4
