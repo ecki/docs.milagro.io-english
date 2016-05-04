@@ -217,9 +217,9 @@ menu:
                 milagro-mfa-with-javascript-browser-client-pin-pad:
                     text: JavaScript Pin Pad Client
                     relativeUrl: mfa/manual/milagro-mfa-with-javascript-browser-client-pin-pad.html
-                milagro-mfa-with-javascript-browser-client-username-password:
+                milagro-mfa-with-javascript-browser-client-username-pin:
                     text: JavaScript Username-Pin Client
-                    relativeUrl: mfa/manual/milagro-mfa-with-javascript-browser-client-pin-pad.html
+                    relativeUrl: mfa/manual/milagro-mfa-with-javascript-browser-client-username-pin.html
                 milagro-mfa-with-native-app-client:
                     text: Mobile Apps
                     relativeUrl: mfa/manual/milagro-mfa-mobile-apps.html
@@ -231,12 +231,15 @@ menu:
                     text: Common Issues
                     relativeUrl: common-issues.html
                 getting-help:
-                    text: "Getting Help"
+                    text: Getting Help
                     relativeUrl: getting-help.html
 
         Misc:
             name:
             items:
+                contributing:
+                    text: Contributing
+                    relativeUrl: contributing.html
                 license:
                     text: License
                     relativeUrl: license.html
