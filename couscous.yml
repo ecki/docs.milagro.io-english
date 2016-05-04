@@ -233,7 +233,7 @@ menu:
                 getting-help:
                     text: "Getting Help"
                     relativeUrl: getting-help.html
-                    
+
         misc:
             name:
             items:
