@@ -19,8 +19,8 @@ deploy:
   acl: public_read
   local_dir: .couscous/generated/
   on:
-    repo: milagro-docs/docs
-  upload-dir: en 
+    repo: milagro-docs/development
+  upload-dir: en
 branches:
   only:
     - master
