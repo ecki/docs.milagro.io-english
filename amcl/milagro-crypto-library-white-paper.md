@@ -22,10 +22,12 @@ currentMenu: milagro-crypto-library-white-paper
   <p><em>Abstract</em> — We introduce a new multi-lingual crypto library, specifically designed to support the Internet of Things.</p>
 </div>
 
+This original Latex authored PDF version of this document is available for download [here](/pdfs/amcl.pdf)
+ 
 ## 1 Introduction
 One of the major mysteries in the real-world of crypto is resistance to the exploitation of new research ideas. Its not that cryptographic research has failed to throw up new ideas that have the potential for commercial exploitation -- far from it. But in the real-world, 1970's crypto rules supreme, and very little happens that isn't PKI/RSA based. The reasons for this are many and varied. However one part of the puzzle might be the non-availability of easy-to-use open source cryptographic tools, that do not require in depth cryptographic expertise to deploy.
 
-There are many crypto libraries out there. Many offer a bewildering variety of cryptographic primitives, at different levels of security. Many use extensive assembly language in order to be as fast as possible. Many are very **BIG**, even bloated. Some rely on other external libraries. Many were designed by academics for academics, and so are not really suitable for commercial use. Many are otherwise excellent, but not written in our favourite language.
+There are many crypto libraries out there. Many offer a bewildering variety of cryptographic primitives, at different levels of security. Many use extensive assembly language in order to be as fast as possible. Many are very BIG, even bloated. Some rely on other external libraries. Many were designed by academics for academics, and so are not really suitable for commercial use. Many are otherwise excellent, but not written in our favourite language.
 
 The Apache Milagro Crypto Library (AMCL) is different; AMCL is completely self-contained, except for the requirement for an external entropy source for random number generation.
 
@@ -37,11 +39,9 @@ Only one level of security is supported, equivalent to 128-bit AES. This is the 
 
 _"With 128-bit security more than sufficient for the foreseeable future, it is not clear either what purpose is served by higher security levels, other than catering to TOP SECRET 192-bit security ..... In this context it is interesting to note that 256-bit AES, also prescribed ...... for TOP SECRET, was introduced only to still have a 128-bit secure symmetric cipher in the post-quantum world......, and that 192-bit security was merely a side-effect that resulted from the calculation (128+256)/2 ....... In that world ECC is obsolete anyhow."_
 
-AMCL makes most of the choices for you as to which primitives to use, based on the best available current advice. Specifically it uses AES-128 for symmetric encryption, SHA256 for hashing, 256-bit prime field elliptic curves for public key protocols, and 256-bit BN curves to support pairing-based protocols. However three different parameterizations of Elliptic curve are supported - Weierstrass, Edwards and
-Montgomery, as each is appropriate within its own niche.
+AMCL makes most of the choices for you as to which primitives to use, based on the best available current advice. Specifically it uses AES-128 for symmetric encryption, SHA256 for hashing, 256-bit prime field elliptic curves for public key protocols, and 256-bit BN curves to support pairing-based protocols. However three different parameterizations of Elliptic curve are supported - Weierstrass, Edwards and Montgomery, as each is appropriate within its own niche.
 
-In each case only the standard projective coordinates are used. But you do get to
-choose the actual elliptic curve, with support for three different forms of the modulus. For pairings we assume a modulus congruent to $3 \bmod 8$ with a D-type twist, parameterized by a negative $x$ value<a href="#barreto-naehrig">3</a>. Standard modes of AES are supported, plus GCM mode for authenticated encryption.
+In each case only the standard projective coordinates are used. But you do get to choose the actual elliptic curve, with support for three different forms of the modulus. For pairings we assume a modulus congruent to $3 \bmod 8$ with a D-type twist, parameterized by a negative $x$ value<a href="#barreto-naehrig">3</a>. Standard modes of AES are supported, plus GCM mode for authenticated encryption.
 
 The C version of AMCL is configured at compile time for 16, 32 or 64 bit processors, and for a specific elliptic curve. The Java and Javascript versions are (obviously) processor agnostic, but the same choices of elliptic curve are available.
 
