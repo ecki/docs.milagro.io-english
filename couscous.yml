@@ -136,6 +136,37 @@ menu:
                     text: Milagro MFA API Reference
                     relativeUrl: mfa/configuration/milagro-mfa-api-reference.html
 
+        mobile sdk:
+            name: "<i class="fa fa-file-code-o" aria-hidden="true"></i> Milagro MFA Mobile SDK"
+            items:
+                milagro-mfa-mobile-sdk-developer-guide:
+                    text: Developer Guide
+                    relativeUrl: mfa/mobile-sdk/milagro-mfa-mobile-sdk-developer-guide.html
+                milagro-mfa-mobile-sdk-building-sdk-app:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Building the SDK & App</span>"
+                    relativeUrl: mfa/mobile-sdk/milagro-mfa-mobile-sdk-building-sdk-app.html
+                milagro-mfa-mobile-sdk-generic-example:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Generic Example</span>"
+                    relativeUrl: mfa/mobile-sdk/milagro-mfa-mobile-sdk-generic-example.html
+                milagro-mfa-mobile-sdk-user-states:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> User States</span>"
+                    relativeUrl: mfa/mobile-sdk/milagro-mfa-mobile-sdk-user-states.html
+                milagro-mfa-mobile-sdk-api-reference:
+                    text: API Reference
+                    relativeUrl: mfa/mobile-sdk/milagro-mfa-mobile-sdk-api-reference.html
+                milagro-mfa-mobile-sdk-init-config-methods:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Init & Config Methods</span>"
+                    relativeUrl: mfa/mobile-apps/milagro-mfa-mobile-sdk-init-config-methods.html
+                milagro-mfa-mobile-sdk-user-management-methods:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> User Management Methods</span>"
+                    relativeUrl: mfa/mobile-apps/milagro-mfa-mobile-sdk-user-management-methods.html
+                milagro-mfa-mobile-sdk-registration-methods:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Registration Methods</span>"
+                    relativeUrl: mfa/mobile-apps/milagro-mfa-mobile-sdk-registration-methods.html
+                milagro-mfa-mobile-sdk-user-management-methods:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Authentication Methods</span>"
+                    relativeUrl: mfa/mobile-apps/milagro-mfa-mobile-sdk-authentication-methods.html
+
         mobile app:
             name: "<i class='fa fa-mobile'></i> Milagro MFA Mobile Apps"
             items:
@@ -193,6 +224,16 @@ menu:
                     text: Mobile Apps
                     relativeUrl: mfa/manual/milagro-mfa-mobile-apps.html
 
+        help:
+            name: "<i class='fa fa-life-ring'></i> Help"
+            items:
+                common-issues:
+                    text: Common Issues
+                    relativeUrl: common-issues.html
+                getting-help:
+                    text: "Getting Help"
+                    relativeUrl: getting-help.html
+                    
         misc:
             name:
             items:
