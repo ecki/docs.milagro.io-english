@@ -14,11 +14,6 @@
     <link href="{{ baseUrl }}/css/tipuesearch.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ baseUrl }}/css/pub.css" type="text/css"/>
 
-
-
-
-
-
 </head>
 <body class="wy-body-for-nav">
 
@@ -26,7 +21,7 @@
 
         <nav data-toggle="wy-nav-shift" class="wy-nav-side">
             <div class="wy-side-nav-search">
-                <a href="{{ baseUrl }}/"><i class="fa fa-home"></i> {{ title|default('The title') }}</a>
+                <a href="{{ baseUrl }}/"><i class="fa fa-home"></i> {{ title|default('The title') }} <a href="https://docs.milagro.io/ja"><i class="fa fa-language" aria-hidden="true"</i>
             </div>
             <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
                 {% if menu is defined %}
@@ -71,7 +66,6 @@
                 <a href="{{ baseUrl }}/">{{ title|default('The title') }}</a>
             </nav>
 
-
             {# PAGE CONTENT #}
             {% if github is defined %}
                 <a href="https://github.com/{{ github.user }}/{{ github.repo }}">
@@ -79,10 +73,6 @@
                 </a>
             {% endif %}
 
-                <a href="https://docs.milagro.io/ja">
-                    <img style="position: absolute; top: 50; right: 50; border: 0; max-width: 150px;" i class="fa fa-language" aria-hidden="true">
-                </a>
-                
             <div class="wy-nav-content">
                 <div class="rst-content">
                     <div role="main" class="document">
@@ -103,19 +93,14 @@
                         <div class="clear"></div>
                     </div>
 
-
-
                     <footer>
                         <small>
                             <a href="http://milagro.apache.org">Apache Milagro (incubating)</a> is a free open source project whose inital contributors include <a href="https://twitter.com/miraclhq">MIRACL</a>, <a href="https://twitter.com/ntti3">NTTi3</a>, and <a href="http://www.ntt.co.jp/RD/e/">NTT Labs</a>. This documentation was built using <a href="http://couscous.io/">Couscous</a> using a <a href="https://github.com/CouscousPHP/Template-ReadTheDocs">theme</a> inspired by <a href="https://readthedocs.org/">Read the Docs</a>. With many thanks to <a href="https://twitter.com/snipeyhead">@snipeyhead</a> of <a href="http://snipeitapp.com">Snipe-IT</a> who provided us with a documentation inspiration.
                         </small>
                     </footer>
-
                 </div>
             </div>
-
         </section>
-
     </div>
 
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
