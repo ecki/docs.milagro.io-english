@@ -1,0 +1,19 @@
+language: php
+php:
+- 5.4
+before_script:
+- composer install --no-progress
+script:
+- vendor/bin/couscous generate
+deploy:
+  provider: s3
+  access_key_id: AKIAJB6LBJTNPKYOFMKA
+  secret_access_key:
+    secure: Dt1WD+gnryNrPSk0kWZTzY/Tzp9tGrhOBuzPVLgoQo8AVIRFVr/VgMn4UgrsrgXcWVUzSe82eAnAApHs90vHQ7BC9Hy1qFv6LiVoBbc7K4+aLyNuc1nqbY/8NC+hgrhNrIhAUwZM5LRMVoCF7nVtB73EauZHPld98vwd1rsK6XWlRzdMPCQSaxMJfSnZNpJyN5si5a/6JEd97Dqw8A/cy3kESOcyvsorJJRfOU/cQjzfBSDoeWFXmjtVuywAlmpPGtCHsGrlREHYtUAeBHqbJSwLVLU3SE0QUoyH2WrCkczzu4dD8/mVSUOl2+qaPgmIQmkei7VbK1nvJy1Jch0R9VsK43OIoCrbrKMxFjyzAjwG3FxTrEeIcOweKBDB+VnWKlFfDyhv2aawkJDxOaKHGF/4K1dL3D+3ciTMjD3Qvdl8bjfj8+DH8lnl/Xkj+9LEzd/QNkmtXcVULIGWpeGfNzgkVZQpZSzS4zQ/5Hgz/ZwYNFm9h9UyFRNVu/JQZs6c7S0Ews7qMwoy+wX4os0bKHbj/4/XfjvNH+Ww5V9/yNoi1CuFELT7oWvV+xAHCpMVUZMla3dOTpjMlpiFmAMYd4s6OmGv32N0ro8vM3RiPIJ6SXA6rb/AOuyLfN5YlSugmE/YEQ/6Ff6WvRiEBsxlAJGWhUr1c7p9B3fJEkAsNjM=
+  skip_cleanup: true
+  bucket: docs.milagro.io
+  local-dir: ".couscous/generated/"
+  upload-dir: en
+  acl: public_read
+  on:
+    repo: milagro-docs/docs.milagro.io-english
