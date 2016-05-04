@@ -22,6 +22,8 @@ currentMenu: milagro-crypto-library-white-paper
   <p><em>Abstract</em> — We introduce a new multi-lingual crypto library, specifically designed to support the Internet of Things.</p>
 </div>
 
+This original Latex authored PDF version of this document is available for download [here](/pdfs/amcl.pdf)
+ 
 ## 1 Introduction
 One of the major mysteries in the real-world of crypto is resistance to the exploitation of new research ideas. Its not that cryptographic research has failed to throw up new ideas that have the potential for commercial exploitation -- far from it. But in the real-world, 1970's crypto rules supreme, and very little happens that isn't PKI/RSA based. The reasons for this are many and varied. However one part of the puzzle might be the non-availability of easy-to-use open source cryptographic tools, that do not require in depth cryptographic expertise to deploy.
 
