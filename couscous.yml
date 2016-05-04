@@ -137,7 +137,7 @@ menu:
                     relativeUrl: mfa/configuration/milagro-mfa-api-reference.html
 
         mobile sdk:
-            name: "<i class="fa fa-file-code-o" aria-hidden="true"></i> Milagro MFA Mobile SDK"
+            name: '<i class="fa fa-file-code-o" aria-hidden="true"></i> Milagro MFA Mobile SDK'
             items:
                 milagro-mfa-mobile-sdk-developer-guide:
                     text: Developer Guide
