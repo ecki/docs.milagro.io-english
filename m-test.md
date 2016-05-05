@@ -95,6 +95,56 @@ D      E     F      G
 <br></br>
 
 
+<markdeep>
+If the schedule is sufficiently long and dense, a calendar preview
+is shown before it. Formatted schedule lists
+look like:
+
+Tuesday Feb 16, 2016: Project Launch
+ - Create specifications
+ - Initialize revision control system
+
+Friday Feb 19, 2016: Build Milestone
+ - Build system fully functional
+ - Placeholder unit tests committed
+
+ _Plan for weekend overtime if we miss this milestone_
+
+Wednesday Feb 24, 2016: Site Visit
+ **Whole team vistits client**. Dress appropriately.
+
+Friday Feb 26, 2016: Demo Milestone
+ - Internal demonstrations for management
+ - QA reports due
+
+Tuesday Feb 29, 2016: Code Freeze
+ - Commit final features before this date
+ - Only priority 1 fixes with issue tracking numbers
+   after this point
+
+Monday Mar 7, 2016: Beta
+
+Wednesday Mar 16, 2016: Gold
+
+</markdeep>
+<br></br>
+
+
+<markdeep>
+*************************************************************************************************
+*                                                                                               *
+*   .---.       .-.        .-.       .-.                                       .-.              *
+*   | A +----->| 1 +<---->| 2 |<----+ 4 +------------------.                  | 8 |             *
+*   '---'       '-'        '+'       '-'                    |                  '-'              *
+*                           |         ^                     |                   ^               *
+*                           v         |                     v                   |               *
+*                          .-.      .-+-.        .-.      .-+-.      .-.       .+.       .---.  *
+*                         | 3 +---->| B |<----->| 5 +---->| C +---->| 6 +---->| 7 |<---->| D |  *
+*                          '-'      '---'        '-'      '---'      '-'       '-'       '---'  *
+*************************************************************************************************
+</markdeep>
+<br></br>
+
 
 <script>window.markdeepOptions = {mode: 'html'};</script>
 <script src="markdeep.min.js"></script>
