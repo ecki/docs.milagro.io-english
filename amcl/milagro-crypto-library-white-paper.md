@@ -19,11 +19,11 @@ currentMenu: milagro-crypto-library-white-paper
 </header>
 
 <div class="abstract">
-  <p><em>Abstract</em> — We introduce a new multi-lingual crypto library, specifically designed to support the Internet of Things.</p>
+  <p><em>Abstract</em> — We introduce a new multi-lingual crypto library, specifically designed to support the Internet of Things.
+  <br></br>
+  <br></br>NOTE: This original Latex authored PDF version of this document is available for download <a href=http://docs.milagro.io.s3-website-us-east-1.amazonaws.com/en/pdfs/amcl.pdf">here</a> </p>
 </div>
 
-This original Latex authored PDF version of this document is available for download [here](/pdfs/amcl.pdf)
- 
 ## 1 Introduction
 One of the major mysteries in the real-world of crypto is resistance to the exploitation of new research ideas. Its not that cryptographic research has failed to throw up new ideas that have the potential for commercial exploitation -- far from it. But in the real-world, 1970's crypto rules supreme, and very little happens that isn't PKI/RSA based. The reasons for this are many and varied. However one part of the puzzle might be the non-availability of easy-to-use open source cryptographic tools, that do not require in depth cryptographic expertise to deploy.
 
@@ -213,7 +213,7 @@ One notable omission from AMCL is the use of pre-computation on fixed parameters
 
 However the development roadmap view might change in later versions depending on the project supporters in-the-field experiences of using AMCL.
 
-## REFERENCES
+## References
 <p></p>
 <div class="references">
   <cite id="AMCL-on-GitHub"><a href="https://www.github.com">Milagro Crypto Library on GitHub</a></cite>
@@ -225,25 +225,3 @@ However the development roadmap view might change in later versions depending on
   <cite id="yorozu87">Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, <q>Electron spectroscopy studies on magneto-optical media and plastic substrate interface,</q> IEEE Transl. J. Magn. Japan, vol. 2, pp. 740–741, August 1987 [Digests 9th Annual Conf. Magnetics Japan, p. 301, 1982].</cite>
   <cite id="young89">M. Young, The Technical Writer’s Handbook. Mill Valley, CA: University Science, 1989.</cite>
 </div>
-
-## Benchmarks
-
-Since AMCL is intended for the Internet of Things, we think it appropriate to give some timings based on an implementation on the Raspberry Pi (version 2) computer, which is based on a 32-bit ARM7 chip. We do not overclock the 900MHz processor.
-
-We developed three API programs, one which tests standard methods of elliptic curve key exchange, public key cryptography and digital signature. Another implements all components of the M-Pin protocol, a pairing-based protocol of medium complexity [@mpin].  The former uses the ed25519 Edwards curve [@bernstein-duif-lange-schwabe-yang] with its pseudo-mersenne modulus, and the latter a BN curve. Finally we implement all the steps of the RSA public key encryption protocol using 2048-bit keys, that is key generation, encryption and decryption.
-
-These might be regarded as representative of what might be expected for an implementation of a typical elliptic curve (ECC) protocol, a typical pairing-based (PBC) protocol, and a typical classic public key protocol based on RSA.
-The results in the first table indicate the code and stack requirements when these programs were compiled using version 4.8 of the GCC compiler, using the standard -O3 (optimize for best performance) and -Os (optimize for minimum size) flags, and a flag to indicate the specific ARM architecture (Cortex-A7).
-
-|Method & Flag|Code Size|Maximum Stack Usage|
-|:-------:|:------:|:------:|
-|ECC  -O3|  68085 |  4140 |
-|ECC  -Os|  31115 |  3752 |
-|PBC  -O3|  84031 |  8140 |
-|PBC  -Os|  46044 |  7904 |
-|RSA  -O3|  61461 |  5332 |
-|RSA  -Os|  23449 |  5228 |
-
-<table>
-<caption>Typical Memory Footprint</caption>
-</table>

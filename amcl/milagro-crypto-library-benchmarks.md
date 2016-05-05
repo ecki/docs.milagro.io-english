@@ -12,17 +12,17 @@ These might be regarded as representative of what might be expected for an imple
 The results in the first table indicate the code and stack requirements when these programs were compiled using version 4.8 of the GCC compiler, using the standard -O3 (optimize for best performance) and -Os (optimize for minimum size) flags, and a flag to indicate the specific ARM architecture (Cortex-A7).
 
 |Method & Flag|Code Size|Maximum Stack Usage|
-|:-------:|:------:|:------:|
+|:-------------:|:------------:|:------------:|
 |ECC  -O3|  68085 |  4140 |
 |ECC  -Os|  31115 |  3752 |
 |PBC  -O3|  84031 |  8140 |
 |PBC  -Os|  46044 |  7904 |
 |RSA  -O3|  61461 |  5332 |
 |RSA  -Os|  23449 |  5228 |
-
-<table>
-<caption>Typical Memory Footprint</caption>
-</table>
+<p align="center">
+<b>Table 1. Typical Memory Footprint</b><br>
+</p>
+</b><br>
 
 
 Next we give some timings for a single SPA-protected ECC point multiplication on an Edwards curve, for the calculation of a single PBC pairing on the BN curve, and for a SPA-protected 2048-bit RSA decryption.
@@ -35,10 +35,11 @@ Next we give some timings for a single SPA-protected ECC point multiplication on
 |PBC pairing -Os|77.3|
 |RSA decryption -O3|155|
 |RSA decryption -Os|233|
+<p align="center">
+<b>Table 2. C Benchmarks</b><br>
+</p>
+</b><br>
 
-<table>
-<caption>C Benchmarks</caption>
-</table>
 
 Observe that we do not compare these timings with any other - because that is not the point.
 The point is - are they "good enough" for whatever application you have in mind? And we suspect that, in the great majority of cases, they are.
@@ -52,7 +53,7 @@ Clearly for Java and Javascript we are completely at the mercy of the efficiency
 |  PBC pairing   |    Raspberry Pi  |   Epiphany  |  11.0|
 |  |    Apple iPad 2  |   Safari  |  1.6|
 |  |    Samsung Galaxy Note 4  |   Chrome  |  0.30|
-
-<table>
-<caption>JavaScript Benchmarks</caption>
-</table
+<p align="center">
+<b>Table 3. JavaScript Benchmarks</b><br>
+</p>
+</b><br>
