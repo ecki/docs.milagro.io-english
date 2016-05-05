@@ -20,7 +20,7 @@ The results in the first table indicate the code and stack requirements when the
 |RSA  -O3|  61461 |  5332 |
 |RSA  -Os|  23449 |  5228 |
 <p align="center">
-<b>Table 1. Typical Memory Footprint</b><br>
+<b>Table 1.  Typical Memory Footprint</b><br>
 </p>
 </b><br>
 
@@ -36,7 +36,7 @@ Next we give some timings for a single SPA-protected ECC point multiplication on
 |RSA decryption -O3|155|
 |RSA decryption -Os|233|
 <p align="center">
-<b>Table 2. C Benchmarks</b><br>
+<b>Table 2.  C Benchmarks</b><br>
 </p>
 </b><br>
 
@@ -54,6 +54,6 @@ Clearly for Java and Javascript we are completely at the mercy of the efficiency
 |  |    Apple iPad 2  |   Safari  |  1.6|
 |  |    Samsung Galaxy Note 4  |   Chrome  |  0.30|
 <p align="center">
-<b>Table 3. JavaScript Benchmarks</b><br>
+<b>Table 3.  JavaScript Benchmarks</b><br>
 </p>
 </b><br>
