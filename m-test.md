@@ -55,6 +55,33 @@ In _Proceedings of Computer Graphics and Interactive Techniques
 <br></br>
 
 
+<markdeep>
+[^syntax]: Endnotes look like reference-style links with an empty text
+field. Endnotes may not contain multiple paragraphs (sorry, David
+Foster Wallace), although they may refer to _other_ endnotes.
+
+</markdeep>
+<br></br>
+
+
+<markdeep>
+Examples of lists and floating diagrams:
+                                                   *****************************
+1. Monday                                          *   A         B         C   *
+2. Tuesday                                         *   *-------->o<------->o   *
+  1. Morning                                       *   ^        / ^        |   *
+  2. Afternoon                                     *   |       v   \       v   *
+3. Wednesday                                       *   o----->o---->o<---->*   *
+  - Bullets                                        *   D      E     F      G   *
+  - Bullets                                        *****************************
+4. Thursday
+5. Friday
+
+</markdeep>
+<br></br>
+
+
+
 <script>window.markdeepOptions = {mode: 'html'};</script>
 <script src="markdeep.min.js"></script>
 <script src="https://casual-effects.com/markdeep/latest/markdeep.min.js"></script>
