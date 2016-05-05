@@ -17,7 +17,7 @@ Subsection
 In _Proceedings of Computer Graphics and Interactive Techniques
 (SIGGRAPH '86)_, ACM, 143-150. http://dx.doi.org/10.1145/15922.15902
 </markdeep>
-
+<br></br>
 <markdeep>
 [^syntax]: Endnotes look like reference-style links with an empty text
 field. Endnotes may not contain multiple paragraphs (sorry, David
