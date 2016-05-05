@@ -1,5 +1,6 @@
 ---
 currentMenu: m-test
+layout: markdeep
 ---
 
 Welcome to Markdeep. It's the simple way to write plain text with
@@ -241,35 +242,6 @@ Although: do you really need six levels of subsection nesting?!
 </markdeep>
 <br></br>
 
-
-<markdeep>
-<style>
-.md .inverse svg.diagram {
-  background: #333;
-  stroke: #FFF;
-  fill: #FFF;
-}
-
-.md .inverse svg.diagram .opendot {
-  fill: #333;
-}
-</style>
-
-You can use CSS to style all diagrams or individual diagrams. For example,
-the following has light lines on a dark background:
-
-<div class="inverse">
- ****************************************************
- *  .---.              .         .----o----.        *
- *  |    |             |         |    |    |        *
- *  |    |  --.   |.-- |   |     *----*<---+        *
- *  |    |  .-.|  |    +--+      |    |____|        *
- *  |    | |   |  |    |   |     |    |    |        *
- *  '---'   '-''  '    '   '     o----o--->'        *
- ****************************************************
-</div>
-</markdeep>
-<br></br>
 
 
 <script>window.markdeepOptions = {mode: 'html'};</script>
