@@ -172,7 +172,78 @@ separate pages when done.
 
 
 <markdeep>
-style>
+$$ \Lo(X, \wo) = \Le(X, \wo) + \int_\Omega \Li(X, \wi) ~ f_X(\wi, \wo) ~ | \n \cdot \wi | ~ d\wi $$
+
+You can also use LaTeX equation syntax directly to obtain numbered
+equations:
+
+\begin{equation}
+e^{i \pi} + 1 = 0
+\end{equation}
+
+\begin{equation}
+\mathbf{A}^{-1}\vec{b} = \vec{x}
+\end{equation}
+
+If you don't have equations in your document, then Markdeep won't
+connect to the MathJax server. Either way, it runs MathJax after
+processing the rest of the document, so there is no delay.
+
+Markdeep is smart enough to distinguish non-math use of dollar signs,
+such as $2.00 and $4.00, US$5, and 3$. Inline
+math requires consistent spaces (or punctuation) either outside or inside
+of the LaTeX dollar signs to distinguish them them from
+regular text usage. Thus, the following all work:
+
+- $x^2$
+- $ x^2 $
+- ($x^2$)
+- ($ x^2 $)
+- Variable $x^2$,
+- Variable $ x^2 $
+
+Unless you've changed out the default MathJax processor, you can define
+your own LaTeX macros by executing `\newcommand` within dollar signs,
+just as you would in LaTeX.  Markdeep provides a handful of commands
+defined this way by default because they're things that I frequently
+need:
+
+   Code            |   Symbol
+-------------------|------------
+ `\O(n)`           |  $\O(n)$
+ `\mathbf{M}^\T`   |  $\mathbf{M}^\T$
+ `45\degrees`      |  $45\degrees$
+ `x \in \Real`     |  $x \in \Real$
+ `x \in \Integer`  |  $x \in \Integer$
+ `x \in \Boolean`  |  $x \in \Boolean$
+ `x \in \Complex`  |  $x \in \Complex$
+ `\n`              |  $\n$
+ `\w`              |  $\w$
+ `\wo`             |  $\wo$
+ `\wi`             |  $\wi$
+ `\wh`             |  $\wh$
+ `\Li`             |  $\Li$
+ `\Lo`             |  $\Lo$
+ `\Lr`             |  $\Lr$
+ `\Le`             |  $\Le$
+
+
+# ATX Headers
+In addition to the underlined headers, you can also use ATX-style
+headers, with multiple # signs:
+
+## H2
+### H3
+#### H4
+##### H5
+###### H6
+Although: do you really need six levels of subsection nesting?!
+</markdeep>
+<br></br>
+
+
+<markdeep>
+<style>
 .md .inverse svg.diagram {
   background: #333;
   stroke: #FFF;
