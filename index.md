@@ -6,15 +6,15 @@ currentMenu: home
 # Trust in the Internet is at an all time low.
 ## It's time for action.
 
-We all make multiple trust assumptions every day. And in truth most of them are justified and we are rarely disappointed. Indeed it would be hard to imagine a more difficult environment than one in which most of our trust assumptions proved false.
-Maybe in the Garden of Eden we all originally trusted one another.
+From its earliest days, one of the building blocks of trust and security on the Internet was cryptography. Unfortunately with the technology then available, the only solution was the highly centralised concept called PKI, i.e., Public Key Infrastructure. The PKI system supports SSL, which in turn underpins e-commerce. By design this involves a central root of trust which typically manifests as a single RSA private key.
+If this is revealed the whole thing unravels.
 
-## Example of MathJax
+This entity - the Certificate Authority or CA – that controls the root of trust, holds a disproportionate amount of power, which to many does not fit comfortably with the original ethos of the Internet.
 
-Three types of Elliptic curve are supported for the implementation of
-Elliptic Curve Cryptography (ECC), but curves are limited to popular
-families that support faster implementation. Weierstrass curves are
-supported using the Short Weierstrass representation:-
+The problems with that PKI forces upon the Internet can be tied to its architecture; A single monolithic trust authority that must
+
+Because the trust issue was not dealt with properly from the start, the Internet faces an uncertain future. Currently trust in the Internet is at an all time low. An Internet of Things will be a disaster unless we fix this. Part of the problem was the lack of vision to see that these shortcomings were not inevitable.
+
 
 $$y^2=x^3+Ax+B$$
 
