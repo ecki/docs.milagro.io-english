@@ -6,13 +6,19 @@ currentMenu: home
 # Trust in the Internet is at an all time low.
 ## It's time for action.
 
-From its earliest days, one of the building blocks of trust and security on the Internet was cryptography. Unfortunately with the technology then available, the only solution was the highly centralised concept called PKI, i.e., Public Key Infrastructure. The PKI system supports SSL, which in turn underpins e-commerce. By design this involves a central root of trust which typically manifests itself as a single private key.
+From its earliest days, one of the building blocks of trust and security on the Internet was cryptography. Unfortunately with the technology then available, the only solution to secure web services was the highly centralised concept called PKI, i.e., Public Key Infrastructure.
 
-If this is revealed the whole thing unravels.
+Put simply, Public Key Infrastructure is a technology in which "roots of trust" authoritatively bind public keys to real world identities.
+
+The PKI system supports SSL, which in turn underpins e-commerce. By design this involves a central root of trust which typically manifests itself as a single private key.
+
+Naturally, if this key is revealed the whole edifice unravels.
 
 This entity - the Certificate Authority or CA – that controls the root of trust, holds a disproportionate amount of centralised responsibility and power, which to many does not fit comfortably with the original ethos of the Internet.
 
-The problems that PKI forces upon the Internet can be tied to its architecture, now more than 30 years old. PKI forces a single monolithic trust authority to possess a root key, which becomes more effective and valuable the more browsers and operating systems 'trust' its signature. As a result, this has led to a distortion in the commercial certificate market, whereby 95% of all commercial certificates issued are from five certificate authorities located in the United States.
+The problems that PKI forces upon the Internet can be tied to its architecture, now more than 30 years old. PKI forces a single monolithic trust authority to possess a root key, which becomes more effective and valuable the more browsers and operating systems 'trust' its signature.
+
+As a result, this has led to a distortion in the commercial certificate market, whereby 95% of all commercial certificates issued are from five certificate authorities located in the United States.
 
 The topic of the commercial certificate authority market's woes has been extensively covered. Indeed, many projects and initiatives have surfaced by some of the Internet's best and brightest to insure the commercial CA market doesn't create an Internet size black swan event have recently surfaced.  [Let's Encrypt](https://letsencrypt.org/), who are breaking the stranglehold of the commercial certificate market cartel with a free, automated certificate authority, and [Google's Certificate Transparency Project](https://www.certificate-transparency.org/), which seeks to catch out rouge certificate authorities, come to mind.
 
