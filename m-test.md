@@ -34,6 +34,5 @@ where $A=1$ or $A=-1$. Montgomery curves are represented as:-
 $$y^2=x^3+Ax^2+x$$
 
 where $A$ must be small.
-
-
-<!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js"></script><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
+<script>window.markdeepOptions = {mode: 'html'};</script>
+<script src="markdeep.min.js"></script>
