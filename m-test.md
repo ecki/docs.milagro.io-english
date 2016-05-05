@@ -19,6 +19,9 @@ In _Proceedings of Computer Graphics and Interactive Techniques
 </markdeep>
 <br></br>
 
+
+
+
 <markdeep>
 [^syntax]: Endnotes look like reference-style links with an empty text
 field. Endnotes may not contain multiple paragraphs (sorry, David
@@ -27,18 +30,20 @@ Foster Wallace), although they may refer to _other_ endnotes.
 <br></br>
 
 
+
 <markdeep>
 LaTeX and other languages that use dollar signs work fine inside code
 fences:
-
 ````````````````````````````````````
+
 $ \int_0^1 x^2 dx $
 
-$$$a = $$$e
 
 ````````````````````````````````````
 </markdeep>
 <br></br>
+
+
 
 <markdeep>
 Basic Formatting
@@ -57,6 +62,8 @@ Text formatting:
 
 </markdeep>
 <br></br>
+
+
 
 $$y^2=x^3+Ax+B$$
 
