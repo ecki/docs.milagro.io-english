@@ -5,22 +5,23 @@ currentMenu: m-test
 Welcome to Markdeep. It's the simple way to write plain text with
 _style_. From http://casual-effects.com/markdeep.
 
-<markdeep>
+
 Section
 ===============================================================================
 
 Subsection
 -------------------------------------------------------------------------------
-
+<markdeep>
 **Bibliography**:
 [#Kajiya86]: James T. Kajiya. 1986. The Rendering Equation.
 In _Proceedings of Computer Graphics and Interactive Techniques
 (SIGGRAPH '86)_, ACM, 143-150. http://dx.doi.org/10.1145/15922.15902
-
+</markdeep>
+<markdeep>
 [^syntax]: Endnotes look like reference-style links with an empty text
 field. Endnotes may not contain multiple paragraphs (sorry, David
 Foster Wallace), although they may refer to _other_ endnotes.
-<markdeep>
+</markdeep>
 
 $$y^2=x^3+Ax+B$$
 
@@ -34,5 +35,6 @@ where $A=1$ or $A=-1$. Montgomery curves are represented as:-
 $$y^2=x^3+Ax^2+x$$
 
 where $A$ must be small.
+
 <script>window.markdeepOptions = {mode: 'html'};</script>
 <script src="markdeep.min.js"></script>
