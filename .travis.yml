@@ -16,7 +16,6 @@ deploy:
   upload-dir: en
   acl: public_read
   on:
-    tags: true
     all_branches: true
 env:
   global:
