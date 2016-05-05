@@ -56,7 +56,35 @@ In _Proceedings of Computer Graphics and Interactive Techniques
 
 
 <markdeep>
-Examples of lists and floating diagrams:
+Maine | Iowa | Colorado
+-------|------|----------
+  1   |  4   |   10
+ ME   |  IA  |   CO
+Blue  | Red  | Brown
+[Optional caption]
+
+
+Maine | Iowa | Colorado
+-------|------|----------
+  1   |  4   |   10
+ ME   |  IA  |   CO
+Blue  | Red  | Brown
+[Table [states]: Caption with label.]
+
+
+With alignment:
+
+Item | Type | Cost
+---- |:----:| ----:
+Fish |  F   | 1.00
+Axe  |  W   | 3.25
+Gold |  I   |20.50
+
+</markdeep>
+<br></br>
+
+
+<pre class="markdeep">Examples of lists and floating diagrams:
                                                    *****************************
 1. Monday                                          *   A         B         C   *
 2. Tuesday                                         *   *-------->o<------->o   *
@@ -70,6 +98,7 @@ Examples of lists and floating diagrams:
 
 </markdeep>
 <br></br>
+
 
 
 
