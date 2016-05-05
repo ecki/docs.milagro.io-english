@@ -18,11 +18,45 @@ In _Proceedings of Computer Graphics and Interactive Techniques
 (SIGGRAPH '86)_, ACM, 143-150. http://dx.doi.org/10.1145/15922.15902
 </markdeep>
 <br></br>
+
 <markdeep>
 [^syntax]: Endnotes look like reference-style links with an empty text
 field. Endnotes may not contain multiple paragraphs (sorry, David
 Foster Wallace), although they may refer to _other_ endnotes.
 </markdeep>
+<br></br>
+
+
+<markdeep>
+LaTeX and other languages that use dollar signs work fine inside code
+fences:
+
+````````````````````````````````````
+$ \int_0^1 x^2 dx $
+
+$$$a = $$$e
+
+````````````````````````````````````
+</markdeep>
+<br></br>
+
+<markdeep>
+Basic Formatting
+=======================================================================================
+Text formatting:
+
+    Source                               |     Result
+-----------------------------------------|------------------------------
+`**bold**`                               | **bold**
+`__bold__`                               | __bold__
+`*italic*`                               | *italic*
+`_italic_`                               | _italic_
+`~~strikethrough~~`                      | ~~strikethrough~~
+<code>`inline code`</code>               | `inline code`
+`5 kg/m^3`                               | 5 kg/m^3
+
+</markdeep>
+<br></br>
 
 $$y^2=x^3+Ax+B$$
 
