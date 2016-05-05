@@ -147,6 +147,60 @@ Wednesday Mar 16, 2016: Gold
 <br></br>
 
 
+<markdeep>
+Multiple Columns
+========================================================================
+<div style="columns:2;-webkit-columns:2;-moz-columns:2;column-gap:3em;-webkit-column-gap:3em;-moz-column-gap:3em">
+You can use the CSS
+[columns](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Columns/Using_multi-column_layouts)
+style to make an HTML multicolumn block. Then, just use regular Markdeep within it and the
+browser will automatically apply your multicolumn layout.
+
+Browsers are even smart enough to break the columns correctly when
+printing to PDF or to a printer. However, for a long document the
+multiples columns don't work well when displayed on screen. There are
+no discrete pages in that case to break columns. So, the browser will
+make each column as long as the entire document, which is probably not
+what you want.
+
+So, multi-column only works well if you know that you have very short
+sections (as in this example), or if you were planning on printing to
+separate pages when done.
+</div>
+</markdeep>
+<br></br>
+
+
+<markdeep>
+style>
+.md .inverse svg.diagram {
+  background: #333;
+  stroke: #FFF;
+  fill: #FFF;
+}
+
+.md .inverse svg.diagram .opendot {
+  fill: #333;
+}
+</style>
+
+You can use CSS to style all diagrams or individual diagrams. For example,
+the following has light lines on a dark background:
+
+<div class="inverse">
+ ****************************************************
+ *  .---.              .         .----o----.        *
+ *  |    |             |         |    |    |        *
+ *  |    |  --.   |.-- |   |     *----*<---+        *
+ *  |    |  .-.|  |    +--+      |    |____|        *
+ *  |    | |   |  |    |   |     |    |    |        *
+ *  '---'   '-''  '    '   '     o----o--->'        *
+ ****************************************************
+</div>
+</markdeep>
+<br></br>
+
+
 <script>window.markdeepOptions = {mode: 'html'};</script>
 <script src="markdeep.min.js"></script>
 <script src="https://casual-effects.com/markdeep/latest/markdeep.min.js"></script>
