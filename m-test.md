@@ -38,3 +38,4 @@ where $A$ must be small.
 
 <script>window.markdeepOptions = {mode: 'html'};</script>
 <script src="markdeep.min.js"></script>
+<script src="https://casual-effects.com/markdeep/latest/markdeep.min.js"></script>
