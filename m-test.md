@@ -56,15 +56,6 @@ In _Proceedings of Computer Graphics and Interactive Techniques
 
 
 <markdeep>
-[^syntax]: Endnotes look like reference-style links with an empty text
-field. Endnotes may not contain multiple paragraphs (sorry, David
-Foster Wallace), although they may refer to _other_ endnotes.
-
-</markdeep>
-<br></br>
-
-
-<markdeep>
 Examples of lists and floating diagrams:
                                                    *****************************
 1. Monday                                          *   A         B         C   *
