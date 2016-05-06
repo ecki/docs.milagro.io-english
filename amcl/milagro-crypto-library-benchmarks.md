@@ -2,7 +2,7 @@
 currentMenu: milagro-crypto-library-benchmarks
 ---
 
-## Benchmarks
+**Benchmarks**
 
 Since AMCL is intended for the Internet of Things, we think it appropriate to give some timings based on an implementation on the Raspberry Pi (version 2) computer, which is based on a 32-bit ARM7 chip. We do not overclock the 900MHz processor.
 
@@ -20,7 +20,7 @@ The results in the first table indicate the code and stack requirements when the
 |PBC  -Os|  46044 |  7904 |
 |RSA  -O3|  61461 |  5332 |
 |RSA  -Os|  23449 |  5228 |
-[Table [states]: Typical Memory Footprint]
+[Table: Typical Memory Footprint]
 </markdeep>
 <br></br>
 
@@ -36,7 +36,7 @@ Next we give some timings for a single SPA-protected ECC point multiplication on
 |PBC pairing -Os|77.3|
 |RSA decryption -O3|155|
 |RSA decryption -Os|233|
-[Table [states]: C Benchmarks]
+[Table: C Benchmarks]
 </markdeep>
 <br></br>
 
@@ -54,11 +54,11 @@ Clearly for Java and Javascript we are completely at the mercy of the efficiency
 |  PBC pairing   |    Raspberry Pi  |   Epiphany  |  11.0|
 |  |    Apple iPad 2  |   Safari  |  1.6|
 |  |    Samsung Galaxy Note 4  |   Chrome  |  0.30|
-[Table [states]: JavaScript Benchmarks]
+[Table: JavaScript Benchmarks]
 <br></br>
 <markdeep>
 
-## References
+**References**
 
 <p></p>
 <div class="references">
