@@ -2,7 +2,7 @@
 currentMenu: milagro-crypto-library-benchmarks
 ---
 
-**Benchmarks**
+## Benchmarks
 
 Since AMCL is intended for the Internet of Things, we think it appropriate to give some timings based on an implementation on the Raspberry Pi (version 2) computer, which is based on a 32-bit ARM7 chip. We do not overclock the 900MHz processor.
 
@@ -57,6 +57,22 @@ Clearly for Java and Javascript we are completely at the mercy of the efficiency
 [Table [states]: JavaScript Benchmarks]
 <br></br>
 <markdeep>
+
+## References
+
+<p></p>
+<div class="references">
+  <cite id="AMCL-on-GitHub"><a href="https://www.github.com">Milagro Crypto Library on GitHub</a></cite>
+  <cite id="m-n-l">Miele and Lenstra, A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68–73.</cite>
+  <cite id="barreto-naehrig">P.S.L.M. Barreto and M. Naehrig, <q>Fine particles, thin films and exchange anisotropy,</q> in Magnetism, vol. III, G. T. Rado and H. Suhl, Eds. New York: Academic, 1963, pp. 271–350.</cite>
+  <cite id="mpin">K. Elissa, <q>Title of paper if known,</q> unpublished.</cite>
+  <cite id="park13">Park, T. H., Saxena, A., Jagannath, S., Wiedenbeck, S., and Forte, A. Towards a taxonomy of errors in HTML and CSS. In <em>Proc. ICER 2013</em>, ACM Press (2013), 75-82.</cite>
+  <cite id="nicole">R. Nicole, <q>Title of paper with only first word capitalized,</q> J. Name Stand. Abbrev., in press.</cite>
+  <cite id="yorozu87">Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, <q>Electron spectroscopy studies on magneto-optical media and plastic substrate interface,</q> IEEE Transl. J. Magn. Japan, vol. 2, pp. 740–741, August 1987 [Digests 9th Annual Conf. Magnetics Japan, p. 301, 1982].</cite>
+  <cite id="young89">M. Young, The Technical Writer’s Handbook. Mill Valley, CA: University Science, 1989.</cite>
+</div>
+
+
 
 <script>window.markdeepOptions = {mode: 'html'};</script>
 <script src="markdeep.min.js"></script>
