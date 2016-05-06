@@ -12,6 +12,13 @@ These might be regarded as representative of what might be expected for an imple
 The results in the first table indicate the code and stack requirements when these programs were compiled using version 4.8 of the GCC compiler, using the standard -O3 (optimize for best performance) and -Os (optimize for minimum size) flags, and a flag to indicate the specific ARM architecture (Cortex-A7).
 
 <markdeep>
+Maine | Iowa | Colorado
+-------|------|----------
+  1   |  4   |   10
+ ME   |  IA  |   CO
+Blue  | Red  | Brown
+[Optional caption]
+
 |Method & Flag|Code Size|Maximum Stack Usage|
 |:-------------:|:------------:|:------------:|
 |ECC  -O3|  68085 |  4140 |
@@ -20,9 +27,10 @@ The results in the first table indicate the code and stack requirements when the
 |PBC  -Os|  46044 |  7904 |
 |RSA  -O3|  61461 |  5332 |
 |RSA  -Os|  23449 |  5228 |
-[Table [states]: Caption with label.]
-</markdeep>
-<br></br>
+<p align="center">
+<b>Table 1.  Typical Memory Footprint</b><br>
+</p>
+</b><br>
 
 
 Next we give some timings for a single SPA-protected ECC point multiplication on an Edwards curve, for the calculation of a single PBC pairing on the BN curve, and for a SPA-protected 2048-bit RSA decryption.
@@ -57,7 +65,3 @@ Clearly for Java and Javascript we are completely at the mercy of the efficiency
 <b>Table 3.  JavaScript Benchmarks</b><br>
 </p>
 </b><br>
-
-<script>window.markdeepOptions = {mode: 'html'};</script>
-<script src="markdeep.min.js"></script>
-<script src="https://casual-effects.com/markdeep/latest/markdeep.min.js"></script>
