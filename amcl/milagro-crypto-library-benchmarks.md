@@ -10,7 +10,6 @@ We developed three API programs, one which tests standard methods of elliptic cu
 
 These might be regarded as representative of what might be expected for an implementation of a typical elliptic curve (ECC) protocol, a typical pairing-based (PBC) protocol, and a typical classic public key protocol based on RSA.
 The results in the first table indicate the code and stack requirements when these programs were compiled using version 4.8 of the GCC compiler, using the standard -O3 (optimize for best performance) and -Os (optimize for minimum size) flags, and a flag to indicate the specific ARM architecture (Cortex-A7).
-
 <br></br>
 <markdeep>
 |Method & Flag|Code Size|Maximum Stack Usage|
@@ -27,7 +26,6 @@ The results in the first table indicate the code and stack requirements when the
 
 
 Next we give some timings for a single SPA-protected ECC point multiplication on an Edwards curve, for the calculation of a single PBC pairing on the BN curve, and for a SPA-protected 2048-bit RSA decryption.
-
 <br></br>
 <markdeep>
 |   |Time in milliseconds|
@@ -44,9 +42,8 @@ Next we give some timings for a single SPA-protected ECC point multiplication on
 
 
 Observe that we do not compare these timings with any other - because that is not the point.
-The point is - are they "good enough" for whatever application you have in mind? And we suspect that, in the great majority of cases, they are.
+The point is - are they "good enough" for whatever application you have in mind? We suspect that, in the great majority of cases, they are.
 Clearly for Java and Javascript we are completely at the mercy of the efficiency (or otherwise) of the virtual machine. As can be seen from these Javascript timings, these can vary significantly.
-
 <br></br>
 <markdeep>
 |   |Device|Browser|Time in seconds|
