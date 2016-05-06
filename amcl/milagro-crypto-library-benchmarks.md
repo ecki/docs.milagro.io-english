@@ -20,7 +20,7 @@ The results in the first table indicate the code and stack requirements when the
 |PBC  -Os|  46044 |  7904 |
 |RSA  -O3|  61461 |  5332 |
 |RSA  -Os|  23449 |  5228 |
-[Table: Typical Memory Footprint]
+[Table 1: Typical Memory Footprint]
 </markdeep>
 <br></br>
 
@@ -36,7 +36,7 @@ Next we give some timings for a single SPA-protected ECC point multiplication on
 |PBC pairing -Os|77.3|
 |RSA decryption -O3|155|
 |RSA decryption -Os|233|
-[Table: C Benchmarks]
+[Table 2: C Benchmarks]
 </markdeep>
 <br></br>
 
@@ -54,7 +54,7 @@ Clearly for Java and Javascript we are completely at the mercy of the efficiency
 |  PBC pairing   |    Raspberry Pi  |   Epiphany  |  11.0|
 |  |    Apple iPad 2  |   Safari  |  1.6|
 |  |    Samsung Galaxy Note 4  |   Chrome  |  0.30|
-[Table: JavaScript Benchmarks]
+[Table 3: JavaScript Benchmarks]
 <br></br>
 <markdeep>
 
