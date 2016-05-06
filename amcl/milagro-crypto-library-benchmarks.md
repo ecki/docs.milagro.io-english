@@ -38,6 +38,7 @@ Next we give some timings for a single SPA-protected ECC point multiplication on
 |PBC pairing -Os|77.3|
 |RSA decryption -O3|155|
 |RSA decryption -Os|233|
+[Table [states]: C Benchmarks]
 </markdeep>
 <br></br>
 
@@ -56,6 +57,7 @@ Clearly for Java and Javascript we are completely at the mercy of the efficiency
 |  PBC pairing   |    Raspberry Pi  |   Epiphany  |  11.0|
 |  |    Apple iPad 2  |   Safari  |  1.6|
 |  |    Samsung Galaxy Note 4  |   Chrome  |  0.30|
+[Table [states]: JavaScript Benchmarks]
 <br></br>
 <markdeep>
 
