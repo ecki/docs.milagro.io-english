@@ -29,9 +29,9 @@ menu:
                 home:
                     text: Introduction
                     relativeUrl: index.html
-                why-milagro:
-                    text: Why Milagro?
-                    relativeUrl: why-milagro.html
+                high-level-overview:
+                    text: High Level Overview
+                    relativeUrl: high-level-overview.html
                 milagro-concepts:
                     text: Milagro Concepts
                     relativeUrl: milagro-concepts.html
