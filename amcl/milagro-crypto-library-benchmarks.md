@@ -1,5 +1,6 @@
 ---
 currentMenu: milagro-crypto-library-benchmarks
+layout: markdeep
 ---
 
 **Benchmarks**

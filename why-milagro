@@ -2,11 +2,13 @@
 currentMenu: milagro-explained
 ---
 
-## Milagro Explained
+# Milagro Explained
 
-Apache Milagro (incubating) establishes a new internet security framework purpose built for cloud connected mobile and desktop applications and IoT devices that require Internet scale. Milagro's purpose is to provide a secure, free, and positive open source alternative to proprietary monolithic trust providers such as commercial certificate authorities and the certificate backed cryptosystems that are reliant on these service providers.
+Apache Milagro (incubating) establishes a new internet security framework purpose built for cloud connected mobile and desktop applications and IoT devices that require Internet scale. Milagro's purpose is to provide a secure, free, and positive open source alternative to proprietary monolithic trust providers such as commercial certificate authorities and the certificate backed cryptosystems that rely on them.
 
-Milagro leverages pairing-based cryptography to distribute cryptographic operations and split cryptographic parameters, providing a level of security and functionality that is step forward in when compared to certificate backed cryptosystems in service today. Compatible with Blockchain technology, and sharing many of the same cryptographic building blocks, Milagro's distributed cryptography seeks to eliminate the single points of compromise that are inherent in all commercial certificate providers and PKI deployments.
+Milagro leverages pairing-based cryptography to distribute cryptographic operations and split cryptographic parameters, providing a level of security and functionality that is a step forward in when compared to the certificate backed cryptosystems in service today. Compatible with Blockchain technology, and sharing many of the same cryptographic building blocks, Milagro's distributed cryptography seeks to eliminate the single points of compromise that are inherent in all commercial certificate providers and PKI deployments.
+
+## Distributed Trust Authorities
 
 Consider BitCoin's blockchain, which provides an alternative distributed approach to managing a currency without the need for a central bank. Trust is distributed.
 SHOW GRAPHIC
