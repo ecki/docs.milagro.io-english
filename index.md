@@ -16,21 +16,21 @@ If the signature is valid, the the web browser can "trust" that the server belon
 
 The entity that issues digital certificates is called a __Certificate Authority__ (or "CA"). The CA's private key that is used to sign these digital certificates is called a CA __root key__.  The more browsers and operating systems 'trust' the signature of the CA's root key, the more valuable a CA becomes.
 
-As a result, this has led to a distortion in the commercial certificate market, where, as of a few months ago, 95% of all commercial certificates were issued from five certificate authorities, all located in the United States (along with their root keys).  To many, this disproportionate amount of centralised responsibility and power does not fit comfortably with the original ethos of the Internet.
+As a result, this has led to a distortion in the commercial certificate market, where, as of a few months ago, 95% of all commercial certificates were issued from five certificate authorities, all located in the United States (along with their root keys) (SHOW REFERENCES).  To many, this disproportionate amount of centralised responsibility and power does not fit comfortably with the original ethos of the Internet.
 
-If the Certificate Authority's root key is revealed or compromised, the whole edifice unravels, and all certificates issued by the Certificate Authority must be revoked. The topic of the commercial certificate authority market's woes has been extensively covered, suffice to say that we are seeing Internet scale commercial and security issues that are directly attributable to the limitations of PKI's fundamental architecture, which is now over thirty years old.
+If the Certificate Authority's root key is revealed or compromised, the whole edifice unravels, and all certificates issued by the Certificate Authority must be revoked.(SHOW DIGINOTAR REFERENCE) The topic of the commercial certificate authority market's woes has been extensively covered, suffice to say that we are seeing Internet scale commercial and security issues that are directly attributable to the limitations of PKI's fundamental architecture, which is now over thirty years old.(SHOW REFERENCES)
 
 In an attempt to "patch" PKI, many projects and initiatives have surfaced to minimise the commercial CA cartel's risk of choking off Internet growth or creating an Internet security "black swan" event. On the commercial side of the spectrum, the excellent [Let's Encrypt](https://letsencrypt.org/) is breaking the stranglehold of the commercial certificate market cartel with a free, automated certificate authority.
 
-On the ecosystem side, [Google's Certificate Transparency Project](https://www.certificate-transparency.org/), seeks to catch out rouge certificate authorities who issue illegitimately obtained but legitimate acting certificates.  A relatively new process that seeks to patch the broken certificate revocation processes PKI is known for, called OCSP stapling, was also introduced recently.  Both initiatives have been met with criticism from various corners because they introduce their own security risks or don't (can't) fix the fundamental limitations of PKI's centralised architecture.
+On the ecosystem side, [Google's Certificate Transparency Project](https://www.certificate-transparency.org/), seeks to catch out rouge certificate authorities who issue illegitimately obtained but legitimate acting certificates.  A relatively new process that seeks to patch the broken certificate revocation processes PKI is known for, called OCSP stapling, was also introduced recently.  Both initiatives have been met with criticism from various corners because they introduce their own security risks or don't (can't) fix the fundamental limitations of PKI's centralised architecture. (SHOW REFERENCES)
 
 These initiatives all provide ample evidence that PKI's problems are mounting under the increasing load of a growing, distributed Internet.
 
-If PKI has problems now, what happens in 2020, when 25 billion more devices are projected to be connected the Internet?
+If PKI has problems now, what happens in 2020, when 25 billion more devices are projected to be connected the Internet? (SHOW REFERENCE)
 
 ## Enter the Internet of Things
 
-By even the smallest industry analysts calculations, the next phase of the Internet growth, driven by Internet of Things deployments and the move to app-centric (vs. browser) software as a service delivery models, will result in growth rates that will dwarf current dwarf rates.
+By even the smallest industry analysts calculations, the next phase of the Internet growth, driven by Internet of Things deployments and the move to app-centric (vs. browser) software as a service delivery models, will result in Internet adoption growth rates that will dwarf current dwarf rates.
 
 This next phase of the Internet's evolution demands a new approach to security. As the architecture of these deployments is fundamentally different to the current __n__ web browser to __n__ web servers architecture, we have a unique opportunity to upgrade the cryptographic systems and trust models used in these deployments.
 
@@ -50,32 +50,28 @@ Below is a simple graphic to show the difference.
 
 SHOW GRAPHIC
 
-## A Different Approach
+As you can see, the n'browser to n'server context contains a requirement that web servers MUST provide a universal method of authenticating themselves to the hundreds of millions of different browsers that connect to them.  It's this context that PKI was designed for, and where the vast majority of PKI technology is utilised on today's internet.
 
+In decades past, it was envisioned that PKI could also provide security for client or end user authentication, where billions of client or end user certificates would be issued to the citizens of the Internet. This has obviously not come to pass, as PKIs scalability issues made the dream impossible to attain.
 
+To satisfy the requirement of authentication end users, web applications overlay end user authentication methods such as passwords and two-factor authentication (if security is a concern) over PKI enabled secure channels such as SSL / TLS. If these secure channels between web server and browser didn't exist, password and one-time password authentication could not be deployed in a secure manner, since the password or one time password would be unsecured in transit between the web browser and web server.
 
+One could make the connection between the failure of PKI and commercial certificate authorities to fulfil the promise of easy client certificate deployment, which would have enabled mutual authentication between end user and web application, to the explosion of industrial scale username / password smash' n grab attacks. If PKI could have been deployed to every browser and end user on the Internet, it's easy to envision a world where passwords would not be the dominant authentication technique used on the Internet today.
 
+In an IoT or app centric context, we have a fundamentally different set of issues because of an obvious truism; apps or IoT devices are not browsing from web server on domain A to web server on domain B.
 
-Consider the deployment scenario for a mobile app with millions of users or an Internet scale smart meter rollout.
+In general, apps or IoT devices are purpose built to connect to ONE SPECIFIC DOMAIN.
 
-Apache Milagro (incubating) seeks to provide a positive alternative to PKI infrastructure where certificates
+SHOW GRAPHIC
 
-Because the trust issue was not dealt with properly from the start, the Internet faces an uncertain future. Currently trust in the Internet is at an all time low. An Internet of Things will be a disaster unless we fix this. Part of the problem was the lack of vision to see that these shortcomings were not inevitable.
+It's obvious from the graphic above that IoT and app-centric deployments will require fundamentally different authentication and security paradigm.
 
+In a app-centric or IoT device Internet scale deployment where millions of clients connect to clouds hosting array of micro services on one specific domain, the pressing challenge is to mutual authenticate millions of clients programmed to securely connect to a static domain.
 
-$$y^2=x^3+Ax+B$$
+PKI can't fulfil this requirement. Technically and commercially, PKI didn't just fail browser based end user certificate deployments - PKI failed to get to the launch pad.
 
-where $A=0$ or $A=-3$. Edwards curves are supported using both regular
-and twisted Edwards format:-
+There is no initiative or technical development currently under development in the PKI ecosystem that can fix its legion of issues to make it suitable for these deployment scenarios.
 
-$$Ax^2+y^2=1+Bx^2y^2$$
+It's time for action. It's time for something new.
 
-where $A=1$ or $A=-1$. Montgomery curves are represented as:-
-
-$$y^2=x^3+Ax^2+x$$
-
-where $A$ must be small.
-
-## Announcement List
-
-Have we made progress on Grav? Because I am getting a lot of CousCous.
+## Enter Milagro
