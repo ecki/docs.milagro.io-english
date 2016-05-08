@@ -70,7 +70,7 @@ It's obvious from the graphic above that IoT and app-centric deployments will re
 
 In a app-centric or IoT device Internet scale deployment where millions of clients connect to clouds hosting array of micro services on one specific domain, the pressing challenge is to mutual authenticate millions of clients programmed to securely connect to a static domain.
 
-PKI can't fulfil this requirement. Technically and commercially, PKI didn't just fail for browser based end user certificate deployments - PKI failed to get to the launch pad.
+PKI can't fulfil this requirement because its fundamental architecture is incompatible with capabilities required. The evidence is already there - consider public facing end user certificate deployments. PKI didn't just fail to get traction when service providers made offerings for this use case - PKI failed to get to the launch pad.
 
 There is no initiative or technical development currently under development in the PKI ecosystem that can fix its legion of issues to make it suitable for these deployment scenarios.
 
