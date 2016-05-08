@@ -29,7 +29,7 @@ One of the major mysteries in the real-world of crypto is resistance to the expl
 
 There are many crypto libraries out there. Many offer a bewildering variety of cryptographic primitives, at different levels of security. Many use extensive assembly language in order to be as fast as possible. Many are very BIG, even bloated. Some rely on other external libraries. Many were designed by academics for academics, and so are not really suitable for commercial use. Many are otherwise excellent, but not written in our favourite language.
 
-The Apache Milagro Crypto Library (AMCL) is different; AMCL is completely self-contained, except for the requirement for an external entropy source for random number generation.
+The Apache Milagro Crypto Library (AMCL) is different; AMCL is completely self-contained, except for the requirement for an external entropy source for random number generation. AMCL is base the base cryptographic service provider for all Milagro services and applications, and is available as its own stand-alone library.
 
 AMCL is portable - there is no assembly language. The original version is written in C, Java, Javascript, Go and Swift using only generic programming constructs, but AMCL is truly multi-lingual, as compatible  versions will be available in many other languages. These versions will be identical in that for the same inputs they will not only produce the same outputs, but all internal calculations will also be the same.
 

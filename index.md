@@ -30,7 +30,7 @@ If PKI has problems now, what happens in 2020, when 25 billion more devices are 
 
 ## Enter the Internet of Things
 
-By even the smallest industry analysts calculations, the next phase of the Internet growth, driven by Internet of Things deployments and the move to app-centric (vs. browser) software as a service delivery models, will result in Internet adoption growth rates that will dwarf current dwarf rates.
+By even the smallest industry analysts calculations, the next phase of the Internet growth, driven by Internet of Things deployments and the move to app-centric (vs. browser) software as a service delivery models, will result in Internet adoption growth rates that will dwarf current rates.
 
 This next phase of the Internet's evolution demands a new approach to security. As the architecture of these deployments is fundamentally different to the current __n__ web browser to __n__ web servers architecture, we have a unique opportunity to upgrade the cryptographic systems and trust models used in these deployments.
 
@@ -56,7 +56,9 @@ In decades past, it was envisioned that PKI could also provide security for clie
 
 To satisfy the requirement of authentication end users, web applications overlay end user authentication methods such as passwords and two-factor authentication (if security is a concern) over PKI enabled secure channels such as SSL / TLS. If these secure channels between web server and browser didn't exist, password and one-time password authentication could not be deployed in a secure manner, since the password or one time password would be unsecured in transit between the web browser and web server.
 
-One could make the connection between the failure of PKI and commercial certificate authorities to fulfil the promise of easy client certificate deployment, which would have enabled mutual authentication between end user and web application, to the explosion of industrial scale username / password smash' n grab attacks. If PKI could have been deployed to every browser and end user on the Internet, it's easy to envision a world where passwords would not be the dominant authentication technique used on the Internet today.
+One could make the connection between the failure of PKI and commercial certificate authorities to fulfil the promise of easy and wide-spread client certificate deployment, which would have enabled mutual strong authentication between end user and web application, to the explosion of industrial scale username / password smash' n grab attacks.
+
+If PKI could have been deployed to every browser and end user on the Internet, it's easy to envision a world where passwords would not be the dominant authentication technique used on the Internet today.
 
 In an IoT or app centric context, we have a fundamentally different set of issues because of an obvious truism; apps or IoT devices are not browsing from web server on domain A to web server on domain B.
 
@@ -68,10 +70,10 @@ It's obvious from the graphic above that IoT and app-centric deployments will re
 
 In a app-centric or IoT device Internet scale deployment where millions of clients connect to clouds hosting array of micro services on one specific domain, the pressing challenge is to mutual authenticate millions of clients programmed to securely connect to a static domain.
 
-PKI can't fulfil this requirement. Technically and commercially, PKI didn't just fail browser based end user certificate deployments - PKI failed to get to the launch pad.
+PKI can't fulfil this requirement. Technically and commercially, PKI didn't just fail for browser based end user certificate deployments - PKI failed to get to the launch pad.
 
 There is no initiative or technical development currently under development in the PKI ecosystem that can fix its legion of issues to make it suitable for these deployment scenarios.
 
 It's time for action. It's time for something new.
 
-## Enter Milagro
+## REFERENCES
