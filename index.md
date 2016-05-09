@@ -6,7 +6,7 @@ currentMenu: home
 
 Apache Milagro (incubating) establishes a new internet security framework purpose-built for cloud-connected mobile and desktop applications and IoT devices that require Internet scale. Milagro's purpose is to provide a secure, free, and positive open source alternative to non-distributed and proprietary monolithic trust providers such as commercial certificate authorities and the certificate backed cryptosystems that rely on them.
 
-Milagro leverages pairing-based cryptography to distribute cryptographic operations and split cryptographic parameters, providing a level of security and functionality that is a step forward in when compared to the certificate backed cryptosystems in service today. Compatible with Blockchain technology, and sharing many of the same cryptographic building blocks, Milagro's distributed cryptography seeks to eliminate the single points of compromise that are inherent in all non-distributed and or monolithic trust authorities.
+Milagro leverages [pairing-based cryptography](https://en.wikipedia.org/wiki/Pairing-based_cryptography) to distribute cryptographic operations and split cryptographic parameters, providing a level of security and functionality that is a step forward in when compared to the certificate backed cryptosystems in service today. Compatible with Blockchain technology, and sharing many of the same cryptographic building blocks, Milagro's distributed cryptography seeks to eliminate the single points of compromise that are inherent in all non-distributed and or monolithic trust authorities.
 
 ## Distributed Trust Authorities
 
@@ -34,11 +34,12 @@ Apache Milagro (incubating) also contains a pairing-based TLS library, Milagro T
 
 Milagro TLS delivers a TLS 1.2 TLS-PSK (pre-shared key) modified cipher suite that provides perfectly forward secure authenticated key agreement for each session between client and server or peer to peer. Milagro TLS is a standalone library that uses MCL as its cryptographic service provider, resulting in an implementation that is lean, yet performant enough to run in constrained environments found in many IoT devices.
 
-Also included is Milagro MFA, a higher level 'Crypto App' ready for the cloud, mobile or enterprise deployments. Milagro MFA is a complete multi-factor authentication platform that uses zero-knowledge proof protocols to eliminate the password and hence the threat of password database breach. Milagro MFA includes client SDKs in JavaScript, C, iOS, Android and Windows Phone, as well as the Authentication Server for Linux. Delivering 128-bit security but lean enough to even run in JavaScript, Milagro MFA allows developers and security engineers to integrate easy-to-use multi-factor authentication capabilities into their mobile and web properties or applications in minutes.
+Also included is Milagro MFA, a higher level 'Crypto App' ready for the cloud, mobile or enterprise deployments. Milagro MFA is a complete multi-factor authentication platform that uses [zero-knowledge proof protocols](https://en.wikipedia.org/wiki/Zero-knowledge_proof) to eliminate the password and hence the threat of password database breach. Milagro MFA includes client SDKs in JavaScript, C, iOS, Android and Windows Phone, as well as the Authentication Server for Linux. Delivering 128-bit security but lean enough to even run in JavaScript, Milagro MFA allows developers and security engineers to integrate easy-to-use multi-factor authentication capabilities into their mobile and web properties or applications in minutes.
 
 * To learn more about the case for Milagro and the proposed Distributed Trust Ecosystem, [click here](milagro-a-case-for-something-new.html)
-* To learn more about the pairing crypto protocols used in the Milagro framework, [click here](pairing-crypto-protocols.html)
 * To learn more about Milagro components and concepts, [click here](milagro-concepts.html)
+* To learn more about the pairing crypto protocols used in the Milagro framework, [click here](pairing-crypto-protocols.html)
+
 
 Or, if you are ready to jump in, grab the code and the examples.
 

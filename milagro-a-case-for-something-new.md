@@ -77,7 +77,7 @@ Ideally, this same authentication process would be a step or building block in c
 
 PKI can't fulfil this requirement because its fundamental architecture is incompatible with capabilities required. The evidence is already there:
 
-PKI has never achieved Internet scale certificate deployments for end users, which would equate to millions or billions of client certificates, despite being commercially available for over twenty-five years.
+**PKI has never achieved Internet scale certificate deployments for end users, which would equate to millions or billions of client certificates, despite being commercially available for over twenty-five years.**
 
 There is no initiative or technical development currently under development in the PKI ecosystem that can fix its legion of issues to make it suitable for these deployment scenarios.
 
