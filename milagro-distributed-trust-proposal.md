@@ -1,4 +1,4 @@
 ---
-currentMenu: milagro-a-case-for-something-new
+currentMenu: milagro-distributed-trust-proposal
 ---
 TBC
