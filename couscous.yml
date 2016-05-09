@@ -35,9 +35,12 @@ menu:
                 pairing-crypto-protocols:
                     text: Pairing Crypto Protocols
                     relativeUrl: pairing-crypto-protocols.html
-                milagro-a-case-for-something-new:
-                    text: A Case for Something New
-                    relativeUrl: milagro-a-case-for-something-new.html
+                milagro-a-case-for-something-new-part-1:
+                    text: A Case for Something New - Part I
+                    relativeUrl: milagro-a-case-for-something-new-part-1.html
+                milagro-a-case-for-something-new-part-2:
+                    text: A Case for Something New - Part II
+                    relativeUrl: milagro-a-case-for-something-new-part-2.html
                 milagro-distributed-trust-proposal:
                     text: Distributed Trust Ecosystem Proposal
                     relativeUrl: milagro-distributed-trust-proposal.html
