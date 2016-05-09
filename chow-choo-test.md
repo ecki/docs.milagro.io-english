@@ -10,13 +10,13 @@ layout: default
 |------|------|
 |$x \in \mathbb{Z}_{q}^{*}$|   |
 |$AG1 := H_{1}(IdA)$|   |
-|$PaG_{1} := x\cdot AG_{1}$|   |
+|$PaG_{1} := x \cdot AG_{1}$|   |
 |$IdA, PaG_{1} \longrightarrow$|   |
 |   |$y,w \in \mathbb{Z}_{q}^{*}$|
-|   |$AG_{1} := H_{1}(IdA)$|
-|   |$BG_{2} := H_{2}(IdB)$|
-|  |  $PbG_{2} := y\cdot BG_{2}$|
-|  |  $PgG_{1} := w\cdot AG_{1}$|
+|   |$AG_{1}:=H_{1}(IdA)$|
+|   |$BG_{2}:=H_{2}(IdB)$|
+|  |  $PbG_{2}:=y \cdot BG_{2}$|
+|  |  $PgG_{1}:=w \cdot AG_{1}$|
 |  |  $pia := H_{q}(PaG_{1}\| PbG_{2} \| PgG_{1}\|IdB)$|
 |  |  $pib := H_{q}(PbG_{2}\|PaG_{1} \|PgG_{1}\| IdA)$|
 |  |  $k:=e(pia\cdot AG_{1}+PaG_{1},(y+pib)\cdot s \cdot BG_{2})$|
@@ -28,6 +28,23 @@ layout: default
 | $k := e((x+pia)\cdot s \cdot AG_{1}, pib\cdot BG_{2} + PbG_{2})$ |  |
 | $K := H(k,x\cdot PgG_{1})$ |  |
 
+Notes
+
+|Alice - identity $ID_a$|Server|
+|:----------------------:|:----------------------:|
+|Generates random $x<q$|Generates random $y<q$|
+|$A=H(ID_a)$||
+|$U=x{A}$||
+|$ID_a$, $U~~ \rightarrow  $||
+| |$\leftarrow y$|
+|$V=-(x+y){((s-\alpha)A+\alpha A)} \rightarrow$||
+| |$A=H(ID_a)$|
+| |$g=e(V,Q).e(U+yA,sQ)$|
+| |if $g \ne 1$, reject the connection|
+<table>
+  <caption>M-Pin</caption>
+</table>
+<br></br>
 
 Notes about notation:
 
