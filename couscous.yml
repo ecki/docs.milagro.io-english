@@ -26,21 +26,21 @@ menu:
         Introduction:
             name: '<i class="fa fa-bolt" aria-hidden="true"></i> Milagro Overview'
             items:
+                milagro-a-case-for-something-new:
+                    text: A Case for Something New
+                    relativeUrl: milagro-a-case-for-something-new.html
+                milagro-proposal-distributed-trust:
+                    text: A Proposed Distributed Trust Ecosystem
+                    relativeUrl: milagro-proposal-distributed-trust.html
                 home:
                     text: Introduction
                     relativeUrl: index.html
-                high-level-overview:
-                    text: High Level Overview
-                    relativeUrl: high-level-overview.html
                 milagro-concepts:
                     text: Milagro Concepts
                     relativeUrl: milagro-concepts.html
                 pairing-crypto-protocols:
                     text: Pairing Crypto Protocols
                     relativeUrl: pairing-crypto-protocols.html
-                distributed-trust:
-                    text: A Distributed Trust Ecosystem
-                    relativeUrl: distributed-trust.html
 
         Milagro Crypto Library:
             name: '<i class="fa fa-key" aria-hidden="true"></i> Milagro Crypto Library'

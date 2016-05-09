@@ -1,79 +1,49 @@
 ---
 currentMenu: home
 ---
-<div id="generated-toc" class="generate_from_h2"></div>
 
-# Trust in the Internet is at an all time low.
-## It's time for action.
+# Milagro Introduction
 
-From its earliest days, one of the building blocks of trust and security on the Internet was cryptography. Unfortunately with the technology then available, the only solution to secure web services was the highly centralised concept called PKI, i.e., Public Key Infrastructure.
+Apache Milagro (incubating) establishes a new internet security framework purpose-built for cloud-connected mobile and desktop applications and IoT devices that require Internet scale. Milagro's purpose is to provide a secure, free, and positive open source alternative to non-distributed and proprietary monolithic trust providers such as commercial certificate authorities and the certificate backed cryptosystems that rely on them.
 
-Put simply, Public Key Infrastructure is a technology in which __trusted authorities__ authoritatively bind public keys to real world identities by issuing digitally signed __certificates__ in the name of the verified real world identity.  
+Milagro leverages pairing-based cryptography to distribute cryptographic operations and split cryptographic parameters, providing a level of security and functionality that is a step forward in when compared to the certificate backed cryptosystems in service today. Compatible with Blockchain technology, and sharing many of the same cryptographic building blocks, Milagro's distributed cryptography seeks to eliminate the single points of compromise that are inherent in all non-distributed and or monolithic trust authorities.
 
-As an example, a web server under the control of Google would have a digital certificate stating the web server's identity is __google.com__. The web browser uses the public key of the entity that digitally signed and issued the certificate to verify that the certificate is valid. These public keys used the verify the signature are embedded in operating systems and browsers from Google, Microsoft, Firefox and others.  
+## Distributed Trust Authorities
 
-If the signature is valid, the the web browser can "trust" that the server belongs to Google because the certificate says its so.  By trusting the web server, the web browser is enabled to create a cryptographically secure connection to the web server. In this way, digital certificates enable on-line shopping and the secure use of the cloud by providing a key ingredient in creating secure communication protocols such as SSL / TLS and virtual private networks (VPN). By encrypting the connection between web server and browser, data traveling between browser and web server, such as credit cards and personal information, is secured from theft and compromise.
-
-The entity that issues digital certificates is called a __Certificate Authority__ (or "CA"). The CA's private key that is used to sign these digital certificates is called a CA __root key__.  The more browsers and operating systems 'trust' the signature of the CA's root key, the more valuable a CA becomes.
-
-As a result, this has led to a distortion in the commercial certificate market, where, as of a few months ago, 95% of all commercial certificates were issued from five certificate authorities, all located in the United States (along with their root keys) (SHOW REFERENCES).  To many, this disproportionate amount of centralised responsibility and power does not fit comfortably with the original ethos of the Internet.
-
-If the Certificate Authority's root key is revealed or compromised, the whole edifice unravels, and all certificates issued by the Certificate Authority must be revoked.(SHOW DIGINOTAR REFERENCE) The topic of the commercial certificate authority market's woes has been extensively covered, suffice to say that we are seeing Internet scale commercial and security issues that are directly attributable to the limitations of PKI's fundamental architecture, which is now over thirty years old.(SHOW REFERENCES)
-
-In an attempt to "patch" PKI, many projects and initiatives have surfaced to minimise the commercial CA cartel's risk of choking off Internet growth or creating an Internet security "black swan" event. On the commercial side of the spectrum, the excellent [Let's Encrypt](https://letsencrypt.org/) is breaking the stranglehold of the commercial certificate market cartel with a free, automated certificate authority.
-
-On the ecosystem side, [Google's Certificate Transparency Project](https://www.certificate-transparency.org/), seeks to catch out rouge certificate authorities who issue illegitimately obtained but legitimate acting certificates.  A relatively new process that seeks to patch the broken certificate revocation processes PKI is known for, called OCSP stapling, was also introduced recently.  Both initiatives have been met with criticism from various corners because they introduce their own security risks or don't (can't) fix the fundamental limitations of PKI's centralised architecture. (SHOW REFERENCES)
-
-These initiatives all provide ample evidence that PKI's problems are mounting under the increasing load of a growing, distributed Internet.
-
-If PKI has problems now, what happens in 2020, when 25 billion more devices are projected to be connected the Internet? (SHOW REFERENCE)
-
-## Enter the Internet of Things
-
-By even the smallest industry analysts calculations, the next phase of the Internet growth, driven by Internet of Things deployments and the move to app-centric (vs. browser) software as a service delivery models, will result in Internet adoption growth rates that will dwarf current rates.
-
-This next phase of the Internet's evolution demands a new approach to security. As the architecture of these deployments is fundamentally different to the current __n__ web browser to __n__ web servers architecture, we have a unique opportunity to upgrade the cryptographic systems and trust models used in these deployments.
-
-Consider the following: End Users operating their desktop browsers have been educated by the commercial Certificate Authority industry to "look for the green padlock" when connecting to web applications across the Internet, from Facebook to online banking and shopping sites. Green text and / or green locks indicate a secure SSL / TLS connection from the web browser to the web server.
-
-You, the reader, have no doubt done this yourself (hopefully).
-
-Now answer this question:
-
-When was the last time you checked for green text or a green lock when using your favourite app on your mobile device?
-
-The answer is, most likely, you never have.
-
-This isn't an accusation that you, dear reader, are not concerned about the security of the app you are using. It's just evidence that PKI doesn't provide the same level of utility in a n'browser to n'server context vs. an app or IoT deployment context.
-
-Below is a simple graphic to show the difference.
-
+Consider BitCoin's blockchain, which provides an alternative distributed approach to managing a currency without the need for a central bank. Trust is distributed.
 SHOW GRAPHIC
 
-As you can see, the n'browser to n'server context contains a requirement that web servers MUST provide a universal method of authenticating themselves to the hundreds of millions of different browsers that connect to them.  It's this context that PKI was designed for, and where the vast majority of PKI technology is utilised on today's internet.
+In the same vein, Milagro envisions a new class of cryptographic service providers called Distributed Trust Authorities, or D-TAs for short. D-TAs can run locally, in an Enterprise, or in the Cloud. D-TAs independently issue shares, or fractions, of cryptographic keys to Milagro clients and servers and application endpoints which have embedded Milagro cryptographic libraries. D-TAs operate independently from each other, are isolated in totality, and completely unaware of the existence of other D-TAs.
 
-In decades past, it was envisioned that PKI could also provide security for client or end user authentication, where billions of client or end user certificates would be issued to the citizens of the Internet. This has obviously not come to pass, as PKIs scalability issues made the dream impossible to attain.
-
-To satisfy the requirement of authentication end users, web applications overlay end user authentication methods such as passwords and two-factor authentication (if security is a concern) over PKI enabled secure channels such as SSL / TLS. If these secure channels between web server and browser didn't exist, password and one-time password authentication could not be deployed in a secure manner, since the password or one time password would be unsecured in transit between the web browser and web server.
-
-One could make the connection between the failure of PKI and commercial certificate authorities to fulfil the promise of easy and wide-spread client certificate deployment, which would have enabled mutual strong authentication between end user and web application, to the explosion of industrial scale username / password smash' n grab attacks.
-
-If PKI could have been deployed to every browser and end user on the Internet, it's easy to envision a world where passwords would not be the dominant authentication technique used on the Internet today.
-
-In an IoT or app centric context, we have a fundamentally different set of issues because of an obvious truism; apps or IoT devices are not browsing from web server on domain A to web server on domain B.
-
-In general, apps or IoT devices are purpose built to connect to ONE SPECIFIC DOMAIN.
-
+In practice, it is envisioned that a Distributed Trust Authority (D-TA) framework would split the functions of a pairing-based key generation server into three services, each D-TA issuing thirds of private keys to distinct identities. The shares of the three cryptographic keys, as an example, could be generated by cloud computing providers, their customers, and dedicated trust providers.
 SHOW GRAPHIC
 
-It's obvious from the graphic above that IoT and app-centric deployments will require fundamentally different authentication and security paradigm.
+## Key Shares
 
-In a app-centric or IoT device Internet scale deployment where millions of clients connect to clouds hosting array of micro services on one specific domain, the pressing challenge is to mutual authenticate millions of clients programmed to securely connect to a static domain.
+Milagro clients and servers receive the issued shares cryptographic keys and combine them to create the whole completed key, thus becoming the only audience who possess knowledge of the entire key. Since key generation services are under separate organisational controls, current root key compromises and key escrow threats inherent in PKI systems are an order of magnitude harder to exploit.  An attacker would need to subvert all three (or more) independent parties, as a compromise of one D-TA in a three D-TA framework does not yield an attacker any cryptographic advantage.
 
-PKI can't fulfil this requirement because its fundamental architecture is incompatible with capabilities required. The evidence is already there - consider public facing end user certificate deployments. PKI didn't just fail to get traction when service providers made offerings for this use case - PKI failed to get to the launch pad.
+In other words, all D-TAs used to generate shares of keys for Milagro clients and servers must be compromised to create the equivalent of a PKI root key compromise.
 
-There is no initiative or technical development currently under development in the PKI ecosystem that can fix its legion of issues to make it suitable for these deployment scenarios.
+## Milagro Components and Applications
 
-It's time for action. It's time for something new.
+Initially started as a joint development effort by MIRACL, NTTi3 and NTT Labs, the results of this joint development are contributed to Apache Milagro (incubating). These contributions consist of the baseline Milagro Crypto Library (MCL) that enables developers to build distributed trust systems and select from a choice of secure, proven, pairing based protocols that deliver certificate-less key encapsulation, zero knowledge proof authentication, authenticated key agreement and digital signing functionality.
 
-## REFERENCES
+Using MCL, application developers can embed multi-factor authentication, secure communications, and data protection methods that are robust enough to meet most requirements required by distributed ledger services, general on-line financial services, government and healthcare industries.
+
+Apache Milagro (incubating) also contains a pairing-based TLS library, Milagro TLS, that enables encrypted connections with perfect forward secrecy between mobile applications or IoT devices and backend service infrastructures, without the need for certificates or PKI.
+
+Milagro TLS delivers a TLS 1.2 TLS-PSK (pre-shared key) modified cipher suite that provides perfectly forward secure authenticated key agreement for each session between client and server or peer to peer. Milagro TLS is a standalone library that uses MCL as its cryptographic service provider, resulting in an implementation that is lean, yet performant enough to run in constrained environments found in many IoT devices.
+
+Also included is Milagro MFA, a higher level 'Crypto App' ready for the cloud, mobile or enterprise deployments. Milagro MFA is a complete multi-factor authentication platform that uses zero-knowledge proof protocols to eliminate the password and hence the threat of password database breach. Milagro MFA includes client SDKs in JavaScript, C, iOS, Android and Windows Phone, as well as the Authentication Server for Linux. Delivering 128-bit security but lean enough to even run in JavaScript, Milagro MFA allows developers and security engineers to integrate easy-to-use multi-factor authentication capabilities into their mobile and web properties or applications in minutes.
+
+* To learn more about the case for Milagro and the proposed Distributed Trust Ecosystem, [click here](milagro-a-case-for-something-new.html)
+* To learn more about the pairing crypto protocols used in the Milagro framework, [click here](pairing-crypto-protocols.html)
+* To learn more about Milagro components and concepts, [click here](milagro-concepts.html)
+
+Or, if you are ready to jump in, grab the code and the examples.
+
+If you need help:
+
+Gitter
+mailinglist
+etc.

@@ -1,12 +1,11 @@
 ---
-currentMenu: home
+currentMenu: milagro-a-case-for-something-new
 ---
+
 <div id="generated-toc" class="generate_from_h2"></div>
 
 # Trust in the Internet is at an all time low.
-## It's time for something new.
-
-NOTE: Skip this section and proceed to the next section if you are familiar with the concepts behind 
+## It's time for action.
 
 From its earliest days, one of the building blocks of trust and security on the Internet was cryptography. Unfortunately with the technology then available, the only solution to secure web services was the highly centralised concept called PKI, i.e., Public Key Infrastructure.
 
@@ -83,5 +82,7 @@ PKI has never achieved Internet scale certificate deployments for end users, whi
 There is no initiative or technical development currently under development in the PKI ecosystem that can fix its legion of issues to make it suitable for these deployment scenarios.
 
 It's time for action. It's time for something new.
+
+Next Section: [A Proposed Distributed Trust Ecosystem](milagro-proposal-distributed-trust.html)
 
 ## REFERENCES
