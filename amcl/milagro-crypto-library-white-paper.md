@@ -31,6 +31,8 @@ There are many crypto libraries out there. Many offer a bewildering variety of c
 
 The Apache Milagro Crypto Library (AMCL) is different; AMCL is completely self-contained, except for the requirement for an external entropy source for random number generation.
 
+This document describes the AMCL library which was originally designed for internal use, but which has now reached a level of maturity where we are pleased to make it available as a service to the wider community as an open source product, under a standard [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0).  In addition to being a stand alone library, AMCL is base the base cryptographic service provider for all Milagro services and applications.
+
 AMCL is portable - there is no assembly language. The original version is written in C, Java, Javascript, Go and Swift using only generic programming constructs, but AMCL is truly multi-lingual, as compatible  versions will be available in many other languages. These versions will be identical in that for the same inputs they will not only produce the same outputs, but all internal calculations will also be the same.
 
 AMCL is fast, but does not attempt to set speed records (a particular academic obsession). There are of course contexts where speed is of the essence; for example for a server farm which must handle multiple SSL connections, and where a 10% speed increase implies the need for 10% less servers, with a a 10% saving on electricity. But in the Internet of Things we would suggest that this is less important. In general the speed is expected to be "good enough". However AMCL is small. Some libraries boast of having hundreds of thousands of lines of code - AMCL has less than 10,000. AMCL takes up the minimum of ROM/RAM resources in order to fit into the smallest possible embedded footprint, consistent with other design constraints. It is expected that this will be vital for implementations that support security in the Internet of Things. AMCL (the C version) only uses stack memory, and is thus natively multi-threaded.
@@ -53,8 +55,6 @@ In the sequel we refer to the C version of AMCL, unless otherwise specified. We 
 ## 2 Context
 
 A crypto library does not function is isolation. The AMCL was originally designed to support the MIRACL Distributed Datacenter Crypto (DDC) platform for cloud providers and device manufacturers. The MIRACL DDC platform in intended to be cloud-based infrastructure agnostic yet support the M-Pin protocols<a href="#mpin">4</a> for MFA and TLS, but which we believe has wider application to novel protocols of particular relevance to the IoT.
-
-This document describes the AMCL library which was originally designed for internal use, but which has now reached a level of maturity where we are pleased to make it available as a service to the wider community as an open source product, under a standard [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0).
 
 ## 3 Library Structure
 

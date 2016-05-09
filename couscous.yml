@@ -29,18 +29,18 @@ menu:
                 home:
                     text: Introduction
                     relativeUrl: index.html
-                why-milagro:
-                    text: Why Milagro?
-                    relativeUrl: why-milagro.html
                 milagro-concepts:
                     text: Milagro Concepts
                     relativeUrl: milagro-concepts.html
                 pairing-crypto-protocols:
                     text: Pairing Crypto Protocols
                     relativeUrl: pairing-crypto-protocols.html
-                distributed-trust:
-                    text: A Distributed Trust Ecosystem
-                    relativeUrl: distributed-trust.html
+                milagro-a-case-for-something-new:
+                    text: A Case for Something New
+                    relativeUrl: milagro-a-case-for-something-new.html
+                milagro-distributed-trust-proposal:
+                    text: Distributed Trust Ecosystem Proposal
+                    relativeUrl: milagro-distributed-trust-proposal.html
 
         Milagro Crypto Library:
             name: '<i class="fa fa-key" aria-hidden="true"></i> Milagro Crypto Library'
