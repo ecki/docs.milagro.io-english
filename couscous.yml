@@ -29,21 +29,18 @@ menu:
                 home:
                     text: Introduction
                     relativeUrl: index.html
+                why-milagro:
+                    text: Why Milagro?
+                    relativeUrl: why-milagro.html
                 milagro-concepts:
                     text: Milagro Concepts
                     relativeUrl: milagro-concepts.html
                 pairing-crypto-protocols:
                     text: Pairing Crypto Protocols
                     relativeUrl: pairing-crypto-protocols.html
-                milagro-a-case-for-something-new-part-1:
-                    text: A Case for Something New - Part I
-                    relativeUrl: milagro-a-case-for-something-new-part-1.html
-                milagro-a-case-for-something-new-part-2:
-                    text: A Case for Something New - Part II
-                    relativeUrl: milagro-a-case-for-something-new-part-2.html
-                milagro-distributed-trust-proposal:
-                    text: Distributed Trust Ecosystem Proposal
-                    relativeUrl: milagro-distributed-trust-proposal.html
+                distributed-trust:
+                    text: A Distributed Trust Ecosystem
+                    relativeUrl: distributed-trust.html
 
         Milagro Crypto Library:
             name: '<i class="fa fa-key" aria-hidden="true"></i> Milagro Crypto Library'
@@ -81,53 +78,35 @@ menu:
             name: '<i class="fa fa-cogs" aria-hidden="true"></i> Milagro Multi-Factor Authentication'
             items:
                 milagro-mfa-overview:
-                    text: Milagro MFA Platform Overview
+                    text: Milagro MFA Overview
                     relativeUrl: mfa/getting-started/milagro-mfa-overview.html
                 milagro-mfa-quick-install:
-                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Quick Install Guide</span>"
-                    relativeUrl: mfa/getting-started/milagro-mfa-quick-install.html
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i>Developer Guide</span>"
+                    relativeUrl: mfa/getting-started/milagro-mfa-developer-guide.html
                 milagro-mfa-email-verification:
                     text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Email Verification</span>"
                     relativeUrl: mfa/getting-started/milagro-mfa-email-verification.html
-                milagro-mfa-mobile-client-testing:
-                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Mobile Client Testing</span>"
-                    relativeUrl: mfa/getting-started/milagro-mfa-mobile-client-testing.html
                 milagro-mfa-configuring-ssl:
                     text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Configuring SSL</span>"
                     relativeUrl: mfa/getting-started/milagro-mfa-configuring-ssl.html
-                milagro-mfa-installation:
-                    text: "Milagro MFA Platform Installation"
-                    relativeUrl: mfa/installation/milagro-mfa-installation.html
                 milagro-mfa-system-requirements:
                     text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> System Requirements</span>"
-                    relativeUrl: mfa/installation/server/milagro-mfa-system-requirements.html
-                milagro-mfa-server-installation:
-                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Server Installation</span>"
-                    relativeUrl: mfa/installation/server/milagro-mfa-server-installation.html
-                milagro-mfa-server-network-and-deployment:
-                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Network and Deployment</span>"
-                    relativeUrl: mfa/installation/server/milagro-mfa-server-network-and-deployment.html
-                milagro-mfa-server-services-and-modules:
-                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Services and Modules</span>"
-                    relativeUrl: mfa/installation/server/milagro-mfa-server-services-and-modules.html
-                milagro-mfa-server-updating:
-                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Updating Milagro MFA Server</span>"
-                    relativeUrl: mfa/installation/server/milagro-mfa-server-updating.html
+                    relativeUrl: mfa/getting-started/milagro-mfa-system-requirements.html
                 milagro-mfa-configuration:
-                    text: Configuration
+                    text: Advanced Configurations
                     relativeUrl: mfa/configuration/milagro-mfa-configuration.html
-                milagro-mfa-server-configuration:
-                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Server Configuration</span>"
-                    relativeUrl: mfa/configuration/milagro-mfa-server-configuration.html
                 milagro-mfa-d-ta-configuration:
                     text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> D-TA Configuration</span>"
                     relativeUrl: mfa/configuration/milagro-mfa-d-ta-configuration.html
                 milagro-mfa-rps-configuration:
                     text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> RPS Configuration</span>"
                     relativeUrl: mfa/configuration/milagro-mfa-rps-configuration.html
-                milagro-mfa-javascript-client-configuration:
-                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> JavaScript Client Configuration</span>"
-                    relativeUrl: mfa/configuration/milagro-mfa-javascript-client-configuration.html
+                milagro-mfa-integrating-pinpad:
+                    text: Intergrating PIN pad
+                    relativeUrl: mfa/configuration/milagro-mfa-integrating-pinpad.html
+                milagro-mfa-enabling-html5:
+                    text: Enabling the HTML5 mobile authentication
+                    relativeUrl: mfa/configuration/milagro-mfa-enabling-html5.html
                 milagro-mfa-enabling-native-apps:
                     text: Enabling Native Apps
                     relativeUrl: mfa/configuration/milagro-mfa-enabling-native-apps.html
@@ -140,65 +119,102 @@ menu:
                 milagro-mfa-api-reference:
                     text: Milagro MFA API Reference
                     relativeUrl: mfa/configuration/milagro-mfa-api-reference.html
-
-        Mobile SDK:
-            name: '<i class="fa fa-file-code-o" aria-hidden="true"></i> Milagro MFA Mobile SDK'
+        Milagro MFA JS Client:
+            name: '<i class="fa fa-file-code-o" aria-hidden="true"></i> Milagro MFA JavaScript Client'
             items:
                 milagro-mfa-mobile-sdk-developer-guide:
                     text: Developer Guide
-                    relativeUrl: mfa/mobile-sdk/milagro-mfa-mobile-sdk-developer-guide.html
-                milagro-mfa-mobile-sdk-building-sdk-app:
-                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Building the SDK & App</span>"
-                    relativeUrl: mfa/mobile-sdk/milagro-mfa-mobile-sdk-building-sdk-app.html
-                milagro-mfa-mobile-sdk-generic-example:
-                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Generic Example</span>"
-                    relativeUrl: mfa/mobile-sdk/milagro-mfa-mobile-sdk-generic-example.html
-                milagro-mfa-mobile-sdk-user-states:
-                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> User States</span>"
-                    relativeUrl: mfa/mobile-sdk/milagro-mfa-mobile-sdk-user-states.html
-                milagro-mfa-mobile-sdk-api-reference:
-                    text: API Reference
-                    relativeUrl: mfa/mobile-sdk/milagro-mfa-mobile-sdk-api-reference.html
-                milagro-mfa-mobile-sdk-init-config-methods:
-                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Init & Config Methods</span>"
-                    relativeUrl: mfa/mobile-sdk/milagro-mfa-mobile-sdk-init-config-methods.html
-                milagro-mfa-mobile-sdk-user-management-methods:
-                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> User Management Methods</span>"
-                    relativeUrl: mfa/mobile-sdk/milagro-mfa-mobile-sdk-user-management-methods.html
-                milagro-mfa-mobile-sdk-registration-methods:
-                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Registration Methods</span>"
-                    relativeUrl: mfa/mobile-sdk/milagro-mfa-mobile-sdk-registration-methods.html
-                milagro-mfa-mobile-sdk-user-management-methods:
-                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Authentication Methods</span>"
-                    relativeUrl: mfa/mobile-sdk/milagro-mfa-mobile-sdk-authentication-methods.html
-
-        Mobile App:
-            name: "<i class='fa fa-mobile'></i> Milagro MFA Mobile Apps"
+                    relativeUrl: mfa/javascript/milagro-mfa-javascript-guide.html
+        Mobile SDK Andriod:
+            name: '<i class="fa fa-android" aria-hidden="true"></i> Milagro MFA SDK Andriod'
             items:
-                milagro-mfa-mobile-apps-overview:
-                    text: Milagro MFA Mobile App Overview
-                    relativeUrl: mfa/mobile-apps/milgaro-mfa-mobile-apps-overview.html
-                milagro-mfa-mobile-apps-registering-and-authenticating:
-                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Registering and Authenticating</span>"
-                    relativeUrl: mfa/mobile-apps/milgaro-mfa-mobile-apps-registering-authenticating.html
-                milagro-mfa-mobile-apps-managing-identities:
-                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Managing Identities</span>"
-                    relativeUrl: mfa/mobile-apps/milgaro-mfa-mobile-apps-managing-identities.html
-                milagro-mfa-mobile-apps-generating-otps:
-                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Generating OTP's</span>"
-                    relativeUrl: mfa/mobile-apps/milgaro-mfa-mobile-apps-generating-one-time-passwords.html
-                milagro-mfa-mobile-apps-adding-custom-configurations:
-                    text: Adding Custom Configurations
-                    relativeUrl: mfa/mobile-apps/milgaro-mfa-mobile-apps-adding-custom-configurations.html
-                milgaro-mfa-mobile-apps-adding-configurations-manually:
-                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Manually Adding</span>"
-                    relativeUrl: mfa/mobile-apps/milgaro-mfa-mobile-apps-adding-configurations-manually.html
-                milgaro-mfa-mobile-apps-adding-configurations-from-qr-code:
-                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> From QR Code</span>"
-                    relativeUrl: mfa/mobile-apps/milgaro-mfa-mobile-apps-adding-configurations-from-qr-code.html
-                milgaro-mfa-mobile-apps-selecting-custom-configurations:
-                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Selecting Custom Configs</span>"
-                    relativeUrl: mfa/mobile-apps/milgaro-mfa-mobile-apps-selecting-custom-configurations.html
+                milagro-mfa-mobile-sdk-developer-guide-android:
+                    text: Developer Guide
+                    relativeUrl: mfa/mobile-sdk-android/milagro-mfa-mobile-sdk-developer-guide.html
+                milagro-mfa-mobile-sdk-building-sdk-app-android:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Building the SDK & App</span>"
+                    relativeUrl: mfa/mobile-sdk-android/milagro-mfa-mobile-sdk-building-sdk-app.html
+                milagro-mfa-mobile-sdk-generic-example-android:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Generic Example</span>"
+                    relativeUrl: mfa/mobile-sdk-android/milagro-mfa-mobile-sdk-generic-example.html
+                milagro-mfa-mobile-sdk-user-states-android:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> User States</span>"
+                    relativeUrl: mfa/mobile-sdk-android/milagro-mfa-mobile-sdk-user-states.html
+                milagro-mfa-mobile-sdk-api-reference-android:
+                    text: API Reference
+                    relativeUrl: mfa/mobile-sdk-android/milagro-mfa-mobile-sdk-api-reference.html
+                milagro-mfa-mobile-sdk-init-config-methods-android:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Init & Config Methods</span>"
+                    relativeUrl: mfa/mobile-sdk-android/milagro-mfa-mobile-sdk-init-config-methods.html
+                milagro-mfa-mobile-sdk-user-management-methods-android:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> User Management Methods</span>"
+                    relativeUrl: mfa/mobile-sdk-android/milagro-mfa-mobile-sdk-user-management-methods.html
+                milagro-mfa-mobile-sdk-registration-methods-android:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Registration Methods</span>"
+                    relativeUrl: mfa/mobile-sdk-android/milagro-mfa-mobile-sdk-registration-methods.html
+                milagro-mfa-mobile-sdk-authentication-methods-android:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Authentication Methods</span>"
+                    relativeUrl: mfa/mobile-sdk-android/milagro-mfa-mobile-sdk-authentication-methods.html
+        Mobile SDK iOS:
+            name: '<i class="fa fa-apple" aria-hidden="true"></i> Milagro MFA SDK iOS'
+            items:
+                milagro-mfa-mobile-sdk-developer-guide-ios:
+                    text: Developer Guide
+                    relativeUrl: mfa/mobile-sdk-ios/milagro-mfa-mobile-sdk-developer-guide.html
+                milagro-mfa-mobile-sdk-building-sdk-app-ios:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Building the SDK & App</span>"
+                    relativeUrl: mfa/mobile-sdk-ios/milagro-mfa-mobile-sdk-building-sdk-app.html
+                milagro-mfa-mobile-sdk-generic-example-ios:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Generic Example</span>"
+                    relativeUrl: mfa/mobile-sdk-ios/milagro-mfa-mobile-sdk-generic-example.html
+                milagro-mfa-mobile-sdk-user-states-ios:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> User States</span>"
+                    relativeUrl: mfa/mobile-sdk-ios/milagro-mfa-mobile-sdk-user-states.html
+                milagro-mfa-mobile-sdk-api-reference-ios:
+                    text: API Reference
+                    relativeUrl: mfa/mobile-sdk-ios/milagro-mfa-mobile-sdk-api-reference.html
+                milagro-mfa-mobile-sdk-init-config-methods-ios:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Init & Config Methods</span>"
+                    relativeUrl: mfa/mobile-sdk-ios/milagro-mfa-mobile-sdk-init-config-methods.html
+                milagro-mfa-mobile-sdk-user-management-methods-ios:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> User Management Methods</span>"
+                    relativeUrl: mfa/mobile-sdk-ios/milagro-mfa-mobile-sdk-user-management-methods.html
+                milagro-mfa-mobile-sdk-registration-methods-ios:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Registration Methods</span>"
+                    relativeUrl: mfa/mobile-sdk-ios/milagro-mfa-mobile-sdk-registration-methods.html
+                milagro-mfa-mobile-sdk-user-authentications-methods-ios:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Authentication Methods</span>"
+                    relativeUrl: mfa/mobile-sdk-ios/milagro-mfa-mobile-sdk-authentication-methods.html
+        Mobile SDK Windows Phone:
+            name: '<i class="fa fa-windows" aria-hidden="true"></i> Milagro MFA SDK Windows Phone'
+            items:
+                milagro-mfa-mobile-sdk-developer-guide-wp:
+                    text: Developer Guide
+                    relativeUrl: mfa/mobile-sdk-wp/milagro-mfa-mobile-sdk-developer-guide.html
+                milagro-mfa-mobile-sdk-building-sdk-app-wp:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Building the SDK & App</span>"
+                    relativeUrl: mfa/mobile-sdk-wp/milagro-mfa-mobile-sdk-building-sdk-app.html
+                milagro-mfa-mobile-sdk-generic-example-wp:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Generic Example</span>"
+                    relativeUrl: mfa/mobile-sdk-wp/milagro-mfa-mobile-sdk-generic-example.html
+                milagro-mfa-mobile-sdk-user-states-wp:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> User States</span>"
+                    relativeUrl: mfa/mobile-sdk-wp/milagro-mfa-mobile-sdk-user-states.html
+                milagro-mfa-mobile-sdk-api-reference-wp:
+                    text: API Reference
+                    relativeUrl: mfa/mobile-sdk-wp/milagro-mfa-mobile-sdk-api-reference.html
+                milagro-mfa-mobile-sdk-init-config-methods-wp:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Init & Config Methods</span>"
+                    relativeUrl: mfa/mobile-sdk-wp/milagro-mfa-mobile-sdk-init-config-methods.html
+                milagro-mfa-mobile-sdk-user-management-methods-wp:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> User Management Methods</span>"
+                    relativeUrl: mfa/mobile-sdk-wp/milagro-mfa-mobile-sdk-user-management-methods.html
+                milagro-mfa-mobile-sdk-registration-methods-wp:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Registration Methods</span>"
+                    relativeUrl: mfa/mobile-sdk-wp/milagro-mfa-mobile-sdk-registration-methods.html
+                milagro-mfa-mobile-sdk-user-authentications-methods-wp:
+                    text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Authentication Methods</span>"
+                    relativeUrl: mfa/mobile-sdk-wp/milagro-mfa-mobile-sdk-authentication-methods.html
 
         Integration:
             name: "<i class='fa fa-code'></i> Milagro Integration Guides"
@@ -216,19 +232,6 @@ menu:
                     text: "<span class='subnav-indent'><i class='fa fa-caret-right'></i> Apache Web Server</span>"
                     relativeUrl: mfa/integration/milagro-mfa-integration-apache-web-server.html
 
-        Manual:
-            name: "<i class='fa fa-book'></i> Milagro End User Guides"
-            items:
-                milagro-mfa-with-javascript-browser-client-pin-pad:
-                    text: JavaScript Pin Pad Client
-                    relativeUrl: mfa/manual/milagro-mfa-with-javascript-browser-client-pin-pad.html
-                milagro-mfa-with-javascript-browser-client-username-pin:
-                    text: JavaScript Username-Pin Client
-                    relativeUrl: mfa/manual/milagro-mfa-with-javascript-browser-client-username-pin.html
-                milagro-mfa-mobile-apps:
-                    text: Mobile Apps
-                    relativeUrl: mfa/manual/milagro-mfa-mobile-apps.html
-
         Help:
             name: "<i class='fa fa-life-ring'></i> Help"
             items:
@@ -237,30 +240,4 @@ menu:
                     relativeUrl: common-issues.html
                 getting-help:
                     text: Getting Help
-                    relativeUrl: getting-help.html
-
-        Misc:
-            name:
-            items:
-                contributing:
-                    text: Contributing
-                    relativeUrl: contributing.html
-                license:
-                    text: License
-                    relativeUrl: license.html
-                website:
-                    text: Main Website
-                    absoluteUrl: http://milagro.apache.org
-
-
-# Base URL of the published website (no "/" at the end!)
-# You are advised to set and use this variable to write your links in the HTML layouts
-baseUrl: http://docs.milagro.io.s3-website-us-east-1.amazonaws.com/en
-
-# Used to link to the GitHub project
-github:
-    user: milagro-docs
-    repo: docs.milagro.io-english
-
-# Set the target branch in which to deploy the generated website
-# branch: master
+                   
