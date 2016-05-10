@@ -36,15 +36,15 @@ __Initially started as a joint development effort by MIRACL, NTTi3 and NTT Labs,
 These contributions consist of the baseline Milagro Crypto Library (MCL) that enables developers to build distributed trust systems and select from a choice of secure, proven, pairing based protocols that deliver certificate-less key encapsulation, zero knowledge proof authentication, authenticated key agreement and digital signing functionality.
 
 Using MCL, application developers can embed multi-factor authentication, secure communications, and data protection methods that are robust enough to meet most requirements required by distributed ledger services, general on-line financial services, government and healthcare industries.
-
+<br></br>
 #### Milagro TLS
 Apache Milagro (incubating) also contains a pairing-based TLS library, Milagro TLS, that enables encrypted connections with perfect forward secrecy between mobile applications or IoT devices and backend service infrastructures, without the need for certificates or PKI.
 
 Milagro TLS delivers a TLS 1.2 TLS-PSK (pre-shared key) modified cipher suite that provides perfectly forward secure authenticated key agreement for each session between client and server or peer to peer. Milagro TLS is a standalone library that uses MCL as its cryptographic service provider, resulting in an implementation that is lean, yet performant enough to run in constrained environments found in many IoT devices.
-
+<br></br>
 #### Milagro MFA
 Also included is Milagro MFA, a higher level 'Crypto App' ready for the cloud, mobile or enterprise deployments. Milagro MFA is a complete multi-factor authentication platform that uses [zero-knowledge proof protocols](https://en.wikipedia.org/wiki/Zero-knowledge_proof) to eliminate the password and hence the threat of password database breach. Milagro MFA includes client SDKs in JavaScript, C, iOS, Android and Windows Phone, as well as the Authentication Server for Linux. Delivering 128-bit security but lean enough to even run in JavaScript, Milagro MFA allows developers and security engineers to integrate easy-to-use multi-factor authentication capabilities into their mobile and web properties or applications in minutes.
-
+<br></br>
 ## To Learn More
 
 * To learn about Milagro components and concepts, [click here](milagro-concepts.html)
@@ -59,3 +59,32 @@ If you need help:
 Gitter
 mailinglist
 etc.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+|
