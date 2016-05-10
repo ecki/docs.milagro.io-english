@@ -4,10 +4,10 @@ currentMenu: home
 
 # Milagro Introduction
 
-Apache Milagro (incubating) establishes a new internet security framework purpose-built for cloud-connected app-centric software and IoT devices that require Internet scale. Milagro's purpose is to provide a secure, free, and positive open source alternative to non-distributed and proprietary monolithic trust providers such as commercial certificate authorities and the certificate backed cryptosystems that rely on them.
+Apache Milagro (incubating) establishes a new internet security framework purpose-built for cloud-connected app-centric software and IoT devices that require Internet scale. Milagro's purpose is to provide a secure, free, and positive open source alternative to centralised and proprietary monolithic trust providers such as commercial certificate authorities and the certificate backed cryptosystems that rely on them.
 <br></br>
 ### Pairing-based Cryptography
-Milagro leverages [pairing-based cryptography](https://en.wikipedia.org/wiki/Pairing-based_cryptography) to distribute cryptographic operations and split cryptographic parameters, providing a level of security and functionality that is a step forward in when compared to the certificate backed cryptosystems in service today.
+Milagro leverages [pairing-based cryptography](https://en.wikipedia.org/wiki/Pairing-based_cryptography) to distribute cryptographic operations and split cryptographic parameters, providing a level of security and functionality that is a step forward in when compared to the certificate backed cryptosystems in service today. With pairing cryptography, security systems such as multi-factor authentication using zero knowledge protocols and certificate-less authenticated key agreement with perfect forward secrecy can be deployed in real world scenarios.
 <br></br>
 ### Distributed Cryptosystem and Architecture
 Consider BitCoin's Blockchain, which provides an alternative distributed approach to managing a currency without the need for a central bank. With BitCoin, the ledger is distributed, not centralised. Milagro's distributed cryptosystem is decentralised to create the same advantages as a distributed ledger. While architecturally different to the Blockchain, Milagro's distributed cryptosystem is compatible with Blockchain technology, sharing many of the same cryptographic building blocks.
@@ -40,7 +40,7 @@ Using MCL, application developers can embed multi-factor authentication, secure 
 #### Milagro TLS
 Apache Milagro (incubating) also contains a pairing-based TLS library, Milagro TLS, that enables encrypted connections with perfect forward secrecy between mobile applications or IoT devices and backend service infrastructures, without the need for certificates or PKI.
 
-Milagro TLS delivers a TLS 1.2 TLS-PSK (pre-shared key) modified cipher suite that provides perfectly forward secure authenticated key agreement for each session between client and server or peer to peer. Milagro TLS is a standalone library that uses MCL as its cryptographic service provider, resulting in an implementation that is lean, yet performant enough to run in constrained environments found in many IoT devices.
+Milagro TLS delivers two new cipher suites that provides perfectly forward secure authenticated key agreement, without the need for certificate processing, for each session between client and server or peer to peer. Milagro TLS is a standalone library that uses MCL as its cryptographic service provider, resulting in an implementation that is lean, yet performant enough to run in constrained environments found in many IoT devices.
 <br></br>
 #### Milagro MFA
 Also included is Milagro MFA, a higher level 'Crypto App' ready for the cloud, mobile or enterprise deployments. Milagro MFA is a complete multi-factor authentication platform that uses [zero-knowledge proof protocols](https://en.wikipedia.org/wiki/Zero-knowledge_proof) to eliminate the password and hence the threat of password database breach. Milagro MFA includes client SDKs in JavaScript, C, iOS, Android and Windows Phone, as well as the Authentication Server for Linux. Delivering 128-bit security but lean enough to even run in JavaScript, Milagro MFA allows developers and security engineers to integrate easy-to-use multi-factor authentication capabilities into their mobile and web properties or applications in minutes.
