@@ -1,12 +1,10 @@
 ---
-currentMenu: milagro-mfa-integration-pin-pad
+currentMenu: milagro-mfa-integrating-pinpad
 ---
 
-<div id="generated-toc" class="generate_from_h2"></div>
 
 
-
-<h1>Integrating the PIN Pad</h1>
+##Integrating the PIN Pad
 
 
 
