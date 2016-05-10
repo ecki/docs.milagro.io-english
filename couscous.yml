@@ -240,4 +240,30 @@ menu:
                     relativeUrl: common-issues.html
                 getting-help:
                     text: Getting Help
-                   
+                    relativeUrl: getting-help.html
+
+        Misc:
+            name:
+            items:
+                contributing:
+                    text: Contributing
+                    relativeUrl: contributing.html
+                license:
+                    text: License
+                    relativeUrl: license.html
+                website:
+                    text: Main Website
+                    absoluteUrl: http://milagro.apache.org
+
+
+# Base URL of the published website (no "/" at the end!)
+# You are advised to set and use this variable to write your links in the HTML layouts
+baseUrl: http://docs.milagro.io/en
+
+# Used to link to the GitHub project
+github:
+    user: milagro-docs
+    repo: docs.milagro.io-english
+
+# Set the target branch in which to deploy the generated website
+# branch: master
