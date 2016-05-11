@@ -22,3 +22,5 @@ Friday May 13, 2016: Milagro Code Drops
 Friday May 20, 2016: Documentation Launch
 - Milagro Documentation portal will be complete for Documentation Site V1
 - MFA, TLS, Proposals for Distributed Trust Ecosystem
+
+Monday November 18, 2016: ApacheCon Europe
