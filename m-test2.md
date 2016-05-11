@@ -59,7 +59,7 @@ equations:
 |\begin{equation}AG1 := H_{1}(IdA)\end{equation}||
 |\begin{equation}PaG_{1} := x\cdot AG_{1}\end{equation}||
 |\begin{equation}IdA, PaG_{1} \longrightarrow\end{equation}||
-||\begin{equation}y,w \in \mathbb{Z}_{q}^{*}\end{equation}|
+| |\begin{equation}y,w \in \mathbb{Z}_{q}^{*}\end{equation}|
 
 
 

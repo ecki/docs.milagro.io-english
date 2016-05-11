@@ -149,6 +149,24 @@ Wednesday Mar 16, 2016: Gold
 </diagram>
 <br></br>
 
+<markdeep>
+Multiple Columns
+========================================================================
+<div style="columns:2;-webkit-columns:2;-moz-columns:2;column-gap:3em;-webkit-column-gap:3em;-moz-column-gap:3em">
+You can use the CSS
+[columns](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Columns/Using_multi-column_layouts)
+
+BOB
+\begin{equation}x \in \mathbb{Z}_{q}^{*}\end{equation}
+\begin{equation}AG1 := H_{1}(IdA)\end{equation}
+\begin{equation}PaG_{1} := x\cdot AG_{1}\end{equation}
+\begin{equation}IdA, PaG_{1} \longrightarrow\end{equation}
+\begin{equation}y,w \in \mathbb{Z}_{q}^{*}\end{equation}
+
+</div>
+</markdeep>
+<br></br>
+
 
 <markdeep>
 Multiple Columns
@@ -195,17 +213,20 @@ e^{i \pi} + 1 = 0
 
 \begin{equation}
 \mbox{ALICE} & \mbox{BOB}
-x \in \mathbb{Z}_{q}^{*}
+x \in \mathbb{Z}_{q}^{*}<br></br>
 AG1 := H_{1}(IdA)
 PaG_{1} := x\cdot AG_{1}
 IdA, PaG_{1} \longrightarrow
 \end{equation}
 
 \begin{equation}
-x \in \mathbb{Z}_{q}^{*}
-AG1 := H_{1}(IdA)
-PaG_{1} := x\cdot AG_{1}
-IdA, PaG_{1} \longrightarrow
+x \in \mathbb{Z}_{q}^{*}<br></br>
+AG1 := H_{1}(IdA)<br></br>
+PaG_{1} := x\cdot AG_{1}<br></br>
+IdA, PaG_{1} \longrightarrow<br></br>
+<br></br>
+<br></br>
+IdA, PaG_{1}
 \end{equation}
 
 \begin{equation}
