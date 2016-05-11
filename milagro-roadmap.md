@@ -5,6 +5,7 @@ layout: markdeep
 
 It's a busy month in May for Milagro. Check back here soon for code drops and completed documentation site.
 
+<markdeep>
 Wednesday May 11, 2016: Apache Milagro Launch at ApacheCon North America
  - [Brian Spector Keynote at 4:15 pm](https://apachecon2016.sched.org/event/6Wla/keynote-apache-milagro-incubating-brian-spector-ceo-co-founder-miracl)
  - See the full schedule [here](https://apachecon2016.sched.org)
@@ -24,3 +25,4 @@ Friday May 20, 2016: Documentation Launch
 - MFA, TLS, Proposals for Distributed Trust Ecosystem
 
 Monday November 18, 2016: ApacheCon Europe
+</markdeep>
