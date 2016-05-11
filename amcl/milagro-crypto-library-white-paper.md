@@ -8,7 +8,7 @@ currentMenu: milagro-crypto-library-white-paper
   <div class="authors col-1">
     <div class="author">
       <div>Mike Scott</div>
-      <div><a href="http://www.miracl.com/miracl-crypto-labs">MIRACL Labs</a></div>
+      <div><a href="http://www.miracl.com/miracl-crypto-labs" target="_blank">MIRACL Labs</a></div>
       <div>Dublin, Ireland</div>
     </div>
     <div class="author">
@@ -21,7 +21,7 @@ currentMenu: milagro-crypto-library-white-paper
 <div class="abstract">
   <p><em>Abstract</em> — We introduce a new multi-lingual crypto library, specifically designed to support the Internet of Things.
   <br></br>
-  <br></br>NOTE: This original Latex authored PDF version of this document is available for download <a href=http://docs.milagro.io.s3-website-us-east-1.amazonaws.com/en/pdfs/amcl.pdf">here</a> </p>
+  <br></br>NOTE: This original Latex authored PDF version of this document is available for download <a href=https://s3.amazonaws.com/docs.milagro.io/amcl.pdf">here</a> </p>
 </div>
 
 ## 1 Introduction
