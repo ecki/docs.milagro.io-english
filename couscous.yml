@@ -54,9 +54,6 @@ menu:
                 milagro-crypto-library-benchmarks:
                     text: Benchmarks
                     relativeUrl: amcl/milagro-crypto-library-benchmarks.html
-                milagro-crypto-library-developer-guide:
-                    text: Developer Guide
-                    relativeUrl: amcl/milagro-crypto-library-developer-guide.html
                 milagro-crypto-library-api-reference:
                     text: API Reference
                     relativeUrl: amcl/milagro-crypto-library-api-reference.html
