@@ -20,5 +20,7 @@ Friday May 20, 2016: Documentation Launch
  - Milagro Documentation portal will be complete for Documentation Site V1
  - MFA, TLS, Proposals for Distributed Trust Ecosystem
 
-Monday November 18, 2016: ApacheCon Europe
+Wednesday June 1, 2016: Milagro MFA Demo Sites Live
+ - Milagro MFA Demo Site is live 
+
 </markdeep>

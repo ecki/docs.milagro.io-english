@@ -176,9 +176,14 @@ separate pages when done.
 
 <markdeep>
 $$ \Lo(X, \wo) = \Le(X, \wo) + \int_\Omega \Li(X, \wi) ~ f_X(\wi, \wo) ~ | \n \cdot \wi | ~ d\wi $$
+</markdeep>
+<br></br>
+
 
 You can also use LaTeX equation syntax directly to obtain numbered
 equations:
+
+<markdeep>
 
 \begin{equation}
 e^{i \pi} + 1 = 0
@@ -189,11 +194,29 @@ e^{i \pi} + 1 = 0
 \end{equation}
 
 \begin{equation}
-\mbox{ALICE} & \mbox{BOB} \\
-x \in \mathbb{Z}_{q}^{*} & \\
-AG1 := H_{1}(IdA) & \\
-PaG_{1} := x\cdot AG_{1} & \\
-IdA, PaG_{1} \longrightarrow & \\
+\mbox{ALICE} & \mbox{BOB}
+x \in \mathbb{Z}_{q}^{*}
+AG1 := H_{1}(IdA)
+PaG_{1} := x\cdot AG_{1}
+IdA, PaG_{1} \longrightarrow
+\end{equation}
+
+\begin{equation}
+x \in \mathbb{Z}_{q}^{*}
+AG1 := H_{1}(IdA)
+PaG_{1} := x\cdot AG_{1}
+IdA, PaG_{1} \longrightarrow
+\end{equation}
+
+\begin{equation}
+PaG_{1} := x\cdot AG_{1}
+\end{equation}
+
+\begin{equation}
+PaG_{1} := x\cdot AG_{1}
+\end{equation}
+
+\begin{equation}
 &  y,w \in \mathbb{Z}_{q}^{*}\\
 &  AG_{1} := H_{1}(IdA)\\
 &  BG_{2} := H_{2}(IdB)\\
