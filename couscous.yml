@@ -44,6 +44,9 @@ menu:
                 milagro-distributed-trust-proposal:
                     text: Distributed Trust Ecosystem Proposal
                     relativeUrl: milagro-distributed-trust-proposal.html
+                milagro-roadmap:
+                    text: Milagro Roadmap
+                    relativeUrl: milagro-roadmap.html
 
         Milagro Crypto Library:
             name: '<i class="fa fa-key" aria-hidden="true"></i> Milagro Crypto Library'
