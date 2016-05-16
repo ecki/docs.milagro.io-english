@@ -13,7 +13,7 @@ Thursday May 12, 2016: Apache Milagro (incubating) Launch at ApacheCon North Ame
  - See the full schedule [here](https://apachecon2016.sched.org)
 
 Friday May 13, 2016: Milagro Code Drops
- - Code drops in Apache Subversion repository
+ - Code drops in Apache GIT repository
  - Apache Milagro Crypto Library + Multi-factor Authentication + TLS
 
 Friday May 20, 2016: Documentation Launch
