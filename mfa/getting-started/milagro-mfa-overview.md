@@ -22,14 +22,12 @@ Milagro authentication is the Apache licensed version of the M-Pin Protocol. It 
 
 Milagro Authentication is based on a zero-knowledge proof authentication protocol using proven, strong, standards-based elliptic curve cryptography:
 
-<ul style="margin: 5px 0px 0px 20px; padding: 0px 0px 0px 12px; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px;">
-	<li>Server Keys and Client Keys are issued according to elliptic curve cryptography principles, and the server can tell whether a client key comes from the right elliptic curve set.</li>
-	<li>The server can prove who a user is without having to store client credentials, or in a database with its&nbsp;current set up of&nbsp;passwords.</li>
-	<li>Credentials (Client Keys) are NEVER exchanged (encrypted or unencrypted) between a user and the server.</li>
-	<li>Server Key compromise does not reveal anything about users or their credentials, eliminating scenarios like password database breaches.</li>
-	<li>The code that manipulates the Client Key (a user&#39;s credential) runs in the user&#39;s browser or app, therefore no separate hardware tokens or software installations are required.</li>
-</ul>
+- Server Keys and Client Keys are issued according to elliptic curve cryptography principles, and the server can tell whether a client key comes from the right elliptic curve set.
+- The server can prove who a user is without having to store client credentials, or in a database with its current set up of passwords.
+- Credentials (Client Keys) are NEVER exchanged (encrypted or unencrypted) between a user and the server.
+- Server Key compromise does not reveal anything about users or their credentials, eliminating scenarios like password database breaches.
+- The code that manipulates the Client Key (a user's credential) runs in the user's browser or app, therefore no separate hardware tokens or software installations are required.
 
-<p>The picture below represents schematically the operation of the M-Pin Authentication Protocol:</p>
+The picture below represents schematically the operation of the M-Pin Authentication Protocol:
 
 <p><img alt="1-m-pin-authentication-overlay" src="http://cdn2.hubspot.net/hub/230906/file-2034175627-jpg/Images-cos/diagrams/1-m-pin-authentication-overlay.jpg" style="font-size: 12px; line-height: 19.2px; margin-right: auto; margin-left: auto; display: block;" /></p>

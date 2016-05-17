@@ -2,98 +2,96 @@
 currentMenu: milagro-mfa-integrating-pinpad
 ---
 
-
-
 ##Integrating the PIN Pad
+The PIN Pad should be integrated into the web application (RPA) login HTML page. To do this:
 
+- **Include the PIN Pad's main module**, mpin.js, by adding a script tag similar to the following, into the HTML head:
+```
+<script type=text/javascript src={mpin-path}/mpin.js>
+```
+- **Instantiate and Initialize an mpin object.** This is done with the following JavaScript code:
+```
+new mpin( <init-options> );
+```
 
+##The following is a sample HTML page implementation:
 
-<p style="margin: 10px 0px 20px; padding: 0px; line-height: 1.6em; color: rgb(62, 69, 76); font-family: Lato, sans-serif; font-size: 1.4em;">The PIN Pad should be integrated into the web application (RPA) login HTML page. To do this:</p>
+```
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>M-Pin demo</title>
+<link href="/public/css/MIRACL.css?v=ee4d555e38d8c86110e6130f077bc6e2" rel="stylesheet" type="text/css" />
+<link href="/public/css/mpin.min.css?v=b7676587a6d88e2818ef2f1a7d1fdae6" rel="stylesheet" type="text/css" />
+<!-- Favicons
+================================================== -->
+<link rel="shortcut icon"
+href="/public/images/favicon.ico?v=206feb63bb8d6b052afb1192d57d83a7">
+<!-- Fonts
+================================================== -->
+<link
+href='//fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+<script type="text/javascript"
+src="https://mpin.MIRACL.net/v0.3/mpin.js?r=139539313122"></script>
+<script type="text/javascript">
+new mpin( {
+targetElement: "pinHolder", clientSettingsURL:
+"http://192.168.10.138:8005/rps/clientSettings",
+mobileAppFullURL: "http://192.168.10.138:8005/m/index.html",
+successSetupURL: "/successSetup", successLoginURL: "/protected", onSuccessSetup: function(setupData, onSuccess) {
+console.log("Setup PIN successful") onSuccess()
+},
+onSuccessLogin: function(authData) { console.log("Login successful") window.location = "/protected"
+},
+onVerifySuccess: function(data){
+},
+identityCheckRegex: "[0-9a-zA-Z]+"
+});
+</script>
+</head>
+<body>
+<div id="header">
+<div class="container">
+<a href="http://MIRACL.com" target="_blank"
+class="logo1"><img src="/public/images/MIRACL-logo.jpg?v=0517e63d9febecab7894f22262f21d67" alt="MIRACL Logo" width="170" height="33" title="MIRACL Logo" style="border-style:
+none"></a>
+<a href="http://www.MIRACL.com/m-pin/", target="_blank"
+class="logo2"><img alt="M-Pin strong authentication logo" src="/public/images/m-pin-logostrong.png?v=3517e8e85a0030f3f4fad11d0e9448c9" width="152" height="54" title="M-Pin strong authentication logo" style="border-style: none"></a>
+</div>
+<div class="clear"></div>
+</div>
+<div id="content">
+<div class="container">
+<div class="nav">
+<ul>
+<li><a href="/" class="active">Home</a></li>
+<li><a href="http://www.MIRACL.com/mpin/", target="_blank">About M-Pin</a></li>
+<li><a href="http://www.MIRACL.com/m-pindownload" target="_blank">Download M-Pin</a></li>
+<li><a href="https://MIRACL.org" target="_blank">Community</a></li>
+</ul>
+<div class="clear"></div>
+</div>
+<div class="content">
+<h1>Welcome to the M-Pin System Demo</h1>
+<!--action box start-->
+<div class="one column center grey marBot20 marTop20">
+<div id="pinHolder" style="margin:auto; width:260px;">
+Loading PinPad...
+</div>
+</div>
+<div class="clear"></div>
+</div>
+<!--action box end-->
+<div id="footer">&copy; 2013 MIRACL UK Limited, All Rights
+Reserved.</div>
+</div>
+</div>
+</body>
+</html>
+```
 
-<ol>
-	<li><strong style="font-style: inherit;">Include the PIN Pad&#39;s main module</strong>, mpin.js, by adding&nbsp;<span style="line-height: 19.2px;">a script tag similar to the following,&nbsp;</span>into the HTML head:<br />
-	<span class="CVXCodeinText" style="font-family: 'Courier New';">&lt;script type=&quot;text/javascript&quot; src=&quot;{mpin-path}/mpin.js&quot; /&gt;</span></li>
-	<li><strong style="font-style: inherit;">Instantiate and Initialize an mpin object.</strong>&nbsp;This is done with the following JavaScript code:<br />
-	<span class="CVXCodeinText" style="font-family: 'Courier New';">new mpin( &lt;init-options&gt; );</span></li>
-</ol>
+The source should be retrieved from GitHub and served from a location of your choice.
 
-<p style="margin: 10px 0px 20px; padding: 0px; line-height: 1.6em; color: rgb(62, 69, 76); font-family: Lato, sans-serif; font-size: 1.4em;">The following is a sample HTML page implementation:<span style="color: rgb(153, 153, 153); font-family: Arial, sans-serif; font-size: 1.7em; font-weight: bold; line-height: 1em;">​</span></p>
-
-<pre style="margin-top: 0px; margin-bottom: 20px; padding: 15px; unicode-bidi: embed; border: 1px dotted; font-size: 12px;">
-&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; 
-&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt; 
-&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt; 
-&lt;head&gt; 
-&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt; 
-&lt;title&gt;M-Pin demo&lt;/title&gt; 
-&lt;link href=&quot;/public/css/MIRACL.css?v=ee4d555e38d8c86110e6130f077bc6e2&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt; 
-&lt;link href=&quot;/public/css/mpin.min.css?v=b7676587a6d88e2818ef2f1a7d1fdae6&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt; 
-&lt;!-- Favicons 
-================================================== --&gt; 
-&lt;link rel=&quot;shortcut icon&quot; 
-href=&quot;/public/images/favicon.ico?v=206feb63bb8d6b052afb1192d57d83a7&quot;&gt; 
-&lt;!-- Fonts 
-================================================== --&gt; 
-&lt;link 
-href=&#39;//fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic&#39; rel=&#39;stylesheet&#39; type=&#39;text/css&#39;&gt; 
-&lt;script type=&quot;text/javascript&quot; 
-src=&quot;https://mpin.MIRACL.net/v0.3/mpin.js?r=139539313122&quot;&gt;&lt;/script&gt; 
-&lt;script type=&quot;text/javascript&quot;&gt; 
-new mpin( { 
-targetElement: &quot;pinHolder&quot;, clientSettingsURL: 
-&quot;http://192.168.10.138:8005/rps/clientSettings&quot;, 
-mobileAppFullURL: &quot;http://192.168.10.138:8005/m/index.html&quot;, 
-successSetupURL: &quot;/successSetup&quot;, successLoginURL: &quot;/protected&quot;, onSuccessSetup: function(setupData, onSuccess) { 
-console.log(&quot;Setup PIN successful&quot;) onSuccess() 
-}, 
-onSuccessLogin: function(authData) { console.log(&quot;Login successful&quot;) window.location = &quot;/protected&quot; 
-}, 
-onVerifySuccess: function(data){ 
-}, 
-identityCheckRegex: &quot;[0-9a-zA-Z]+&quot; 
-}); 
-&lt;/script&gt; 
-&lt;/head&gt; 
-&lt;body&gt; 
-&lt;div id=&quot;header&quot;&gt; 
-&lt;div class=&quot;container&quot;&gt; 
-&lt;a href=&quot;http://MIRACL.com&quot; target=&quot;_blank&quot; 
-class=&quot;logo1&quot;&gt;&lt;img src=&quot;/public/images/MIRACL-logo.jpg?v=0517e63d9febecab7894f22262f21d67&quot; alt=&quot;MIRACL Logo&quot; width=&quot;170&quot; height=&quot;33&quot; title=&quot;MIRACL Logo&quot; style=&quot;border-style: 
-none&quot;&gt;&lt;/a&gt; 
-&lt;a href=&quot;http://www.MIRACL.com/m-pin/&quot;, target=&quot;_blank&quot; 
-class=&quot;logo2&quot;&gt;&lt;img alt=&quot;M-Pin strong authentication logo&quot; src=&quot;/public/images/m-pin-logostrong.png?v=3517e8e85a0030f3f4fad11d0e9448c9&quot; width=&quot;152&quot; height=&quot;54&quot; title=&quot;M-Pin strong authentication logo&quot; style=&quot;border-style: none&quot;&gt;&lt;/a&gt; 
-&lt;/div&gt; 
-&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt; 
-&lt;/div&gt; 
-&lt;div id=&quot;content&quot;&gt; 
-&lt;div class=&quot;container&quot;&gt; 
-&lt;div class=&quot;nav&quot;&gt; 
-&lt;ul&gt; 
-&lt;li&gt;&lt;a href=&quot;/&quot; class=&quot;active&quot;&gt;Home&lt;/a&gt;&lt;/li&gt; 
-&lt;li&gt;&lt;a href=&quot;http://www.MIRACL.com/mpin/&quot;, target=&quot;_blank&quot;&gt;About M-Pin&lt;/a&gt;&lt;/li&gt; 
-&lt;li&gt;&lt;a href=&quot;http://www.MIRACL.com/m-pindownload&quot; target=&quot;_blank&quot;&gt;Download M-Pin&lt;/a&gt;&lt;/li&gt; 
-&lt;li&gt;&lt;a href=&quot;https://MIRACL.org&quot; target=&quot;_blank&quot;&gt;Community&lt;/a&gt;&lt;/li&gt; 
-&lt;/ul&gt; 
-&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt; 
-&lt;/div&gt; 
-&lt;div class=&quot;content&quot;&gt; 
-&lt;h1&gt;Welcome to the M-Pin System Demo&lt;/h1&gt; 
-&lt;!--action box start--&gt; 
-&lt;div class=&quot;one column center grey marBot20 marTop20&quot;&gt; 
-&lt;div id=&quot;pinHolder&quot; style=&quot;margin:auto; width:260px;&quot;&gt; 
-Loading PinPad... 
-&lt;/div&gt; 
-&lt;/div&gt; 
-&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt; 
-&lt;/div&gt; 
-&lt;!--action box end--&gt; 
-&lt;div id=&quot;footer&quot;&gt;&amp;copy; 2013 MIRACL UK Limited, All Rights 
-Reserved.&lt;/div&gt; 
-&lt;/div&gt; 
-&lt;/div&gt; 
-&lt;/body&gt; 
-&lt;/html&gt;</pre>
-
-<p>The source should be retrieved from GitHub and served from a location of your choice.</p>
-
-<p> For full instructions follow this <a href="../javascript/milagro-mfa-javascript-guide.html"> link. </a> </p>
+For full instructions follow this <a href="../javascript/milagro-mfa-javascript-guide.html"> link. </a>
