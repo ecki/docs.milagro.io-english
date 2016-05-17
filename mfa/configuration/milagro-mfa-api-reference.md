@@ -105,51 +105,31 @@ currentMenu: milagro-mfa-api-reference
 <p abp="2853"><strong abp="3134" style="line-height: 1.6em;">Response Data:</strong></p>
 </div>
 
-<div abp="2855">
-<div>
-<div abp="3135" class="code panel pdl">
-<div abp="3136" class="codeContent panelContent pdl">
-<div abp="3137">
-<div abp="3138" class="syntaxhighlighter nogutter java" id="highlighter_320352">
-<table abp="3139" border="0" cellpadding="0" cellspacing="0">
-	<tbody abp="3140">
-		<tr abp="3141">
-			<td abp="3142" class="code">
-			<div abp="3143" class="container" title="Hint: double-click to select code">
-			<div abp="3144" class="line number1 index0 alt2"><span style="font-family: monospace;">{</span><br style="font-family: monospace; color: rgb(102, 102, 102); line-height: 20.4px; background-color: rgb(249, 249, 249);" />
-			<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; &quot;mpinAuthServerURL&quot;: &lt;mpin-auth-endpoint&gt;,</span><br style="font-family: monospace; color: rgb(102, 102, 102); line-height: 20.4px; background-color: rgb(249, 249, 249);" />
-			<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; &quot;timePermitsURL&quot;: &lt;customer-time-permit-endpoint&gt;,</span><br style="font-family: monospace; color: rgb(102, 102, 102); line-height: 20.4px; background-color: rgb(249, 249, 249);" />
-			<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; &quot;timePermitsStorageURL&quot;: &lt;certivox-time-permit-cache-url&gt;,</span><br style="font-family: monospace; color: rgb(102, 102, 102); line-height: 20.4px; background-color: rgb(249, 249, 249);" />
-			<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; &quot;authenticateURL&quot;: &lt;auth-validation-endpoint&gt;,</span><br style="font-family: monospace; color: rgb(102, 102, 102); line-height: 20.4px; background-color: rgb(249, 249, 249);" />
-			<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; &quot;timePermitsStorageURL&quot;: &lt;tp-storage-url&gt;,</span><br style="font-family: monospace; color: rgb(102, 102, 102); line-height: 20.4px; background-color: rgb(249, 249, 249);" />
-			<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; &quot;certivoxURL&quot;: &lt;certivox-services-url&gt;,</span><br style="font-family: monospace; color: rgb(102, 102, 102); line-height: 20.4px; background-color: rgb(249, 249, 249);" />
-			<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; &quot;mobileAuthenticateURL&quot;: &lt;mobile-auth-validation-endpoint&gt;,</span><br style="font-family: monospace; color: rgb(102, 102, 102); line-height: 20.4px; background-color: rgb(249, 249, 249);" />
-			<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; &quot;signatureURL&quot;: &lt;signature-endpoint&gt;,</span><br style="font-family: monospace; color: rgb(102, 102, 102); line-height: 20.4px; background-color: rgb(249, 249, 249);" />
-			<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; &quot;requestOTP&quot;: &lt;request-otp&gt;,</span><br style="font-family: monospace; color: rgb(102, 102, 102); line-height: 20.4px; background-color: rgb(249, 249, 249);" />
-			<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; &quot;setupDoneURL&quot;: &lt;setup-done-endpoint&gt;,</span><br style="font-family: monospace; color: rgb(102, 102, 102); line-height: 20.4px; background-color: rgb(249, 249, 249);" />
-			<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; &quot;successLoginURL&quot;: &lt;successful-login-url&gt;,</span><br style="font-family: monospace; color: rgb(102, 102, 102); line-height: 20.4px; background-color: rgb(249, 249, 249);" />
-			<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; &quot;accessNumberURL&quot;: &lt;access-number-endpoint&gt;,</span><br style="font-family: monospace; color: rgb(102, 102, 102); line-height: 20.4px; background-color: rgb(249, 249, 249);" />
-			<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; &quot;getAccessNumberURL&quot;: &lt;get-access-number-endpoint&gt;,</span><br style="font-family: monospace; color: rgb(102, 102, 102); line-height: 20.4px; background-color: rgb(249, 249, 249);" />
-			<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; &quot;accessNumberDigits&quot;: &lt;access-number-digits&gt;,</span><br style="font-family: monospace; color: rgb(102, 102, 102); line-height: 20.4px; background-color: rgb(249, 249, 249);" />
-			<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; &quot;accessNumberUseCheckSum&quot;: &lt;access-number-use-checksum&gt;,</span><br style="font-family: monospace; color: rgb(102, 102, 102); line-height: 20.4px; background-color: rgb(249, 249, 249);" />
-			<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; &quot;cSum&quot;: &lt;access-number-checksum-method&gt;,</span><br style="font-family: monospace; color: rgb(102, 102, 102); line-height: 20.4px; background-color: rgb(249, 249, 249);" />
-			<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; &quot;seedValue&quot;: &lt;seed-value&gt;,</span><br style="font-family: monospace; color: rgb(102, 102, 102); line-height: 20.4px; background-color: rgb(249, 249, 249);" />
-			<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; &quot;registerURL&quot;: &lt;user-register-endpoint&gt;,</span><br style="font-family: monospace; color: rgb(102, 102, 102); line-height: 20.4px; background-color: rgb(249, 249, 249);" />
-			<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; &quot;identityCheckRegex&quot;: &lt;identity-check-regex&gt;,</span><br style="font-family: monospace; color: rgb(102, 102, 102); line-height: 20.4px; background-color: rgb(249, 249, 249);" />
-			<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; &quot;useWebSocket&quot;: &lt;use-web-sockets&gt;,</span><br style="font-family: monospace; color: rgb(102, 102, 102); line-height: 20.4px; background-color: rgb(249, 249, 249);" />
-			<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; &quot;setDeviceName&quot;: &lt;set-device-name&gt;,</span><br style="font-family: monospace; color: rgb(102, 102, 102); line-height: 20.4px; background-color: rgb(249, 249, 249);" />
-			<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; &quot;appID&quot;: &lt;app-id&gt;</span><br style="font-family: monospace; color: rgb(102, 102, 102); line-height: 20.4px; background-color: rgb(249, 249, 249);" />
-			<span style="font-family: monospace;">}</span></div>
-			</div>
-			</td>
-		</tr>
-	</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
+		{
+		    "mpinAuthServerURL": <mpin-auth-endpoint>,
+		    "timePermitsURL": <customer-time-permit-endpoint>,
+		    "timePermitsStorageURL": <certivox-time-permit-cache-url>,
+		    "authenticateURL": <auth-validation-endpoint>,
+		    "timePermitsStorageURL": <tp-storage-url>,
+		    "certivoxURL": <certivox-services-url>,
+		    "mobileAuthenticateURL": <mobile-auth-validation-endpoint>,
+		    "signatureURL": <signature-endpoint>,
+		    "requestOTP": <request-otp>,
+		    "setupDoneURL": <setup-done-endpoint>,
+		    "successLoginURL": <successful-login-url>,
+		    "accessNumberURL": <access-number-endpoint>,
+		    "getAccessNumberURL": <get-access-number-endpoint>,
+		    "accessNumberDigits": <access-number-digits>,
+		    "accessNumberUseCheckSum": <access-number-use-checksum>,
+		    "cSum": <access-number-checksum-method>,
+		    "seedValue": <seed-value>,
+		    "registerURL": <user-register-endpoint>,
+		    "identityCheckRegex": <identity-check-regex>,
+		    "useWebSocket": <use-web-sockets>,
+		    "setDeviceName": <set-device-name>,
+		    "appID": <app-id>
+		}
+
 
 <div><em abp="2942">&lt;mpin-auth-endpoint&gt;</em>&nbsp;- M-Pin Server URL&nbsp;for end-user authentication.&nbsp;On this URL the client will&nbsp;open a WebSocket or make the &quot;/pass1&quot; and &quot;/pass2&quot; requests.&nbsp;Example: &quot;/rps&quot;</div>
 
@@ -187,7 +167,9 @@ currentMenu: milagro-mfa-api-reference
 
 <p abp="2988"><em abp="2989">&lt;user-register-endpoint&gt;</em>&nbsp;- Endpoint for initiating end-user registration flow.&nbsp;<span abp="2990">Example: &quot;&nbsp;rps/user&quot;</span></p>
 
-<p abp="2991"><span abp="2992"><em abp="2993">&lt;identity-check-regex&gt;</em>&nbsp;-&nbsp;A regular expression used to verify the format of a new end-user identity. Example: &quot;[0-9a-zA-Z]+&quot;</span></p>
+<p abp="2991"><span abp="2992"><em abp="2993">&lt;identity-check-regex&gt;</em>&nbsp;-&nbsp;A regular expression used to verify the format of a new end-user identity.
+
+Example: [0-9a-zA-Z]
 
 <p abp="2994"><em abp="2995">&lt;use-web-sockets&gt;</em><span abp="2996">&nbsp;-&nbsp;Indicates (true or false) whether the PIN Pad should make an&nbsp;</span>attempt<span abp="2997">&nbsp;to use WebSockets when authenticating an end-user against the M-Pin Server. If not specified, the default is&nbsp;<em abp="2998">true</em>.</span></p>
 
@@ -432,8 +414,10 @@ currentMenu: milagro-mfa-api-reference
 
 <p abp="3258"><em abp="3259">&lt;client-secret-share&gt;</em>&nbsp;- Client Secret Share from the Customer-hosted D-TA Service.</p>
 
-<p abp="3260"><em abp="3261">&lt;client-secret-request-params&gt;</em>&nbsp;- Parameters (including signature) that should be used to request the other Client Secret Share from the MIRACL-hosted D-TA Service. Those parameters are formatted as request query parameters in the form:&nbsp;<code abp="3262">app_id=&lt;app_id&gt;&amp;hash_mpin_id=&lt;hash_mpin_id&gt;&amp;\nexpires=&lt;expires&gt;&amp;mobile=&lt;mobile&gt;&amp;signature=&lt;signature&gt;</code></p>
-
+Parameters (including signature) that should be used to request the other Client Secret Share from the MIRACL-hosted D-TA Service. Those parameters are formatted as request query parameters in the form:
+</br>
+		app_id=<app_id>&hash_mpin_id=<hash_mpin_id>&\nexpires=<expires>&mobile=<mobile>&signature=<signature>
+</br>
 <h5 abp="3263" id="TechSpec-M-Pinv0.3RelyingPartyService-POST/rps/setupDone/&lt;mpin-id&gt;">POST /rps/setupDone/&lt;mpin-id&gt;</h5>
 
 <p abp="3265">This request is made by the Client (through a proxy) to announce that the end-user has finalized the setup process, providing his/her PIN Number. Currently no action is taken by the RPS during this request.</p>
@@ -1096,135 +1080,113 @@ currentMenu: milagro-mfa-api-reference
 
 <p abp="4012"><img abp="4013" class="confluence-embedded-image" confluence-query-params="effects=border-simple,shadow-kn" data-image-src="/download/attachments/11534356/M-Pin%20Mobile%20Authentication.png?version=7&amp;modificationDate=1413213302000&amp;api=v2&amp;effects=border-simple,shadow-kn" height="1310" src="http://docs.miracl.com/userfiles/1995/3089/ckfinder/images/M-Pin%20Mobile%20Authentication.png?dc=201502241747-0" style="margin-right: auto; margin-left: auto; display: block;" width="1256" /></p>
 
+**language** py
+**title** <installation-folder>/config_rps.py
+</br></br>
+<pre><code>
+		from __future__ import unicode_literals
 
+		"""HTTP server settings"""
+		address = <rps-listen-address>
+		port = <rps-port>
 
-<h2 abp="4035" id="TechSpec-M-Pinv0.3RelyingPartyService-Configuration">Configuration</h2>
+		"""Set Access-Control-Allow-Origin header"""
+		allowOrigin = <access-control-allow-origin>
 
-<div abp="4037" class="code panel pdl">
-<div abp="4038" class="codeHeader panelHeader pdl"><strong>language</strong> py</div>
+		"""Time synchronization
+		To be able to perform time based verification, by default RPS syncs its time
+		with CertiVox servers. If you set it to False, you should still sync the server
+		using an accurate NTP time server!
+		"""
+		syncTime = <sync-time>
 
-<div abp="4038" class="codeHeader panelHeader pdl"><strong abp="4039">title </strong>&lt;installation-folder&gt;/config_rps.py</div>
+		"""
+		Dynamic options url
+		Location to be queried for dynamically (runtime) changeable options.
+		'None' mean dynamic options are disabled and it is default value.
+		"""
+		dynamicOptionsURL = <dynamic-options-url>
 
-<div abp="4040" class="codeContent panelContent pdl">
-<div abp="4041">
-<div abp="4042" class="syntaxhighlighter nogutter java" id="highlighter_118831">
-<table abp="4043" border="0" cellpadding="0" cellspacing="0">
-	<tbody abp="4044">
-		<tr abp="4045">
-			<td abp="4046" class="code">
-			<div abp="4047" class="container" title="Hint: double-click to select code">
-			<pre abp="4048" class="computer_code" style="text-align: left;">
-from __future__ import unicode_literals
- 
-&quot;&quot;&quot;HTTP server settings&quot;&quot;&quot;
-address = &lt;rps-listen-address&gt;
-port = &lt;rps-port&gt;
- 
-&quot;&quot;&quot;Set Access-Control-Allow-Origin header&quot;&quot;&quot;
-allowOrigin = &lt;access-control-allow-origin&gt;
- 
-&quot;&quot;&quot;Time synchronization
-To be able to perform time based verification, by default RPS syncs its time
-with CertiVox servers. If you set it to False, you should still sync the server
-using an accurate NTP time server!
-&quot;&quot;&quot;
-syncTime = &lt;sync-time&gt;
- 
-&quot;&quot;&quot;
-Dynamic options url
-Location to be queried for dynamically (runtime) changeable options.
-&#39;None&#39; mean dynamic options are disabled and it is default value.
-&quot;&quot;&quot;
-dynamicOptionsURL = &lt;dynamic-options-url&gt;
- 
-&quot;&quot;&quot;The location of your keys file (relative to mpin-backend/servers/dta).&quot;&quot;&quot;
-credentialsFile = &lt;credentials-file&gt;
- 
-&quot;&quot;&quot;Entropy sources
-D-TA supports multiple ways to gather entropy random, urandom, certivox or
-combination of those.
-&quot;&quot;&quot;
-EntropySources = &lt;entropy-source&gt;
- 
-&quot;&quot;&quot;CertiVox server secret share acquisition
-- dta - get server secret from CertiVox dta automatically on start
-- credentials.json - get server secret from credentials.json (key: certivox_server_secret)
-- manual - service will prompt for it
-- the secret itself
-You can get your CertiVox server secret by:
-    ./scripts/getServerSecretShare.py credentials.json
-which will output your credentials json including certivox_server_secret.
-NOTE: Don&#39;t pipe it directly to the same file - you&#39;ll lose your original
-      credentials file.
-Alternatively you can copy only your certivox_server_secret value and supply it
-either manually or via config.py setting the certivoxServerSecret to the
-corresponding value.
-&quot;&quot;&quot;
-certivoxServerSecret = &lt;server-secret-source&gt;
- 
-&quot;&quot;&quot;Local DTA address.&quot;&quot;&quot;
-DTALocalURL = &lt;local-dta-url&gt;
- 
-&quot;&quot;&quot;Access number options
-- enable access number
-- accessNumberExpireSeconds - The default time client will show the access number
-- accessNumberExtendValiditySeconds - Validity of the access number (on top of accessNumberExpireSeconds)
-- accessNumberUseCheckSum - Should access number have checksum
-&quot;&quot;&quot;
-requestOTP = &lt;request-otp&gt;
-accessNumberExpireSeconds = &lt;access-number-expiration-in-seconds&gt;
-accessNumberExtendValiditySeconds = &lt;access-number-extend-validity-in-seconds&gt;
-accessNumberUseCheckSum = &lt;access-number-use-checksum&gt;
- 
-&quot;&quot;&quot;Authentication options
-- waitForLoginResult -For the mobile flow. Wait the browser login before showing the Done/Logout button.
-&quot;&quot;&quot;
-waitForLoginResult = &lt;wait-for-login-result&gt;
-VerifyUserExpireSeconds = &lt;user-verification-expiration-in-seconds&gt;
-maxInvalidLoginAttempts = &lt;max-invalid-login-attempts&gt;
-cacheTimePermits = &lt;cache-time-permits&gt;
- 
-&quot;&quot;&quot;RPA options
-- RPAPermitUserURL - RPA Revocation endpoint
-- RegisterForwardUserHeaders - Coma separated list of headers
-    - &#39;&#39; - do not forward headers
-    - * - forward all headers
-- LogoutURL - RPA Logout url. For logout using the mobile client.
-&quot;&quot;&quot;
-RPAVerifyUserURL = &lt;rpa-verify-user-endpoint&gt;
-RPAPermitUserURL = &lt;rpa-permit-user-endpoint&gt;
-RPAAuthenticateUserURL = &lt;rpa-auth-validation-endpoint&gt;
-RegisterForwardUserHeaders = &lt;forward-headers&gt;
-LogoutURL = &lt;logout-endpoint&gt;
- 
-&quot;&quot;&quot;PIN pad client options&quot;&quot;&quot;
-rpsBaseURL = &lt;rps-public-requests-base-url&gt;
-rpsPrefix = &lt;rps-public-requests-prefix&gt;
-setDeviceName = &lt;set-device-name&gt;
- 
-&quot;&quot;&quot;Key value storage options&quot;&quot;&quot;
-storage = &lt;storage&gt;
- 
-redisHost = &lt;redis-host&gt;
-redisPort = &lt;redis-port&gt;
-redisDB = &lt;redis-db&gt;
-redisPassword = &lt;redis-password&gt;
-redisPrefix = &lt;redis-prefix&gt;
- 
-fileStorageLocation = &lt;json-storage-file-name&gt;
- 
-&quot;&quot;&quot;Debug options&quot;&quot;&quot;
-logLevel = &lt;log-level&gt;</pre>
-			</div>
-			</td>
-		</tr>
-	</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
+		"""The location of your keys file (relative to mpin-backend/servers/dta)."""
+		credentialsFile = <credentials-file>
 
+		"""Entropy sources
+		D-TA supports multiple ways to gather entropy random, urandom, certivox or
+		combination of those.
+		"""
+		EntropySources = <entropy-source>
+
+		"""CertiVox server secret share acquisition
+		- dta - get server secret from CertiVox dta automatically on start
+		- credentials.json - get server secret from credentials.json (key: certivox_server_secret)
+		- manual - service will prompt for it
+		- the secret itself
+		You can get your CertiVox server secret by:
+		    ./scripts/getServerSecretShare.py credentials.json
+		which will output your credentials json including certivox_server_secret.
+		NOTE: Don't pipe it directly to the same file - you'll lose your original
+		      credentials file.
+		Alternatively you can copy only your certivox_server_secret value and supply it
+		either manually or via config.py setting the certivoxServerSecret to the
+		corresponding value.
+		"""
+		certivoxServerSecret = <server-secret-source>
+
+		"""Local DTA address."""
+		DTALocalURL = <local-dta-url>
+
+		"""Access number options
+		- enable access number
+		- accessNumberExpireSeconds - The default time client will show the access number
+		- accessNumberExtendValiditySeconds - Validity of the access number (on top of accessNumberExpireSeconds)
+		- accessNumberUseCheckSum - Should access number have checksum
+		"""
+		requestOTP = <request-otp>
+		accessNumberExpireSeconds = <access-number-expiration-in-seconds>
+		accessNumberExtendValiditySeconds = <access-number-extend-validity-in-seconds>
+		accessNumberUseCheckSum = <access-number-use-checksum>
+
+		"""Authentication options
+		- waitForLoginResult -For the mobile flow. Wait the browser login before showing the Done/Logout button.
+		"""
+		waitForLoginResult = <wait-for-login-result>
+		VerifyUserExpireSeconds = <user-verification-expiration-in-seconds>
+		maxInvalidLoginAttempts = <max-invalid-login-attempts>
+		cacheTimePermits = <cache-time-permits>
+
+		"""RPA options
+		- RPAPermitUserURL - RPA Revocation endpoint
+		- RegisterForwardUserHeaders - Coma separated list of headers
+		    - '' - do not forward headers
+		    - * - forward all headers
+		- LogoutURL - RPA Logout url. For logout using the mobile client.
+		"""
+		RPAVerifyUserURL = <rpa-verify-user-endpoint>
+		RPAPermitUserURL = <rpa-permit-user-endpoint>
+		RPAAuthenticateUserURL = <rpa-auth-validation-endpoint>
+		RegisterForwardUserHeaders = <forward-headers>
+		LogoutURL = <logout-endpoint>
+
+		"""PIN pad client options"""
+		rpsBaseURL = <rps-public-requests-base-url>
+		rpsPrefix = <rps-public-requests-prefix>
+		setDeviceName = <set-device-name>
+
+		"""Key value storage options"""
+		storage = <storage>
+
+		redisHost = <redis-host>
+		redisPort = <redis-port>
+		redisDB = <redis-db>
+		redisPassword = <redis-password>
+		redisPrefix = <redis-prefix>
+
+		fileStorageLocation = <json-storage-file-name>
+
+		"""Debug options"""
+		logLevel = <log-level>
+</code></pre>
+</br></br>
 <p abp="4134"><em abp="4135">&lt;rps-port&gt;</em>&nbsp;- The port on which the RPS listens. Example: 8011</p>
 
 <p abp="4138"><em abp="4139">&lt;rps-public-requests-base-url&gt;</em><span abp="4140">&nbsp;- Base URL for the Public RPS API. This is address of the proxy, through which RPS requests might be done and could be relative. The client will append to this URL &quot;/rps/&lt;endpoint&gt;&quot; to make a request to the RPS. Example (Default):</span>&quot;&quot; (empty)</p>
