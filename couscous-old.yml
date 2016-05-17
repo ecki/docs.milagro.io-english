@@ -1,0 +1,47 @@
+template:
+    # Name of the directory containing the website template (default is "website")
+
+    directory: website
+    # Or if you are using a remote template, you can set the Git URL
+    #url: https://github.com/snipe/Template-ReadTheDocs.git
+    # Name of the index file (default is "README.md")
+    index: index.md
+
+# List of directories to exclude from the processing (default contains "vendor" and "website")
+# Paths are relative to the repository root
+exclude:
+    - vendor
+    - app
+    - public
+    - website
+    - public
+    - .DS_STORE
+
+# Any variable you put in this file is also available in the Twig layouts:
+title: Milagro Documentation
+
+# The left menu bar
+menu:
+    sections:
+        Introduction:
+            name: '<i class="fa fa-bolt" aria-hidden="true"></i> Milagro Overview'
+            items:
+                home:
+                    text: Introduction
+                    relativeUrl: index.html
+                milagro-roadmap:
+                    text: Milagro Roadmap
+                    relativeUrl: milagro-roadmap.html
+
+
+# Base URL of the published website (no "/" at the end!)
+# You are advised to set and use this variable to write your links in the HTML layouts
+baseUrl: http://dev.docs.milagro.io.s3-website-us-east-1.amazonaws.com/en/
+
+# Used to link to the GitHub project
+github:
+    user: milagro-docs
+    repo: docs.milagro.io-english
+
+# Set the target branch in which to deploy the generated website
+# branch: master
