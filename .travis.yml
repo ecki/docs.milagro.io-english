@@ -7,7 +7,19 @@ before_script:
 script:
 - vendor/bin/couscous generate
 deploy:
-  provider: s3
+- provider: s3
+  access_key_id: AKIAJB6LBJTNPKYOFMKA
+  secret_access_key:
+    secure: fodtdaa7Vrhokw5cxmjk2PhPHIdwf31GYkn2dmA4wX/lAjVqb6lC0xWCJRTGasuoDqv+laAGR7IL8w+XgwXXjaSq3Tmz4Ss9TxvqllGMd1o3yYzawnS9MgXQRTwtNK7XA/0Z/MpZbFMBkNMQUuUDY0aU2xEhNYMCmsd1rploAPBRJysslh9sIAElCAsx6IwOyDo08RghkDaDKZu7tLyaxP4K8kJIA34fWulRdOi4af9W2kULlbY/7L/QCAORFXWVhKr22XsT1idjm0v9qgy+KCJzSRpRt9H0LzVVyB4qEn0PAdl/CBJ2ltwxgiaE09um0rC8OpdVehNW0RRafDYKaadSuwnan3dlw7yvj5/wsPn+eZSKZrzO7hO9uPyOICiuFSnqxPxxRiMDBIKepkAyk+Rk7TJj+KSPkVGxWd+P5qwVy8DGFKxEuOMgoxFjAHO/AGsIUQMyIX0MGmGjX5Y+ENxIhvKqlvQAWl1m85CPGHwNBvmGi3V4IugYPYGLZOys+ibyMQ8YlHn7UVyEg12XEiOXpdzyxmcTPW6EoEa1+EdAJ06CO7DBN87tF7lvqtLD7FTRU+zZnRMCsGprKZdcFyn0+juNqyWQDU746BCmeVvMU1Pqx1rR3m+qhhupY1DOE0ZV7A68o+8wkujfGH88h6BxQyf8CqmRym7vFWP3K4g=
+  bucket: docs.milagro.io
+  local-dir: .couscous/generated
+  upload-dir: en
+  acl: public_read
+  skip_cleanup: true
+  on:
+    branch: master
+    repo: milagro-docs/docs.milagro.io-english
+- provider: s3
   access_key_id: AKIAJB6LBJTNPKYOFMKA
   secret_access_key:
     secure: fodtdaa7Vrhokw5cxmjk2PhPHIdwf31GYkn2dmA4wX/lAjVqb6lC0xWCJRTGasuoDqv+laAGR7IL8w+XgwXXjaSq3Tmz4Ss9TxvqllGMd1o3yYzawnS9MgXQRTwtNK7XA/0Z/MpZbFMBkNMQUuUDY0aU2xEhNYMCmsd1rploAPBRJysslh9sIAElCAsx6IwOyDo08RghkDaDKZu7tLyaxP4K8kJIA34fWulRdOi4af9W2kULlbY/7L/QCAORFXWVhKr22XsT1idjm0v9qgy+KCJzSRpRt9H0LzVVyB4qEn0PAdl/CBJ2ltwxgiaE09um0rC8OpdVehNW0RRafDYKaadSuwnan3dlw7yvj5/wsPn+eZSKZrzO7hO9uPyOICiuFSnqxPxxRiMDBIKepkAyk+Rk7TJj+KSPkVGxWd+P5qwVy8DGFKxEuOMgoxFjAHO/AGsIUQMyIX0MGmGjX5Y+ENxIhvKqlvQAWl1m85CPGHwNBvmGi3V4IugYPYGLZOys+ibyMQ8YlHn7UVyEg12XEiOXpdzyxmcTPW6EoEa1+EdAJ06CO7DBN87tF7lvqtLD7FTRU+zZnRMCsGprKZdcFyn0+juNqyWQDU746BCmeVvMU1Pqx1rR3m+qhhupY1DOE0ZV7A68o+8wkujfGH88h6BxQyf8CqmRym7vFWP3K4g=
