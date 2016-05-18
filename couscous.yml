@@ -1,4 +1,4 @@
-# Use this couscous.yml file when releasing to Master branch. Rename this file to 'couscous.yml' when closing a release branch into the master branch.
+# #Use this couscous.yml file when releasing to Master branch WHEN IT IS READY. Rename this file to 'couscous.yml' when closing a release branch into the master branch.
 
 template:
     # Name of the directory containing the website template (default is "website")
