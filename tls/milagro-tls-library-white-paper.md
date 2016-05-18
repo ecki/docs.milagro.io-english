@@ -27,38 +27,6 @@ This document introduces two key-exchange algorithms that are both
 based on pairing-based cryptography. The first is designed for
 Client-to-Server communication and the second for Peer-to-Peer.
 
-## Status of This Memo
-
-This Internet-Draft is submitted in full conformance with the
-provisions of BCP 78 and BCP 79.
-
-Internet-Drafts are working documents of the Internet Engineering
-Task Force (IETF).  Note that other groups may also distribute
-working documents as Internet-Drafts.  The list of current Internet-
-Drafts is at http://datatracker.ietf.org/drafts/current/.
-
-Internet-Drafts are draft documents valid for a maximum of six months
-and may be updated, replaced, or obsoleted by other documents at any
-time.  It is inappropriate to use Internet-Drafts as reference
-material or to cite them other than as "work in progress."
-
-This Internet-Draft will expire on November 11, 2016.
-
-## Copyright Notice
-
-Copyright (c) 2016 IETF Trust and the persons identified as the
-document authors.  All rights reserved.
-
-This document is subject to BCP 78 and the IETF Trust's Legal
-Provisions Relating to IETF Documents
-(http://trustee.ietf.org/license-info) in effect on the date of
-publication of this document.  Please review these documents
-carefully, as they describe your rights and restrictions with respect
-to this document.  Code Components extracted from this document must
-include Simplified BSD License text as described in Section 4.e of
-the Trust Legal Provisions and are provided without warranty as
-described in the Simplified BSD License.
-
 ## Introduction
 
 Pairing-Based Crypto (PBC) is emerging as a  solution to complex
@@ -105,43 +73,43 @@ information about that entity's relationships.
 </br></br>
 ### Abbreviations
 
-ECC Elliptic Curve Cryptography
+**ECC** Elliptic Curve Cryptography
 
-PBC Pairing-Based Cryptography
+**PBC** Pairing-Based Cryptography
 
-AES Advanced Encryption Standard
+**AES** Advanced Encryption Standard
 
-TA Trusted Authority
+**TA** Trusted Authority
 
-Peer-to-Peer  P2P
+**Peer-to-Peer**  P2P
 
-Milagro_CS Milagro Client-to-Server
+**Milagro_CS** Milagro Client-to-Server
 
-Milagro_P2P Milagro Peer-to-Peer
+**Milagro_P2P** Milagro Peer-to-Peer
 
-E is an ordinary pairing-friendly elliptic curve over a finite field
-F, defined by a fixed prime modulus p.
+**E** is an ordinary pairing-friendly elliptic curve over a finite field
+**F**, defined by a fixed prime modulus p.
 
-e: G1 X G2 -> GT is a computable bi-linear map on E. G1 is defined as
+**e:** G1 X G2 -> GT is a computable bi-linear map on E. G1 is defined as
 a group of points on E. G2 is defined as a group of points on a twist
 of E. Both groups are of prime order q. GT is a finite extension
 field of F, also of order q.
 </br></br>
 ### Conventions
 
-IdC: Digital identity of the client
+**IdC:** Digital identity of the client
 
-IdS: Digital identity of the server
+**IdS:** Digital identity of the server
 
-H1: Maps string value to a point on the curve in G1.
+**H1:** Maps string value to a point on the curve in G1.
 
-H2: Maps string value to a point on the curve in G_2
+**H2:** Maps string value to a point on the curve in G_2
 
-Hq: Hashes inputs to an integer modulo the curve order q.
+**Hq:** Hashes inputs to an integer modulo the curve order q.
 
-Hg: Generate AES key
+**Hg:** Generate AES key
 
-SHA-256: Perform the SHA256 function.
+**SHA-256:** Perform the SHA256 function.
 
 ## Key Exchange Algorithms
 
@@ -232,8 +200,9 @@ value k = e(pis.H(IdS)+PsG1,(y+pic).CKeyG2).</li>
 pis = Hq(PsG1||PcG2||PgG1), pic = Hq(PcG2||PsG1||PgG1) and the
 value k = e((x+pis).SKeyG1,pic.B+PcG2).</li>
 
-<li>server compute the premaster secret as K = Hg(k,x.PsG1).</li>
+<li>server computes the premaster secret as K = Hg(k,x.PsG1).</li>
 </ul>
+
 ## Data Structures and Computations
 
 This document introduces two new Pairing-Based key exchange
@@ -321,11 +290,11 @@ this specification adds a new type to ExtensionType.
             (255)
     } Milagro_CS_ext;
 
-    length_hash_IdC, length_U, length_V: length of the parameters.
-    hash_IdC: hash of the client's identity.
-    U: first parameter sent by the client.
-    V: second parameter sent by the client.
-    time_value: current epoch time in seconds.
+**length_hash_IdC, length_U, length_V:** length of the parameters.</br>
+**hash_IdC:** hash of the client's identity.</br>
+**U:** first parameter sent by the client.</br>
+**V:** second parameter sent by the client.</br>
+**time_value:** current epoch time in seconds.</br>
 
 
 Actions of the Server:
@@ -408,8 +377,8 @@ The ClientKeyExchange message is extended as follows.
 The table below defines new cipher suites that use the key exchange
 algorithms specified in Section 3.
 
-* CipherSuite TLS_MILAGRO_CS_WITH_AES_128_GCM_SHA256  = { 0xC0, 0xB1 }
-* CipherSuite TLS_MILAGRO_P2P_WITH_AES_128_GCM_SHA256 = { 0xC0, 0xB2 }
+    CipherSuite TLS_MILAGRO_CS_WITH_AES_128_GCM_SHA256  = { 0xC0, 0xB1 }
+    CipherSuite TLS_MILAGRO_P2P_WITH_AES_128_GCM_SHA256 = { 0xC0, 0xB2 }
 
 The key exchange method, cipher, and hash algorithm for each of these
 cipher suites are easily determined by examining the name. AES cipher
