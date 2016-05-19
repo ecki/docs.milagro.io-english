@@ -16,8 +16,9 @@ currentMenu: milagro-mfa-mobile-sdk-generic-example-android
 <p class="MsoNormal">You can use this example as a “skeleton” on which to further build your specific use cases and functionalities.</p>
 
 <h2>Example</h2>
-<div style="border: solid windowtext 1.0pt; padding: 1.0pt 4.0pt 1.0pt 4.0pt;">
-<pre class="computer_code">/*
+<pre>
+<code>
+/*
 * Initializing the SDK
 */
 MPinSDK sdk = new MPinSDK();
@@ -45,17 +46,17 @@ if (status.getStatusCode() != Status.Code.OK) {
 switch (user.getState()) {
    case state.STARTED_REGISTRATION: {
        boolean waitForCofirmation = true;
-       
+
        while (waitForCofirmation) {
            // Wait for user identity confirmation
-           
+
            status = sdk.ConfirmRegistration(user);
-           
+
            if (status.getStatusCode() == Status.Code.IDENTITY_NOT_VERIFIED) {
                Thread.sleep(3000);
                continue;
            }
-               
+
            if (status.getStatusCode() != Status.Code.OK) {
                // handle error and exit
            }
@@ -66,7 +67,7 @@ switch (user.getState()) {
    }
    case State.ACTIVATED: {
        status = sdk.ConfirmRegistration(user);
-       
+
        if (status.getStatusCode() != Status.Code.OK) {
            // handle error and exit
        }
@@ -130,6 +131,7 @@ switch (status.getStatusCode()) {
    default:
        // handle error and exit
        break;
-}</pre>
-</div>
-</div>
+}
+
+</code>
+</pre>

@@ -27,16 +27,18 @@ None
 None
 <h2>Example</h2>
 The following example initializes an instance and sets the back-end service to http://ec2-54-77-232-113.eu-west-1.compute.amazonaws.com.
-<div>
-<pre class="computer_code">// Create a new MPinSDK instance
+<pre>
+<code>
+// Create a new MPinSDK instance
 MPinSDK sdk = new MPinSDK();
 
 // Initialize the SDK
 HashMap&lt;String, String&gt; config = new HashMap&lt;&gt;();
 config.put("backend", "http://ec2-54-77-232-113.eu-west-1.compute.amazonaws.com");
 
-Status status = sdk.Init(config, context);</pre>
-</div>
+Status status = sdk.Init(config, context);
+</code>
+</pre>
 <h1><strong>Init</strong></h1>
 <h2>Description</h2>
 This method initializes the SDK. It receives a key/value map of the configuration parameters. The additional <code style="box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0px; margin: 0px; border-radius: 3px; color: #333333; background-color: rgba(0, 0, 0, 0.0392157);">context</code> parameter is of type <code style="box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0px; margin: 0px; border-radius: 3px; color: #333333; background-color: rgba(0, 0, 0, 0.0392157);">android.content.Context</code> and is usually retrieved from the system's <code style="box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0px; margin: 0px; border-radius: 3px; color: #333333; background-color: rgba(0, 0, 0, 0.0392157);">getApplicationContext()</code>method.
@@ -99,7 +101,10 @@ This method initializes the SDK. It receives a key/value map of the configuratio
 	<li><span style="font-family: courier new,courier,monospace;">NETWORK_ERROR</span> - in case there was a problem to communicate with the back-end</li>
 </ul>
 <h2>Example</h2>
-<pre class="computer_code" style="margin-bottom: 20px; unicode-bidi: embed;">MPinSDK sdk = new MPinSDK();
+
+<pre>
+<code>
+MPinSDK sdk = new MPinSDK();
 
 HashMap&lt;String, String&gt; config = new HashMap&lt;String, String&gt;();
 config.put(MPinSDK.CONFIG_BACKEND, "http://ec2-54-77-232-113.eu-west-1.compute.amazonaws.com");
@@ -108,7 +113,10 @@ Status status = sdk.Init(config, context);
 
 if (status.getStatusCode() != Status.Code.OK) {
     // handle error
-}</pre>
+}
+</code>
+</pre>
+
 <div class="WordSection1">
 <h1><span style="font-size: 42px;"><span class="CVXCodeinTitle"><b><span style="font-family: 'Courier New';">SetBackend</span></b></span></span></h1>
 <h2>Description</h2>
@@ -172,15 +180,18 @@ if (status.getStatusCode() != Status.Code.OK) {
 <p class="MsoListParagraph" style="margin-left: 0.5in; text-indent: -.25in;"><span style="font-family: Symbol;">·</span><span style="font-size: 7.0pt; line-height: 105%; font-family: 'Times New Roman',serif;">         </span><span class="CVXCodeinText" style="line-height: 19.2px; text-indent: -24px;"><span style="font-family: 'Courier New';">NETWORK_ERROR</span></span> – The specified back-end could not be reached</p>
 
 <h2>Example</h2>
-<p class="MsoNormal">The following example sets the back-end service to <span class="CVXCodeinText;" style="font-family: 'Courier New';">http://ec2-54-77-232-113.eu-west-1.compute.amazonaws.com</span>.</p>
-
-<div style="border: solid windowtext 1.0pt; padding: 1.0pt 4.0pt 1.0pt 4.0pt;">
-<p class="CVXCodeExample" style="border: none; padding: 0in;"><span style="font-size: 11.0pt; line-height: 150%; font-family: 'Courier New';">Status status = sdk.SetBackend(“http://ec2-54-77-232-113.eu-west-1.compute.amazonaws.com”);</span></p>
+The following example sets the back-end service to
+</br></br>
+http://ec2-54-77-232-113.eu-west-1.compute.amazonaws.com
+</br></br>
+<pre><code>
+Status status = sdk.SetBackend(“http://ec2-54-77-232-113.eu-west-1.compute.amazonaws.com”);</span></p>
 if (status.getStatusCode() != Status.Code.OK) {
 
 // handle error
 
 }
+</code></pre>
 
 </div>
 </div>
@@ -247,15 +258,18 @@ if (status.getStatusCode() != Status.Code.OK) {
 <p class="MsoListParagraph" style="margin-left: 0.5in; text-indent: -.25in;"><span style="font-family: Symbol;">·</span><span style="font-size: 7.0pt; line-height: 105%; font-family: 'Times New Roman',serif;">         </span><span class="CVXCodeinText" style="line-height: 19.2px; text-indent: -24px;"><span style="font-family: 'Courier New';">NETWORK_ERROR</span></span> – The specified back-end could not be reached</p>
 
 <h2>Example</h2>
-<p class="MsoNormal">The code snippet below tests the following URL:<span style="font-family: 'Courier New';"> <span class="CVXCodeinText"><span style="font-family: 'Courier New';">http://ec2-54-77-232-113.eu-west-1.compute.amazonaws.com</span></span></span>.</p>
+The code snippet below tests the following URL: http://ec2-54-77-232-113.eu-west-1.compute.amazonaws.com
 
-<div style="border: solid windowtext 1.0pt; padding: 1.0pt 4.0pt 1.0pt 4.0pt;">
-<p class="CVXCodeExample" style="border: none; padding: 0in;"><span style="font-size: 11.0pt; line-height: 150%; font-family: 'Courier New';">Status status = sdk.TestBackend(“http://ec2-54-77-232-113.eu-west-1.compute.amazonaws.com”);</span></p>
+<pre>
+<code>
+Status status = sdk.TestBackend(“http://ec2-54-77-232-113.eu-west-1.compute.amazonaws.com”);
 if (status.getStatusCode() != Status.Code.OK) {
 
 // handle error
 
 }
+</code>
+</pre>
 
 </div>
 </div>
