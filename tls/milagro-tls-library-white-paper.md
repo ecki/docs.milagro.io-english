@@ -11,12 +11,12 @@ currentMenu: milagro-tls-library-white-paper
       <div>Alessandro Budroni</div>
       <div>Kealan McCusker</div>
       <div><a href="http://www.miracl.com/miracl-crypto-labs">MIRACL Labs</a></div>
-      <div>Dublin, Ireland</div>
+      <div><a href="http://www.miracl.com/miracl-crypto-labs">MIRACL Labs</a></div>
     </div>
     <div class="author">
       <div>-</div>
       <div>-</div>
-      <div>-</div>
+      
     </div>
 </header>
 

@@ -9,9 +9,10 @@ currentMenu: milagro-mfa-mobile-sdk-registration-methods-android
 <h2>Overview</h2>
 <p class="MsoNormal">This section provides a list and brief description of the Registration methods used in the Milagro MFA Mobile SDK for Android. The methods detail the process of registering a new User.</p>
 <p class="MsoNormal">To view all methods used, refer to the <a href="#">API Reference</a> page.</p>
-
+</br></br>
 <div class="WordSection1">
-<h1><span class="CVXCodeinText"><b><span style="font-family: 'Courier New'; font-size: 42px;">StartRegistration</span></b></span></h1>
+<h1>StartRegistration</h1>
+<hr>
 <h2>Description</h2>
 <p style="margin-bottom: 16px; line-height: 25.6px; box-sizing: border-box; color: #333333; font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 16px;">This method initializes the registration for a User that has already been created. The SDK starts the M-Pin Setup flow, sending the necessary requests to the back-end service. The State of the User instance will change to <code style="box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0px; margin: 0px; border-radius: 3px; background-color: rgba(0, 0, 0, 0.0392157);">STARTED_REGISTRATION</code>. The status will indicate whether the operation was successful or not. During this call, an M-Pin ID for the end-user will be issued by the RPS and stored within the user object. The RPA can also start a user identity verification procedure, by sending a verification e-mail.</p>
 <p style="margin-bottom: 16px; line-height: 25.6px; box-sizing: border-box; color: #333333; font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 16px;">The optional <code style="box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0px; margin: 0px; border-radius: 3px; color: #333333; background-color: rgba(0, 0, 0, 0.0392157);">activateCode</code> parameter might be provided if the registration process requires such. In cases when the user verification is done through a <em style="box-sizing: border-box; color: #333333; font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 16px; font-weight: normal; line-height: 20.48px;">One-Time-Code</em> (OTC) or through an SMS that carries such code, this OTC should be passed as the <code style="box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0px; margin: 0px; border-radius: 3px; color: #333333; background-color: rgba(0, 0, 0, 0.0392157);">activateCode</code> parameter. In those cases, the identity verification should be completed instantly and the User State will be set to <code style="box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0px; margin: 0px; border-radius: 3px; color: #333333; background-color: rgba(0, 0, 0, 0.0392157);">ACTIVATED</code>.</p>
@@ -95,8 +96,9 @@ currentMenu: milagro-mfa-mobile-sdk-registration-methods-android
 <h2>Example</h2>
 <p class="MsoNormal">The following code snippet creates a new User and handles its registration process.</p>
 
-<div style="border: solid windowtext 1.0pt; padding: 1.0pt 4.0pt 1.0pt 4.0pt;">
-<pre class="computer_code">Status status = sdk.StartRegistration(user);
+<pre>
+<code>
+Status status = sdk.StartRegistration(user);
 
 if (status.getStatusCode() != Status.Code.OK) {
     // handle error
@@ -104,9 +106,9 @@ if (status.getStatusCode() != Status.Code.OK) {
 
 if (user.getState() != State.ACTIVATED) {
     int i = 0;
-    
+
     while (user.getState() == State.STARTED_REGISTRATION) {
-    
+
        // waiting for verification to be completed
        status = sdk.ConfirmRegistration(user); // if the verification has completed successfully, this displays the M-Pin PIN-Pad for the user to set up their PIN
 
@@ -143,9 +145,11 @@ String pin;
 status = sdk.FinishRegistration(user, pin);
 if (status.getStatusCode() != Status.Code.OK) {
       // handle error
-}</pre>
-</div>
-</div>
+}
+</code>
+</pre>
+
+
 <div class="WordSection1">
 <h1><span class="CVXCodeinText;"><b style="font-style: inherit;"><span style="font-family: 'Courier New';">RestartRegistration</span></b></span></h1>
 <h2>Description</h2>
@@ -216,8 +220,9 @@ if (status.getStatusCode() != Status.Code.OK) {
 <h2>Example</h2>
 <p class="MsoNormal">The following code snippet demonstrates a sample implementation of restarting a User registration</p>
 
-<div style="border: solid windowtext 1.0pt; padding: 1.0pt 4.0pt 1.0pt 4.0pt;">
-<pre class="computer_code">Status status = sdk.StartRegistration(user);
+<pre>
+<code>
+Status status = sdk.StartRegistration(user);
 
 if (status.getStatusCode() != Status.Code.OK) {
     // handle error
@@ -264,9 +269,11 @@ String pin;
 status = sdk.FinishRegistration(user, pin);
 if (status.getStatusCode() != Status.Code.OK) {
     // handle error
-}</pre>
-</div>
-</div>
+}
+</code>
+</pre>
+
+
 <h1><span class="CVXCodeinText"><b><span style="font-size: 29pt; line-height: 106%; font-family: 'Courier New';">ComfirmRegistration</span></b></span></h1>
 <h2>Description</h2>
 The ConfirmRegistration method allows the application to check whether the user identity verification process has been finalized or not. The <code style="box-sizing: border-box; font-family: Consolas,;">user</code> object should be either in the <code style="box-sizing: border-box; font-family: Consolas,;">STARTED_REGISTRATION </code>or the <code style="box-sizing: border-box; font-family: Consolas,;">ACTIVATED </code>state. The latter is possible if the RPA activated the user immediately with the call to <code style="box-sizing: border-box; font-family: Consolas,;">StartRegistration</code> and no verification process is started. During the call to <code style="color: #3e454c; font-size: 16.8px; line-height: 26.88px; box-sizing: border-box;">ConfirmRegistration,</code> the SDK will try to retrieve a Client Key for the user, which will succeed if the user has already been verified/activated, but will fail otherwise. The method returns status <code style="color: #3e454c; font-size: 16.8px; line-height: 26.88px; box-sizing: border-box;">OK</code> if the Client Key is successfully retrieved and <code style="color: #3e454c; font-size: 16.8px; line-height: 26.88px; box-sizing: border-box;">IDENTITY_NOT_VERIFIED</code> if the identity is not verified. If the method is successful, the application will get the desired PIN/secret from the end-user and then call <code style="color: #3e454c; font-size: 16.8px; line-height: 26.88px; box-sizing: border-box;">FinishRegistration </code>to provide the PIN.
@@ -330,7 +337,10 @@ The ConfirmRegistration method allows the application to check whether the user 
 	<li>IDENTITY_NOT_VERIFIED - if the user identity is not verified</li>
 </ul>
 <h2>Example</h2>
-<pre class="computer_code">Status status = sdk.StartRegistration(user);
+
+<pre>
+<code>
+Status status = sdk.StartRegistration(user);
 
 if (status.getStatusCode() != Status.Code.OK) {
     // handle error
@@ -338,9 +348,9 @@ if (status.getStatusCode() != Status.Code.OK) {
 
 if (user.getState() != State.ACTIVATED) {
     int i = 0;
-    
+
     while (user.getState() == State.STARTED_REGISTRATION) {
-    
+
        // waiting for verification to be completed
        status = sdk.ConfirmRegistration(user); // if the verification has completed successfully, this displays the M-Pin PIN-Pad for the user to set up their PIN
 
@@ -377,7 +387,10 @@ String pin;
 status = sdk.FinishRegistration(user, pin);
 if (status.getStatusCode() != Status.Code.OK) {
       // handle error
-}</pre>
+}
+</code>
+</pre>
+
 <div class="WordSection1">
 <h1><span class="CVXCodeinText;"><b><span style="font-family: 'Courier New';">FinishRegistration</span></b></span></h1>
 <h2>Description</h2>
@@ -442,8 +455,9 @@ if (status.getStatusCode() != Status.Code.OK) {
 <h2>Example</h2>
 <p class="MsoNormal">The following code snippet creates a new User identity and, if the registration process is successful, finalizes it.</p>
 
-<div style="border: solid windowtext 1.0pt; padding: 1.0pt 1.0pt 1.0pt 1.0pt;">
-<pre class="computer_code">User user = sdk.MakeNewUser("me@miracl.org");
+<pre>
+<code>
+User user = sdk.MakeNewUser("me@miracl.org");
 Status status = sdk.StartRegistration(user);
 
 if (status.getStatusCode() != Status.Code.OK) {
@@ -477,6 +491,8 @@ status = sdk.FinishRegistration(user, setupPin);
 
 if (status.getStatusCode() != Status.Code.OK) {
    // handle error
-}</pre>
+}
+</code>
+</pre>
 </div>
 </div>

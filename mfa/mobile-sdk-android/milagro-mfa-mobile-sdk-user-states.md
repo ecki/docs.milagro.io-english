@@ -65,31 +65,33 @@ currentMenu: milagro-mfa-mobile-sdk-user-states-android
 </tr>
 </tbody>
 </table>
-<h2>The <span style="font-family: 'Courier New';">User</span> Class</h2>
-The <span class="CVXCodeinText"><span style="font-family: 'Courier New';">User</span></span> class is as follows:
-<pre class="computer_code">public class User implements Closeable {
-
+</br></br>
+##The User Class
+The User class is as follows:
+<pre>
+<code>
 public enum State {
 INVALID,
 STARTED_REGISTRATION,
 ACTIVATED,
 REGISTERED,
-<code> BLOCKED
-};</code>
+BLOCKED
+};
 
-<code> public String getId() {
+public String getId() {
 ...
-}</code>
+}
 
-<code> public State getState() {
+public State getState() {
 ...
-}</code>
+}
 
-<code> @Override
+@Override
 public String toString() {
 return getId();
-}</code>
+}
 
-<code> ...
-}</code></pre>
-<p class="CVXCodeExample" style="margin-left: 40px;"></p>
+...
+}
+</pre>
+</code>

@@ -143,7 +143,9 @@ This method is used only when a user needs to be authenticated to a remote (brow
 	<li>INCORRECT_ACCESS_NUMBER (if not)</li>
 </ul>
 <h2>Examples</h2>
-<pre class="computer_code">Status status = sdk.StartAuthentication(user);
+<pre>
+<code>
+Status status = sdk.StartAuthentication(user);
 
 switch (status.getStatusCode())
 {
@@ -193,7 +195,10 @@ switch (status.getStatusCode())
     default:
         // Show error message and exit
         break;
-}</pre>
+}
+</code>
+</pre>
+
 <h1><span style="font-size: 34px;"><span style="font-family: 'Courier New';">FinishAuthentication</span> Method</span></h1>
 <h2>Description</h2>
 This method performs end-user authentication. The <em>user</em> to be authenticated and the pin (secret) are passed as parameters. The method uses the provided pin and the stored <em style="font-weight: normal; line-height: 19.2px;">M-Pin Token</em> to do the authentication against the <em>M-Pin Authentication Server</em> and then logs into the RPA. The RPA passes back <em>User Data</em> with the authentication response, which is returned to the application through the <code style="color: #3e454c; font-size: 16.8px; line-height: 26.88px; box-sizing: border-box;">authResultData</code> parameter. If authenticated, the returned status is <code style="color: #3e454c; font-size: 16.8px; line-height: 26.88px; box-sizing: border-box;">OK</code> and if not, it would be <code style="color: #3e454c; font-size: 16.8px; line-height: 26.88px; box-sizing: border-box;">INCORRECT_PIN.</code>
@@ -273,7 +278,9 @@ After the third (configurable in the RPS) unsuccessful authentication attempt, t
 	<li><span style="font-family: 'courier new', courier, monospace;">FLOW_ERROR<span style="font-family: arial, helvetica, sans-serif;"> - The user is in the incorrect state.</span></span></li>
 </ul>
 <h2>Example</h2>
-<pre class="computer_code">Status status = sdk.StartAuthentication(user);
+<pre>
+<code>
+Status status = sdk.StartAuthentication(user);
 
 switch (status.getStatusCode())
 {
@@ -308,7 +315,10 @@ switch (status.getStatusCode())
     default:
         // Show error message and exit
         break;
-}</pre>
+}
+</code>
+</pre>
+
 <h1><span style="font-size: 34px;"><span style="font-family: 'Courier New';">FinishAuthenticationOTP</span></span></h1>
 <h2>Description</h2>
 This method performs end-user authentication for an OTP. It is similar to the FinishAuthentication method but the RPA issues an OTP instead of logging the user into the application. The returned status is also similar to the FinishAuthentication method except that an OTP structure is returned.
@@ -323,31 +333,31 @@ The OTP structure is as follows:
     <span class="pl-k" style="box-sizing: border-box; color: #a71d5d;">long</span> nowTime;
     Status status;
 };</pre>
-<table style="border-collapse: collapse; border-spacing: 0px; color: #000000; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; width: 1061px;" border="1" cellspacing="1" cellpadding="1">
+<table style="border-collapse: collapse; border-spacing: 0px; color: #000000; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; width: 500px;" border="1" cellspacing="1" cellpadding="1">
 <tbody>
 <tr>
 <td style="margin: 0px; padding: 0.5em; font-family: inherit; border: 1px solid #cccccc; vertical-align: top; color: #585858; width: 192px;"><strong style="font-style: inherit;">Terms used</strong></td>
-<td style="margin: 0px; padding: 0.5em; font-family: inherit; border: 1px solid #cccccc; vertical-align: top; color: #585858; width: 840px;"><strong style="font-style: inherit;">Description</strong></td>
+<td style="margin: 0px; padding: 0.5em; font-family: inherit; border: 1px solid #cccccc; vertical-align: top; color: #585858; width: 420px;"><strong style="font-style: inherit;">Description</strong></td>
 </tr>
 <tr>
 <td style="margin: 0px; padding: 0.5em; font-family: inherit; border: 1px solid #cccccc; vertical-align: top; color: #585858; width: 192px;">otp</td>
-<td style="margin: 0px; padding: 0.5em; font-family: inherit; border: 1px solid #cccccc; vertical-align: top; color: #585858; width: 840px;">The otp string is the issued OTP</td>
+<td style="margin: 0px; padding: 0.5em; font-family: inherit; border: 1px solid #cccccc; vertical-align: top; color: #585858; width: 420px;">The otp string is the issued OTP</td>
 </tr>
 <tr>
 <td style="margin: 0px; padding: 0.5em; font-family: inherit; border: 1px solid #cccccc; vertical-align: top; color: #585858; width: 192px;">expireTime</td>
-<td style="margin: 0px; padding: 0.5em; font-family: inherit; border: 1px solid #cccccc; vertical-align: top; color: #585858; width: 840px;">The M-Pin system time when the OTP expires</td>
+<td style="margin: 0px; padding: 0.5em; font-family: inherit; border: 1px solid #cccccc; vertical-align: top; color: #585858; width: 420px;">The M-Pin system time when the OTP expires</td>
 </tr>
 <tr>
 <td style="margin: 0px; padding: 0.5em; font-family: inherit; border: 1px solid #cccccc; vertical-align: top; color: #585858; width: 192px;">ttlSeconds</td>
-<td style="margin: 0px; padding: 0.5em; font-family: inherit; border: 1px solid #cccccc; vertical-align: top; color: #585858; width: 840px;">The expiration period in seconds</td>
+<td style="margin: 0px; padding: 0.5em; font-family: inherit; border: 1px solid #cccccc; vertical-align: top; color: #585858; width: 420px;">The expiration period in seconds</td>
 </tr>
 <tr>
 <td style="margin: 0px; padding: 0.5em; font-family: inherit; border: 1px solid #cccccc; vertical-align: top; color: #585858; width: 192px;">nowTime</td>
-<td style="margin: 0px; padding: 0.5em; font-family: inherit; border: 1px solid #cccccc; vertical-align: top; color: #585858; width: 840px;">The current M-Pin system time</td>
+<td style="margin: 0px; padding: 0.5em; font-family: inherit; border: 1px solid #cccccc; vertical-align: top; color: #585858; width: 420px;">The current M-Pin system time</td>
 </tr>
 <tr>
 <td style="margin: 0px; padding: 0.5em; font-family: inherit; border: 1px solid #cccccc; vertical-align: top; color: #585858; width: 192px;">status</td>
-<td style="margin: 0px; padding: 0.5em; font-family: inherit; border: 1px solid #cccccc; vertical-align: top; color: #585858; width: 840px;">The status of the OTP generation. If <span style="color: #585858;">OK - OTP is successfully generated, if FLOW_ERROR - OTP was not generated, probably because the RPA doesn't support that functionality.</span></td>
+<td style="margin: 0px; padding: 0.5em; font-family: inherit; border: 1px solid #cccccc; vertical-align: top; color: #585858; width: 420px;">The status of the OTP generation. If <span style="color: #585858;">OK - OTP is successfully generated, if FLOW_ERROR - OTP was not generated, probably because the RPA doesn't support that functionality.</span></td>
 </tr>
 </tbody>
 </table>
@@ -425,7 +435,9 @@ The OTP structure is as follows:
 	<li><span style="font-family: 'courier new', courier, monospace;">FLOW_ERROR<span style="font-family: arial, helvetica, sans-serif;"> - The user is in the incorrect state.</span></span></li>
 </ul>
 <h2>Examples</h2>
-<pre class="computer_code">Status status = sdk.StartAuthentication(user);
+<pre>
+<code>
+Status status = sdk.StartAuthentication(user);
 
 switch (status.getStatusCode())
 {
@@ -467,7 +479,10 @@ switch (status.getStatusCode())
     default:
         // Show error message and exit
         break;
-}</pre>
+}
+</code>
+</pre>
+
 <h1 style="margin: 0px 0px 15px; padding: 0px; font-stretch: normal; font-family: Arial, sans-serif;"><span style="font-size: 34px;"><span style="font-family: 'Courier New';">FinishAuthenticationAN</span></span></h1>
 <h2>Description</h2>
 This method authenticates a user with an Access Number which is obtained out-of-band, either from a browser session, through reading a QR code orsent via Push Message. The user then logs into the PC/Browser session which was associated with the provided Access Number although the actual authentication is done on the Mobile Device.
@@ -546,7 +561,9 @@ This method authenticates a user with an Access Number which is obtained out-of-
 	<li><span style="font-family: 'courier new', courier, monospace;">INCORRECT_ACCESS_NUMBER</span> - The authentication failed because of incorrect <em style="font-weight: normal; line-height: 19.2px;">Access Number.</em></li>
 </ul>
 <h2>Examples</h2>
-<pre class="computer_code">Status status = sdk.StartAuthentication(user);
+<pre>
+<code>
+Status status = sdk.StartAuthentication(user);
 
 switch (status.getStatusCode())
 {
@@ -596,7 +613,10 @@ switch (status.getStatusCode())
     default:
         // Show error message and exit
         break;
-}</pre>
+}
+</code>
+</pre>
+
 <div class="WordSection1">
 <h1><span class="CVXCodeinText"><b><span style="font-family: 'Courier New'; font-size: 42px;">CanLogout</span></b></span></h1>
 <h2>Description</h2>
@@ -649,7 +669,10 @@ switch (status.getStatusCode())
 
 <div class="info">The code assumes the <span class="CVXCodeinText"><span style="font-family: 'Courier New';">accessNumber</span></span> to be an input from the user.</div>
 <div style="border: solid windowtext 1.0pt; padding: 1.0pt 1.0pt 1.0pt 1.0pt; margin-left: 4.5pt; margin-right: 4.5pt;">
-<pre class="computer_code">Status status = sdk.FinishAuthenticationAN(user, pin, accessNumber);
+
+<pre>
+<code>
+Status status = sdk.FinishAuthenticationAN(user, pin, accessNumber);
 
 if (status.getStatusCode() != Status.Code.OK) {
     // handle error
@@ -658,7 +681,10 @@ if (status.getStatusCode() != Status.Code.OK) {
 if (sdk.CanLogout(user)) {
     SystemClock.sleep(60000);   //Waiting for 60 seconds before logging out
     sdk.Logout(user);
-}</pre>
+}
+</code>
+</pre>
+
 </div>
 </div>
 <div class="WordSection1">
@@ -712,8 +738,10 @@ if (sdk.CanLogout(user)) {
 <p class="MsoNormal">The following code snippet logs out the User from the browser/online session after one minute.</p>
 
 <div class="info">The code assumes the <span class="CVXCodeinText"><b><span style="font-family: 'Courier New';">accessNumber</span></b></span> to be an input from the user.</div>
-<div style="border: solid windowtext 1.0pt; padding: 1.0pt 1.0pt 1.0pt 1.0pt; margin-left: 4.5pt; margin-right: 4.5pt;">
-<pre class="computer_code">Status status = sdk.FinishAuthenticationAN(user, pin, accessNumber);
+
+<pre>
+<code>
+Status status = sdk.FinishAuthenticationAN(user, pin, accessNumber);
 
 if (status.getStatusCode() != Status.Code.OK) {
     // handle error
@@ -722,6 +750,8 @@ if (status.getStatusCode() != Status.Code.OK) {
 if (sdk.CanLogout(user)) {
     SystemClock.sleep(60000);   //Waiting for 60 seconds before logging out
     sdk.Logout(user);
-}</pre>
+}
+</code>
+</pre>
 </div>
 </div>
