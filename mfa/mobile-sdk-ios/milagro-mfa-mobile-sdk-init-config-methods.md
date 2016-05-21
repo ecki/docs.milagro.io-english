@@ -42,9 +42,12 @@ if (mpinStatus.status != OK) {
 <p class="MsoNormal">This method tests if <code style="box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0px; margin: 0px; border-radius: 3px; color: #333333; background-color: rgba(0, 0, 0, 0.0392157);">server</code> is a valid back-end URL by trying to retrieve Client Settings from it. You can specify a custom RPS prefix if it was customized at the back-end and is different from the default <code style="box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0px; margin: 0px; border-radius: 3px; color: #333333; background-color: rgba(0, 0, 0, 0.0392157);">"rps"</code>. If the back-end URL is a valid one, the method will return status <code style="box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0px; margin: 0px; border-radius: 3px; color: #333333; background-color: rgba(0, 0, 0, 0.0392157);">OK</code>.</p>
 
 <h2>Definition</h2>
-<div style="border: solid windowtext 1.0pt; padding: 1.0pt 4.0pt 1.0pt 4.0pt; background: #E2EFD9; margin-left: 0in; margin-right: 0in;">
-<p class="CVXAPIDefinition" style="line-height: 125%; font-family: 'Courier New';"><code style="box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: inherit; padding: 0.2em 0px; margin: 0px; border-radius: 3px; background-color: rgba(0, 0, 0, 0.0392157);">+ (MpinStatus*) TestBackend: (const NSString*) url;</code></p>
-<p class="CVXAPIDefinition" style="line-height: 125%; font-family: 'Courier New';"><code style="box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: inherit; padding: 0.2em 0px; margin: 0px; border-radius: 3px; background-color: rgba(0, 0, 0, 0.0392157);">+ (MpinStatus*) TestBackend: (const NSString*) url rpsPrefix: (const NSString*) rpsPrefix;</code></p>
+<pre>
+<code>
++ (MpinStatus*) TestBackend: (const NSString*) url;
++ (MpinStatus*) TestBackend: (const NSString*) url rpsPrefix: (const NSString*) rpsPrefix;
+</code>
+</pre>
 
 </div>
 <h2>Parameters</h2>
@@ -99,24 +102,30 @@ if (mpinStatus.status != OK) {
 <p class="MsoListParagraph" style="margin-left: 0.5in; text-indent: -.25in;"><span style="font-family: Symbol;">·</span><span style="font-size: 7.0pt; line-height: 105%; font-family: 'Times New Roman',serif;">         </span><span class="CVXCodeinText"><span style="font-family: 'Courier New';">NETWORK_ERROR - Back-end service URL verification failed</span></span></p>
 
 <h2>Example</h2>
-<p class="MsoNormal"><code style="box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: inherit; padding: 0.2em 0px; margin: 0px; border-radius: 3px;">The code snippet below tests the following URL:<span style="font-family: 'Courier New';"> <span class="CVXCodeinText"><span style="font-family: 'Courier New';">http://ec2-54-77-232-113.eu-west-1.compute.amazonaws.com</span></span></span>.</code></p>
+The code snippet below tests the following URL:http://ec2-54-77-232-113.eu-west-1.compute.amazonaws.com
 
-<div>
-<pre class="computer_code"><code style="box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: inherit; padding: 0.2em 0px; margin: 0px; border-radius: 3px;">MpinStatus* mpinStatus = [MPin TestBackend:@"http://ec2-54-77-232-113.eu-west-1.compute.amazonaws.com"];</code>
+<pre>
+<code>
+MpinStatus* mpinStatus = [MPin TestBackend:@"http://ec2-54-77-232-113.eu-west-1.compute.amazonaws.com"];
 
 if (mpinStatus.status != OK) {
     // Show error message
-}</pre>
-</div>
-</div>
+}
+</code>
+</pre>
+
+
 <h1><span style="font-size: 42px;"><span class="CVXCodeinTitle"><b><span style="font-family: 'Courier New';">SetBackend</span></b></span></span></h1>
 <h2>Description</h2>
 <p class="MsoNormal">This method changes the currently configured back-end in the SDK. <span style="font-family: courier new,courier,monospace;">url</span> is the new back-end URL that should be used. Optionally, a custom RPS prefix might be specified if it was customized at the back-end and is different from the default <code style="box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0px; margin: 0px; border-radius: 3px; color: #333333; background-color: rgba(0, 0, 0, 0.0392157);">"rps"</code>. If successful, the method will return status <code style="box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0px; margin: 0px; border-radius: 3px; color: #333333; background-color: rgba(0, 0, 0, 0.0392157);">OK</code>.</p>
 
 <h2>Definition</h2>
-<div style="border: solid windowtext 1.0pt; padding: 1.0pt 4.0pt 1.0pt 4.0pt; background: #E2EFD9; margin-left: 0in; margin-right: 0in;">
-<p class="CVXAPIDefinition" style="line-height: 125%; font-family: 'Courier New';"><code style="box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: inherit; padding: 0.2em 0px; margin: 0px; border-radius: 3px; background-color: rgba(0, 0, 0, 0.0392157);">+ (MpinStatus*) SetBackend: (const NSString*) url;</code></p>
-<p class="CVXAPIDefinition" style="line-height: 125%; font-family: 'Courier New';"><code style="box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: inherit; padding: 0.2em 0px; margin: 0px; border-radius: 3px; background-color: rgba(0, 0, 0, 0.0392157);">+ (MpinStatus*) SetBackend: (const NSString*) url rpsPrefix: (const NSString*) rpsPrefix;</code></p>
+<pre>
+<code>
++ (MpinStatus*) SetBackend: (const NSString*) url;
++ (MpinStatus*) SetBackend: (const NSString*) url rpsPrefix: (const NSString*) rpsPrefix;
+</code>
+</pre>
 
 </div>
 <h2>Parameters</h2>
@@ -159,15 +168,19 @@ if (mpinStatus.status != OK) {
 <p class="MsoListParagraph" style="margin-left: 0.5in; text-indent: -.25in;"><span style="font-family: Symbol;">·</span><span style="font-size: 7.0pt; line-height: 105%; font-family: 'Times New Roman',serif;">         </span><span class="CVXCodeinText"><span style="font-family: 'Courier New';">NETWORK_ERROR</span></span> – Setting back-end service URL failed</p>
 
 <h2>Example</h2>
-<p class="MsoNormal">The following example sets the M-Pin back-end service to <span class="CVXCodeinText;" style="font-family: 'Courier New';">http://ec2-54-77-232-113.eu-west-1.compute.amazonaws.com</span>.</p>
+The following example sets the M-Pin back-end service to http://ec2-54-77-232-113.eu-west-1.compute.amazonaws.com:
 
-<div>
-<pre class="computer_code"><code style="box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: inherit; padding: 0.2em 0px; margin: 0px; border-radius: 3px;">MpinStatus* mpinStatus = [MPin SetBackend:@"http://ec2-54-77-232-113.eu-west-1.compute.amazonaws.com"];</code>
+<pre>
+<code>
+MpinStatus* mpinStatus = [MPin SetBackend:@"http://ec2-54-77-232-113.eu-west-1.compute.amazonaws.com"];
 
 if (mpinStatus.status != OK) {
     // Show error message
-}</pre>
-</div>
+}
+</code>
+</pre>
+
+
 <h1><span class="CVXCodeinText;"><b><span style="font-family: 'Courier New';">GetClientParam</span></b> Method</span></h1>
 <h2>Description</h2>
 This method returns the value for a <em style="box-sizing: border-box;">Client Setting</em> with the given key. The value is returned as a String always, i.e. when a numeric or a boolean value is expected, the conversion should be handled by the application. It uses the following client settings:
