@@ -16,11 +16,11 @@ Friday May 13, 2016: Milagro Code Drops
  - Code drops in Apache GIT repository
  - Apache Milagro Crypto Library + Multi-factor Authentication + TLS
 
-Friday May 20, 2016: Documentation Launch
+Friday May 27, 2016: Documentation Launch - DELAYED from May 20th
  - Milagro Documentation portal will be complete for Documentation Site V1
  - MFA, TLS, Proposals for Distributed Trust Ecosystem
 
-Wednesday June 1, 2016: Milagro MFA Demo Sites Live
- - Milagro MFA Demo Site is live 
+Wednesday June 14, 2016: Milagro MFA Demo Sites Live - DELAY from June 1st
+ - Milagro MFA Demo Site is live
 
 </markdeep>
