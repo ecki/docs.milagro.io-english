@@ -16,7 +16,7 @@ currentMenu: milagro-tls-library-white-paper
     <div class="author">
       <div>-</div>
       <div>-</div>
-      
+
     </div>
 </header>
 
@@ -274,7 +274,8 @@ compute the premaster secret.
 
 Structure of these extensions:
 
-The general structure of TLS extensions is described in <a href="#3">3</a>, and
+Two octets are used to indicate the extension type. In the case of the Milagro_CS extension
+these are 0x0025. The general structure of TLS extensions is described in <a href="#3">3</a>, and
 this specification adds a new type to ExtensionType.
 
     enum { Milagro_CS_ext } ExtensionType;
@@ -374,11 +375,11 @@ The ClientKeyExchange message is extended as follows.
 ## Cipher Suites
 
 
-The table below defines new cipher suites that use the key exchange
+The following defines new cipher suites that use the key exchange
 algorithms specified in Section 3.
 
-    CipherSuite TLS_MILAGRO_CS_WITH_AES_128_GCM_SHA256  = { 0xC0, 0xB1 }
-    CipherSuite TLS_MILAGRO_P2P_WITH_AES_128_GCM_SHA256 = { 0xC0, 0xB2 }
+- CipherSuite TLS_MILAGRO_CS_WITH_AES_128_GCM_SHA256  = { 0xC0, 0xB1 }
+- CipherSuite TLS_MILAGRO_P2P_WITH_AES_128_GCM_SHA256 = { 0xC0, 0xB2 }
 
 The key exchange method, cipher, and hash algorithm for each of these
 cipher suites are easily determined by examining the name. AES cipher
