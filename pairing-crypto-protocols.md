@@ -5,6 +5,34 @@ layout: markdeep
 <div id="generated-toc" class="generate_from_h2"></div>
 <style>h1:before, h2:before { content: none; }</style>
 
+## Introduction
+
+The Milagro framework relies on Distributed Trust Authorities to issue shares of Type-3 Pairing keys to Milagro Crypto Apps, such as the Milagro MFA server and clients, or to software or hardware applications that have embedded Milagro code in order derive the functional capabilities.
+
+Type-3 pairings were selected as they are the most efficient pairing and will work with non-supersingular pairing-friendly curves. These operate as $G_1$ x $G_2 \rightarrow G_T$, where $G_2$ is a particular group of points, again of the order $q$, but on a twisted elliptic curve defined over an extension which is a divisor of $k$.
+These curves can be constructed to be a near perfect fit at any required level of security <a href="#freeman-scott-teske">1</a>. The pairing protocols within the Milagro framework all work on a Type-3 setting.
+
+## M-Pin Protocol
+
+The genesis of the M-Pin Protocol was first put forward in a research paper by [Dr. Michael Scott](https://scholar.google.com/citations?user=GsM-aeEAAAAJ&hl=en) in 2002 <a href="#Scott1">2</a>. The M-Pin Protocol has been iterated on several times over the years since, and has been shown to be proven secure under the computational BDH (Bilinear Diffie-Hellman) assumption, and in the Canetti-Krawczyk (CK) security model \cite{boyd}. Furthermore Gorantla, Boyd and Nieto \cite{gorantla} (section 4.3) extend this protocol again to the M-Pin 'one-pass' setting, and provide a proof in a modified extended Canetti-Krawczyk (eCK) setting.
+
+
+ As noted in [Milagro Crypto Concepts](milagro-concepts.html), the M-Pin Protocol is of these classifications and exploits the features of:
+
+* Elliptic Curve Cryptography
+* Pairing Based Cryptography
+* Identity Based Encryption
+* Zero Knowledge Proof
+
+Because of the characteristics that M-Pin inherits from the four techniques above, the M-Pin Protocol and its four variants are able to deliver:
+* Multi factor authentication using Zero Knowledge Proof
+* Authenticated Key Agreement
+* Distribution, or splitting, of Trust Authorities
+* Covert Channel Communication
+
+
+<!--- This is the Chow Choo protocol in a table / frame  --->
+
 <figure>
 	<html>
 	<math xmlns="http://www.w3.org/1998/Math/MathML" display='block'>
@@ -571,10 +599,11 @@ layout: markdeep
 <style>h1:before, h2:before { content: none; }</style>
 ## REFERENCES
 </markdeep>
-
 <p></p>
 <div class="references">
-  <cite id="eason55">G. Eason, B. Noble, and I. N. Sneddon, <q>On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,</q> Phil. Trans. Roy. Soc. London, vol. A247, pp. 529–551, April 1955. (<em>references</em>)</cite>
+	<cite id="freeman-scott-teske">D. Freeman and M. Scott and E. Teske. A taxonomy of pairing-friendly elliptic curves. Journal of Cryptography. 2010. Pages 224 -- 280. Volume 23.</cite>
+	<cite id="Scott1">M. Scott. Authenticated ID-based Key Exchange and remote log-in with simple token and PIN number. Cryptology ePrint Archive, Report 2002/164. http://eprint.iacr.org.</cite>
+	<cite id="eason55">G. Eason, B. Noble, and I. N. Sneddon, <q>On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,</q> Phil. Trans. Roy. Soc. London, vol. A247, pp. 529–551, April 1955. (<em>references</em>)</cite>
   <cite id="maxwell1892">J. Clerk Maxwell, A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68–73.</cite>
   <cite id="jacobs63">I. S. Jacobs and C. P. Bean, <q>Fine particles, thin films and exchange anisotropy,</q> in Magnetism, vol. III, G. T. Rado and H. Suhl, Eds. New York: Academic, 1963, pp. 271–350.</cite>
   <cite id="elissa">K. Elissa, <q>Title of paper if known,</q> unpublished.</cite>

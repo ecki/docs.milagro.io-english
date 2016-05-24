@@ -32,7 +32,7 @@ menu:
                     text: Introduction
                     relativeUrl: index.html
                 milagro-concepts:
-                    text: Milagro Concepts
+                    text: Milagro Crypto Concepts
                     relativeUrl: milagro-concepts.html
                 pairing-crypto-protocols:
                     text: Pairing Crypto Protocols

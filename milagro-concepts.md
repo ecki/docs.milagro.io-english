@@ -12,13 +12,11 @@ One of the critical points about information security is to give access to resou
 Preventing unauthorised access very often comes down to making it ___almost impossible___, i.e., tough, expensive, complicated, and time-consuming for the unauthorised entities to get access to resources.
 
 The same principles apply to cryptography. In most cases, a suitable encryption mechanism satisfies at least two basic requirements:
-1. It is possible to give easy access to encrypted, cryptographically protected) content to authorised people entities.
-2. It is possible to make it extremely challenging for unauthorised people to access encrypted (ditto) content.
+1. It is possible to give easy access to encrypted, cryptographically protected content to authorised entities.
+2. It is possible to make it extremely challenging for unauthorised entities to access encrypted (ditto) content.
 
 Using the above, we can define an operation: Encryption that is tough to reverse without possessing a particular parameter, for example, a decryption key.
-One example is typically prime number factorization in RSA-based encryption algorithm: two big prime numbers are multiplied to generate a public key so that it is ___almost impossible___ to reverse the operation and retrieve the original prime numbers.
-
-Note something odd. It is easy to multiply primes together. But there is no easy way to take the product and reduce it back to its original primes. In crypto jargon, this is a “trapdoor”: a function that lets you go one way easily, but not the other.
+In RSA-based encryption two prime numbers, the private key, are multiplied to generate a public key, so that it is almost impossible to reverse the operation and retrieve the original prime numbers.
 
 Multiple sources are available online to read more on the topic. We recommend this short paper from [Cal Berkeley at this link](https://math.berkeley.edu/~kpmann/encryption.pdf).
 
@@ -26,15 +24,17 @@ As noted in the mentioned paper, with RSA, we need enormous prime numbers to mak
 On elliptic curves, multiplication of a point by a number can be defined so that much shorter numbers than in the big prime number case are needed to reach the same level of ___almost impossibility___.
 
 ## Elliptic Curve Cryptography
-Elliptic curves are another way to create a trapdoor. Elliptic curves are mathematical structures, on which operations like addition and multiplications of points are easily defined. In particular, multiplication of a point by a number is a relatively easy operation to compute, while it is ___almost impossible___ to reverse the process, that is, to determine the multiplier knowing the result of the multiplication.
+Elliptic curves are another way to do encryption. Elliptic curves are mathematical structures, on which operations like addition and multiplications of points are easily defined.
+In particular, multiplication of a point by a number is a relatively easy operation to compute, while it is ___almost impossible___ to reverse the process, that is, to determine
+the multiplier knowing the result of the multiplication.
 
 The problem of reversing the multiplication is known as the Discrete Logarithm Problem (DLP) on elliptic curves.
-The difference in computational complexity (between performing the multiplication for a scalar and reversing the result to retrieve the initial factors to determine the multiplier) is one of the essential cornerstones of elliptic curve cryptography.
+The difference in computational complexity ((between performing the multiplication and reversing the result to retrieve the multiplier)) is one of the essential cornerstones of elliptic curve cryptography.
 
 ## Pairing Based Cryptography
 Using elliptic curves we can now define on some elliptic curve a bilinear function called a ___pairing___, which enables a mapping from two points on the same curve (or points on two related curves) into a different mathematical structure called a finite field. The bilinearity of the pairing is the key characteristic that makes pairing interesting and widely used in cryptography.
 <markdeep>
-A ___bilinear pairing___ $e$ maps a pair of points (hence the name pairing) on an elliptic curve $E$, defined over some field ${F}_{q}$, to an element of the multiplicative group of a finite extension of ${F}_{q}$.
+A ___bilinear pairing___ $e$ maps a pair of points (hence the name pairing) on an elliptic curve $E$, defined over some field ${F}_{q}$, to an element of the multiplicative group of a finite extension of ${F}_{q^k}$.
 
 $$ e(aP, bQ) = e(P, Q)^{ab} $$
 
@@ -64,7 +64,7 @@ If proving the statement requires knowledge of some secret information on the pa
 
 Notice that the statement being proved must include the assertion that the prover has such knowledge (otherwise, the statement would not be proved in zero-knowledge, since at the end of the protocol the verifier would gain the additional information that the prover has knowledge of the required secret information).
 
-If the statement consists _only_ of the fact that the prover possesses the secret information, it is a special case known as _zero-knowledge proof of knowledge_, and it nicely illustrates the essence of the notion of zero-knowledge proofs: proving that one has knowledge of certain information is trivial if one is allowed to simply reveal that information; the challenge is proving that one has such knowledge without revealing the secret information or anything else.""
+If the statement consists _only_ of the fact that the prover possesses the secret information, it is a special case known as _zero-knowledge proof of knowledge_, and it nicely illustrates the essence of the notion of zero-knowledge proofs: proving that one has knowledge of certain information is trivial if one is allowed to simply reveal that information; the challenge is proving that one has such knowledge without revealing the secret information or anything else."
 
 ## Summary
 
