@@ -3,7 +3,12 @@ currentMenu: pairing-crypto-protocols
 layout: markdeep
 ---
 <div id="generated-toc" class="generate_from_h2"></div>
-<style>h1:before, h2:before { content: none; }</style>
+<style>h1:before, h2:before, h3:before { content: none; }</style>
+
+<div class="abstract">
+<span class="footnote">
+Note: This document uses sections from the MIRACL Labs M-Pin Full Paper, published in 2015.<p></p>MIRACL Ltd, along with NTT Labs and NTTi3, are the originators of the Milagro Project. The original LaTex authored PDF version is available for download <a href="docs.milagro.io/mpinfull.pdf">here</a>.</span></p>
+</div>
 
 ## Introduction
 
@@ -12,24 +17,44 @@ The Milagro framework relies on Distributed Trust Authorities to issue shares of
 Type-3 pairings were selected as they are the most efficient pairing and will work with non-supersingular pairing-friendly curves. These operate as $G_1$ x $G_2 \rightarrow G_T$, where $G_2$ is a particular group of points, again of the order $q$, but on a twisted elliptic curve defined over an extension which is a divisor of $k$.
 These curves can be constructed to be a near perfect fit at any required level of security <a href="#freeman-scott-teske">1</a>. The pairing protocols within the Milagro framework all work on a Type-3 setting.
 
-## M-Pin Protocol
+## M-Pin Protocol - Introduction
 
-The genesis of the M-Pin Protocol was first put forward in a research paper by [Dr. Michael Scott](https://scholar.google.com/citations?user=GsM-aeEAAAAJ&hl=en) in 2002 <a href="#Scott1">2</a>. The M-Pin Protocol has been iterated on several times over the years since, and has been shown to be proven secure under the computational BDH (Bilinear Diffie-Hellman) assumption, and in the Canetti-Krawczyk (CK) security model \cite{boyd}. Furthermore Gorantla, Boyd and Nieto \cite{gorantla} (section 4.3) extend this protocol again to the M-Pin 'one-pass' setting, and provide a proof in a modified extended Canetti-Krawczyk (eCK) setting.
-
+The genesis of the M-Pin Protocol was first put forward in a research paper by [Dr. Michael Scott](https://scholar.google.com/citations?user=GsM-aeEAAAAJ&hl=en) in 2002 <a href="#Scott1">2</a>. The M-Pin Protocol has been iterated on several times over the years since, to develop three distinct modes, which will be explored in the following sections.
 
  As noted in [Milagro Crypto Concepts](milagro-concepts.html), the M-Pin Protocol is of these classifications and exploits the features of:
-
 * Elliptic Curve Cryptography
 * Pairing Based Cryptography
 * Identity Based Encryption
 * Zero Knowledge Proof
 
-Because of the characteristics that M-Pin inherits from the four techniques above, the M-Pin Protocol and its four variants are able to deliver:
-* Multi factor authentication using Zero Knowledge Proof
+Because of the characteristics that M-Pin inherits from the four techniques above, the M-Pin Protocol and its variants are able to deliver:
+* Multi-factor authentication (MFA) using Zero Knowledge Proof
 * Authenticated Key Agreement
 * Distribution, or splitting, of Trust Authorities
 * Covert Channel Communication
 
+The three modes of operation of the M-Pin Protocol are as follows:
+* **M-Pin 1-pass**: Client to server authentication via digital signature, this mode implements a *non-interactive* zero knowledge proof and is resistant to [MITM (man in the middle)](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) attacks.
+* **M-Pin 2-pass**: Client to server authentication via a *interactive* zero knowledge proof, resistant to [MITM](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) and [KCI (Key Compromise Impersonation)](https://kcitls.org) attacks.
+* **M-Pin FULL**: Mutual client to server authentication via a *interactive* zero knowledge proof, resistant to MITM and KCI attacks and able to drive an Authenticated [Key Agreement](https://en.wikipedia.org/wiki/Key-agreement_protocol) between client and server, resulting in 128 bit shared secret key.
+
+Note that the M-Pin Full Authenticated Key Agreement possesses the quality of [perfect forward secrecy](https://en.wikipedia.org/wiki/Forward_secrecy), meaning, even if the client and server long term keys are compromised, the past session keys (used to encrypt TLS traffic, for example) are not compromised.
+
+***MODE RECOMMENDATIONS***
+
+|Mode|Use Case|
+|:----------------------:|:----------------------:|
+|***M-Pin 1-pass***| Digital Signature|
+
+<!---
+
+The M-Pin Protocol has been iterated on several times over the years since, and has been shown to be proven secure under the computational BDH (Bilinear Diffie-Hellman) assumption, and in the Canetti-Krawczyk (CK) security model <a href="#boyd">3</a>.
+
+Furthermore Gorantla, Boyd and Nieto extend this protocol again to the M-Pin 'one-pass' setting, and provide a proof in a modified extended Canetti-Krawczyk (eCK) setting <a href="#gorantla">4</a>.
+
+Furthermore Gorantla, Boyd and Nieto extend this protocol again to the M-Pin 'one-pass' setting, and provide a proof in a modified extended Canetti-Krawczyk (eCK) setting <a href="#gorantla">4</a>.
+
+--->
 
 <!--- This is the Chow Choo protocol in a table / frame  --->
 
@@ -603,8 +628,8 @@ Because of the characteristics that M-Pin inherits from the four techniques abov
 <div class="references">
 	<cite id="freeman-scott-teske">D. Freeman and M. Scott and E. Teske. A taxonomy of pairing-friendly elliptic curves. Journal of Cryptography. 2010. Pages 224 -- 280. Volume 23.</cite>
 	<cite id="Scott1">M. Scott. Authenticated ID-based Key Exchange and remote log-in with simple token and PIN number. Cryptology ePrint Archive, Report 2002/164. http://eprint.iacr.org.</cite>
-	<cite id="eason55">G. Eason, B. Noble, and I. N. Sneddon, <q>On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,</q> Phil. Trans. Roy. Soc. London, vol. A247, pp. 529–551, April 1955. (<em>references</em>)</cite>
-  <cite id="maxwell1892">J. Clerk Maxwell, A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68–73.</cite>
+	<cite id="boyd">C. Boyd and A. Mathuria, Protocols for Authentication and Key Establishment, Springer-Verlag, 2003.</cite>
+  <cite id="gorantla">J. Clerk Maxwell, A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68–73.</cite>
   <cite id="jacobs63">I. S. Jacobs and C. P. Bean, <q>Fine particles, thin films and exchange anisotropy,</q> in Magnetism, vol. III, G. T. Rado and H. Suhl, Eds. New York: Academic, 1963, pp. 271–350.</cite>
   <cite id="elissa">K. Elissa, <q>Title of paper if known,</q> unpublished.</cite>
   <cite id="park13">Park, T. H., Saxena, A., Jagannath, S., Wiedenbeck, S., and Forte, A. Towards a taxonomy of errors in HTML and CSS. In <em>Proc. ICER 2013</em>, ACM Press (2013), 75-82.</cite>

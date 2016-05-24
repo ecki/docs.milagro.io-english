@@ -28,15 +28,15 @@ Elliptic curves are another way to do encryption. Elliptic curves are mathematic
 In particular, multiplication of a point by a number is a relatively easy operation to compute, while it is ___almost impossible___ to reverse the process, that is, to determine
 the multiplier knowing the result of the multiplication.
 
-The problem of reversing the multiplication is known as the Discrete Logarithm Problem (DLP) on elliptic curves.
-The difference in computational complexity ((between performing the multiplication and reversing the result to retrieve the multiplier)) is one of the essential cornerstones of elliptic curve cryptography.
+The problem of reversing the multiplication is known as the Discrete Logarithm Problem on elliptic curves (ECDLP).
+The difference in computational complexity (between performing the multiplication and reversing the result to retrieve the multiplier) is one of the essential cornerstones of elliptic curve cryptography.
 
 ## Pairing Based Cryptography
 Using elliptic curves we can now define on some elliptic curve a bilinear function called a ___pairing___, which enables a mapping from two points on the same curve (or points on two related curves) into a different mathematical structure called a finite field. The bilinearity of the pairing is the key characteristic that makes pairing interesting and widely used in cryptography.
 <markdeep>
 A ___bilinear pairing___ $e$ maps a pair of points (hence the name pairing) on an elliptic curve $E$, defined over some field ${F}_{q}$, to an element of the multiplicative group of a finite extension of ${F}_{q^k}$.
 
-$$ e(aP, bQ) = e(P, Q)^{ab} $$
+$$ e(mA+B, nP + Q) = e(A,P)^{mn} e(B, Q) $$
 
 The elements $P$ and $Q$ lie in two different groups, respectively $G_{1}$ and $G_{2}$. The choice of those two different group determines a different ___types___ of pairing.
 
