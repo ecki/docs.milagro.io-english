@@ -41,6 +41,7 @@ $$ e(aP, bQ) = e(P, Q)^{ab} $$
 The elements $P$ and $Q$ lie in two different groups, respectively $G_{1}$ and $G_{2}$. The choice of those two different group determines a different ___types___ of pairing.
 
 Let $E$ an ordinary elliptic curve, take $G_{1} \neq G_{2}$, and if there is not an efficiently computable isomorphism $\phi:G_{1}\to G_{2}$ then the pairing is said to be of ___Type$-3$___.
+
 Currently, most of the state-of-the-art implementations of pairings take place on ordinary curves that assume the ___Type$-3$___ scenario for reasons of efficiency and secure implementation.
 </markdeep>
 
@@ -66,7 +67,7 @@ Notice that the statement being proved must include the assertion that the prove
 If the statement consists _only_ of the fact that the prover possesses the secret information, it is a special case known as _zero-knowledge proof of knowledge_, and it nicely illustrates the essence of the notion of zero-knowledge proofs: proving that one has knowledge of certain information is trivial if one is allowed to simply reveal that information; the challenge is proving that one has such knowledge without revealing the secret information or anything else.
 ________________________________
 
-The protocols currently in use within the Milagro framework exploit ___ALL___ of these capabilities.
+The protocols currently in use within the Milagro framework exploit at least 3 of 4 (Chow-Choo) or ___ALL___ (M-Pin) of these capabilities.
 
 For an in-depth dive into the cryptographic protocols in use within the Milagro framework, see the next section [Pairing Crypto Protocols](pairing-crypto-protocols.html).
 ________________________________
