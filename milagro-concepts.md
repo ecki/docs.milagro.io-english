@@ -67,7 +67,7 @@ Notice that the statement being proved must include the assertion that the prove
 If the statement consists _only_ of the fact that the prover possesses the secret information, it is a special case known as _zero-knowledge proof of knowledge_, and it nicely illustrates the essence of the notion of zero-knowledge proofs: proving that one has knowledge of certain information is trivial if one is allowed to simply reveal that information; the challenge is proving that one has such knowledge without revealing the secret information or anything else.
 ________________________________
 
-The protocols currently in use within the Milagro framework exploit at least 3 of 4 (Chow-Choo) or ___ALL___ (M-Pin) of these capabilities.
+The protocols currently in use within the Milagro framework exploit at least 3 of 4 (Chow-Choo) or all (M-Pin) of these capabilities.
 
 For an in-depth dive into the cryptographic protocols in use within the Milagro framework, see the next section [Pairing Crypto Protocols](pairing-crypto-protocols.html).
 ________________________________
