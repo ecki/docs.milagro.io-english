@@ -51,11 +51,11 @@ _______________
 ## See the [Milagro Roadmap](milagro-roadmap.html) for important upcoming dates.
 ______________
 
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
+* To learn about Milagro components and concepts, [click here](milagro-concepts.html)
+* To learn about the Pairing Crypto Protocols used in the Milagro framework, [click here](pairing-crypto-protocols.html)
+* To learn about 'The Case for Something New', [click here](milagro-a-case-for-something-new-part-1.html)
+* To read the 'Distributed Trust Ecosystem' proposal, [click here](distributed-trust.html)
+
 <br></br>
 <br></br>
 <br></br>

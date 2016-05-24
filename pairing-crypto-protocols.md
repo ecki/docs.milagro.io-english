@@ -1,553 +1,557 @@
 ---
 currentMenu: pairing-crypto-protocols
-layout: markdeep
 ---
 <style>h1:before, h2:before { content: none; }</style>
 
-<html>
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-	<mtr>
-		<mtd>
-			<mspace width="0.25em" />
-		</mtd>
-		<mtd columnalign="left">
-			<mtable class="m-matrix">
-				<mtr>
-					<mtd>
-						<mtext>SENDER</mtext>
-					</mtd>
-					<mtd>
-						<mtext>RECEIVER</mtext>
-					</mtd>
-				</mtr>
-				<mtr>
-					<mtd>
-						<mi>x</mi>
-						<mo>&#x02208;</mo>
-						<msubsup>
-							<mi>&#x02124;</mi>
-							<mi>q</mi>
-							<mo>*</mo>
-						</msubsup>
-					</mtd>
-					<mtd>
-					</mtd>
-				</mtr>
-				<mtr>
-					<mtd>
-						<mi>A</mi>
-						<mi>G</mi>
-						<mn>1</mn>
-						<mo>:</mo>
-						<mo>=</mo>
-						<msub>
-							<mi>H</mi>
-							<mn>1</mn>
-						</msub>
-						<mrow>
-							<mo form="prefix">(</mo>
-							<mi>I</mi>
-							<mo>&#x02146;</mo>
+<figure>
+
+	<html>
+	<math xmlns="http://www.w3.org/1998/Math/MathML">
+		<mtr>
+			<mtd>
+				<mspace width="0.25em" />
+			</mtd>
+			<mtd columnalign="left">
+				<mtable class="m-matrix">
+					<mtr>
+						<mtd>
+							<mtext>SENDER</mtext>
+						</mtd>
+						<mtd>
+							<mtext>RECEIVER</mtext>
+						</mtd>
+					</mtr>
+					<mtr>
+						<mtd>
+							<mi>x</mi>
+							<mo>&#x02208;</mo>
+							<msubsup>
+								<mi>&#x02124;</mi>
+								<mi>q</mi>
+								<mo>*</mo>
+							</msubsup>
+						</mtd>
+						<mtd>
+						</mtd>
+					</mtr>
+					<mtr>
+						<mtd>
 							<mi>A</mi>
-							<mo form="postfix">)</mo>
-						</mrow>
-					</mtd>
-					<mtd>
-					</mtd>
-				</mtr>
-				<mtr>
-					<mtd>
-						<mi>P</mi>
-						<mi>a</mi>
-						<msub>
 							<mi>G</mi>
 							<mn>1</mn>
-						</msub>
-						<mo>:</mo>
-						<mo>=</mo>
-						<mi>x</mi>
-						<mo>&#x022C5;</mo>
-						<mi>A</mi>
-						<msub>
-							<mi>G</mi>
-							<mn>1</mn>
-						</msub>
-					</mtd>
-					<mtd>
-					</mtd>
-				</mtr>
-				<mtr>
-					<mtd>
-						<mi>I</mi>
-						<mo>&#x02146;</mo>
-						<mi>A</mi>
-						<mo>,</mo>
-						<mi>P</mi>
-						<mi>a</mi>
-						<msub>
-							<mi>G</mi>
-							<mn>1</mn>
-						</msub>
-						<mo>&#x027F6;</mo>
-					</mtd>
-					<mtd>
-					</mtd>
-				</mtr>
-				<mtr>
-					<mtd>
-					</mtd>
-					<mtd>
-						<mi>y</mi>
-						<mo>,</mo>
-						<mi>w</mi>
-						<mo>&#x02208;</mo>
-						<msubsup>
-							<mi>&#x02124;</mi>
-							<mi>q</mi>
-							<mo>*</mo>
-						</msubsup>
-					</mtd>
-				</mtr>
-				<mtr>
-					<mtd>
-					</mtd>
-					<mtd>
-						<mi>A</mi>
-						<msub>
-							<mi>G</mi>
-							<mn>1</mn>
-						</msub>
-						<mo>:</mo>
-						<mo>=</mo>
-						<msub>
-							<mi>H</mi>
-							<mn>1</mn>
-						</msub>
-						<mrow>
-							<mo form="prefix">(</mo>
-							<mi>I</mi>
-							<mo>&#x02146;</mo>
-							<mi>A</mi>
-							<mo form="postfix">)</mo>
-						</mrow>
-					</mtd>
-				</mtr>
-				<mtr>
-					<mtd>
-					</mtd>
-					<mtd>
-						<mi>B</mi>
-						<msub>
-							<mi>G</mi>
-							<mn>2</mn>
-						</msub>
-						<mo>:</mo>
-						<mo>=</mo>
-						<msub>
-							<mi>H</mi>
-							<mn>2</mn>
-						</msub>
-						<mrow>
-							<mo form="prefix">(</mo>
-							<mi>I</mi>
-							<mo>&#x02146;</mo>
-							<mi>B</mi>
-							<mo form="postfix">)</mo>
-						</mrow>
-					</mtd>
-				</mtr>
-				<mtr>
-					<mtd>
-					</mtd>
-					<mtd>
-						<mi>P</mi>
-						<mi>b</mi>
-						<msub>
-							<mi>G</mi>
-							<mn>2</mn>
-						</msub>
-						<mo>:</mo>
-						<mo>=</mo>
-						<mi>y</mi>
-						<mo>&#x022C5;</mo>
-						<mi>B</mi>
-						<msub>
-							<mi>G</mi>
-							<mn>2</mn>
-						</msub>
-					</mtd>
-				</mtr>
-				<mtr>
-					<mtd>
-					</mtd>
-					<mtd>
-						<mi>P</mi>
-						<mi>g</mi>
-						<msub>
-							<mi>G</mi>
-							<mn>1</mn>
-						</msub>
-						<mo>:</mo>
-						<mo>=</mo>
-						<mi>w</mi>
-						<mo>&#x022C5;</mo>
-						<mi>A</mi>
-						<msub>
-							<mi>G</mi>
-							<mn>1</mn>
-						</msub>
-					</mtd>
-				</mtr>
-				<mtr>
-					<mtd>
-					</mtd>
-					<mtd>
-						<mtext>pia</mtext>
-						<mo>:</mo>
-						<mo>=</mo>
-						<msub>
-							<mi>H</mi>
-							<mi>q</mi>
-						</msub>
-						<mrow>
-							<mo form="prefix">(</mo>
+							<mo>:</mo>
+							<mo>=</mo>
+							<msub>
+								<mi>H</mi>
+								<mn>1</mn>
+							</msub>
+							<mrow>
+								<mo form="prefix">(</mo>
+								<mi>I</mi>
+								<mo>&#x02146;</mo>
+								<mi>A</mi>
+								<mo form="postfix">)</mo>
+							</mrow>
+						</mtd>
+						<mtd>
+						</mtd>
+					</mtr>
+					<mtr>
+						<mtd>
 							<mi>P</mi>
 							<mi>a</mi>
 							<msub>
 								<mi>G</mi>
 								<mn>1</mn>
 							</msub>
-							<mo>&#x02016;</mo>
-							<mi>P</mi>
-							<mi>b</mi>
-							<msub>
-								<mi>G</mi>
-								<mn>2</mn>
-							</msub>
-							<mo>&#x02016;</mo>
-							<mi>P</mi>
-							<mi>g</mi>
-							<msub>
-								<mi>G</mi>
-								<mn>1</mn>
-							</msub>
-							<mo>&#x02016;</mo>
-							<mi>I</mi>
-							<mo>&#x02146;</mo>
-							<mi>B</mi>
-							<mo form="postfix">)</mo>
-						</mrow>
-					</mtd>
-				</mtr>
-				<mtr>
-					<mtd>
-					</mtd>
-					<mtd>
-						<mtext>pib</mtext>
-						<mo>:</mo>
-						<mo>=</mo>
-						<msub>
-							<mi>H</mi>
-							<mi>q</mi>
-						</msub>
-						<mrow>
-							<mo form="prefix">(</mo>
-							<mi>P</mi>
-							<mi>b</mi>
-							<msub>
-								<mi>G</mi>
-								<mn>2</mn>
-							</msub>
-							<mo>&#x02016;</mo>
-							<mi>P</mi>
-							<mi>a</mi>
-							<msub>
-								<mi>G</mi>
-								<mn>1</mn>
-							</msub>
-							<mo>&#x02016;</mo>
-							<mi>P</mi>
-							<mi>g</mi>
-							<msub>
-								<mi>G</mi>
-								<mn>1</mn>
-							</msub>
-							<mo>&#x02016;</mo>
-							<mi>I</mi>
-							<mo>&#x02146;</mo>
-							<mi>A</mi>
-							<mo form="postfix">)</mo>
-						</mrow>
-					</mtd>
-				</mtr>
-				<mtr>
-					<mtd>
-					</mtd>
-					<mtd>
-						<mi>k</mi>
-						<mo>:</mo>
-						<mo>=</mo>
-						<mi>e</mi>
-						<mrow>
-							<mo form="prefix">(</mo>
-							<mtext>pia</mtext>
+							<mo>:</mo>
+							<mo>=</mo>
+							<mi>x</mi>
 							<mo>&#x022C5;</mo>
 							<mi>A</mi>
 							<msub>
 								<mi>G</mi>
 								<mn>1</mn>
 							</msub>
-							<mo>+</mo>
-							<mi>P</mi>
-							<mi>a</mi>
-							<msub>
-								<mi>G</mi>
-								<mn>1</mn>
-							</msub>
+						</mtd>
+						<mtd>
+						</mtd>
+					</mtr>
+					<mtr>
+						<mtd>
+							<mi>I</mi>
+							<mo>&#x02146;</mo>
+							<mi>A</mi>
 							<mo>,</mo>
-							<mo form="prefix">(</mo>
-							<mi>y</mi>
-							<mo>+</mo>
-							<mtext>pib</mtext>
-							<mo form="postfix">)</mo>
-							<mo>&#x022EF;</mo>
-							<mo>&#x022C5;</mo>
-							<mi>B</mi>
+							<mi>P</mi>
+							<mi>a</mi>
 							<msub>
 								<mi>G</mi>
-								<mn>2</mn>
+								<mn>1</mn>
 							</msub>
-							<mo form="postfix">)</mo>
-						</mrow>
-					</mtd>
-				</mtr>
-				<mtr>
-					<mtd>
-					</mtd>
-					<mtd>
-						<mi>K</mi>
-						<mo>:</mo>
-						<mo>=</mo>
-						<mi>H</mi>
-						<mrow>
-							<mo form="prefix">(</mo>
-							<mi>k</mi>
+							<mo>&#x027F6;</mo>
+						</mtd>
+						<mtd>
+						</mtd>
+					</mtr>
+					<mtr>
+						<mtd>
+						</mtd>
+						<mtd>
+							<mi>y</mi>
 							<mo>,</mo>
 							<mi>w</mi>
-							<mo>&#x022C5;</mo>
-							<mi>P</mi>
-							<mi>a</mi>
+							<mo>&#x02208;</mo>
+							<msubsup>
+								<mi>&#x02124;</mi>
+								<mi>q</mi>
+								<mo>*</mo>
+							</msubsup>
+						</mtd>
+					</mtr>
+					<mtr>
+						<mtd>
+						</mtd>
+						<mtd>
+							<mi>A</mi>
 							<msub>
 								<mi>G</mi>
 								<mn>1</mn>
 							</msub>
-							<mo form="postfix">)</mo>
-						</mrow>
-					</mtd>
-				</mtr>
-				<mtr>
-					<mtd>
-					</mtd>
-					<mtd>
-						<mo>&#x027F5;</mo>
-						<mi>I</mi>
-						<mo>&#x02146;</mo>
-						<mi>B</mi>
-						<mo>,</mo>
-						<mi>P</mi>
-						<mi>g</mi>
-						<msub>
-							<mi>G</mi>
-							<mn>1</mn>
-						</msub>
-						<mo>,</mo>
-						<mi>P</mi>
-						<mi>b</mi>
-						<msub>
-							<mi>G</mi>
-							<mn>2</mn>
-						</msub>
-					</mtd>
-				</mtr>
-				<mtr>
-					<mtd>
-						<mi>B</mi>
-						<msub>
-							<mi>G</mi>
-							<mn>2</mn>
-						</msub>
-						<mo>:</mo>
-						<mo>=</mo>
-						<msub>
-							<mi>H</mi>
-							<mn>2</mn>
-						</msub>
-						<mrow>
-							<mo form="prefix">(</mo>
-							<mi>I</mi>
-							<mo>&#x02146;</mo>
+							<mo>:</mo>
+							<mo>=</mo>
+							<msub>
+								<mi>H</mi>
+								<mn>1</mn>
+							</msub>
+							<mrow>
+								<mo form="prefix">(</mo>
+								<mi>I</mi>
+								<mo>&#x02146;</mo>
+								<mi>A</mi>
+								<mo form="postfix">)</mo>
+							</mrow>
+						</mtd>
+					</mtr>
+					<mtr>
+						<mtd>
+						</mtd>
+						<mtd>
 							<mi>B</mi>
-							<mo form="postfix">)</mo>
-						</mrow>
-					</mtd>
-					<mtd>
-					</mtd>
-				</mtr>
-				<mtr>
-					<mtd>
-						<mtext>pia</mtext>
-						<mo>:</mo>
-						<mo>=</mo>
-						<msub>
-							<mi>H</mi>
-							<mi>q</mi>
-						</msub>
-						<mrow>
-							<mo form="prefix">(</mo>
-							<mi>P</mi>
-							<mi>a</mi>
 							<msub>
 								<mi>G</mi>
-								<mn>1</mn>
+								<mn>2</mn>
 							</msub>
-							<mo>&#x02016;</mo>
+							<mo>:</mo>
+							<mo>=</mo>
+							<msub>
+								<mi>H</mi>
+								<mn>2</mn>
+							</msub>
+							<mrow>
+								<mo form="prefix">(</mo>
+								<mi>I</mi>
+								<mo>&#x02146;</mo>
+								<mi>B</mi>
+								<mo form="postfix">)</mo>
+							</mrow>
+						</mtd>
+					</mtr>
+					<mtr>
+						<mtd>
+						</mtd>
+						<mtd>
 							<mi>P</mi>
 							<mi>b</mi>
 							<msub>
 								<mi>G</mi>
 								<mn>2</mn>
 							</msub>
-							<mo>&#x02016;</mo>
-							<mi>P</mi>
-							<mi>g</mi>
-							<msub>
-								<mi>G</mi>
-								<mn>1</mn>
-							</msub>
-							<mo>&#x02016;</mo>
-							<mi>I</mi>
-							<mo>&#x02146;</mo>
+							<mo>:</mo>
+							<mo>=</mo>
+							<mi>y</mi>
+							<mo>&#x022C5;</mo>
 							<mi>B</mi>
-							<mo form="postfix">)</mo>
-						</mrow>
-					</mtd>
-					<mtd>
-					</mtd>
-				</mtr>
-				<mtr>
-					<mtd>
-						<mtext>pib</mtext>
-						<mo>:</mo>
-						<mo>=</mo>
-						<msub>
-							<mi>H</mi>
-							<mi>q</mi>
-						</msub>
-						<mrow>
-							<mo form="prefix">(</mo>
-							<mi>P</mi>
-							<mi>b</mi>
 							<msub>
 								<mi>G</mi>
 								<mn>2</mn>
 							</msub>
-							<mo>&#x02016;</mo>
-							<mi>P</mi>
-							<mi>a</mi>
-							<msub>
-								<mi>G</mi>
-								<mn>1</mn>
-							</msub>
-							<mo>&#x02016;</mo>
+						</mtd>
+					</mtr>
+					<mtr>
+						<mtd>
+						</mtd>
+						<mtd>
 							<mi>P</mi>
 							<mi>g</mi>
 							<msub>
 								<mi>G</mi>
 								<mn>1</mn>
 							</msub>
-							<mo>&#x02016;</mo>
-							<mi>I</mi>
-							<mo>&#x02146;</mo>
-							<mi>A</mi>
-							<mo form="postfix">)</mo>
-						</mrow>
-					</mtd>
-					<mtd>
-					</mtd>
-				</mtr>
-				<mtr>
-					<mtd>
-						<mi>k</mi>
-						<mo>:</mo>
-						<mo>=</mo>
-						<mi>e</mi>
-						<mrow>
-							<mo form="prefix">(</mo>
-							<mo form="prefix">(</mo>
-							<mi>x</mi>
-							<mo>+</mo>
-							<mi>p</mi>
-							<mi>i</mi>
-							<mi>a</mi>
-							<mo form="postfix">)</mo>
-							<mo>&#x022EF;</mo>
+							<mo>:</mo>
+							<mo>=</mo>
+							<mi>w</mi>
 							<mo>&#x022C5;</mo>
 							<mi>A</mi>
 							<msub>
 								<mi>G</mi>
 								<mn>1</mn>
 							</msub>
-							<mo>,</mo>
+						</mtd>
+					</mtr>
+					<mtr>
+						<mtd>
+						</mtd>
+						<mtd>
+							<mtext>pia</mtext>
+							<mo>:</mo>
+							<mo>=</mo>
+							<msub>
+								<mi>H</mi>
+								<mi>q</mi>
+							</msub>
+							<mrow>
+								<mo form="prefix">(</mo>
+								<mi>P</mi>
+								<mi>a</mi>
+								<msub>
+									<mi>G</mi>
+									<mn>1</mn>
+								</msub>
+								<mo>&#x02016;</mo>
+								<mi>P</mi>
+								<mi>b</mi>
+								<msub>
+									<mi>G</mi>
+									<mn>2</mn>
+								</msub>
+								<mo>&#x02016;</mo>
+								<mi>P</mi>
+								<mi>g</mi>
+								<msub>
+									<mi>G</mi>
+									<mn>1</mn>
+								</msub>
+								<mo>&#x02016;</mo>
+								<mi>I</mi>
+								<mo>&#x02146;</mo>
+								<mi>B</mi>
+								<mo form="postfix">)</mo>
+							</mrow>
+						</mtd>
+					</mtr>
+					<mtr>
+						<mtd>
+						</mtd>
+						<mtd>
 							<mtext>pib</mtext>
-							<mo>&#x022C5;</mo>
-							<mi>B</mi>
+							<mo>:</mo>
+							<mo>=</mo>
 							<msub>
-								<mi>G</mi>
-								<mn>2</mn>
+								<mi>H</mi>
+								<mi>q</mi>
 							</msub>
-							<mo>+</mo>
-							<mi>P</mi>
-							<mi>b</mi>
-							<msub>
-								<mi>G</mi>
-								<mn>2</mn>
-							</msub>
-							<mo form="postfix">)</mo>
-						</mrow>
-					</mtd>
-					<mtd>
-					</mtd>
-				</mtr>
-				<mtr>
-					<mtd>
-						<mi>K</mi>
-						<mo>:</mo>
-						<mo>=</mo>
-						<mi>H</mi>
-						<mrow>
-							<mo form="prefix">(</mo>
+							<mrow>
+								<mo form="prefix">(</mo>
+								<mi>P</mi>
+								<mi>b</mi>
+								<msub>
+									<mi>G</mi>
+									<mn>2</mn>
+								</msub>
+								<mo>&#x02016;</mo>
+								<mi>P</mi>
+								<mi>a</mi>
+								<msub>
+									<mi>G</mi>
+									<mn>1</mn>
+								</msub>
+								<mo>&#x02016;</mo>
+								<mi>P</mi>
+								<mi>g</mi>
+								<msub>
+									<mi>G</mi>
+									<mn>1</mn>
+								</msub>
+								<mo>&#x02016;</mo>
+								<mi>I</mi>
+								<mo>&#x02146;</mo>
+								<mi>A</mi>
+								<mo form="postfix">)</mo>
+							</mrow>
+						</mtd>
+					</mtr>
+					<mtr>
+						<mtd>
+						</mtd>
+						<mtd>
 							<mi>k</mi>
+							<mo>:</mo>
+							<mo>=</mo>
+							<mi>e</mi>
+							<mrow>
+								<mo form="prefix">(</mo>
+								<mtext>pia</mtext>
+								<mo>&#x022C5;</mo>
+								<mi>A</mi>
+								<msub>
+									<mi>G</mi>
+									<mn>1</mn>
+								</msub>
+								<mo>+</mo>
+								<mi>P</mi>
+								<mi>a</mi>
+								<msub>
+									<mi>G</mi>
+									<mn>1</mn>
+								</msub>
+								<mo>,</mo>
+								<mo form="prefix">(</mo>
+								<mi>y</mi>
+								<mo>+</mo>
+								<mtext>pib</mtext>
+								<mo form="postfix">)</mo>
+								<mo>&#x022EF;</mo>
+								<mo>&#x022C5;</mo>
+								<mi>B</mi>
+								<msub>
+									<mi>G</mi>
+									<mn>2</mn>
+								</msub>
+								<mo form="postfix">)</mo>
+							</mrow>
+						</mtd>
+					</mtr>
+					<mtr>
+						<mtd>
+						</mtd>
+						<mtd>
+							<mi>K</mi>
+							<mo>:</mo>
+							<mo>=</mo>
+							<mi>H</mi>
+							<mrow>
+								<mo form="prefix">(</mo>
+								<mi>k</mi>
+								<mo>,</mo>
+								<mi>w</mi>
+								<mo>&#x022C5;</mo>
+								<mi>P</mi>
+								<mi>a</mi>
+								<msub>
+									<mi>G</mi>
+									<mn>1</mn>
+								</msub>
+								<mo form="postfix">)</mo>
+							</mrow>
+						</mtd>
+					</mtr>
+					<mtr>
+						<mtd>
+						</mtd>
+						<mtd>
+							<mo>&#x027F5;</mo>
+							<mi>I</mi>
+							<mo>&#x02146;</mo>
+							<mi>B</mi>
 							<mo>,</mo>
-							<mi>x</mi>
-							<mo>&#x022C5;</mo>
 							<mi>P</mi>
 							<mi>g</mi>
 							<msub>
 								<mi>G</mi>
 								<mn>1</mn>
 							</msub>
-							<mo form="postfix">)</mo>
-						</mrow>
-					</mtd>
-					<mtd>
-					</mtd>
-				</mtr>
-			</mtable>
-		</mtd>
-	</mtr>
-</mtable>
-</math>
-</html>
+							<mo>,</mo>
+							<mi>P</mi>
+							<mi>b</mi>
+							<msub>
+								<mi>G</mi>
+								<mn>2</mn>
+							</msub>
+						</mtd>
+					</mtr>
+					<mtr>
+						<mtd>
+							<mi>B</mi>
+							<msub>
+								<mi>G</mi>
+								<mn>2</mn>
+							</msub>
+							<mo>:</mo>
+							<mo>=</mo>
+							<msub>
+								<mi>H</mi>
+								<mn>2</mn>
+							</msub>
+							<mrow>
+								<mo form="prefix">(</mo>
+								<mi>I</mi>
+								<mo>&#x02146;</mo>
+								<mi>B</mi>
+								<mo form="postfix">)</mo>
+							</mrow>
+						</mtd>
+						<mtd>
+						</mtd>
+					</mtr>
+					<mtr>
+						<mtd>
+							<mtext>pia</mtext>
+							<mo>:</mo>
+							<mo>=</mo>
+							<msub>
+								<mi>H</mi>
+								<mi>q</mi>
+							</msub>
+							<mrow>
+								<mo form="prefix">(</mo>
+								<mi>P</mi>
+								<mi>a</mi>
+								<msub>
+									<mi>G</mi>
+									<mn>1</mn>
+								</msub>
+								<mo>&#x02016;</mo>
+								<mi>P</mi>
+								<mi>b</mi>
+								<msub>
+									<mi>G</mi>
+									<mn>2</mn>
+								</msub>
+								<mo>&#x02016;</mo>
+								<mi>P</mi>
+								<mi>g</mi>
+								<msub>
+									<mi>G</mi>
+									<mn>1</mn>
+								</msub>
+								<mo>&#x02016;</mo>
+								<mi>I</mi>
+								<mo>&#x02146;</mo>
+								<mi>B</mi>
+								<mo form="postfix">)</mo>
+							</mrow>
+						</mtd>
+						<mtd>
+						</mtd>
+					</mtr>
+					<mtr>
+						<mtd>
+							<mtext>pib</mtext>
+							<mo>:</mo>
+							<mo>=</mo>
+							<msub>
+								<mi>H</mi>
+								<mi>q</mi>
+							</msub>
+							<mrow>
+								<mo form="prefix">(</mo>
+								<mi>P</mi>
+								<mi>b</mi>
+								<msub>
+									<mi>G</mi>
+									<mn>2</mn>
+								</msub>
+								<mo>&#x02016;</mo>
+								<mi>P</mi>
+								<mi>a</mi>
+								<msub>
+									<mi>G</mi>
+									<mn>1</mn>
+								</msub>
+								<mo>&#x02016;</mo>
+								<mi>P</mi>
+								<mi>g</mi>
+								<msub>
+									<mi>G</mi>
+									<mn>1</mn>
+								</msub>
+								<mo>&#x02016;</mo>
+								<mi>I</mi>
+								<mo>&#x02146;</mo>
+								<mi>A</mi>
+								<mo form="postfix">)</mo>
+							</mrow>
+						</mtd>
+						<mtd>
+						</mtd>
+					</mtr>
+					<mtr>
+						<mtd>
+							<mi>k</mi>
+							<mo>:</mo>
+							<mo>=</mo>
+							<mi>e</mi>
+							<mrow>
+								<mo form="prefix">(</mo>
+								<mo form="prefix">(</mo>
+								<mi>x</mi>
+								<mo>+</mo>
+								<mi>p</mi>
+								<mi>i</mi>
+								<mi>a</mi>
+								<mo form="postfix">)</mo>
+								<mo>&#x022EF;</mo>
+								<mo>&#x022C5;</mo>
+								<mi>A</mi>
+								<msub>
+									<mi>G</mi>
+									<mn>1</mn>
+								</msub>
+								<mo>,</mo>
+								<mtext>pib</mtext>
+								<mo>&#x022C5;</mo>
+								<mi>B</mi>
+								<msub>
+									<mi>G</mi>
+									<mn>2</mn>
+								</msub>
+								<mo>+</mo>
+								<mi>P</mi>
+								<mi>b</mi>
+								<msub>
+									<mi>G</mi>
+									<mn>2</mn>
+								</msub>
+								<mo form="postfix">)</mo>
+							</mrow>
+						</mtd>
+						<mtd>
+						</mtd>
+					</mtr>
+					<mtr>
+						<mtd>
+							<mi>K</mi>
+							<mo>:</mo>
+							<mo>=</mo>
+							<mi>H</mi>
+							<mrow>
+								<mo form="prefix">(</mo>
+								<mi>k</mi>
+								<mo>,</mo>
+								<mi>x</mi>
+								<mo>&#x022C5;</mo>
+								<mi>P</mi>
+								<mi>g</mi>
+								<msub>
+									<mi>G</mi>
+									<mn>1</mn>
+								</msub>
+								<mo form="postfix">)</mo>
+							</mrow>
+						</mtd>
+						<mtd>
+						</mtd>
+					</mtr>
+				</mtable>
+			</mtd>
+		</mtr>
+	</mtable>
+	</math>
+	</html>
+	<figcaption>Distributed Trust Authorities</figcaption>
+</figure>
+
 <br></br>
 <br></br>
 
