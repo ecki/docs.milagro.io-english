@@ -1,15 +1,18 @@
 ---
 currentMenu: pairing-crypto-protocols
+layout: markdeep
 ---
+<div id="generated-toc" class="generate_from_h2"></div>
 <style>h1:before, h2:before { content: none; }</style>
 
 <figure>
-
 	<html>
-	<math xmlns="http://www.w3.org/1998/Math/MathML">
+	<math xmlns="http://www.w3.org/1998/Math/MathML" display='block'>
+			<mtable frame="solid" rowlines="solid" rowalign="center">
+			<mstyle mathsize='.85em'>
 		<mtr>
 			<mtd>
-				<mspace width="0.25em" />
+				<mspace width="0.1em" />
 			</mtd>
 			<mtd columnalign="left">
 				<mtable class="m-matrix">
@@ -549,15 +552,11 @@ currentMenu: pairing-crypto-protocols
 	</mtable>
 	</math>
 	</html>
-	<figcaption>Distributed Trust Authorities</figcaption>
+	<figcaption>Chow-Choo Protocol</figcaption>
 </figure>
+---
 
-<br></br>
-<br></br>
-
-NOTE:
----------------------------------------------------
-
+**Notes on Chow-Choo Protocol:**
 <markdeep>
 * $G_1$: a $r$-order cyclic subgroup of $E(F_p)$.
 * $G_2$: a subgroup of$E(F_{p^k})$, where $k$ is the embedding degree of the Curve.
@@ -567,3 +566,20 @@ NOTE:
 * H(): Hash function.
 * $||$: denotes the concatenation of messages.
 </markdeep>
+
+<markdeep>
+<style>h1:before, h2:before { content: none; }</style>
+## REFERENCES
+</markdeep>
+
+<p></p>
+<div class="references">
+  <cite id="eason55">G. Eason, B. Noble, and I. N. Sneddon, <q>On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,</q> Phil. Trans. Roy. Soc. London, vol. A247, pp. 529–551, April 1955. (<em>references</em>)</cite>
+  <cite id="maxwell1892">J. Clerk Maxwell, A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68–73.</cite>
+  <cite id="jacobs63">I. S. Jacobs and C. P. Bean, <q>Fine particles, thin films and exchange anisotropy,</q> in Magnetism, vol. III, G. T. Rado and H. Suhl, Eds. New York: Academic, 1963, pp. 271–350.</cite>
+  <cite id="elissa">K. Elissa, <q>Title of paper if known,</q> unpublished.</cite>
+  <cite id="park13">Park, T. H., Saxena, A., Jagannath, S., Wiedenbeck, S., and Forte, A. Towards a taxonomy of errors in HTML and CSS. In <em>Proc. ICER 2013</em>, ACM Press (2013), 75-82.</cite>
+  <cite id="nicole">R. Nicole, <q>Title of paper with only first word capitalized,</q> J. Name Stand. Abbrev., in press.</cite>
+  <cite id="yorozu87">Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, <q>Electron spectroscopy studies on magneto-optical media and plastic substrate interface,</q> IEEE Transl. J. Magn. Japan, vol. 2, pp. 740–741, August 1987 [Digests 9th Annual Conf. Magnetics Japan, p. 301, 1982].</cite>
+  <cite id="young89">M. Young, The Technical Writer’s Handbook. Mill Valley, CA: University Science, 1989.</cite>
+</div>

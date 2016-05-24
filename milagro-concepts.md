@@ -58,20 +58,24 @@ IBE is similar to classical asymmetric key cryptography, in that each user has a
 
 ## Zero Knowledge Proof [(from Wikipedia article)](https://en.wikipedia.org/wiki/Zero-knowledge_proof)
 
-In cryptography, a **zero-knowledge proof** or **zero-knowledge protocol** is a method by which one party (the _prover_) can prove to another party (the _verifier_) that a given statement is true, without conveying any information apart from the fact that the statement is indeed true.
+"In cryptography, a **zero-knowledge proof** or **zero-knowledge protocol** is a method by which one party (the _prover_) can prove to another party (the _verifier_) that a given statement is true, without conveying any information apart from the fact that the statement is indeed true.
 
 If proving the statement requires knowledge of some secret information on the part of the prover, the definition implies that the verifier will not be able to prove the statement in turn to anyone else, since the verifier does not possess the secret information.
 
 Notice that the statement being proved must include the assertion that the prover has such knowledge (otherwise, the statement would not be proved in zero-knowledge, since at the end of the protocol the verifier would gain the additional information that the prover has knowledge of the required secret information).
 
-If the statement consists _only_ of the fact that the prover possesses the secret information, it is a special case known as _zero-knowledge proof of knowledge_, and it nicely illustrates the essence of the notion of zero-knowledge proofs: proving that one has knowledge of certain information is trivial if one is allowed to simply reveal that information; the challenge is proving that one has such knowledge without revealing the secret information or anything else.
-________________________________
+If the statement consists _only_ of the fact that the prover possesses the secret information, it is a special case known as _zero-knowledge proof of knowledge_, and it nicely illustrates the essence of the notion of zero-knowledge proofs: proving that one has knowledge of certain information is trivial if one is allowed to simply reveal that information; the challenge is proving that one has such knowledge without revealing the secret information or anything else.""
 
-The protocols currently in use within the Milagro framework exploit at least 3 of 4 (Chow-Choo) or all (M-Pin) of these capabilities.
+## Summary
+
+**Elliptic curve cryptography** is an attractive alternative to conventional public key cryptography for implementation on constrained devices, where the significant computational resources i.e. speed, memory are limited and low-power wireless communication protocols is essential. It attains the same security levels as traditional cryptosystems using smaller parameter sizes.
+
+**Pairing-based cryptography** builds on elliptic curve-based cryptography, but the extra functionality of the pairing enables us to design schemes which would otherwise be impossible to realise, or would be prohibitively expensive. Examples include identity-based encryption, group signatures and non-interactive zero-knowledge proofs.
+
+**Identity-based encryption** doesn’t require certificates and certificate authorities. A trusted third party generates all the private keys, but all the public keys can be derived knowing the identity of the public key owner, for example, an email address.  That means that no certificate is needed to bind a public key to its owner.  Typically, it is up to the application to verify the owner possesses access to the unique identity attribute during the enrolment process in which a client obtains a private key.
+
+**A zero-knowledge proof** is a method by which one party (the prover) can prove to another party (the verifier) that a given statement is true, without conveying any information apart from the fact that the statement is indeed true.
+
+The protocols currently in use within the Milagro framework exploit at least the first three of the four listed attributes. In the case of the M-Pin Protocol, it utilises all four listed attributes above.
 
 For an in-depth dive into the cryptographic protocols in use within the Milagro framework, see the next section [Pairing Crypto Protocols](pairing-crypto-protocols.html).
-________________________________
-
-
-<br></br>
-<br></br>
