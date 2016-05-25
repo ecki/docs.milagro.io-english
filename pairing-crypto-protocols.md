@@ -81,7 +81,8 @@ Because of the characteristics that Chow-Choo inherits from the three techniques
 * Distribution, or splitting, of Trust Authorities
 
 Note that the Chow-Choo Protocol is not a Zero Knowledge Proof protocol, and is not able to deliver a Subliminal Channel capability.
-<br></br>
+
+---
 
 <figure>
   <caption><strong>Table 1.</strong> PROTOCOL RECOMMENDATIONS</caption>
@@ -129,7 +130,9 @@ Lastly, it enables Distributed Trust.
 
 ### Distributed Trust Authorities
 
-A Trusted Authority will be in possession of a master secret $s$, a random element of $F_q$. A client secret is of the form $s.H(ID)$, where ID is the client identity and $H(.)$ a hash function which maps to a point on $G_1$.
+A Trusted Authority will be in possession of a master secret $s$, a random element of $F_q$.
+
+A client secret is of the form $s.H(ID)$, where ID is the client identity and $H(.)$ a hash function which maps to a point on $G_1$.
 
 From prior art, we assume that $H$ is modelled as a random oracle where $H(ID) = r_{ID}.P$
 
@@ -164,6 +167,8 @@ In the original implementation, the client was supplied with a challenge by the 
 In a later proposal, it was realised that an M-Pin 1-Pass Protocol could be obtained if the client itself derived the challenge as $y$ as $y=H(U|T)$ where $T$ is a time-stamp transmitted by the Client along her claimed identity, $U$ and $V$.<a href="#m-pin-ietf">5</a>.
 
 The protocol could then be reduced in an obvious way to a secure 1-pass protocol. However, this assumes that the Server checks the accuracy of the time-stamp before completing the protocol.
+
+This all works thanks to the pairing function $e(.,.)$ and its remarkable bilinearity property $e(aP,Q) = e(P,aQ) = e(P,Q)^{a}$.
 <br></br>
 
 ---
@@ -188,7 +193,9 @@ The protocol could then be reduced in an obvious way to a secure 1-pass protocol
 
 ### M-Pin 2-Pass
 
-As you can see below in Fig 2., M-Pin in the two pass operation
+As you can see below in Fig 2., M-Pin in the two pass operation operates in a challenge (from the Server) to client, who responds to challenge. This implementation obviates the any risk of Key Compromise Impersonation attack vector, at the cost of of a full roundtrip.
+
+---
 
 <figure>
   <caption><strong>Figure 2.</strong> M-Pin 2-Pass</caption>
@@ -205,20 +212,83 @@ As you can see below in Fig 2., M-Pin in the two pass operation
 | |$g=e(V,Q).e(U+yA,sQ)$|
 | |if $g \ne 1$, reject the connection|
 
+---
+
+### M-Pin FULL
+
+This more elaborate protocol not only replaces Username/Password, but replaces the functionality of digital certificates being utilised to drive key agreement for TLS or VPN protocols as well.
+
+Our starting point is the M-Pin protocol as described above.
+
+The idea is to run it first (to authenticate the client to the server), and then proceed to authenticate the server to the client via an authenticated key exchange, which also establishes the agreed key of 128 bits.
+
+The first thing to note is that both the client and the server can already calculate a mutual authenticated encryption key!
+
+This protocol requires another general hash function $H_g(.)$ which serializes, and hashes its input to a 256-bit value. Both sides can then extract a key from this value $K$.
+
+It is left as a simple exercise for the reader to confirm that both client and server end up with the same key.
+
+Note that since the first part of the protocol is just the original M-Pin protocol, all of its features and extensions still apply.
 
 ---
 
-<!---
-The M-Pin Protocol has been iterated on several times over the years since, and has been shown to be proven secure under the computational BDH (Bilinear Diffie-Hellman) assumption, and in the Canetti-Krawczyk (CK) security model <a href="#boyd">3</a>.
+<figure>
+  <caption><strong>Figure 3.</strong> M-Pin FULL</caption>
+</figure>
+|Alice - identity $ID_a$|Server|
+|:----------------------:|:----------------------:|
+|Generates random $x<q$|Generates random $y<q$|
+|$A=H(ID_a)$||
+|$U=x{A}$||
+|$ID_a$, $U~~ \rightarrow  $||
+| |$\leftarrow y$|
+|$V=-(x+y){((s-\alpha)A+\alpha A)} \rightarrow$||
+| |$A=H(ID_a)$|
+| |$g=e(V,Q).e(U+yA,sQ)$|
+| |if $g \ne 1$, reject the connection|
+| $R=r{A} \rightarrow $ | $\leftarrow W=w{A}$ |
+| $h=H(A,U,y,V,R,W)$ | $h=H(A,U,y,V,R,W)$ |
+| $K=H_g((g_1.{g_2}^\alpha)^{r+h} \| x{W})$ | $K=H_g(e(R+hA,sQ) \| w{U})$ |
 
-Furthermore Gorantla, Boyd and Nieto extend this protocol again to the M-Pin 'one-pass' setting, and provide a proof in a modified extended Canetti-Krawczyk (eCK) setting <a href="#gorantla">4</a>.
+---
 
-Furthermore Gorantla, Boyd and Nieto extend this protocol again to the M-Pin 'one-pass' setting, and provide a proof in a modified extended Canetti-Krawczyk (eCK) setting <a href="#gorantla">4</a>.
+### Chow-Choo Protocol
 
---->
+As initially proposed, the Chow-Choo Protocol was based on a type-1 pairing. A type-1 pairing operates as $G_1 \times G_1 \rightarrow G_T$, where $G_1$ is a group of points of prime order $q$ on the curve, and $G_T$ is a finite extension field of the same order, whose extension is the so-called embedding degree $k$ associated with the curve.
 
-<!--- This is the Chow Choo protocol in a Mathml table / frame because redering in Math LaTex equations exposes a bug in MathJax. It's just one equation!  --->
+In the Milagro framework, the Chow-Choo Protocol is made to work in a Type-3 setting.
 
+Pairings are usually written as functions of the form $g=e(A,B)$, where $A \in G_1$, $g \in G_T$, and for a Type-1 pairing $B \in G_1$ and for Type-3 $B \in G_2$.
+
+Consider now an application of this protocol to an imagined Internet of Things (IoT) setting.
+
+Each Thing is issued with a serial number and its own Chow-Choo key (which can double as an M-Pin Key) based on that serial number as an identity.
+
+These keys may be embedded at the time of manufacture, by the manufacturer acting as a naturally trusted authority.
+
+When a Thing needs to communicate with another Thing, an action which requires knowing only the identity of the other, both parties can activate the Chow-Choo Protocol to calculate the same key to encrypt their communication.
+
+For both sending and receiving, Alice is issued with $sA_1$ and $sA_2$, where $A_1=H_1$ and $A_2=H_2$ both in the $ID = Alice$.
+
+Similarly Bob is issued with $sB_1$ and $sB_2$. Now if Alice initiates and Bob responds, Alice calculates the key as $e(sA_1,B_2)$ and Bob can calculate the same key as $e(A_1,sB_2)$, where by convention the initiator uses their *sender* key and the responder uses their *receiver* key.
+
+One thing we can exploit -- in any communication context there is an initiator and a responder, or a *sender* and *receiver*, if you will.
+
+In the above example, Alice and Bob both were issued *sender* and *receiver* keys respectively, as this describes where they can appear in the pairing.
+
+An obvious advantage is to issue each Thing with two keys, one in $G_1$ and the other in $G_2$, **if** the Thing is approved to send and receive.
+
+However, the capability exists to cryptographically bound Things to only receiving information, or only sending information, based upon whether or not a Thing has been issued a sender and / or a receiver key.
+
+This capability is exploited in the Milagro framework to enable peer to peer authenticated key agreement.
+
+---
+
+<!--- This is the Chow Choo protocol in a Mathml table / frame because redering in Math LaTex equations exposes a bug in MathJax. It's just one equation that has this bug!  --->
+
+<figure>
+  <caption><strong>Figure 4.</strong> Chow-Choo Protocol</caption>
+</figure>
 <figure>
 	<html>
 	<math xmlns="http://www.w3.org/1998/Math/MathML" display='block'>
@@ -766,7 +836,6 @@ Furthermore Gorantla, Boyd and Nieto extend this protocol again to the M-Pin 'on
 	</mtable>
 	</math>
 	</html>
-	<figcaption>Chow-Choo Protocol</figcaption>
 </figure>
 ---
 
@@ -780,6 +849,23 @@ Furthermore Gorantla, Boyd and Nieto extend this protocol again to the M-Pin 'on
 * H(): Hash function.
 * $||$: denotes the concatenation of messages.
 </markdeep>
+
+---
+
+For in-depth information on the above protocols, the reader is encourage to download research papers from MIRACL Labs:
+
+(TBC)
+- M-Pin
+- M-Pin Full
+- etc.
+<!---
+The M-Pin Protocol has been iterated on several times over the years since, and has been shown to be proven secure under the computational BDH (Bilinear Diffie-Hellman) assumption, and in the Canetti-Krawczyk (CK) security model <a href="#boyd">3</a>.
+
+Furthermore Gorantla, Boyd and Nieto extend this protocol again to the M-Pin 'one-pass' setting, and provide a proof in a modified extended Canetti-Krawczyk (eCK) setting <a href="#gorantla">4</a>.
+
+Furthermore Gorantla, Boyd and Nieto extend this protocol again to the M-Pin 'one-pass' setting, and provide a proof in a modified extended Canetti-Krawczyk (eCK) setting <a href="#gorantla">4</a>.
+
+--->
 
 <markdeep>
 <style>h1:before, h2:before { content: none; }</style>
