@@ -54,6 +54,9 @@ menu:
                 pairing-crypto-protocols:
                     text: Pairing Crypto Protocols
                     relativeUrl: pairing-crypto-protocols.html
+                protocol-extensions:
+                    text: Protocol Extensions
+                    relativeUrl: protocol-extensions.html
 
         Milagro Crypto Library:
             name: '<i class="fa fa-key" aria-hidden="true"></i> Milagro Crypto Library'
