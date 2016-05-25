@@ -96,7 +96,8 @@ M-Pin 2-Pass | Client to server authentication in smartphone apps, desktop brows
 M-Pin FULL | Mutual client and server authentication with authenticated key agreement for use in smartphone apps, hardware and software applications. <br>Authenticated Key Agreement with PFS can be used as the basis for TLS sessions between clients and servers.
 Chow-Choo | Mutual peer to peer authentication with authenticated key agreement for use in smartphone apps, hardware and software applications. <br>Authenticated Key Agreement with PFS can be used as the basis for TLS sessions between clients and servers and peer to peer.
 </markdeep>
-</figure>
+
+---
 
 ## Protocols In Depth
 
@@ -852,12 +853,7 @@ This capability is exploited in the Milagro framework to enable peer to peer aut
 
 ---
 
-For in-depth information on the above protocols, the reader is encourage to download research papers from MIRACL Labs:
-
-(TBC)
-- M-Pin
-- M-Pin Full
-- etc.
+For additional information, the reader is encouraged to download the following research papers from MIRACL LABS (LINK TO PAPERS).
 <!---
 The M-Pin Protocol has been iterated on several times over the years since, and has been shown to be proven secure under the computational BDH (Bilinear Diffie-Hellman) assumption, and in the Canetti-Krawczyk (CK) security model <a href="#boyd">3</a>.
 
