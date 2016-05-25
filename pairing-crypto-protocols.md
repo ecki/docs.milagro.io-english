@@ -48,7 +48,7 @@ The Chow-Choo Protocol was developed by Sherman S.M. Chow and Kim-Kwang Raymond 
 <figure>
   <figcaption><strong>PROTOCOL MODE RECOMMENDATIONS</strong></figcaption>
 <markdeep>
-      Mode                    |   Use Cases
+      Mode                          |   Use Cases
 -------------------------------------|------------
 M-Pin 1-Pass | Digital signature authentication in battery or bandwidth constrained environments such as IoT devices, embedded applications and mobile apps.
 M-Pin 1-Pass + M-Pin 2-Pass      | Digital signature and client to server authentication in smartphones apps, desktop browsers and software applications.
