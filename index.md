@@ -83,10 +83,11 @@ Milagro TLS delivers two new cipher suites that provides perfectly forward secur
 ### Milagro MFA
 Also included is Milagro MFA, a higher level 'Crypto App' ready for the cloud, mobile or enterprise deployments. Milagro MFA is a complete multi-factor authentication platform that uses [zero-knowledge proof protocols](https://en.wikipedia.org/wiki/Zero-knowledge_proof) to eliminate the password and hence the threat of password database breach. Milagro MFA includes client SDKs in JavaScript, C, iOS, Android and Windows Phone, as well as the Authentication Server for Linux. Delivering 128-bit security but lean enough to even run in JavaScript, Milagro MFA allows developers and security engineers to integrate easy-to-use multi-factor authentication capabilities into their mobile and web properties and applications in hours or less.
 
-_______________
+---
 
 ## See the [Milagro Roadmap](milagro-roadmap.html) for important upcoming dates.
-______________
+
+---
 
 * To learn about Milagro components and concepts, [click here](milagro-concepts.html)
 * To learn about the Pairing Crypto Protocols used in the Milagro framework, [click here](pairing-crypto-protocols.html)
