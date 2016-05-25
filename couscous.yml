@@ -23,20 +23,12 @@ exclude:
 title: Milagro Documentation
 
 # The left menu bar
+
 menu:
     sections:
-        Introduction:
-            name: '<i class="fa fa-bolt" aria-hidden="true"></i> Milagro Overview'
+        Why Milagro:
+            name: '<i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Why Milagro'
             items:
-                home:
-                    text: Introduction
-                    relativeUrl: index.html
-                milagro-concepts:
-                    text: Milagro Crypto Concepts
-                    relativeUrl: milagro-concepts.html
-                pairing-crypto-protocols:
-                    text: Pairing Crypto Protocols
-                    relativeUrl: pairing-crypto-protocols.html
                 milagro-a-case-for-something-new-part-1:
                     text: A Case for Something New - Part I
                     relativeUrl: milagro-a-case-for-something-new-part-1.html
@@ -49,6 +41,19 @@ menu:
                 milagro-roadmap:
                     text: Milagro Roadmap
                     relativeUrl: milagro-roadmap.html
+
+        Introduction:
+            name: '<i class="fa fa-bolt" aria-hidden="true"></i> Milagro Overview'
+            items:
+                home:
+                    text: Introduction
+                    relativeUrl: index.html
+                milagro-concepts:
+                    text: Milagro Crypto Concepts
+                    relativeUrl: milagro-concepts.html
+                pairing-crypto-protocols:
+                    text: Pairing Crypto Protocols
+                    relativeUrl: pairing-crypto-protocols.html
 
         Milagro Crypto Library:
             name: '<i class="fa fa-key" aria-hidden="true"></i> Milagro Crypto Library'

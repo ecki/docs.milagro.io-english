@@ -5,16 +5,17 @@ layout: markdeep
 <div id="generated-toc" class="generate_from_h2"></div>
 <style>h1:before, h2:before, h3:before { content: none; }</style>
 
-<div class="abstract">
+<!--- <div class="abstract">
 <span class="footnote">
 Note: This document uses sections from the MIRACL Labs M-Pin Full Paper, published in 2015.<p></p>MIRACL Ltd, along with NTT Labs and NTTi3, are the originators of the Milagro Project. The original LaTex authored PDF version is available for download <a href="docs.milagro.io/mpinfull.pdf">here</a>.</span></p>
 </div>
+--->
 
 ## Introduction
 
 The Milagro framework relies on Distributed Trust Authorities to issue shares of Type-3 Pairing keys to Milagro Crypto Apps, such as the Milagro MFA server and clients, or to software or hardware applications that have embedded Milagro code in order derive the functional capabilities.
 
-Type-3 pairings were selected as they are the most efficient pairing and will work with non-supersingular pairing-friendly curves. These operate as $G_1$ x $G_2 \rightarrow G_T$, where $G_2$ is a particular group of points, again of the order $q$, but on a twisted elliptic curve defined over an extension which is a divisor of $k$.
+As outlined in the previous section, Type-3 pairings were selected as they are the most efficient pairing and will work with non-supersingular pairing-friendly curves. These operate as $G_1$ x $G_2 \rightarrow G_T$, where $G_2$ is a particular group of points, again of the order $q$, but on a twisted elliptic curve defined over an extension which is a divisor of $k$.
 These curves can be constructed to be a near perfect fit at any required level of security <a href="#freeman-scott-teske">1</a>. The pairing protocols within the Milagro framework all work on a Type-3 setting.
 
 ## M-Pin Protocol - Introduction
@@ -38,16 +39,26 @@ The three modes of operation of the M-Pin Protocol are as follows:
 * **M-Pin 2-pass**: Client to server authentication via a *interactive* zero knowledge proof, resistant to [MITM](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) and [KCI (Key Compromise Impersonation)](https://kcitls.org) attacks.
 * **M-Pin FULL**: Mutual client to server authentication via a *interactive* zero knowledge proof, resistant to MITM and KCI attacks and able to drive an Authenticated [Key Agreement](https://en.wikipedia.org/wiki/Key-agreement_protocol) between client and server, resulting in 128 bit shared secret key.
 
-Note that the M-Pin Full Authenticated Key Agreement possesses the quality of [perfect forward secrecy](https://en.wikipedia.org/wiki/Forward_secrecy), meaning, even if the client and server long term keys are compromised, the past session keys (used to encrypt TLS traffic, for example) are not compromised.
+Note that the M-Pin Full Authenticated Key Agreement possesses the quality of [perfect forward secrecy (PFS)](https://en.wikipedia.org/wiki/Forward_secrecy), meaning, even if the client and server long term keys are compromised, the past session keys (used to encrypt TLS traffic, for example) are not compromised.
 
-***MODE RECOMMENDATIONS***
+## Chow-Choo Protocol - Introduction
 
-|Mode|Use Case|
-|:----------------------:|:----------------------:|
-|***M-Pin 1-pass***| Digital Signature|
+The Chow-Choo Protocol was developed by Sherman S.M. Chow and Kim-Kwang Raymond Choo and published in 2007 via a research paper titled Strongly-Secure Identity-based Key Agreement <a href="#chow-choo">3</a>.
+
+<figure>
+  <figcaption><strong>PROTOCOL MODE RECOMMENDATIONS</strong></figcaption>
+<markdeep>
+      Mode                    |   Use Cases
+-------------------------------------|------------
+M-Pin 1-Pass | Digital signature authentication in battery or bandwidth constrained environments such as IoT devices, embedded applications and mobile apps.
+M-Pin 1-Pass + M-Pin 2-Pass      | Digital signature and client to server authentication in smartphones apps, desktop browsers and software applications.
+M-Pin 2-Pass | Client to server authentication in smartphones apps, desktop browsers and software applications.
+M-Pin FULL | Mutual client and server authentication with authenticated key agreement for use in smartphones apps, hardware and software applications. Authenticated Key Agreement with PFS can be used as the basis for TLS sessions between clients and servers.
+Chow-Choo | Mutual peer to peer authentication with authenticated key agreement for use in smartphones apps, hardware and software applications. Authenticated Key Agreement with PFS can be used as the basis for TLS sessions between clients and servers and peer to peer.
+</markdeep>
+</figure>
 
 <!---
-
 The M-Pin Protocol has been iterated on several times over the years since, and has been shown to be proven secure under the computational BDH (Bilinear Diffie-Hellman) assumption, and in the Canetti-Krawczyk (CK) security model <a href="#boyd">3</a>.
 
 Furthermore Gorantla, Boyd and Nieto extend this protocol again to the M-Pin 'one-pass' setting, and provide a proof in a modified extended Canetti-Krawczyk (eCK) setting <a href="#gorantla">4</a>.
@@ -56,12 +67,12 @@ Furthermore Gorantla, Boyd and Nieto extend this protocol again to the M-Pin 'on
 
 --->
 
-<!--- This is the Chow Choo protocol in a table / frame  --->
+<!--- This is the Chow Choo protocol in a Mathml table / frame because redering in Math LaTex equations exposes a bug in MathJax. It's just one equation!  --->
 
 <figure>
 	<html>
 	<math xmlns="http://www.w3.org/1998/Math/MathML" display='block'>
-			<mtable frame="solid" rowlines="solid" rowalign="center">
+			<mtable frame="solid" rowlines="solid" rowalign="center" mathbackground="white">
 			<mstyle mathsize='.85em'>
 		<mtr>
 			<mtd>
@@ -629,11 +640,5 @@ Furthermore Gorantla, Boyd and Nieto extend this protocol again to the M-Pin 'on
 	<cite id="freeman-scott-teske">D. Freeman and M. Scott and E. Teske. A taxonomy of pairing-friendly elliptic curves. Journal of Cryptography. 2010. Pages 224 -- 280. Volume 23.</cite>
 	<cite id="Scott1">M. Scott. Authenticated ID-based Key Exchange and remote log-in with simple token and PIN number. Cryptology ePrint Archive, Report 2002/164. http://eprint.iacr.org.</cite>
 	<cite id="boyd">C. Boyd and A. Mathuria, Protocols for Authentication and Key Establishment, Springer-Verlag, 2003.</cite>
-  <cite id="gorantla">J. Clerk Maxwell, A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68–73.</cite>
-  <cite id="jacobs63">I. S. Jacobs and C. P. Bean, <q>Fine particles, thin films and exchange anisotropy,</q> in Magnetism, vol. III, G. T. Rado and H. Suhl, Eds. New York: Academic, 1963, pp. 271–350.</cite>
-  <cite id="elissa">K. Elissa, <q>Title of paper if known,</q> unpublished.</cite>
-  <cite id="park13">Park, T. H., Saxena, A., Jagannath, S., Wiedenbeck, S., and Forte, A. Towards a taxonomy of errors in HTML and CSS. In <em>Proc. ICER 2013</em>, ACM Press (2013), 75-82.</cite>
-  <cite id="nicole">R. Nicole, <q>Title of paper with only first word capitalized,</q> J. Name Stand. Abbrev., in press.</cite>
-  <cite id="yorozu87">Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, <q>Electron spectroscopy studies on magneto-optical media and plastic substrate interface,</q> IEEE Transl. J. Magn. Japan, vol. 2, pp. 740–741, August 1987 [Digests 9th Annual Conf. Magnetics Japan, p. 301, 1982].</cite>
-  <cite id="young89">M. Young, The Technical Writer’s Handbook. Mill Valley, CA: University Science, 1989.</cite>
+  <cite id="chow-choo">Chow, S.S.M., Choo, K.-K.R.: Strongly-Secure Identity-based Key Agreement and Anonymous Extension. Cryptology ePrint Archive, Report 2007/018.</cite>
 </div>
