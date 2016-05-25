@@ -46,15 +46,15 @@ Note that the M-Pin Full Authenticated Key Agreement possesses the quality of [p
 The Chow-Choo Protocol was developed by Sherman S.M. Chow and Kim-Kwang Raymond Choo and published in 2007 via a research paper titled Strongly-Secure Identity-based Key Agreement <a href="#chow-choo">3</a>.
 
 <figure>
-  <figcaption><strong>PROTOCOL MODE RECOMMENDATIONS</strong></figcaption>
+  <figcaption><strong>PROTOCOL RECOMMENDATIONS</strong></figcaption>
 <markdeep>
-      Mode                          |   Use Cases
+      Protocol                         |   Use Cases
 -------------------------------------|------------
 M-Pin 1-Pass | Digital signature authentication in battery or bandwidth constrained environments such as IoT devices, embedded applications and mobile apps.
 M-Pin 1-Pass + M-Pin 2-Pass      | Digital signature and client to server authentication in smartphones apps, desktop browsers and software applications.
-M-Pin 2-Pass | Client to server authentication in smartphones apps, desktop browsers and software applications.
-M-Pin FULL | Mutual client and server authentication with authenticated key agreement for use in smartphones apps, hardware and software applications. Authenticated Key Agreement with PFS can be used as the basis for TLS sessions between clients and servers.
-Chow-Choo | Mutual peer to peer authentication with authenticated key agreement for use in smartphones apps, hardware and software applications. Authenticated Key Agreement with PFS can be used as the basis for TLS sessions between clients and servers and peer to peer.
+M-Pin 2-Pass | Client to server authentication in smartphone apps, desktop browsers and software applications.
+M-Pin FULL | Mutual client and server authentication with authenticated key agreement for use in smartphone apps, hardware and software applications. Authenticated Key Agreement with PFS can be used as the basis for TLS sessions between clients and servers.
+Chow-Choo | Mutual peer to peer authentication with authenticated key agreement for use in smartphone apps, hardware and software applications. Authenticated Key Agreement with PFS can be used as the basis for TLS sessions between clients and servers and peer to peer.
 </markdeep>
 </figure>
 
