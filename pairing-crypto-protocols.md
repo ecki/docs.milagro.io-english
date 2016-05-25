@@ -11,16 +11,41 @@ Note: This document uses sections from the MIRACL Labs M-Pin Full Paper, publish
 </div>
 --->
 
-## Introduction
-
-The Milagro framework relies on Distributed Trust Authorities to issue shares of Type-3 Pairing keys to Milagro Crypto Apps, such as the Milagro MFA server and clients, or to software or hardware applications that have embedded Milagro code in order derive the functional capabilities.
-
-As outlined in the previous section, Type-3 pairings were selected as they are the most efficient pairing and will work with non-supersingular pairing-friendly curves. These operate as $G_1$ x $G_2 \rightarrow G_T$, where $G_2$ is a particular group of points, again of the order $q$, but on a twisted elliptic curve defined over an extension which is a divisor of $k$.
-These curves can be constructed to be a near perfect fit at any required level of security <a href="#freeman-scott-teske">1</a>. The pairing protocols within the Milagro framework all work on a Type-3 setting.
-
 ## M-Pin Protocol - Introduction
 
-The genesis of the M-Pin Protocol was first put forward in a research paper by [Dr. Michael Scott](https://scholar.google.com/citations?user=GsM-aeEAAAAJ&hl=en) in 2002 <a href="#Scott1">2</a>. The M-Pin Protocol has been iterated on several times over the years since, to develop three distinct modes, which will be explored in the following sections.
+The genesis of the M-Pin Protocol was first put forward in a research paper by [Dr. Michael Scott](https://scholar.google.com/citations?user=GsM-aeEAAAAJ&hl=en) in 2002 <a href="#Scott1">2</a>.
+
+The M-Pin Protocol has been iterated on several times over the years since, to develop three distinct modes, which will be explored in the following sections.
+
+The M-Pin Protocol is intended to replace the well-known Username/Password authentication mechanism which is widely considered to be effectively broken.
+
+The main problem is the existence of a **password file** on the server, which is commonly stolen and hacked, revealing most user passwords.
+
+The idea behind M-Pin is that each registered client is issued with a cryptographic identity based encryption key. They then prove to a server that they are in possession of this key using a zero-knowledge proof protocol, which can be extended to include authenticated key agreement.
+
+This protocol design eliminates the need for any information related to clients, or their keys, to be kept on the authentication server.
+
+Common to both Chow-Choo and M-Pin is that the keys are issued in fractions, not as whole keys, by the Distributed Trust Authorities. Only the clients, who receive the fractions from various D-TA's, will ever know the completed whole keys.
+
+Industry commentators have long advocated a multi-factor solution. The novel feature of M-Pin and Chow-Choo is that the cryptographic secrets issued to clients or peers may be safely split up into any number of independent factors.
+
+Each of these factors has the same form; they are points on an elliptic curve. To recreate the original secret, they are simply added together again -- ***it's as simple as that***.
+
+One factor might be derived from a short 4-digit PIN. Another might be a *token* conveniently stored in an authenticator app on a smartphone.
+
+Classic two-factor solutions are in fact often hierarchical and two-level. A key generated from one factor is used to unlock the other.
+
+Disjointed technologies are used by each factor. Typically a password (or a biometric) might be used to unlock an authentication key stored in a file.
+
+Strictly speaking, this solution is only one factor, as it is only this authentication key that is required, and an attacker would be satisfied if they could obtain this without knowing the password.
+
+However since this is probably not possible, we accept that the overall effect is two-factor authentication.
+
+Software encryption might be used as the locking mechanism, but since a brute force attack will discover the authentication key, the password must become a large hard-to-remember pass-phrase.
+
+The alternative (which achieves the same functionality as two-factor M-Pin) is to lock the authentication key into a secure hardware vault. Now a short PIN can be used to unlock it.
+
+However, secure hardware is expensive and may not be supported on all devices. Another downside of this classic approach is that the extension to multi-factor authentication is not at all obvious.
 
  As noted in [Milagro Crypto Concepts](milagro-concepts.html), the M-Pin Protocol is of these classifications and exploits the features of:
 * Elliptic Curve Cryptography
@@ -32,7 +57,7 @@ Because of the characteristics that M-Pin inherits from the four techniques abov
 * Multi-factor authentication (MFA) using Zero Knowledge Proof
 * Authenticated Key Agreement
 * Distribution, or splitting, of Trust Authorities
-* Covert Channel Communication
+* [Subliminal Channel Communication](https://en.wikipedia.org/wiki/Subliminal_channel)<a href="#scott-spector">3</a>
 
 The three modes of operation of the M-Pin Protocol are as follows:
 * **M-Pin 1-pass**: Client to server authentication via digital signature, this mode implements a *non-interactive* zero knowledge proof and is resistant to [MITM (man in the middle)](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) attacks.
@@ -43,20 +68,145 @@ Note that the M-Pin Full Authenticated Key Agreement possesses the quality of [p
 
 ## Chow-Choo Protocol - Introduction
 
-The Chow-Choo Protocol was developed by Sherman S.M. Chow and Kim-Kwang Raymond Choo and published in 2007 via a research paper titled Strongly-Secure Identity-based Key Agreement <a href="#chow-choo">3</a>.
+The Chow-Choo Protocol was developed by Sherman S.M. Chow and Kim-Kwang Raymond Choo and published in 2007 via a research paper titled Strongly-Secure Identity-based Key Agreement <a href="#chow-choo">4</a>.  The Chow-Choo Protocol can be technically described as an identity-based key agreement protocol.
+
+The Chow-Choo Protocol is of these classifications and exploits the features of:
+* Elliptic Curve Cryptography
+* Pairing Based Cryptography
+* Identity Based Encryption
+
+Because of the characteristics that Chow-Choo inherits from the three techniques above, the Chow-Choo Protocol can deliver:
+* Multi-factor authentication (MFA) using Zero Knowledge Proof
+* Authenticated Key Agreement
+* Distribution, or splitting, of Trust Authorities
+
+Note that the Chow-Choo Protocol is not a Zero Knowledge Proof protocol, and is not able to deliver a Subliminal Channel capability.
+<br></br>
 
 <figure>
-  <figcaption><strong>PROTOCOL RECOMMENDATIONS</strong></figcaption>
+  <caption><strong>Table 1.</strong> PROTOCOL RECOMMENDATIONS</caption>
+</figure>
 <markdeep>
-      Protocol                         |   Use Cases
--------------------------------------|------------
-M-Pin 1-Pass | Digital signature authentication in battery or bandwidth constrained environments such as IoT devices, embedded applications and mobile apps.
-M-Pin 1-Pass + M-Pin 2-Pass      | Digital signature and client to server authentication in smartphones apps, desktop browsers and software applications.
+Protocols | Use Cases
+-------|-------
+M-Pin 1-Pass | Digital signature authentication in battery or bandwidth constrained environments such as IoT devices, embedded applications and mobile apps. <br>This should be considered the default implementation for client to server authentication suitable for almost all use cases.
+M-Pin 1-Pass + <br>M-Pin 2-Pass | Digital signature and client to server authentication in smartphones apps, desktop browsers and software applications.
 M-Pin 2-Pass | Client to server authentication in smartphone apps, desktop browsers and software applications.
-M-Pin FULL | Mutual client and server authentication with authenticated key agreement for use in smartphone apps, hardware and software applications. Authenticated Key Agreement with PFS can be used as the basis for TLS sessions between clients and servers.
-Chow-Choo | Mutual peer to peer authentication with authenticated key agreement for use in smartphone apps, hardware and software applications. Authenticated Key Agreement with PFS can be used as the basis for TLS sessions between clients and servers and peer to peer.
+M-Pin FULL | Mutual client and server authentication with authenticated key agreement for use in smartphone apps, hardware and software applications. <br>Authenticated Key Agreement with PFS can be used as the basis for TLS sessions between clients and servers.
+Chow-Choo | Mutual peer to peer authentication with authenticated key agreement for use in smartphone apps, hardware and software applications. <br>Authenticated Key Agreement with PFS can be used as the basis for TLS sessions between clients and servers and peer to peer.
 </markdeep>
 </figure>
+
+## Protocols In Depth
+
+The Milagro framework protocols rely on Distributed Trust Authorities to issue shares, or fractions, of Type-3 Pairing keys to Milagro Crypto Apps, such as the Milagro MFA server and clients, or to software or hardware applications that have embedded Milagro code in order derive the functional capabilities.
+
+These clients or peers become the only entities that know the completed whole keys assembled from shares (fractions) issued by different Distributed Trust Authorities.
+
+As outlined in the previous section, Type-3 pairings were selected as they are the most efficient pairing and will work with non-supersingular pairing-friendly curves.
+
+These operate as $G_1$ x $G_2 \rightarrow G_T$, where $G_2$ is a particular group of points, again of the order $q$, but on a twisted elliptic curve defined over an extension which is a divisor of $k$.
+
+These curves can be constructed to be a near perfect fit at any required level of security <a href="#freeman-scott-teske">1</a>. The pairing protocols within the Milagro framework all work on a Type-3 pairing.
+
+One of the novel aspects of pairing-based cryptography is that deployed secrets are commonly represented as points on an elliptic curve, which are the result of multiplying a known point by a master secret $s$.
+
+So for example a secret might be of the form $sP$, where $P$ is known.
+
+There are a number of interesting things we can do with secrets that have this form, that are not possible with the secrets that arise when using other cryptographic technologies.
+
+For example they can be split into two, into $s_1P$ and $s_2P$ where $s=s_1+s_2$ and $sP = s_1P +s_2P$.
+
+In fact they can be just as easily split into multiple parts, just like <a href="url" target="_blank">chopping up a cucumber</a>.
+
+We can also add extra components to create a secret of the form $s(P_1+P_2) = sP_1+sP_2$.
+
+It is the flexibility that arises from this form of the secret that allows us to introduce the idea of chopping off a tiny sliver of the secret to support a PIN number.
+
+It also facilitates the concept of *Time Permits* as discussed in a later section.
+
+Lastly, it enables Distributed Trust.
+
+### Distributed Trust Authorities
+
+A Trusted Authority will be in possession of a master secret $s$, a random element of $F_q$. A client secret is of the form $s.H(ID)$, where ID is the client identity and $H(.)$ a hash function which maps to a point on $G_1$.
+
+From prior art, we assume that $H$ is modelled as a random oracle where $H(ID) = r_{ID}.P$
+
+where $r_{ID} \in F_q$ is random and $P$ is a fixed generator of $G_1$.<a href="#smart-vercauteren">6</a>
+
+The server will be issued with $sQ$, where $Q$ is a fixed generator of $G_2$.
+
+Note that this will be the only multiple of $s$ in $G_2$ ever provided by the TA. Servers will always be associated with their own unique master secrets.
+
+Note that the TA functionality can be trivially distributed using a secret sharing scheme, to remove from the overall system a single point of compromise or coercion.
+
+In the simplest possible case there may be two Distributed Trusted Authorities (D-TAs), each of which independently maintains their own share of the master key.
+
+So $s=s_1+s_2$, and each D-TA issues a part-client key to the client $s_1 H(ID)$ and $s_2 H(ID)$, which the client, after receiving the shares, adds together to form their full key.
+
+Now even if one D-TA is compromised, the client key is still safe.
+
+NOTE: As discussed in the <a href="url" target="_blank">Distributed Trust Ecosystem Proposal</a>, the Milagro Project has put forward a proposal to create an ecosystem whereby any participant can run independent Distributed Trust Authority services.
+
+### M-Pin 1-Pass
+
+As opposed to Chow-Choo, which can be used in a client to server as well as a peer to peer setting, M-Pin is strictly a client-server protocol.
+
+To embellish the security of the client-server protocol, it is important that client and server secrets should be kept distinct.
+
+A simple way to do this is to exploit the structure of a Type-3 pairing and put client secrets in $G_1$ and the server secret in $G_2$ as previously noted in the preceding section.
+
+For a Type-3 pairing there is assumed to be no computable isomorphism between these groups, even though both are of the same order.
+
+In the original implementation, the client was supplied with a challenge by the server as part of the second step within the protocol, after the first step whereby the client announced her identity to the server.
+
+In a later proposal, it was realised that an M-Pin 1-Pass Protocol could be obtained if the client itself derived the challenge as $y$ as $y=H(U|T)$ where $T$ is a time-stamp transmitted by the Client along her claimed identity, $U$ and $V$.<a href="#m-pin-ietf">5</a>.
+
+The protocol could then be reduced in an obvious way to a secure 1-pass protocol. However, this assumes that the Server checks the accuracy of the time-stamp before completing the protocol.
+<br></br>
+
+---
+
+<figure>
+  <caption><strong>Figure 1.</strong> M-Pin 1-Pass</caption>
+</figure>
+
+|Alice - identity $ID_a$|Server|
+|:----------------------:|:----------------------:|
+|Generates random $x<q$||
+|$A=H(ID_a)$||
+|$U=x{A}$||
+|$ID_a$, $U~~ $||
+|$y=H(U\|T)$ ||
+|$V=-(x+y){((s-\alpha)A+\alpha A)} \rightarrow$||
+| |$A=H(ID_a)$|
+| |$g=e(V,Q).e(U+yA,sQ)$|
+| |if $g \ne 1$, reject the connection|
+
+---
+
+### M-Pin 2-Pass
+
+As you can see below in Fig 2., M-Pin in the two pass operation
+
+<figure>
+  <caption><strong>Figure 2.</strong> M-Pin 2-Pass</caption>
+</figure>
+|Alice - identity $ID_a$|Server|
+|:----------------------:|:----------------------:|
+|Generates random $x<q$|Generates random $y<q$|
+|$A=H(ID_a)$||
+|$U=x{A}$||
+|$ID_a$, $U~~ \rightarrow  $||
+| |$\leftarrow y$|
+|$V=-(x+y){((s-\alpha)A+\alpha A)} \rightarrow$||
+| |$A=H(ID_a)$|
+| |$g=e(V,Q).e(U+yA,sQ)$|
+| |if $g \ne 1$, reject the connection|
+
+
+---
 
 <!---
 The M-Pin Protocol has been iterated on several times over the years since, and has been shown to be proven secure under the computational BDH (Bilinear Diffie-Hellman) assumption, and in the Canetti-Krawczyk (CK) security model <a href="#boyd">3</a>.
@@ -641,4 +791,6 @@ Furthermore Gorantla, Boyd and Nieto extend this protocol again to the M-Pin 'on
 	<cite id="Scott1">M. Scott. Authenticated ID-based Key Exchange and remote log-in with simple token and PIN number. Cryptology ePrint Archive, Report 2002/164. http://eprint.iacr.org.</cite>
 	<cite id="boyd">C. Boyd and A. Mathuria, Protocols for Authentication and Key Establishment, Springer-Verlag, 2003.</cite>
   <cite id="chow-choo">Chow, S.S.M., Choo, K.-K.R.: Strongly-Secure Identity-based Key Agreement and Anonymous Extension. Cryptology ePrint Archive, Report 2007/018.</cite>
+  <cite id="m-pin-ietf">Chow, S.S.M., Choo, K.-K.R.: Strongly-Secure Identity-based Key Agreement and Anonymous Extension. Cryptology ePrint Archive, Report 2007/018.</cite>
+  <cite id="smart-vercauteren">N. Smart and F. Vercauteren. On Computable Isomorphisms in Efficient Pairing-based Systems. Discrete Applied Mathematics. Volume 155. Pages 538--547. 2007.</cite>
 </div>
