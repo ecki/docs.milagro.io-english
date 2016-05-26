@@ -35,7 +35,6 @@ In 2015, NIST [(***the 'post-NSA' NIST***)](http://www.theregister.co.uk/2014/05
 >      --- NIST, Report on Pairing-Based Cryptography
 
 </markdeep>
-
 **It is hoped that the Milagro project will become a safe, IPR free island of innovation for cryptographers interested in pairing protocols that solve real world security issues**.
 
 **We hope you join us and become part of this journey.**
