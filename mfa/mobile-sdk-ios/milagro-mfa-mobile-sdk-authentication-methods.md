@@ -255,8 +255,6 @@ Note that OTP is generated only by RPA that supports that functionality, such as
 | user           | IUser          | Yes       | The user that is being authenticated     |
 | pin            | NSString*      | Yes       | The PIN/secret that the user has entered |
 | otp            | OTP**          | Yes       | The resulting OTP is returned here.      |
-|                |                |           |                                          |
-|                |                |           |                                          |
 
 #### Return Values
 
