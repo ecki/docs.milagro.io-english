@@ -33,9 +33,9 @@ This method starts the authentication process for a given user. It attempts to r
 #### Return Status
 
 
-- OK - The authentication process has been started successfully
-- REVOKED - Time permit for the given user was refused by the server.
--FLOW_ERROR The user is in the incorrect state, i.e. its state is not REGISTERED
+**OK:** The authentication process has been started successfully   
+**REVOKED:** Time permit for the given user was refused by the server.   
+**FLOW_ERROR:** The user is in the incorrect state, i.e. its state is not REGISTERED   
 
 #### Example
 
@@ -100,8 +100,8 @@ This method is used only when a user needs to be authenticated to a remote (brow
 
 Return Values
 
-- OK (if successful)
-- INCORRECT_ACCESS_NUMBER (if not)
+**OK:** if successful   
+**INCORRECT_ACCESS_NUMBER:** if not   
 
 #### Examples
 
@@ -176,9 +176,9 @@ This method performs end-user authentication. The user to be authenticated and t
 
 #### Return Status
 
-- OK - Authentication successfull
-- INCORRECT_PIN - Authentication failed.
-- FLOW_ERROR - The user is in the incorrect state.
+**OK:** Authentication successful   
+**INCORRECT_PIN:** Authentication failed   
+**FLOW_ERROR:** The user is in the incorrect state   
 
 #### Example
 
@@ -258,53 +258,53 @@ Note that OTP is generated only by RPA that supports that functionality, such as
 
 #### Return Values
 
-- OK - Authentication successfull
-- INCORRECT_PIN - Authentication failed.
-- FLOW_ERROR - The user is in the incorrect state.
+**OK:** Authentication successful  
+**INCORRECT_PIN:** Authentication failed.   
+**FLOW_ERROR:** The user is in the incorrect state.   
 
 #### Examples
+```
+MpinStatus* mpinStatus = [MPin StartAuthentication:iuser];
 
-    MpinStatus* mpinStatus = [MPin StartAuthentication:iuser];
+switch (mpinStatus.status) {
+    case OK:
+        break;
+    case REVOKED:
+        // User is revoked, canot authenticate
+        break;
+    default:
+        // Show error message and exit
+        break;
+}
 
-    switch (mpinStatus.status) {
-        case OK:
-            break;
-        case REVOKED:
-            // User is revoked, canot authenticate
-            break;
-        default:
-            // Show error message and exit
-            break;
-    }
+NSString* authPin;
+//
+// Read PIN Code or secret from the user
+//
 
-    NSString* authPin;
-    //
-    // Read PIN Code or secret from the user
-    //
+OTP *otp = nil;
+mpinStatus = [MPin FinishAuthenticationOTP:iuser pin:authPin otp:&otp];
 
-    OTP *otp = nil;
-    mpinStatus = [MPin FinishAuthenticationOTP:iuser pin:authPin otp:&otp];
-
-    switch (mpinStatus.status) {
-        case OK:
-            // Authentication successful
-            if ( otp == nil || otp.status.status != OK ) {
-                // Provided OTP is not valid - backend doesn't support OTP, exit
-            }
-            // Display otp.otp to the user
-            // otp.ttlSeconds holds the OTP expiration time in seconds
-            break;
-        case INCORRECT_PIN:
-            // Authentication failed
-            if ([iuser getState] == BLOCKED) {
-                // User is blocked and cannot authenticate anymore
-            }
-            break;
-        default:
-            // Show error message and exit
-            break;
-    }
-
+switch (mpinStatus.status) {
+    case OK:
+        // Authentication successful
+        if ( otp == nil || otp.status.status != OK ) {
+            // Provided OTP is not valid - backend doesn't support OTP, exit
+        }
+        // Display otp.otp to the user
+        // otp.ttlSeconds holds the OTP expiration time in seconds
+        break;
+    case INCORRECT_PIN:
+        // Authentication failed
+        if ([iuser getState] == BLOCKED) {
+            // User is blocked and cannot authenticate anymore
+        }
+        break;
+    default:
+        // Show error message and exit
+        break;
+}
+```
 ### FinishAuthenticationAN
 
 #### Description
@@ -327,9 +327,8 @@ accessNumber is the Access Number obtained out-of-band.
 
 #### Return Status
 
- - OK - Successful Authentication
- - INCORRECT_PIN - Authentication failed because of an incorrect PIN code. After the third (configurable in the RPS) unsuccessful authentication attempt, the method still returns status INCORRRECT_PIN but the user state is set to BLOCKED.
- - INCORRECT_ACCESS_NUMBER - The authentication failed because of incorrect Access Number.
+**OK:** Successful Authentication   
+**INCORRECT_PIN:** Authentication failed because of an incorrect PIN code. After the third (configurable in the RPS) unsuccessful authentication attempt, the method still returns status INCORRRECT_PIN but the user state is set to BLOCKED.</br>     **INCORRECT_ACCESS_NUMBER:** The authentication failed because of incorrect Access Number.
 
 #### Examples
 
@@ -401,21 +400,22 @@ This method checks if a user's logout information was provided by the RPA, and t
 
 #### Return Values
 
-- TRUE: the User can be logged out from the remote session
+**TRUE:** the User can be logged out from the remote session
 
-- FALSE: the User cannot be logged out from the remote session
+**FALSE:** the User cannot be logged out from the remote session
 
 #### Example
 
 The following code demonstrates the use of the method:
-
+```
 MpinStatus* mpinStatus = [MPin Authenticate:iuser];
 
-    // To logout
-    if([Mpin CanLogout:iuser])
-    {
-        [Mpin Logout:iuser];
-    }
+// To logout
+if([Mpin CanLogout:iuser])
+{
+    [Mpin Logout:iuser];
+}
+```
 
 ### Logout Method
 
@@ -435,9 +435,9 @@ This method tries to log the user out of a remote (Browser) session after succes
 
 #### Return Values
 
-- TRUE: the log-out request to the RPA has been successful
+**TRUE:** the log-out request to the RPA has been successful
 
-- FALSE: the log-out request to the RPA has failed
+**FALSE:** the log-out request to the RPA has failed
 
 #### Example
 
