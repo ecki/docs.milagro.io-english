@@ -21,11 +21,11 @@ The M-Pin Protocol is intended to replace the well-known Username/Password authe
 
 The main problem is the existence of a **password file** on the server, which is commonly stolen and hacked, revealing most user passwords.
 
-The idea behind M-Pin is that each registered client is issued with a cryptographic identity based encryption key. They then prove to a server that they are in possession of this key using a zero-knowledge proof protocol, which can be extended to include authenticated key agreement.
+The idea behind M-Pin is that each registered client is issued with a secret cryptographic key derived from their identity. They then prove to a server that they are in possession of this key using a zero-knowledge proof protocol, which can be extended to include authenticated key agreement.
 
 This protocol design eliminates the need for any information related to clients, or their keys, to be kept on the authentication server.
 
-Common to both Chow-Choo and M-Pin is that the keys are issued in fractions, not as whole keys, by the Distributed Trust Authorities. Only the clients, who receive the fractions from various D-TA's, will ever know the completed whole keys.
+Common to both Chow-Choo and M-Pin is that the keys are issued in shares, not as whole keys, by the Distributed Trust Authorities. Only the clients, who receive all of the shares from the D-TA's, will ever know the completed whole keys.
 
 Industry commentators have long advocated a multi-factor solution. The novel feature of M-Pin and Chow-Choo is that the cryptographic secrets issued to clients or peers may be safely split up into any number of independent factors.
 
@@ -47,7 +47,7 @@ The alternative (which achieves the same functionality as two-factor M-Pin) is t
 
 However, secure hardware is expensive and may not be supported on all devices. Another downside of this classic approach is that the extension to multi-factor authentication is not at all obvious.
 
- As noted in [Milagro Crypto Concepts](milagro-concepts.html), the M-Pin Protocol is of these classifications and exploits the features of:
+ As noted in [Milagro Crypto Concepts](milagro-concepts.html), the M-Pin Protocol exploits:
 * Elliptic Curve Cryptography
 * Pairing Based Cryptography
 * Identity Based Encryption
@@ -59,10 +59,10 @@ Because of the characteristics that M-Pin inherits from the four techniques abov
 * Distribution, or splitting, of Trust Authorities
 * [Subliminal Channel Communication](https://en.wikipedia.org/wiki/Subliminal_channel)<a href="#scott-spector">3</a>
 
-The three modes of operation of the M-Pin Protocol are as follows:
-* **M-Pin 1-pass**: Client to server authentication via digital signature, this mode implements a *non-interactive* zero knowledge proof and is resistant to [MITM (man in the middle)](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) attacks.
-* **M-Pin 2-pass**: Client to server authentication via a *interactive* zero knowledge proof, resistant to [MITM](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) and [KCI (Key Compromise Impersonation)](https://kcitls.org) attacks.
-* **M-Pin FULL**: Mutual client to server authentication via a *interactive* zero knowledge proof, resistant to MITM and KCI attacks and able to drive an Authenticated [Key Agreement](https://en.wikipedia.org/wiki/Key-agreement_protocol) between client and server, resulting in 128 bit shared secret key.
+The three modes of operation of the M-Pin Protocol are as below. All are fully protected against  MITM (man in the middle) attacks and KCI (Key Compromise Impersonation)  attacks:
+* **M-Pin 1-pass**: Client to server authentication via digital signatureof a time-stamp.
+* **M-Pin 2-pass**: Client to server authentication via an *interactive* zero knowledge proof.
+* **M-Pin FULL**: Mutual client to server authentication via an *interactive* zero knowledge proof, and able to drive an Authenticated [Key Agreement](https://en.wikipedia.org/wiki/Key-agreement_protocol) between client and server, resulting in 128 bit shared secret key.
 
 Note that the M-Pin Full Authenticated Key Agreement possesses the quality of [perfect forward secrecy (PFS)](https://en.wikipedia.org/wiki/Forward_secrecy), meaning, even if the client and server long term keys are compromised, the past session keys (used to encrypt TLS traffic, for example) are not compromised.
 
@@ -151,7 +151,7 @@ So $s=s_1+s_2$, and each D-TA issues a part-client key to the client $s_1 H(ID)$
 
 Now even if one D-TA is compromised, the client key is still safe.
 
-NOTE: As discussed in the <a href="url" target="_blank">Distributed Trust Ecosystem Proposal</a>, the Milagro Project has put forward a proposal to create an ecosystem whereby any participant can run independent Distributed Trust Authority services.
+NOTE: As discussed in the 'Distributed Trust Ecosystem Proposal', the Milagro Project has put forward a proposal to create an ecosystem whereby any participant can run independent Distributed Trust Authority services.
 
 ### M-Pin 1-Pass
 
@@ -159,7 +159,7 @@ As opposed to Chow-Choo, which can be used in a client to server as well as a pe
 
 To embellish the security of the client-server protocol, it is important that client and server secrets should be kept distinct.
 
-A simple way to do this is to exploit the structure of a Type-3 pairing and put client secrets in $G_1$ and the server secret in $G_2$ as previously noted in the preceding section.
+A simple way to do this is to exploit the structure of a Type-3 pairing and put client secrets in $G_1$ and the server secret in $G_2$ as noted in the preceding section.
 
 For a Type-3 pairing there is assumed to be no computable isomorphism between these groups, even though both are of the same order.
 
@@ -194,7 +194,7 @@ This all works thanks to the pairing function $e(.,.)$ and its remarkable biline
 
 ### M-Pin 2-Pass
 
-As you can see below in Fig 2., M-Pin in the two pass operation operates in a challenge (from the Server) to client, who responds to challenge. This implementation obviates the any risk of Key Compromise Impersonation attack vector, at the cost of of a full roundtrip.
+As you can see below in Fig 2., M-Pin in two pass mode operates in a challenge (from the Server) to client, who responds to the challenge. This implementation obviates the need for synchronised clocks, at the cost of of a full roundtrip.
 
 ---
 
@@ -215,21 +215,21 @@ As you can see below in Fig 2., M-Pin in the two pass operation operates in a ch
 
 ---
 
-### M-Pin FULL
+### M-Pin Full
 
-This more elaborate protocol not only replaces Username/Password, but replaces the functionality of digital certificates being utilised to drive key agreement for TLS or VPN protocols as well.
+This more elaborate protocol not only replaces Username/Password, but replaces the functionality of digital certificates being utilised to drive key agreement for TLS or VPN protocols.
 
 Our starting point is the M-Pin protocol as described above.
 
 The idea is to run it first (to authenticate the client to the server), and then proceed to authenticate the server to the client via an authenticated key exchange, which also establishes the agreed key of 128 bits.
-
-The first thing to note is that both the client and the server can already calculate a mutual authenticated encryption key!
 
 This protocol requires another general hash function $H_g(.)$ which serializes, and hashes its input to a 256-bit value. Both sides can then extract a key from this value $K$.
 
 It is left as a simple exercise for the reader to confirm that both client and server end up with the same key.
 
 Note that since the first part of the protocol is just the original M-Pin protocol, all of its features and extensions still apply.
+
+This protocol was deliberately designed to reduce client-side computation to a minimum.
 
 ---
 
@@ -279,7 +279,7 @@ In the above example, Alice and Bob both were issued *sender* and *receiver* key
 
 An obvious advantage is to issue each Thing with two keys, one in $G_1$ and the other in $G_2$, **if** the Thing is approved to send and receive.
 
-However, the capability exists to cryptographically bound Things to only receiving information, or only sending information, based upon whether or not a Thing has been issued a sender and / or a receiver key.
+However, the capability exists to cryptographically bound Things to only receive information, or only send information, based upon whether or not a Thing has been issued a sender and / or a receiver key.
 
 This capability is exploited in the Milagro framework to enable peer to peer authenticated key agreement.
 
