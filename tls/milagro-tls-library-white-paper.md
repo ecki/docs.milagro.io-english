@@ -23,9 +23,10 @@ currentMenu: milagro-tls-library-white-paper
 
 ## Abstract
 
-This document introduces two key-exchange algorithms that are both
-based on pairing-based cryptography. The first is designed for
-Client-to-Server communication and the second for Peer-to-Peer.
+This document introduces two key exchange algorithms based on
+Pairing-Based Cryptography (PBC) for the Transport Layer Security
+(TLS) protocol. In particular,  it specifies the use of two identity-
+based key exchange algorithm in TLS handshake.
 
 ## Introduction
 
@@ -374,17 +375,35 @@ The ClientKeyExchange message is extended as follows.
 
 ## Cipher Suites
 
-
 The following defines new cipher suites that use the key exchange
 algorithms specified in Section 3.
 
-- CipherSuite TLS_MILAGRO_CS_WITH_AES_128_GCM_SHA256  = { 0xC0, 0xB1 }
-- CipherSuite TLS_MILAGRO_P2P_WITH_AES_128_GCM_SHA256 = { 0xC0, 0xB2 }
+- CipherSuite TLS_MILAGRO_CS_WITH_AES_128_GCM_SHA256       = {0xC0,0xB1}
+- CipherSuite TLS_MILAGRO_CS_WITH_AES_128_GCM_SHA512       = {0xC0,0xB2}
+- CipherSuite TLS_MILAGRO_CS_WITH_CAMELLIA_128_GCM_SHA256  = {0xC0,0xB3}
+- CipherSuite TLS_MILAGRO_CS_WITH_CAMELLIA_128_GCM_SHA512  = {0xC0,0xB4}
+- CipherSuite TLS_MILAGRO_CS_WITH_3DES_EDE_CBC_SHA512      = {0xC0,0xB5}
+- CipherSuite TLS_MILAGRO_CS_WITH_3DES_EDE_CBC_SHA256      = {0xC0,0xB6}
+- CipherSuite TLS_MILAGRO_CS_WITH_NULL_SHA256              = {0xC0,0xB7}
+- CipherSuite TLS_MILAGRO_CS_WITH_NULL_SHA512              = {0xC0,0xB8}
+
+- CipherSuite TLS_MILAGRO_P2P_WITH_AES_128_GCM_SHA256      = {0xC0,0xB9}
+- CipherSuite TLS_MILAGRO_P2P_WITH_AES_128_GCM_SHA512      = {0xC0,0xC0}
+- CipherSuite TLS_MILAGRO_P2P_WITH_CAMELLIA_128_GCM_SHA256 = {0xC0,0xC1}
+- CipherSuite TLS_MILAGRO_P2P_WITH_CAMELLIA_128_GCM_SHA512 = {0xC0,0xC2}
+- CipherSuite TLS_MILAGRO_P2P_WITH_3DES_EDE_CBC_SHA512     = {0xC0,0xC3}
+- CipherSuite TLS_MILAGRO_P2P_WITH_3DES_EDE_CBC_SHA256     = {0xC0,0xC4}
+- CipherSuite TLS_MILAGRO_P2P_WITH_NULL_SHA256             = {0xC0,0xC5}
+- CipherSuite TLS_MILAGRO_P2P_WITH_NULL_SHA256             = {0xC0,0xC6}
 
 The key exchange method, cipher, and hash algorithm for each of these
-cipher suites are easily determined by examining the name. AES cipher
-is defined in <a href="#5">5</a>, GCM in <a href="#6">6</a>  and the
-hash algorithm is defined in <a href="#7">7</a>.
+cipher suites are easily determined by examining the name. Ciphers (other
+than AES ciphers) and hash algorithms are defined in <a href="#1">1</a>. AES cipher is
+defined in <a href="#5">5</a>, GCM in <a href="#6">6</a> and the hash algorithm is
+defined in <a href="#7">7</a>.
+
+The cipher suite name space is maintained by IANA.  See Section 7 for
+information on how new value assignments are added.
 
 ## Security Considerations
 
@@ -426,6 +445,9 @@ This key exchange algorithm has been proved secure under the
 Bilinear-Diffie-Hellman (BDH) assumption in the Canetti-Krawczyk <a href="#10">10</a>.
 
 ## IANA Considerations
+
+This document introduces in section 4.1 and 5 some additions to Transport Layer Security
+(TLS) Parameters.
 
 Any assignments in this document require IETF Consensus action <a href="#4">4</a>
 
