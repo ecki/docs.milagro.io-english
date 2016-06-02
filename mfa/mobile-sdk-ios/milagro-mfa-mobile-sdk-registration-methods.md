@@ -79,54 +79,55 @@ The StartRegistration method generates a new M-Pin ID while RestartRegistration 
 |----------------|----------------|-----------|-------------------------------------------------------------------------------------------------------|
 | user           | IUser          | Yes       | The user to be registered                                                                             |
 | userData       | NSString       | No        | Optional application specific user data that might be needed by the RPA in order to register the user |
-|                |                |           |                                                                                                       |
+
 
 ### Return Values
 
-- OK: User registered has been restarted successfully.
+**OK:** User registered has been restarted successfully.
 
-- IDENTITY_NOT_AUTHORIZED: User registration refused by remote server
+**IDENTITY_NOT_AUTHORIZED:** User registration refused by remote server
 
-- FLOW_ERROR: the User is in the incorrect state, i.e its state is not STARTED_REGISTRATION
+**FLOW_ERROR:** the User is in the incorrect state, i.e its state is not STARTED_REGISTRATION
 
 ### Example
 
 The following code snippet demonstrates a sample implementation of restarting a User registration
+```
+id iuser = [MPin MakeNewUser:@"me@MIRACL.org" deviceName:@"My Smartphone"];
+MpinStatus* mpinStatus = [MPin StartRegistration:iuser];
 
-    id iuser = [MPin MakeNewUser:@"me@MIRACL.org" deviceName:@"My Smartphone"];
-    MpinStatus* mpinStatus = [MPin StartRegistration:iuser];
+if(mpinStatus.status != OK) {
+    // Handle error
+}
 
-    if(mpinStatus.status != OK) {
+if ([iuser getState] == STARTED_REGISTRATION)
+{
+    // Waiting for identity verification, which doesn't happen
+    mpinStatus = [MPin RestartRegistration:iuser];
+
+    //
+    // Wait for identity confirmation
+    //
+
+    mpinStatus = [MPin ConfirmRegistration:iuser];
+
+    if (mpinStatus.status == IDENTITY_NOT_VERIFIED) {
+        // The identity has not been verified
+    } else if (mpinStatus.status != OK) {
         // Handle error
     }
 
-    if ([iuser getState] == STARTED_REGISTRATION)
-    {
-        // Waiting for identity verification, which doesn't happen
-        mpinStatus = [MPin RestartRegistration:iuser];
+    NSString* setupPin;
 
-        //
-        // Wait for identity confirmation
-        //
+    /* Read PIN from user */
 
-        mpinStatus = [MPin ConfirmRegistration:iuser];
+    mpinStatus = [MPin FinishRegistration:iuser pin:setupPin];
 
-        if (mpinStatus.status == IDENTITY_NOT_VERIFIED) {
-            // The identity has not been verified
-        } else if (mpinStatus.status != OK) {
-            // Handle error
-        }
-
-        NSString* setupPin;
-
-        /* Read PIN from user */
-
-        mpinStatus = [MPin FinishRegistration:iuser pin:setupPin];
-
-        if (mpinStatus.status != OK) {
-            // Handle error
-        }
+    if (mpinStatus.status != OK) {
+        // Handle error
     }
+}
+```
 
 ### Confirm Registration
 
@@ -144,15 +145,15 @@ Note The application can provide a platform specific identifier for sending push
 
 #### Parameters
 
-| Parameter Name             | Parameter Type | Required? | Description                                                                                                                                       |   |
-|----------------------------|----------------|-----------|---------------------------------------------------------------------------------------------------------------------------------------------------|---|
-| user                       | IUser          | Yes       | The user that is being registered                                                                                                                 |   |
-| pushNotificationIdentifier | NSString*      | No        | An application instance specific Push Message Identifier/Token, which could later be used by the server to send Push Messages to the application. |   |
+| Parameter Name             | Parameter Type | Required? | Description                                                                                                                                       |
+|----------------------------|----------------|-----------|---------------------------------------------------------------------------------------------------------------------------------------------------|
+| user                       | IUser          | Yes       | The user that is being registered                                                                                                                 |
+| pushNotificationIdentifier | NSString*      | No        | An application instance specific Push Message Identifier/Token, which could later be used by the server to send Push Messages to the application. |
 
 #### Return Values
 
-- OK: if the client key is successfully retrieved
-- IDENTITY_NOT_VERIFIED: if the user identity is not verified
+**OK:** if the client key is successfully retrieved   
+**IDENTITY_NOT_VERIFIED:** if the user identity is not verified   
 
 #### Example
 

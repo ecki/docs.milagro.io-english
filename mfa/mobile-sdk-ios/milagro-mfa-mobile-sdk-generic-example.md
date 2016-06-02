@@ -1,17 +1,14 @@
 ---
 currentMenu: milagro-mfa-mobile-sdk-generic-example-ios
 ---
+# Generic App Code Example
 
+## Overview
 
+This page provides a generic code example of an app for iOS to help you get started with the SDK. It demonstrates the full M-Pin User registration/authentication cycle in its correct succession: initialization, User creation and verification, and then User verification. You can use this example as a “skeleton” on which to further build your specific use cases and functionalities.
 
-<div class="WordSection1">
-<h1>Generic App Code Example</h1>
-<h2>Overview</h2>
-<p class="MsoNormal">This page provides a generic code example of an app for iOS to help you get started with the SDK. It demonstrates the full M-Pin User registration/authentication cycle in its correct succession: initialization, User creation and verification, and then User verification. You can use this example as a “skeleton” on which to further build your specific use cases and functionalities.</p>
-
-<h2>Example</h2>
-<div style="border: solid windowtext 1.0pt; padding: 1.0pt 4.0pt 1.0pt 4.0pt;">
-<pre class="computer_code">/*
+## Example
+```
 * Initializing the SDK
 */
 [MPin initSDK];
@@ -34,17 +31,17 @@ if (mpinStatus.status != OK) {
 switch ([iuser getState]) {
     case STARTED_REGISTRATION: {
         BOOL waitForCofirmation = TRUE;
-        
+
         while (waitForCofirmation) {
             // Wait for user identity confirmation
-            
+
             mpinStatus = [MPin ConfirmRegistration:iuser];
-            
+
             if (mpinStatus.status == IDENTITY_NOT_VERIFIED) {
                 [NSThread sleepForTimeInterval:3.0f];
                 continue;
             }
-                
+
             if (mpinStatus.status != OK) {
                 // Show error message and exit
             }
@@ -55,7 +52,7 @@ switch ([iuser getState]) {
     }
     case ACTIVATED: {
         mpinStatus = [MPin ConfirmRegistration:iuser];
-        
+
         if (mpinStatus.status != OK) {
             // Show error message and exit
         }
@@ -118,6 +115,5 @@ switch (mpinStatus.status) {
     default:
         // Show error message and exit
         break;
-}</pre>
-</div>
-</div>
+}
+```
