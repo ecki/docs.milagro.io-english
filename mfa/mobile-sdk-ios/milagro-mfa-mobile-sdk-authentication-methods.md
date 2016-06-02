@@ -442,11 +442,12 @@ This method tries to log the user out of a remote (Browser) session after succes
 #### Example
 
 The following code demonstrates the use of the method:
+```
+MpinStatus* mpinStatus = [MPin Authenticate:iuser];
 
-    MpinStatus* mpinStatus = [MPin Authenticate:iuser];
-
-    // To logout
-    if([Mpin CanLogout:iuser])
-    {
-        [Mpin Logout:iuser];
-    }
+// To logout
+if([Mpin CanLogout:iuser])
+{
+    [Mpin Logout:iuser];
+}
+```
