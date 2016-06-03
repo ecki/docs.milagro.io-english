@@ -2,28 +2,27 @@
 currentMenu: milagro-mfa-mobile-sdk-generic-example-android
 ---
 
-<div id="generated-toc" class="generate_from_h2"></div>
+# Generic app code example
 
-<h1>Generic app code example</span></h1>
-<h2>Overview</h2>
-<p class="MsoNormal">This page provides a generic code example of an app for Android to help you get started with the SDK. It demonstrates the full user registration/authentication cycle in its correct succession:</p>
+## Overview
 
-<ul>
-    <li class="MsoNormal">Initialization</li>
-    <li class="MsoNormal">User creation and verification</li>
-    <li class="MsoNormal">User verification (again)</li>
-</ul>
-<p class="MsoNormal">You can use this example as a “skeleton” on which to further build your specific use cases and functionalities.</p>
+This page provides a generic code example of an app for Android to help you get started with the SDK. It demonstrates the full user registration/authentication cycle in its correct succession:
 
-<h2>Example</h2>
-<pre>
-<code>
+* Initialization
+* User creation and verification
+* User verification (again)
+
+You can use this example as a “skeleton” on which to further build your specific use cases and functionalities.
+
+## Example
+
+```
 /*
 * Initializing the SDK
 */
 MPinSDK sdk = new MPinSDK();
 
-HashMap&lt;String, String&gt; config = new HashMap&lt;String, String&gt;();
+HashMap<String, String> config = new HashMap<String, String>();
 config.put(MPinSDK.CONFIG_BACKEND, "http://ec2-54-77-232-113.eu-west-1.compute.amazonaws.com");
 
 Status status = sdk.Init(config, context);
@@ -92,7 +91,7 @@ if (status.getStatusCode() != Status.Code.OK) {
 /*
 * Retrieving the stored User identities
 */
-ArrayList&lt;User&gt; users = new ArrayList&lt;User&gt;();
+ArrayList<User> users = new ArrayList<User>();
 sdk.ListUsers(users);
 
 /*
@@ -132,6 +131,4 @@ switch (status.getStatusCode()) {
        // handle error and exit
        break;
 }
-
-</code>
-</pre>
+```

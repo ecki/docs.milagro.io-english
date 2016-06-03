@@ -2,111 +2,57 @@
 currentMenu: milagro-mfa-mobile-sdk-init-config-methods-android
 ---
 
-<div id="generated-toc" class="generate_from_h2"></div>
+# Initialization and Configuration Methods
 
-<h1><span style="font-size: 28px;">Initialization and Configuration Methods</span></h1>
-<h2>Overview</h2>
-<p class="MsoNormal">This page provides a list and brief description of the Initialization and Configuration methods used in the Milagro Mobile SDK for Android. They relate to initializing the SDK and configuring the back-end URL.</p>
-<p class="MsoNormal">To view the other methods, refer to the <a href="#">API Reference</a> page.</p>
+## Overview
 
-<h1>MPinSDK</h1>
-<!-- MsoSubtitle -->
-<h2>Description</h2>
+This page provides a list and brief description of the Initialization and Configuration methods used in the Milagro Mobile SDK for Android. They relate to initializing the SDK and configuring the back-end URL.
+
+To view the other methods, refer to the [API Reference](/milagro-mfa-mobile-sdk-api-reference.html) page.
+
+# MPinSDK
+## Description
 This method constructs an SDK instance.
-
-<!-- Standard Paragraph -->
-<h2>Definition</h2>
-<!-- Standard Paragraph -->
-<div style="border: solid windowtext 1.0pt; padding: 1.0pt 4.0pt 1.0pt 4.0pt; background: #E2EFD9; margin-left: 0in; margin-right: 0in;">
-<p class="CVXAPIDefinition"><b><span style="line-height: 105%; font-family: 'Courier New';">MPinSDK()</span></b></p>
-
-</div>
-<h2 class="Body">Parameters</h2>
+## Definition
+```
+MPinSDK()
+```
+## Parameters
 None
-<h2>Return Values</h2>
+## Return Values
 None
-<h2>Example</h2>
+## Example
 The following example initializes an instance and sets the back-end service to http://ec2-54-77-232-113.eu-west-1.compute.amazonaws.com.
-<pre>
-<code>
+```
 // Create a new MPinSDK instance
 MPinSDK sdk = new MPinSDK();
 
 // Initialize the SDK
-HashMap&lt;String, String&gt; config = new HashMap&lt;&gt;();
+HashMap<String, String> config = new HashMap<>();
 config.put("backend", "http://ec2-54-77-232-113.eu-west-1.compute.amazonaws.com");
 
 Status status = sdk.Init(config, context);
-</code>
-</pre>
-<h1><strong>Init</strong></h1>
-<h2>Description</h2>
-This method initializes the SDK. It receives a key/value map of the configuration parameters. The additional <code style="box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0px; margin: 0px; border-radius: 3px; color: #333333; background-color: rgba(0, 0, 0, 0.0392157);">context</code> parameter is of type <code style="box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0px; margin: 0px; border-radius: 3px; color: #333333; background-color: rgba(0, 0, 0, 0.0392157);">android.content.Context</code> and is usually retrieved from the system's <code style="box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0px; margin: 0px; border-radius: 3px; color: #333333; background-color: rgba(0, 0, 0, 0.0392157);">getApplicationContext()</code>method.
-<h2>Definition</h2>
-<div>
-<div style="border: solid windowtext 1.0pt; padding: 1.0pt 4.0pt 1.0pt 4.0pt; background: #E2EFD9; margin-left: 0in; margin-right: 0in;">
-<p class="CVXAPIDefinition"><b><span style="line-height: 105%; font-family: 'Courier New';">Status Init(Map&lt;String, String&gt; config, Context context)</span></b></p>
+```
+# Init
+## Description
+This method initializes the SDK. It receives a key/value map of the configuration parameters. The additional context parameter is of type `android.content.Context` and is usually retrieved from the system's `getApplicationContext()` method.
+## Definition
+```
+Status Init(Map<String, String> config, Context context)
+```
+## Parameters
+|Parameter Name|Parameter Type|Required?|Description|
+|--------------|--------------|---------|-----------|
+|`config`|Map&lt;String, String&gt;|Yes|Key/value dictionary of initialization parameters|
+|`IContext`|Context|No|An additional context parameter of type `android.content.Content`. It is usually retrieved from the system's `getApplicationContext()` method.|
+## Return Values
+* `NETWORK_ERROR` - in case there was a problem to communicate with the back-end
 
-</div>
-</div>
-<h2>Parameters</h2>
-<table class="MsoNormalTable" style="margin-left: -.4pt; border-collapse: collapse;" border="0" cellspacing="0" cellpadding="0">
-<tbody>
-<tr>
-<td style="border: solid windowtext 1.0pt; background: #F4F4F4; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="MsoNormal" style="margin-bottom: 6.0pt; line-height: normal;"><b><span style="color: #7f7f7f;">Parameter Name</span></b></p>
-</td>
-<td style="border: solid windowtext 1.0pt; border-left: none; background: #F4F4F4; padding: 0in 5.75pt 0in 5.75pt;" valign="top">
-<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal;"><b><span style="color: #7f7f7f;">Parameter Type</span></b></p>
-</td>
-<td style="border: solid windowtext 1.0pt; border-left: none; background: #F4F4F4; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal;"><b><span style="color: #7f7f7f;">Required?</span></b></p>
-</td>
-<td style="border: solid windowtext 1.0pt; border-left: none; background: #F4F4F4; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal;"><b><span style="color: #7f7f7f;">Description</span></b></p>
-</td>
-</tr>
-<tr>
-<td style="border: solid windowtext 1.0pt; border-top: none; background: #E2EFD9; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="CVXAPIParameterName"><b><i><span style="font-family: 'Courier New';">config</span></i></b></p>
-</td>
-<td style="border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; background: #E2EFD9; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal;">Map&lt;String, String&gt;</p>
-</td>
-<td style="border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal;">Yes</p>
-</td>
-<td style="border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="MsoNormal">Key/value dictionary of initialization parameters</p>
-</td>
-</tr>
-<tr>
-<td style="border: solid windowtext 1.0pt; border-top: none; background: #E2EFD9; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="CVXAPIParameterName"><b><i><span style="font-family: 'Courier New';">IContext</span></i></b></p>
-</td>
-<td style="border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; background: #E2EFD9; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="MsoNormal">Context</p>
-</td>
-<td style="border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal;">No</p>
-</td>
-<td style="border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="MsoNormal" style="line-height: 106%;">An additional context parameter of type android.content.Content. It is usually retrieved from the system's getApplicationContext() method.</p>
-</td>
-</tr>
-</tbody>
-</table>
-<h2>Return Values</h2>
-<ul>
-	<li><span style="font-family: courier new,courier,monospace;">NETWORK_ERROR</span> - in case there was a problem to communicate with the back-end</li>
-</ul>
-<h2>Example</h2>
-
-<pre>
-<code>
+## Example
+```
 MPinSDK sdk = new MPinSDK();
 
-HashMap&lt;String, String&gt; config = new HashMap&lt;String, String&gt;();
+HashMap<String, String> config = new HashMap<String, String>();
 config.put(MPinSDK.CONFIG_BACKEND, "http://ec2-54-77-232-113.eu-west-1.compute.amazonaws.com");
 
 Status status = sdk.Init(config, context);
@@ -114,212 +60,80 @@ Status status = sdk.Init(config, context);
 if (status.getStatusCode() != Status.Code.OK) {
     // handle error
 }
-</code>
-</pre>
+```
 
-<div class="WordSection1">
-<h1><span style="font-size: 42px;"><span class="CVXCodeinTitle"><b><span style="font-family: 'Courier New';">SetBackend</span></b></span></span></h1>
-<h2>Description</h2>
-<p class="MsoNormal">The <span class="CVXCodeinText"><b><span style="font-family: 'Courier New';">SetBackend</span></b></span> method modifies the currently configured back-end service. The back-end is initially set at SDK initialization (i.e. through the <span class="CVXCodeinText"><span style="font-family: 'Courier New';">Mpin</span></span> method), but it can be changed at any time using <span class="CVXCodeinText"><span style="font-family: 'Courier New';">SetBackend</span></span>.</p>
+# <pre>SetBackend</pre>
 
-<h2>Definition</h2>
-<div style="border: solid windowtext 1.0pt; padding: 1.0pt 4.0pt 1.0pt 4.0pt; background: #E2EFD9; margin-left: 0in; margin-right: 0in;">
-<p class="CVXAPIDefinition" style="line-height: 105%; font-family: 'Courier New';"><b>Status SetBackend(</b>String<b><i> server</i>) </b></p>
-<p class="CVXAPIDefinition" style="line-height: 105%; font-family: 'Courier New';"><b>Status SetBackend(</b>String<b><i> server</i>, </b>String<b><i> rpsPrefix</i>) </b></p>
+## Description
+The `SetBackend` method modifies the currently configured back-end service. The back-end is initially set at SDK initialization (i.e. through the Mpin method), but it can be changed at any time using `SetBackend`.
+## Definition
 
-</div>
-<h2>Parameters</h2>
-<table class="MsoNormalTable" style="margin-left: -.4pt; border-collapse: collapse;" border="0" cellspacing="0" cellpadding="0">
-<tbody>
-<tr>
-<td style="border: solid windowtext 1.0pt; background: #F4F4F4; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="MsoNormal" style="margin-bottom: 6.0pt; line-height: normal;"><b><span style="color: #7f7f7f;">Parameter Name</span></b></p>
-</td>
-<td style="border: solid windowtext 1.0pt; border-left: none; background: #F4F4F4; padding: 0in 5.75pt 0in 5.75pt;" valign="top">
-<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal;"><b><span style="color: #7f7f7f;">Parameter Type</span></b></p>
-</td>
-<td style="border: solid windowtext 1.0pt; border-left: none; background: #F4F4F4; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal;"><b><span style="color: #7f7f7f;">Required?</span></b></p>
-</td>
-<td style="border: solid windowtext 1.0pt; border-left: none; background: #F4F4F4; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal;"><b><span style="color: #7f7f7f;">Description</span></b></p>
-</td>
-</tr>
-<tr>
-<td style="border: solid windowtext 1.0pt; border-top: none; background: #E2EFD9; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="CVXAPIParameterName"><b><i><span style="font-family: 'Courier New';">server</span></i></b></p>
-</td>
-<td style="border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; background: #E2EFD9; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal;">String</p>
-</td>
-<td style="border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal;">Yes</p>
-</td>
-<td style="border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="MsoNormal">The server URL used for the new M-Pin back-end service.</p>
-</td>
-</tr>
-<tr>
-<td style="border: solid windowtext 1.0pt; border-top: none; background: #E2EFD9; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="CVXAPIParameterName"><b><i><span style="font-family: 'Courier New';">rpsPrefix</span></i></b></p>
-</td>
-<td style="border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; background: #E2EFD9; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="MsoNormal">String</p>
-</td>
-<td style="border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal;">No</p>
-</td>
-<td style="border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="MsoNormal" style="line-height: 106%;">A string representing the prefix for the requests to the RPS. Required only if the default prefix has been changed. If not provided, the value defaults to <span class="CVXCodeinText"><span style="font-family: 'Courier New';">rps</span></span>.</p>
-</td>
-</tr>
-</tbody>
-</table>
-<h2>Return Values</h2>
-<p class="MsoListParagraph" style="margin-left: 0.5in; text-indent: -.25in;"><span style="font-family: Symbol;">·</span><span style="font-size: 7.0pt; line-height: 105%; font-family: 'Times New Roman',serif;">         </span><span class="CVXCodeinText"><span style="font-family: 'Courier New';">OK</span></span> – Back-end service URL configured successfully</p>
-<p class="MsoListParagraph" style="margin-left: 0.5in; text-indent: -.25in;"><span style="font-family: Symbol;">·</span><span style="font-size: 7.0pt; line-height: 105%; font-family: 'Times New Roman',serif;">         </span><span class="CVXCodeinText" style="line-height: 19.2px; text-indent: -24px;"><span style="font-family: 'Courier New';">NETWORK_ERROR</span></span> – The specified back-end could not be reached</p>
+```
+Status SetBackend(String server)
+Status SetBackend(String server, String rpsPrefix)
+```
+## Parameters
 
-<h2>Example</h2>
-The following example sets the back-end service to
-</br></br>
-http://ec2-54-77-232-113.eu-west-1.compute.amazonaws.com
-</br></br>
-<pre><code>
-Status status = sdk.SetBackend(“http://ec2-54-77-232-113.eu-west-1.compute.amazonaws.com”);</span></p>
+|Parameter Name|Parameter Type|Required?|Description|
+|--------------|--------------|---------|-----------|
+|`server`|String|Yes|The server URL used for the new M-Pin back-end service.|
+|`rpsPrefix`|String|No|A string representing the prefix for the requests to the RPS. Required only if the default prefix has been changed. If not provided, the value defaults to `rps`.|
+
+## Return Values
+
+* `OK` – Back-end service URL configured successfully
+* `NETWORK_ERROR` – The specified back-end could not be reached
+
+## Example
+
+The following example sets the back-end service to http://ec2-54-77-232-113.eu-west-1.compute.amazonaws.com
+```
+Status status = sdk.SetBackend(“http://ec2-54-77-232-113.eu-west-1.compute.amazonaws.com”);
 if (status.getStatusCode() != Status.Code.OK) {
 
 // handle error
 
 }
-</code></pre>
+```
+# <pre>TestBackend</pre>
 
-</div>
-</div>
-<div class="WordSection1">
-<h1><span style="font-size: 42px;"><span class="CVXCodeinTitle"><b><span style="font-family: 'Courier New';">TestBackend</span></b></span></span></h1>
-<h2>Description</h2>
-<p class="MsoNormal">The <span class="CVXCodeinText"><b><span style="font-family: 'Courier New';">TestBackend</span></b></span> method tests whether the back-end service is operational by sending a request for retrieving the Client Settings to back-end.</p>
+## Description
 
-<h2>Definition</h2>
-<div style="border: solid windowtext 1.0pt; padding: 1.0pt 4.0pt 1.0pt 4.0pt; background: #E2EFD9; margin-left: 0in; margin-right: 0in;">
-<p class="CVXAPIDefinition" style="line-height: 105%; font-family: 'Courier New';"><b>Status TestBackend(</b>String<b><i> server</i>) </b></p>
-<p class="CVXAPIDefinition" style="line-height: 105%; font-family: 'Courier New';"><b>Status TestBackend(</b>String<b><i> server</i>, </b>String<b><i> rpsPrefix</i>)</b></p>
+The `TestBackend` method tests whether the back-end service is operational by sending a request for retrieving the Client Settings to back-end.
 
-</div>
-<h2>Parameters</h2>
-<table class="MsoNormalTable" style="margin-left: -.4pt; border-collapse: collapse;" border="0" cellspacing="0" cellpadding="0">
-<tbody>
-<tr>
-<td style="border: solid windowtext 1.0pt; background: #F4F4F4; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal;"><b><span style="color: #7f7f7f;">Parameter Name</span></b></p>
-</td>
-<td style="border: solid windowtext 1.0pt; border-left: none; background: #F4F4F4; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal;"><b><span style="color: #7f7f7f;">Parameter Type</span></b></p>
-</td>
-<td style="border: solid windowtext 1.0pt; border-left: none; background: #F4F4F4; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal;"><b><span style="color: #7f7f7f;">Required?</span></b></p>
-</td>
-<td style="border: solid windowtext 1.0pt; border-left: none; background: #F4F4F4; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal;"><b><span style="color: #7f7f7f;">Description</span></b></p>
-</td>
-</tr>
-<tr>
-<td style="border: solid windowtext 1.0pt; border-top: none; background: #E2EFD9; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="CVXAPIParameterName"><b><i><span style="font-family: 'Courier New';">server</span></i></b></p>
-</td>
-<td style="border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; background: #E2EFD9; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal;">String</p>
-</td>
-<td style="border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal;">Yes</p>
-</td>
-<td style="border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="MsoNormal">The URL of the M-Pin back-end service to test.</p>
-</td>
-</tr>
-<tr>
-<td style="border: solid windowtext 1.0pt; border-top: none; background: #E2EFD9; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="CVXAPIParameterName"><b><i><span style="font-family: 'Courier New';">rpsPrefix</span></i></b></p>
-</td>
-<td style="border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; background: #E2EFD9; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="MsoNormal">String</p>
-</td>
-<td style="border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="MsoNormal" style="margin-bottom: .0001pt; line-height: normal;">No</p>
-</td>
-<td style="border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="MsoNormal">A string representing the prefix for the requests to the RPS. Required only if the default prefix has been changed. If not provided, the value defaults to <span class="CVXCodeinText"><span style="font-family: 'Courier New';">rps</span></span>.</p>
-</td>
-</tr>
-</tbody>
-</table>
-<h2>Return Values</h2>
-<p class="MsoListParagraph" style="margin-left: 0.5in; text-indent: -.25in;"><span style="font-family: Symbol;">·</span><span style="font-size: 7.0pt; line-height: 105%; font-family: 'Times New Roman',serif;">         </span><span class="CVXCodeinText"><span style="font-family: 'Courier New';">OK</span></span> – Back-end service URL verifies OK</p>
-<p class="MsoListParagraph" style="margin-left: 0.5in; text-indent: -.25in;"><span style="font-family: Symbol;">·</span><span style="font-size: 7.0pt; line-height: 105%; font-family: 'Times New Roman',serif;">         </span><span class="CVXCodeinText" style="line-height: 19.2px; text-indent: -24px;"><span style="font-family: 'Courier New';">NETWORK_ERROR</span></span> – The specified back-end could not be reached</p>
+## Definition
 
-<h2>Example</h2>
-The code snippet below tests the following URL: http://ec2-54-77-232-113.eu-west-1.compute.amazonaws.com
+```
+Status TestBackend(String server)
+Status TestBackend(String server, String rpsPrefix)
+```
 
-<pre>
-<code>
-Status status = sdk.TestBackend(“http://ec2-54-77-232-113.eu-west-1.compute.amazonaws.com”);
-if (status.getStatusCode() != Status.Code.OK) {
+# <pre>GetClientParam</pre>
 
-// handle error
+## Description
 
-}
-</code>
-</pre>
+This method returns the value for a _Client Setting_ with the given key. The value is returned as a String always, i.e. when a numeric or a boolean value is expected, the conversion should be handled by the application. It uses the following client settings:
 
-</div>
-</div>
-<h1><span class="CVXCodeinText;"><b><span style="font-family: 'Courier New';">GetClientParam</span></b> Method</span></h1>
-<h2>Description</h2>
-This method returns the value for a <em style="box-sizing: border-box;">Client Setting</em> with the given key. The value is returned as a String always, i.e. when a numeric or a boolean value is expected, the conversion should be handled by the application. It uses the following client settings:
-<ul>
-	<li style="box-sizing: border-box;"><code style="box-sizing: border-box; font-family: Consolas,;">accessNumberDigits</code> - The number of Access Number digits that should be entered by the user, prior to calling <a href="#"><code style="box-sizing: border-box; font-family: Consolas,;">FinishAuthenticationAN</code></a></li>
-	<li style="box-sizing: border-box;"><code style="box-sizing: border-box; font-family: Consolas,;">setDeviceName</code> - Indicates (<code style="box-sizing: border-box; font-family: Consolas,;">true/false</code>) whether the application should ask the user to insert a <em style="box-sizing: border-box;">Device Name</em> and pass it to the <a href="#"><code style="box-sizing: border-box; font-family: Consolas,;">MakeNewUser</code></a> method</li>
-	<li style="box-sizing: border-box;"><code style="box-sizing: border-box; font-family: Consolas,;">appID</code> - Unique ID assigned to each customer or application, used by the backend. It is a hex-encoded long numeric value and can only be used for information purposes and does not affect the behaviour of the application in any way.</li>
-</ul>
-<h2>Definition</h2>
-<div style="border: solid windowtext 1.0pt; padding: 1.0pt 4.0pt 1.0pt 4.0pt; background: #E2EFD9; margin-left: 0in; margin-right: 0in;">
-<p class="CVXAPIDefinition" style="line-height: 105%; font-family: 'Courier New';"><b>String GetClientParam(String key)</b></p>
+*  `accessNumberDigits` - The number of Access Number digits that should be entered by the user, prior to calling `FinishAuthenticationAN`
+*  `setDeviceName` - Indicates (`true`/`false`) whether the application should ask the user to insert a _Device Name_ and pass it to the `MakeNewUser` method
+*  `appID` - Unique ID assigned to each customer or application, used by the backend. It is a hex-encoded long numeric value and can only be used for information purposes and does not affect the behaviour of the application in any way.
 
-</div>
-<h2>Parameters</h2>
-<table class="MsoNormalTable" style="margin-left: 2.75pt; border-collapse: collapse; border: none;" border="1" cellspacing="0" cellpadding="0">
-<tbody>
-<tr>
-<td style="width: 101.35pt; border: solid windowtext 1.0pt; background: #F4F4F4; padding: 0in 5.4pt 0in 5.4pt;" valign="top" width="135">
-<p class="MsoNormal" style="margin-bottom: 6.0pt; line-height: normal;"><b><span style="color: #7f7f7f;">Parameter Name</span></b></p>
-</td>
-<td style="border: solid windowtext 1.0pt; border-left: none; background: #F4F4F4; padding: 0in 5.75pt 0in 5.75pt;" valign="top">
-<p class="MsoNormal" style="margin-bottom: 6.0pt; line-height: normal;"><b><span style="color: #7f7f7f;">Parameter Type</span></b></p>
-</td>
-<td style="border: solid windowtext 1.0pt; border-left: none; background: #F4F4F4; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="MsoNormal" style="margin-bottom: 6.0pt; line-height: normal;"><b><span style="color: #7f7f7f;">Required?</span></b></p>
-</td>
-<td style="border: solid windowtext 1.0pt; border-left: none; background: #F4F4F4; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="MsoNormal" style="margin-bottom: 6.0pt; line-height: normal;"><b><span style="color: #7f7f7f;">Description</span></b></p>
-</td>
-</tr>
-<tr>
-<td style="width: 101.35pt; border: solid windowtext 1.0pt; border-top: none; background: #E2EFD9; padding: 0in 5.4pt 0in 5.4pt;" valign="top" width="135">
-<p class="CVXAPIParameterName" style="margin-bottom: 6.0pt;"><b><i><span style="font-family: 'Courier New';">key</span></i></b></p>
-</td>
-<td style="border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0in 5.75pt 0in 5.75pt;" valign="top">
-<p class="MsoNormal" style="margin-bottom: 6.0pt; line-height: normal;">String</p>
-</td>
-<td style="border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="MsoNormal" style="margin-bottom: 6.0pt; line-height: normal;">Yes</p>
-</td>
-<td style="border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="MsoNormal" style="margin-bottom: 6.0pt; line-height: normal;"><span style="color: #3e454c; font-family: Lato, sans-serif; font-size: 16.8px; background-color: #ffffff;">The name of the requested parameter</span></p>
-</td>
-</tr>
-</tbody>
-</table>
-<h2>Return Values</h2>
+## Definition
+
+```
+String GetClientParam(String key)
+```
+
+## Parameters
+
+|Parameter Name|Parameter Type|Required?|Description|
+|--------------|--------------|---------|-----------|
+|`key`|String|Yes|The name of the requested parameter|
+
+## Return Values
 String - the value of the requested client parameter
-<h2>Example</h2>
-<pre class="computer_code" style="margin-bottom: 20px; unicode-bidi: embed;">String appID = sdk.GetClientParam("appID");</pre>
+
+## Example
+```
+String appID = sdk.GetClientParam("appID");
+```
