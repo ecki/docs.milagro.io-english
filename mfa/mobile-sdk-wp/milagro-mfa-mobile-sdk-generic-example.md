@@ -2,38 +2,32 @@
 currentMenu: milagro-mfa-mobile-sdk-generic-example-wp
 ---
 
-<div id="generated-toc" class="generate_from_h2"></div>
+# Generic M-Pin App Code Example - Milagro MFA Mobile SDK for Windows Phone
 
+# Overview
 
-<div class="WordSection1">
-<h1><span style="font-size:32px;">Generic M-Pin App Code Example - Milagro MFA Mobile SDK for Windows Phone</span></h1>
+This page provides a generic code example of an Milagro App for Windows phones to help you get started with the SDK. It demonstrates the full Milagro User registration/authentication cycle in its correct succession: initialization, User creation and verification, and then User verification.
 
-<h2>Overview</h2>
+You can use this example as a “skeleton” on which to further build your specific use cases and functionalities.
 
-<p class="MsoNormal">This page provides a generic code example of an Milagro App for Windows phones to help you get started with the SDK. It demonstrates the full Milagro User registration/authentication cycle in its correct succession: initialization, User creation and verification, and then User verification.</p>
-
-<p class="MsoNormal">You can use this example as a &ldquo;skeleton&rdquo; on which to further build your specific use cases and functionalities.</p>
-
-<h2>Example - needs to be replaced by a Windows example</h2>
-
-<div style="border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt">
-<pre class="computer_code">
+## Example - needs to be replaced by a Windows example
+```
 //
 // Initializing the SDK for the first time
 //
 MPin sdk = new MPin();
 
-IDictionary&lt;string, string&gt; config = new Dictionary&lt;string, string&gt;();
-config.Add(&quot;backend&quot;, &quot;http://my.backend.com&quot;);
+IDictionary<string, string> config = new Dictionary<string, string>();
+config.Add("backend", "http://my.backend.com");
 
 Status status = sdk.Init(config);
 
 //
 // Process service changed
 //
-status = sdk.SetBackend(&quot;http://my.secondBackend.com&quot;);
-                
-if (status.StatusCode != Status.Code.OK) 
+status = sdk.SetBackend("http://my.secondBackend.com");
+
+if (status.StatusCode != Status.Code.OK)
 {
     // Show error message and exit
 }
@@ -41,10 +35,10 @@ if (status.StatusCode != Status.Code.OK)
 //
 // Creating a User identity
 //
-User user = sdk.MakeNewUser(@&quot;me@domain.com&quot;);
+User user = sdk.MakeNewUser(@"me@domain.com");
 status = sdk.StartRegistration(user);
 
-if (status != null &amp;&amp; status.StatusCode != Status.Code.OK)
+if (status != null && status.StatusCode != Status.Code.OK)
 {
     // Show error message and exit
 }
@@ -55,18 +49,18 @@ switch (user.UserState)
     {
         bool waitForCofirmation = true;
 
-        while (waitForCofirmation) 
+        while (waitForCofirmation)
         {
             // Wait for user identity confirmation            
             status = sdk.ConfirmRegistration(user);
 
-            if (status.StatusCode == Status.Code.IdentityNotVerified) 
+            if (status.StatusCode == Status.Code.IdentityNotVerified)
             {
-&nbsp;               await Task.Delay(3000);
+                await Task.Delay(3000);
                 continue;
             }
 
-            if (status.StatusCode != Status.Code.OK) 
+            if (status.StatusCode != Status.Code.OK)
             {
                 // Show error message and exit
             }
@@ -75,7 +69,7 @@ switch (user.UserState)
         }
         break;        
     }
-    case User.State.Activated: 
+    case User.State.Activated:
     {
         status = sdk.ConfirmRegistration(user);
 
@@ -103,7 +97,7 @@ if (status.StatusCode != Status.Code.OK)
 //
 // Retrieving the stored User identities
 //
-List&lt;User&gt; users = new List&lt;User&gt;();
+List<User> users = new List<User>();
 sdk.ListUsers(users);
 
 //
@@ -129,14 +123,14 @@ string authPin;
 //
 status = sdk.FinishAuthentication(user, authPin);
 
-switch (status.StatusCode) 
+switch (status.StatusCode)
 {
     case Status.Code.OK:
         // Authentication successful
         break;
     case Status.Code.IncorrectPIN:
         // Authentication failed
-        if (user.UserState == User.State.Blocked) 
+        if (user.UserState == User.State.Blocked)
         {
             // User is blocked and cannot authenticate anymore
         }
@@ -144,10 +138,5 @@ switch (status.StatusCode)
     default:
         // Show error message and exit
         break;
-}</pre>
-
-<p class="CVXCodeExample" style="margin-top:0in;margin-right:4.5pt;margin-bottom:
-8.0pt;margin-left:4.5pt"><span style="font-size:11.0pt;line-height:150%;
-font-family:&quot;Courier New&quot;"><iuser> </iuser></span></p>
-</div>
-</div>
+}
+```
