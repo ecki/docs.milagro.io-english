@@ -2,74 +2,27 @@
 currentMenu: milagro-mfa-mobile-sdk-user-states-android
 ---
 
-<div id="generated-toc" class="generate_from_h2"></div>
+# Understanding User States
+## Overview
+This page briefly describes the states of the `User` object and when they are assigned. A physical user is represented by a `User` object. The `User` object supports several states which shows the progress of the physical user through the various stages of the registration process and their current permissions, in order to access the system.
+
+## User States
+The following table shows the states of the `User` object in the chronological order in which they are normally assigned to a User.
+
+|State|Description|
+|-----|-----------|
+|`INVALID`|The `User` object has been created, but the User registration process has not started yet; any newly created Users are in an `INVALID` state.<br>To start User registration, call the `StartRegistration` method. The `INVALID` state is also temporarily assigned to a User that has just been deleted until the User is physically deleted from memory.|
+|`STARTED_REGISTRATION`|The `User` object has been created, and the User registration process has started but not yet completed. The User’s state remains `STARTED_REGISTRATION` until the `ConfirmRegistration` method is executed successfully. The `STARTED_REGISTRATION` state indicates that if the registration procedure needs to be done anew, you must use the `RestartRegistration` method and not the `StartRegistration` method. The `StartRegistration` method will return `FLOW_ERROR` in this case.|
+|`REGISTERED`|The User registration has completed successfully and the User can now authenticate to the M-Pin System.|
+|`ACTIVATED`|Temporary state for the special case in which a User can be registered without going through a verification process, e.g. in the case of a demo app. In this special case, the `ACTIVATED` state is assigned to the User upon `StartRegistration`, which allows the `ConfirmRegistration` method to be called and to succeed without waiting for identity verification.|
+|`BLOCKED`|State assigned to a User upon reaching the maximum allowed number of unsuccessful login attempts (3 by default, configurable through the `maxInvalidLoginAttempts` option the in the RPS). Once this state is set, the end-user is blocked and should re-register.|
 
 
-<h1>Understanding User States</h1>
-<h2>Overview</h2>
-<p class="MsoNormal">This page briefly describes the <span style="line-height: 19.2000007629395px;">states</span><span style="line-height: 19.2000007629395px;"> of </span><span style="line-height: 1.6em;">the </span><span class="CVXCodeinText" style="line-height: 1.6em;"><span style="font-family: 'Courier New';">User</span></span><span style="line-height: 1.6em;"> object and when they are assigned. </span>A physical user is represented by a <span class="CVXCodeinText"><span style="font-family: 'Courier New';">User</span></span> object. The <span class="CVXCodeinText"><span style="font-family: 'Courier New';">User</span></span> object supports several states which shows the progress of the physical user through the various stages of the registration process and their current permissions, in order to access the system.</p>
 
-<h2>User States</h2>
-<p class="MsoNormal">The following table shows the states of the <span class="CVXCodeinText"><span style="font-family: 'Courier New';">User</span></span> object in the chronological order in which they are normally assigned to a User.</p>
+## The User Class
+The `User` class is as follows:
 
-<table class="MsoNormalTable" style="margin-left: -.4pt; border-collapse: collapse;" border="0" cellspacing="0" cellpadding="0">
-<tbody>
-<tr>
-<td style="border: solid windowtext 1.0pt; background: #F4F4F4; padding: 0in 5.75pt 0in 5.75pt;" valign="top">
-<p class="MsoNormal" style="margin-bottom: 6.0pt; line-height: normal;"><b><span style="color: #7f7f7f;">State</span></b></p>
-</td>
-<td style="border: solid windowtext 1.0pt; border-left: none; background: #F4F4F4; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="MsoNormal" style="margin-bottom: 6.0pt; line-height: normal;"><b><span style="color: #7f7f7f;">Description</span></b></p>
-</td>
-</tr>
-<tr>
-<td style="border: solid windowtext 1.0pt; border-top: none; padding: 0in 5.75pt 0in 5.75pt;" valign="top">
-<p class="CVXAPIDefinitionNoHighlight"><span style="font-family: 'Courier New';">INVALID</span></p>
-</td>
-<td style="border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="MsoNormal" style="margin-bottom: 6.0pt; line-height: normal;">The <span class="CVXCodeinText"><span style="font-family: 'Courier New';">User</span></span> object has been created, but the User registration process has not started yet; any newly created Users are in an <span class="CVXCodeinText"><span style="font-family: 'Courier New';">INVALID</span></span> state.</p>
-<p class="MsoNormal" style="margin-bottom: 6.0pt; line-height: normal;">To start User registration, call the <span class="CVXCodeinText"><span style="font-family: 'Courier New';">StartRegistration</span></span> method. The <span class="CVXCodeinText"><span style="font-family: 'Courier New';">INVALID</span></span> state is also temporarily assigned to a User that has just been deleted until the User is physically deleted from memory.</p>
-</td>
-</tr>
-<tr>
-<td style="border: solid windowtext 1.0pt; border-top: none; padding: 0in 5.75pt 0in 5.75pt;" valign="top">
-<p class="CVXAPIDefinitionNoHighlight"><span style="font-family: 'Courier New';">STARTED_REGISTRATION</span></p>
-</td>
-<td style="border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="MsoNormal" style="margin-bottom: 6.0pt; line-height: normal;">The <span class="CVXCodeinText"><span style="font-family: 'Courier New';">User</span></span> object has been created, and the User registration process has started but not yet completed. The User’s state remains <span class="CVXCodeinText"><span style="font-family: 'Courier New';">STARTED_REGISTRATION</span></span> until the<span class="CVXCodeinText"><span style="font-family: 'Courier New';"> ConfirmRegistration</span></span> method is executed successfully. The <span class="CVXCodeinText"><span style="font-family: 'Courier New';">STARTED_REGISTRATION</span></span> state indicates that if the registration procedure needs to be done anew, you must use the <span class="CVXCodeinText"><span style="font-family: 'Courier New';">RestartRegistration</span></span> method and not the <span class="CVXCodeinText"><span style="font-family: 'Courier New';">StartRegistration</span></span> method. The <span class="CVXCodeinText"><span style="font-family: 'Courier New';">StartRegistration</span></span> method will return <span class="CVXCodeinText"><span style="font-family: 'Courier New';">FLOW_ERROR</span></span> in this case.</p>
-</td>
-</tr>
-<tr>
-<td style="border: solid windowtext 1.0pt; border-top: none; padding: 0in 5.75pt 0in 5.75pt;" valign="top">
-<p class="CVXAPIDefinitionNoHighlight"><span style="font-family: 'Courier New';">REGISTERED</span></p>
-</td>
-<td style="border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="MsoNormal" style="margin-bottom: 6.0pt; line-height: normal;">The User registration has completed successfully and the User can now authenticate to the M-Pin System.</p>
-</td>
-</tr>
-<tr>
-<td style="border: solid windowtext 1.0pt; border-top: none; padding: 0in 5.75pt 0in 5.75pt;" valign="top">
-<p class="CVXAPIDefinitionNoHighlight"><span style="font-family: 'Courier New';">ACTIVATED</span></p>
-</td>
-<td style="border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="MsoNormal" style="margin-bottom: 6.0pt; line-height: normal;">Temporary state for the special case in which a User can be registered without going through a verification process, e.g. in the case of a demo app. In this special case, the <span class="CVXCodeinText"><span style="font-family: 'Courier New';">ACTIVATED</span></span> state is assigned to the User upon <span class="CVXCodeinText"><span style="font-family: 'Courier New';">StartRegistration</span></span>, which allows the <span class="CVXCodeinText"><span style="font-family: 'Courier New';">ConfirmRegistration</span></span> method to be called and to succeed without waiting for identity verification.</p>
-</td>
-</tr>
-<tr>
-<td style="border: solid windowtext 1.0pt; border-top: none; padding: 0in 5.75pt 0in 5.75pt;" valign="top">
-<p class="CVXAPIDefinitionNoHighlight"><span style="font-family: 'Courier New';">BLOCKED</span></p>
-</td>
-<td style="border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0in 5.4pt 0in 5.4pt;" valign="top">
-<p class="MsoNormal" style="margin-bottom: 6.0pt; line-height: normal;">State assigned to a User upon reaching the maximum allowed number of unsuccessful login attempts (3 by default, configurable through the <span class="CVXCodeinText"><span style="font-family: 'Courier New';">maxInvalidLoginAttempts</span></span> option the in the RPS). Once this state is set, the end-user is blocked and should re-register.</p>
-</td>
-</tr>
-</tbody>
-</table>
-</br></br>
-##The User Class
-The User class is as follows:
-<pre>
-<code>
+```
 public enum State {
 INVALID,
 STARTED_REGISTRATION,
@@ -93,5 +46,4 @@ return getId();
 
 ...
 }
-</pre>
-</code>
+```
