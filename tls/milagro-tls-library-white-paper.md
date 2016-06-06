@@ -26,35 +26,44 @@ currentMenu: milagro-tls-library-white-paper
 This document introduces two key exchange algorithms based on
 Pairing-Based Cryptography (PBC) for the Transport Layer Security
 (TLS) protocol. In particular,  it specifies the use of two identity-
-based key exchange algorithm in TLS handshake.
+based key exchange algorithms for the TLS handshake.
 
 ## Introduction
 
 Pairing-Based Crypto (PBC) is emerging as a  solution to complex
 problems that proved intractable to the standard mathematics of
-Public-Key Cryptography such as Identity-Based Encryption, whereby
-the identity of a client can be used as their public key <a href="#11">11</a>.
+Public-Key Cryptography. An example of such a problem would be
+Identity-Based Encryption, whereby the identity of a client can
+be used as their public key <a href="#11">11</a>.
+
+PBC is based on the use of a bi-linear map defined on an elliptic curve E
+
+e: G1 X G2 -> GT
+
+where G1 is defined as a group of points on E. G2 is defined as a group of
+points on a twist of E over an extension field. Both groups are of prime order q.
+GT is a finite extension.
 
 Milagro TLS proposes the use of PBC for mutually authenticated key
 agreement. There are two new  key exchange algorithms in this draft;
-P2P and Client-Server. The P2P solution uses the Chow-Choo protocol
-and Client-Server uses the MPIN Protocol <a href="#9">9</a><a href="#10">10</a>.
+Peer-to-Peer (P2P) and Client-Server. The P2P solution uses the Chow-Choo protocol
+and the Client-Server solution uses the MPIN Protocol <a href="#9">9</a><a href="#10">10</a>.
 
 The mbed TLS library has been extended to incorporate the new key-
-exchange algorithms <a href="#14">14</a>
+exchange algorithms <a href="#12">12</a>
 
 Milagro TLS uses a curve that has security at the AES-128 level.
 
 This document describes an addition to TLS 1.2 <a href="#1">1</a> to support PBC. In
 particular, it defines:
 <ul>
-<li>Milagro_CS: a key-exchange algorithm based on MPIN-FULL protocol <a href="#9">9</a>.
+<li>Milagro_CS: a key exchange algorithm based on MPIN-FULL protocol <a href="#9">9</a>.
 This is a Client-to-Server protocol that allows mutually authenticated key agreement.
 In this protocol the client secrets are in G1 and the server secret is in G2.  
 For a Type-3 pairing there is assumed to be no computable isomorphism between these
 groups, even though both are of the same order.</li>
 
-<li>Milagro_P2P: a key-exchange algorithm based on Chow-Choo protocol <a href="#10">10</a>.
+<li>Milagro_P2P: a key exchange algorithm based on the Chow-Choo protocol <a href="#10">10</a>.
 It can operate in P2P or client/server mode. User of this protocol are issued sender
 keys in G1 and receiver keys in G2. The server that sends the ServerKeyExchange is
 considered the sender in  this protocol.</li>
@@ -82,19 +91,17 @@ information about that entity's relationships.
 
 **TA** Trusted Authority
 
-**Peer-to-Peer**  P2P
+**P2P** Peer-to-Peer  
 
 **Milagro_CS** Milagro Client-to-Server
 
 **Milagro_P2P** Milagro Peer-to-Peer
 
+**ECDH** Elliptic Curve Diffie Hellman.
+
 **E** is an ordinary pairing-friendly elliptic curve over a finite field
 **F**, defined by a fixed prime modulus p.
 
-**e:** G1 X G2 -> GT is a computable bi-linear map on E. G1 is defined as
-a group of points on E. G2 is defined as a group of points on a twist
-of E. Both groups are of prime order q. GT is a finite extension
-field of F, also of order q.
 </br></br>
 ### Conventions
 
@@ -116,16 +123,21 @@ field of F, also of order q.
 
 ### MILAGRO_CS
 
-Here we briefly resume the main steps of the MPIN-FULL key-exchange
+Here we briefly resume the main steps of the MPIN-FULL key exchange
 algorithm, see <a href="#8">8</a> and <a href="#9">9</a> for details.
 
-The TA provides the client key s.A, in G1 and the server key s.Q, in
-G2.
+Let A = H1(IdC) be a point on G1, where IdC is the client’s identity and
+let Q be a generator of the group G2.The TA provides the client key s.A,
+in G1 and the server key s.Q, in G2.
 
 MPIN Full was envisaged as a two factor authentication solution but
 in this context, as this is a machine to machine protocol, there is
 no requirement for a second factor and therefore the PIN is set to
-zero in the code.
+zero in the code. It supports also the use of time permits, which is
+a tool that provide a simple alternate revocation capability. The idea
+is that the server includes an explicitly described time slot in its
+construction of Alice’s hashed identity. Unless Alice has a corresponding
+“Time permit” for the same time slot, she cannot complete the protocol.
 
 The ClientHello message MUST have an extension which contains three
 public parameters:
@@ -142,7 +154,7 @@ U = x.(H1(IdC)+H1(d|SHA-256(IdC))), where d is the Epoch days</li>
 <li>t, the epoch time at which authentication occurred.</li>
 
 <li>V = -(x+y)(s.A), where y = Hq(t|U) and A =H1(IdC).
-When time permits are enabled then it must be added to s.A prior to
+When time permits are enabled then a time permit must be added to s.A prior to
 multiplication.</li>
 </ul>
 
@@ -153,7 +165,7 @@ check that e(V,Q).e(U+yA,s.Q) = 1. If this tests fails then the
 connection is terminated by the server with a proper alert message
 and the attempted Client connection is rejected.
 
-Through the ServerKeyExchange message, the server send a  ECDH public
+Through the ServerKeyExchange message, the server sends an ECDH public
 key W=w.A, where w is a random number modulo the curve order and A is
 H1(IdA) or H1(IdA) + H1(d,SHA-256(IdA) if time permits used.
 
@@ -173,10 +185,10 @@ See <a href="#9">9</a> for more details.
 </br></br>
 ### MILAGRO_P2P
 
-Here we briefly resume the main steps of the Chow-Choo key-exchange
+Here we briefly resume the main steps of the Chow-Choo key exchange
 Algorithm <a href="#10">10</a>.
 
-Choo-Chow key-exchange algorithm is designed for communications peer-
+Choo-Chow key exchange algorithm is designed for communications peer-
 to-peer. The TA provides the server with a sender key in G1 i.e.
 SKeyG1 and client with receiver key in G2 I.e. CKeyG2 based on their
 respective identities.
@@ -220,12 +232,12 @@ and not impacted by the introduction of PBC and ECC.
 	} KeyExchangeAlgorithm;
 
 
-The first key-exchange algorithm is Milagro_CS and it is designed for
+The first key exchange algorithm is Milagro_CS and it is designed for
 client-to-server communications. It is based on the MPIN-FULL key
 exchange protocol <a href="#9">9</a>, which is an extension of the M-Pin
 Authentication Protocol <a href="#8">8</a>.
 
-The second key-exchange algorithm is Milagro_P2P and it is designed
+The second key exchange algorithm is Milagro_P2P and it is designed
 for peer-to-peer communications. It is based on the CHOW-CHOO
 protocol <a href="#10">10</a>.
 
@@ -250,7 +262,7 @@ exchange algorithms.
 
 
 The following messages of TLS-Handshake MUST NOT be sent for those
-two key-exchange algorithms: (Server)Certificate, CertificateRequest,
+two key exchange algorithms: (Server)Certificate, CertificateRequest,
 (Client)Certificate and CertificateVerify.
 </br></br>
 ### ClientHello Extension
@@ -261,7 +273,7 @@ ClientHello message as described in <a href="#3">3</a>, the Milagro_CS Extension
 When this extension are sent:
 
 The extension MUST be sent along with any ClientHello message that
-proposes Milagro_CS key-exchange algorithms and it MUST NOT be sent
+proposes Milagro_CS key exchange algorithms and it MUST NOT be sent
 with any other ClientHello message that doesn't proposes this
 cipher.
 
@@ -301,7 +313,7 @@ this specification adds a new type to ExtensionType.
 
 Actions of the Server:
 
-If Milagro_CS is between the key-exchange algorithms available of
+If Milagro_CS is between the key exchange algorithms available of
 the server, then he MUST check if the time_value received from the
 client differs too much from the current time. If the difference is
 more than a fixed value then he has to refuse the client. If this
@@ -315,7 +327,7 @@ See <a href="#8">8</a> for details about the authentication.
 ### Server Key Exchange
 
 This document introduces two new ServerKeyExchange messages, one for
-each key-exchange algorithm.
+each key exchange algorithm.
 
 If the cipher suite chosen by the server has Milagro_CS as key-
 exchange algorithm, then the server MUST compute the parameter W, as
@@ -382,19 +394,15 @@ algorithms specified in Section 3.
 - CipherSuite TLS_MILAGRO_CS_WITH_AES_128_GCM_SHA512       = {0xC0,0xB2}
 - CipherSuite TLS_MILAGRO_CS_WITH_CAMELLIA_128_GCM_SHA256  = {0xC0,0xB3}
 - CipherSuite TLS_MILAGRO_CS_WITH_CAMELLIA_128_GCM_SHA512  = {0xC0,0xB4}
-- CipherSuite TLS_MILAGRO_CS_WITH_3DES_EDE_CBC_SHA512      = {0xC0,0xB5}
-- CipherSuite TLS_MILAGRO_CS_WITH_3DES_EDE_CBC_SHA256      = {0xC0,0xB6}
-- CipherSuite TLS_MILAGRO_CS_WITH_NULL_SHA256              = {0xC0,0xB7}
-- CipherSuite TLS_MILAGRO_CS_WITH_NULL_SHA512              = {0xC0,0xB8}
+- CipherSuite TLS_MILAGRO_CS_WITH_3DES_EDE_CBC_SHA256      = {0xC0,0xB5}
+- CipherSuite TLS_MILAGRO_CS_WITH_3DES_EDE_CBC_SHA512      = {0xC0,0xB6}
 
-- CipherSuite TLS_MILAGRO_P2P_WITH_AES_128_GCM_SHA256      = {0xC0,0xB9}
-- CipherSuite TLS_MILAGRO_P2P_WITH_AES_128_GCM_SHA512      = {0xC0,0xC0}
-- CipherSuite TLS_MILAGRO_P2P_WITH_CAMELLIA_128_GCM_SHA256 = {0xC0,0xC1}
-- CipherSuite TLS_MILAGRO_P2P_WITH_CAMELLIA_128_GCM_SHA512 = {0xC0,0xC2}
-- CipherSuite TLS_MILAGRO_P2P_WITH_3DES_EDE_CBC_SHA512     = {0xC0,0xC3}
-- CipherSuite TLS_MILAGRO_P2P_WITH_3DES_EDE_CBC_SHA256     = {0xC0,0xC4}
-- CipherSuite TLS_MILAGRO_P2P_WITH_NULL_SHA256             = {0xC0,0xC5}
-- CipherSuite TLS_MILAGRO_P2P_WITH_NULL_SHA256             = {0xC0,0xC6}
+- CipherSuite TLS_MILAGRO_P2P_WITH_AES_128_GCM_SHA256      = {0xC0,0xB7}
+- CipherSuite TLS_MILAGRO_P2P_WITH_AES_128_GCM_SHA512      = {0xC0,0xB8}
+- CipherSuite TLS_MILAGRO_P2P_WITH_CAMELLIA_128_GCM_SHA256 = {0xC0,0xB9}
+- CipherSuite TLS_MILAGRO_P2P_WITH_CAMELLIA_128_GCM_SHA512 = {0xC0,0xC0}
+- CipherSuite TLS_MILAGRO_P2P_WITH_3DES_EDE_CBC_SHA256     = {0xC0,0xC1}
+- CipherSuite TLS_MILAGRO_P2P_WITH_3DES_EDE_CBC_SHA512     = {0xC0,0xC2}
 
 The key exchange method, cipher, and hash algorithm for each of these
 cipher suites are easily determined by examining the name. Ciphers (other
@@ -455,8 +463,8 @@ Any assignments in this document require IETF Consensus action <a href="#4">4</a
 
   <cite id="1">T. Dierks,  E. Rescorla, "The Transport Layer Security (TLS) Protocol Version 1.2", RFC 5246, August 2008</cite>
   <cite id="2"> Bradner S., "Key words for use in RFCs to Indicate Requirement Levels", RFC 2119, March 1997</cite>
-  <cite id="3">Blake-Wilson, S., Nystrom, M., Hopwood, D., Mikkelsen, J., and T.Wright, "Transport Layer Security (TLS) Extensions", RFC 4366, April 2006.</cite>
-  <cite id="4">Narten, T. and H. Alvestrand, "Guidelines for Writing an IANA Considerations Section in RFCs", RFC 2434, October 1998.</cite>
+  <cite id="3">D. Eastlake, "Transport Layer Security (TLS) Extensions", RFC 4366, April 2006.</cite>
+  <cite id="4">Narten, T. and H. Alvestrand, "Guidelines for Writing an IANA Considerations Section in RFCs", RFC 5226, May 2008.</cite>
   <cite id="5">National Institute of Standards and Technology, "Specification for the Advanced Encryption Standard (AES)", FIPS 197, November 2001.</cite>
   <cite id="6">National Institute of Standards and Technology, "Recommendation for Block Cipher Modes of Operation: Galois/Counter Mode (GCM) for Confidentiality and Authentication", SP 800-38D, November 2007.</cite>
   <cite id="7">National Institute of Standards and Technology, "Secure Hash Standard", FIPS PUB 180-4, August 2015.</cite>
@@ -464,9 +472,7 @@ Any assignments in this document require IETF Consensus action <a href="#4">4</a
   <cite id="9">Scott, M. "M-Pin Full Technology (Version 3.0)", Miracl Labs.</cite>
   <cite id="10">Sherman S.M. Chow and Kim-Kwang Raymond Choo, "Strongly-Secure Identity-based Key Agreement and Anonymous Extension", Cryptology ePrint Archive, Report 2007/018,2007.</cite>
   <cite id="11">D. Boneh and M. Franklin. Identity-based encryption from the Weil pairing. SIAM Journal of Computing, 32(3):586-615, 2003.</cite>
-  <cite id="12">S. Galbraith, K. Paterson, and N. Smart. Pairings for cryptographers. Discrete Applied Mathematics, 156:3113-3121, 2008.</cite>
-  <cite id="13">P.S.L.M. Barreto and M. Naehrig. Pairing-friendly elliptic curves of prime order. In Selected Areas in Cryptology SAC 2005, volume 3897 of Lecture Notes in Computer Science, pages 319-331. Springer-Verlag, 2006.</cite>
-  <cite id="14">"mbed TLS," ARM. https://tls.mbed.org</cite>
+  <cite id="12">"mbed TLS," ARM. https://tls.mbed.org</cite>
 
 
 ## Authors' Addresses
