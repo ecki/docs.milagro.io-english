@@ -1,9 +1,11 @@
 ---
 currentMenu: milagro-mfa-mobile-sdk-user-management-methods-wp
 ---
-## MakeNewUser
 
-### Description
+# User Management Methods
+___
+## MakeNewUser
+___
 
 This method creates a new User object which represents an end-user of the M-Pin authentication. The User has its own unique identity which is passed as the id parameter to this method. You can also specify an optional deviceName, as a User can have multiple Devices. The device name is passed to the RPA which stores it and uses it later to determine which M-Pin ID is associated with this Device. The return value is a reference to the newly created user.
 
@@ -73,10 +75,9 @@ else
     // Handle error
 }
 ```
-
+___
 ## DeleteUser
-
-### Description
+___
 
 This method deletes a user from the users list that the SDK maintains. All the user data, including its M-Pin ID, its state and M-Pin Token will be deleted.
 
@@ -109,10 +110,9 @@ for (int i = 0; i < users.Count; i++)
     sdk.DeleteUser(users[i]);
 }
 ```
-
+___
 ## ListUsers
-
-### Description
+___
 
 This method populates the provided vector with all the users that are currently available in the SDK's users list. The listed users' state indicates their registration status.
 

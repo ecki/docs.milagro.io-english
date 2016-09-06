@@ -4,14 +4,12 @@ currentMenu: milagro-mfa-mobile-sdk-init-config-methods-android
 
 # Initialization and Configuration Methods
 
-## Overview
-
 This page provides a list and brief description of the Initialization and Configuration methods used in the Milagro Mobile SDK for Android. They relate to initializing the SDK and configuring the back-end URL.
 
-To view the other methods, refer to the [API Reference](/milagro-mfa-mobile-sdk-api-reference.html) page.
-
+To view the other methods, refer to the [API Reference](milagro-mfa-mobile-sdk-api-reference.html) page.
+___
 # MPinSDK
-## Description
+___
 This method constructs an SDK instance.
 ## Definition
 ```
@@ -33,8 +31,9 @@ config.put("backend", "http://ec2-54-77-232-113.eu-west-1.compute.amazonaws.com"
 
 Status status = sdk.Init(config, context);
 ```
+___
 # Init
-## Description
+___
 This method initializes the SDK. It receives a key/value map of the configuration parameters. The additional context parameter is of type `android.content.Context` and is usually retrieved from the system's `getApplicationContext()` method.
 ## Definition
 ```
@@ -61,10 +60,9 @@ if (status.getStatusCode() != Status.Code.OK) {
     // handle error
 }
 ```
-
-# <pre>SetBackend</pre>
-
-## Description
+___
+# SetBackend
+___
 The `SetBackend` method modifies the currently configured back-end service. The back-end is initially set at SDK initialization (i.e. through the Mpin method), but it can be changed at any time using `SetBackend`.
 ## Definition
 
@@ -95,9 +93,9 @@ if (status.getStatusCode() != Status.Code.OK) {
 
 }
 ```
-# <pre>TestBackend</pre>
-
-## Description
+___
+# TestBackend
+___
 
 The `TestBackend` method tests whether the back-end service is operational by sending a request for retrieving the Client Settings to back-end.
 
@@ -107,10 +105,9 @@ The `TestBackend` method tests whether the back-end service is operational by se
 Status TestBackend(String server)
 Status TestBackend(String server, String rpsPrefix)
 ```
-
-# <pre>GetClientParam</pre>
-
-## Description
+___
+# GetClientParam
+___
 
 This method returns the value for a _Client Setting_ with the given key. The value is returned as a String always, i.e. when a numeric or a boolean value is expected, the conversion should be handled by the application. It uses the following client settings:
 

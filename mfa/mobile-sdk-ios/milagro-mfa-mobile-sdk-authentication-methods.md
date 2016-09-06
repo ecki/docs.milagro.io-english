@@ -4,40 +4,36 @@ currentMenu: milagro-mfa-mobile-sdk-user-authentications-methods-ios
 
 <div id="generated-toc" class="generate_from_h2"></div>
 
-
-## Authentication Methods Reference
-
-### Overview
+# Authentication Methods
 
 This page provides a list of the Authentication methods used, along with brief descriptions, in the Milagro MFA Mobile SDK for iOS. They relate to performing User Authentication.
 
-To view the other methods, refer to the API Reference page.
-
-### StartAuthentication Method
-
-#### Description
+To view the other methods, refer to the [API Reference](milagro-mfa-mobile-sdk-api-reference.html) page.
+___
+## StartAuthentication Method
+___
 
 This method starts the authentication process for a given user. It attempts to retrieve the Time Permits for the user. If successful, it returns status code OK, and if not, it returns status code REVOKED. If the Time Permits are retrieved, the app reads the PIN/secret from the end-user and calls one of the FinishAuthentication variants to authenticate the user.
 
-#### Definition
+### Definition
 
 		(MpinStatus*) StartAuthentication: (const id<IUser>) user;
 
-#### Parameters
+### Parameters
 
 | Parameter Name | Parameter Type | Required? | Description |
 |----------------|----------------|-----------|-------------|
 | user           | IUser          | Yes       | The User ID |
 
 
-#### Return Status
+### Return Status
 
 
 **OK:** The authentication process has been started successfully   
 **REVOKED:** Time permit for the given user was refused by the server.   
 **FLOW_ERROR:** The user is in the incorrect state, i.e. its state is not REGISTERED   
 
-#### Example
+### Example
 
 		MpinStatus* mpinStatus = [MPin StartAuthentication:iuser];
 
@@ -74,36 +70,29 @@ This method starts the authentication process for a given user. It attempts to r
 				break;
 		}
 
+___
+## CheckAccessNumber
+___
 
-#### CheckAccessNumber
-
-#### Description
 This method is used only when a user needs to be authenticated to a remote (browser) session, using Access Number. The access numbers have a check-sum digit in them which needs to be verified on the client side, in order to prevent calling the back-end with non-compliant access numbers. The method returns status OK if successful, and INCORRECT_ACCESS_NUMBER if not.
 
-#### Definition
+### Definition
 
 		+ (MpinStatus*) CheckAccessNumber: (NSString*) an;
 
-#### Parameters
+### Parameters
 
 | Parameter Name | Parameter Type | Required? | Description                                 |
 |----------------|----------------|-----------|---------------------------------------------|
 | an             | NSString*      | Yes       | Access Number used to authenticate the user |
 
-#### Definition
 
-    + (MpinStatus*) CheckAccessNumber: (NSString*) an;
-
-| Parameter Name | Parameter Type | Required? | Description                                 |
-|----------------|----------------|-----------|---------------------------------------------|
-| an             | NSString*      | Yes       | Access Number used to authenticate the user |
-
-Return Values
+### Return Values
 
 **OK:** if successful   
 **INCORRECT_ACCESS_NUMBER:** if not   
 
-#### Examples
+### Examples
 
     MpinStatus* mpinStatus = [MPin StartAuthentication:iuser];
 
@@ -153,10 +142,9 @@ Return Values
             // Show error message and exit
             break;
     }
-
-### FinishAuthentication
-
-#### Description
+___
+## FinishAuthentication
+___
 
 This method performs end-user authentication. The user to be authenticated and the pin (secret) are passed as parameters. The method uses the provided pin and the stored M-Pin Token to do the authentication against the M-Pin Authentication Server and then logs into the RPA. The RPA passes back User Data with the authentication response, which is returned to the application through the authResultData parameter. If authenticated, the returned status is OK and if not, it would be INCORRECT_PIN. After the third (configurable in the RPS) unsuccessful authentication attempt, the method returns status INCORRECT_PIN and the User State is set to BLOCKED.
 
@@ -173,14 +161,14 @@ This method performs end-user authentication. The user to be authenticated and t
 | user           | IUser          | Yes       | The User ID                                                                         |
 | pin            | NSString*      | Yes       | The PIN/secret entered by the end-user                                              |
 | authResultData | NSString**     | No        | Optionally, the result of the authentication would be passed back in that parameter |
-
-#### Return Status
-
+___
+## Return Status
+___
 **OK:** Authentication successful   
 **INCORRECT_PIN:** Authentication failed   
 **FLOW_ERROR:** The user is in the incorrect state   
 
-#### Example
+### Example
 
     MpinStatus* mpinStatus = [MPin StartAuthentication:iuser];
 
@@ -216,10 +204,9 @@ This method performs end-user authentication. The user to be authenticated and t
             // Show error message and exit
             break;
     }
-
-### FinishAuthenticationOTP
-
-#### Description
+___
+## FinishAuthenticationOTP
+___
 
 This method performs end-user authentication for an OTP. It is similar to the FinishAuthentication method but the RPA issues an OTP instead of logging the user into the application. The returned status is also similar to the FinishAuthentication method except that an OTP structure is also returned. The OTP structure is as follows:
 
@@ -245,7 +232,7 @@ This method performs end-user authentication for an OTP. It is similar to the Fi
 
 Note that OTP is generated only by RPA that supports that functionality, such as M-Pin SSO. For RPA's that do not support OTP generation the status within the returned otp structure would be Status FLOW_ERROR.
 
-#### Definition
+### Definition
 
     + (MpinStatus*) FinishAuthenticationOTP: (id<IUser>) user pin:
     (NSString*) pin otp: (OTP**) otp;
@@ -256,13 +243,13 @@ Note that OTP is generated only by RPA that supports that functionality, such as
 | pin            | NSString*      | Yes       | The PIN/secret that the user has entered |
 | otp            | OTP**          | Yes       | The resulting OTP is returned here.      |
 
-#### Return Values
+### Return Values
 
 **OK:** Authentication successful  
 **INCORRECT_PIN:** Authentication failed.   
 **FLOW_ERROR:** The user is in the incorrect state.   
 
-#### Examples
+### Examples
 ```
 MpinStatus* mpinStatus = [MPin StartAuthentication:iuser];
 
@@ -305,19 +292,19 @@ switch (mpinStatus.status) {
         break;
 }
 ```
-### FinishAuthenticationAN
-
-#### Description
+___
+## FinishAuthenticationAN
+___
 
 This method authenticates a user with an Access Number which is obtained out-of-band, either from a browser session, through reading a QR code orsent via Push Message . The user then logs into the PC/Browser session which was associated with the provided Access Number although the actual authentication is done on the Mobile Device.
 accessNumber is the Access Number obtained out-of-band.
 
-#### Definition
+### Definition
 
     + (MpinStatus*) FinishAuthenticationAN: (id<IUser>) user pin:
     (NSString*) pin accessNumber: (NSString*) an;
 
-#### Parameters
+### Parameters
 
 | Parameter Name | Parameter Type | Required? | Description                                                                 |
 |----------------|----------------|-----------|-----------------------------------------------------------------------------|
@@ -325,12 +312,12 @@ accessNumber is the Access Number obtained out-of-band.
 | pin            | NSString*      | Yes       | The PIN/secret that the user has entered                                    |
 | an             | NSString*      | Yes       | The Access Number obtained out-of-band and required for the authentication. |
 
-#### Return Status
+### Return Status
 
 **OK:** Successful Authentication   
 **INCORRECT_PIN:** Authentication failed because of an incorrect PIN code. After the third (configurable in the RPS) unsuccessful authentication attempt, the method still returns status INCORRRECT_PIN but the user state is set to BLOCKED.</br>     **INCORRECT_ACCESS_NUMBER:** The authentication failed because of incorrect Access Number.
 
-#### Examples
+### Examples
 
     MpinStatus* mpinStatus = [MPin StartAuthentication:iuser];
 
@@ -380,31 +367,30 @@ accessNumber is the Access Number obtained out-of-band.
             // Show error message and exit
             break;
     }
-
-### CanLogout Method
-
-#### Description
+___
+## CanLogout Method
+___
 
 This method checks if a user's logout information was provided by the RPA, and the remote (Browser) session can be terminated from a mobile device. It is used after authentiction with an Access Number, through the FinishAuthenticationAN method. It will return TRUE if the user can be logged-out from the remote session, and FALSE otherwise.
 
-#### Definition
+### Definition
 
     + (Boolean) CanLogout: (const id<IUser>) user;
 
-#### Example
+### Example
 
 | Parameter Name | Parameter Type | Required? | Description |
 |----------------|----------------|-----------|-------------|
 | user           | IUser          | Yes       | The User ID |
 
 
-#### Return Values
+### Return Values
 
 **TRUE:** the User can be logged out from the remote session
 
 **FALSE:** the User cannot be logged out from the remote session
 
-#### Example
+### Example
 
 The following code demonstrates the use of the method:
 ```
@@ -416,30 +402,29 @@ if([Mpin CanLogout:iuser])
     [Mpin Logout:iuser];
 }
 ```
-
-### Logout Method
-
-#### Description
+___
+## Logout Method
+___
 
 This method tries to log the user out of a remote (Browser) session after successfully authenticating them via the FinishAuthenticationAN method. Before calling this method, ensure that logout data was provided by the RPA and that the logout operation can be actually performed. The method returns TRUE if the logged-out request to the RPA is successful, and FALSE otherwise.
 
-#### Definition
+### Definition
 
     + (Boolean) Logout: (const id<IUser>) user;
 
-#### Parameters
+### Parameters
 
 | Parameter Name | Parameter Type | Required? | Description |
 |----------------|----------------|-----------|-------------|
 | user           | IUser          | Yes       | The User ID |
 
-#### Return Values
+### Return Values
 
 **TRUE:** the log-out request to the RPA has been successful
 
 **FALSE:** the log-out request to the RPA has failed
 
-#### Example
+### Example
 
 The following code demonstrates the use of the method:
 ```

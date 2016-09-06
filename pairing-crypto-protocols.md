@@ -11,6 +11,8 @@ Note: This document uses sections from the MIRACL Labs M-Pin Full Paper, publish
 </div>
 --->
 
+# Pairing Crypto Protocols
+
 ## M-Pin Protocol - Introduction
 
 The genesis of the M-Pin Protocol was first put forward in a research paper by [Dr. Michael Scott](https://scholar.google.com/citations?user=GsM-aeEAAAAJ&hl=en) in 2002 <a href="#Scott1">2</a>.

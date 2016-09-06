@@ -2,19 +2,19 @@
 currentMenu: milagro-mfa-integrating-pinpad
 ---
 
-##Integrating the PIN Pad
+## Integrating the PIN Pad
 The PIN Pad should be integrated into the web application (RPA) login HTML page. To do this:
-
-- **Include the PIN Pad's main module**, mpin.js, by adding a script tag similar to the following, into the HTML head:
+<br /><br />
+**1. Include the PIN Pad's main module**, `mpin.js`, by adding a script tag similar to the following, into the HTML head:<br /><br />
 ```
 <script type=text/javascript src={mpin-path}/mpin.js>
 ```
-- **Instantiate and Initialize an mpin object.** This is done with the following JavaScript code:
+**2. Instantiate and Initialize an mpin object.** This is done with the following JavaScript code:
 ```
 new mpin( <init-options> );
 ```
 
-##The following is a sample HTML page implementation:
+## The following is a sample HTML page implementation:
 
 ```
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -91,7 +91,6 @@ Reserved.</div>
 </body>
 </html>
 ```
-
 The source should be retrieved from GitHub and served from a location of your choice.
 
 For full instructions follow this <a href="../javascript/milagro-mfa-javascript-guide.html"> link. </a>

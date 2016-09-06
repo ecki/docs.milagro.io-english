@@ -5,9 +5,8 @@ layout: markdeep
 <div id="generated-toc" class="generate_from_h2"></div>
 <style>h1:before, h2:before { content: none; }</style>
 
-# Milagro Concepts
+# Milagro Crypto Concepts
 
-## Introduction
 One of the critical points about information security is to give access to resources only to authorised entities and deny access to unauthorised ones.
 Preventing unauthorised access very often comes down to making it ___almost impossible___, i.e., tough, expensive, complicated, and time-consuming for the unauthorised entities to get access to resources.
 

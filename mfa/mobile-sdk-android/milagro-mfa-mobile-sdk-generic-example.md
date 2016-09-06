@@ -2,9 +2,7 @@
 currentMenu: milagro-mfa-mobile-sdk-generic-example-android
 ---
 
-# Generic app code example
-
-## Overview
+# Generic App Code Example
 
 This page provides a generic code example of an app for Android to help you get started with the SDK. It demonstrates the full user registration/authentication cycle in its correct succession:
 
@@ -13,8 +11,6 @@ This page provides a generic code example of an app for Android to help you get 
 * User verification (again)
 
 You can use this example as a “skeleton” on which to further build your specific use cases and functionalities.
-
-## Example
 
 ```
 /*

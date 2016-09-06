@@ -2,15 +2,12 @@
 currentMenu: milagro-mfa-mobile-sdk-generic-example-wp
 ---
 
-# Generic M-Pin App Code Example - Milagro MFA Mobile SDK for Windows Phone
-
-# Overview
+# Generic Milagro App Example
 
 This page provides a generic code example of an Milagro App for Windows phones to help you get started with the SDK. It demonstrates the full Milagro User registration/authentication cycle in its correct succession: initialization, User creation and verification, and then User verification.
 
 You can use this example as a “skeleton” on which to further build your specific use cases and functionalities.
 
-## Example - needs to be replaced by a Windows example
 ```
 //
 // Initializing the SDK for the first time

@@ -3,7 +3,7 @@ currentMenu: milagro-crypto-library-benchmarks
 layout: markdeep
 ---
 
-**Benchmarks**
+# Benchmarks - Milagro Crypto Library
 
 Since AMCL is intended for the Internet of Things, we think it appropriate to give some timings based on an implementation on the Raspberry Pi (version 2) computer, which is based on a 32-bit ARM7 chip. We do not overclock the 900MHz processor.
 
