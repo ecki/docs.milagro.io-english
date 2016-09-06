@@ -1,9 +1,11 @@
 ---
 currentMenu: milagro-mfa-mobile-sdk-init-config-methods-wp
 ---
-## MPin
 
-### Description
+# Initialization and Configuration methods
+___
+## MPin
+___
 
 The MPin method is the constructor for the M-Pin SDK instance. It receives the required configuration settings as a parameter.
 
@@ -31,10 +33,9 @@ config.Add("backend", "http://my.backend.com");
 
 Status status = sdk.Init(config);
 ```
-
+___
 ## Init
-
-### Description
+___
 
 This method initializes the SDK. It receives a key/value dictionary of the configuration parameters. The context parameter is optional. If not set, an instance of Context class is used. The application can provide its own context, if necessary, to override the http request and storage functionality implementations.
 
@@ -69,10 +70,9 @@ if (status.StatusCode != Status.Code.OK)
     // Show error message and exit
 }
 ```
-
+___
 ## TestBackend Method
-
-### Description
+___
 
 This method tests if backend is a valid back-end URL by trying to retrieve Client Settings from it. You can specify a custom RPS prefix if it was customized at the back-end and is different from the default "rps". If the back-end URL is a valid one, the method will return status OK.
 
@@ -107,9 +107,9 @@ if (status.StatusCode != Status.Code.OK)
     // Handle error
 }
 ```
+___
 ## SetBackend Method
-
-### Description
+___
 
 This method changes the currently configured back-end in the Core. Initially you can set the back-end through the Init method, after which you can change it using this method. backend is the new back-end URL that should be used. Optionally, a custom RPS prefix might be specified if it was customized at the back-end and is different from the default "rps". If successful, the method will return status OK.
 
@@ -141,9 +141,9 @@ if (status.StatusCode != Status.Code.OK)
     // Handle error
 }
 ```
+___
 ## GetClientParam Method
-
-### Description
+___
 
 The GetClientParam method returns the value for a Client Setting with the given key. The value is returned as a String always, i.e. when a numeric or a boolean value is expected, the conversion should be handled by the application. It uses the following client settings:
 
@@ -163,7 +163,6 @@ string GetClientParam(string key)
 | Parameter Name     | Parameter Type     | Required? | Description |
 | :------------- | :------------- |:------------- |:------------- |
 | key     | String       | Yes | The name of the requested parameter |
-
 
 ### Return Values
 

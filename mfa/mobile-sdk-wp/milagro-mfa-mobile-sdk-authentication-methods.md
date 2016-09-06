@@ -1,9 +1,11 @@
 ---
 currentMenu: milagro-mfa-mobile-sdk--authentications-methods-wp
 ---
-## StartAuthentication
 
-### Description
+# Authentication Methods
+___
+## StartAuthentication
+___
 
 This method starts the authentication process for a given user. It attempts to retrieve the Time Permits for the user. If successful, it returns status OK, and if not, it returns status Revoked. If the Time Permits are retrieved, the app reads the PIN/secret from the end-user and calls one of the FinishAuthentication variants to authenticate the user.
 
@@ -63,10 +65,9 @@ switch (status.StatusCode)
         break;
 }
 ```
-
+___
 ## CheckAccessNumber
-
-### Description
+___
 
 This method is used only when a user needs to be authenticated to a remote (browser) session, using Access Number. The access numbers have a check-sum digit in them which needs to be verified on the client side, in order to prevent calling the back-end with non-compliant access numbers. The method returns status OK, if successful, and status IncorrectAccessNumber, if not.
 
@@ -141,10 +142,9 @@ switch (status.StatusCode)
         break;
 }
 ```
-
+___
 ## FinishAuthentication
-
-### Description
+___
 
 This method performs end-user authentication. The user to be authenticated and the pin (secret) are passed as parameters. The method uses the provided pin and the stored M-Pin Token to do the authentication against the M-Pin Authentication Server and then logs into the RPA. The RPA passes back User Data with the authentication response, which is returned to the application through the authResultData parameter. If authenticated, the returned status is OK and if not, it would be IncorrectPIN. After the third (configurable in the RPS) unsuccessful authentication attempt, the method returns status IncorrectPIN and the User State is set to Blocked.
 
@@ -206,10 +206,9 @@ switch (status.StatusCode)
         break;
 }
 ```
-
+___
 ## FinishAuthenticationOTP
-
-### Description
+___
 
 This method performs end-user authentication for an OTP. It is similar to the FinishAuthentication Method but the RPA issues an OTP instead of logging the user into the application. The returned status is also similar to the FinishAuthentication Method except that an OTP structure is returned.
 
@@ -302,10 +301,9 @@ switch (status.StatusCode)
         break;
 }
 ```
-
+___
 ## FinishAuthenticationAN
-
-### Description
+___
 
 This method authenticates a user with an Access Number which is obtained out-of-band, either from a browser session, through reading a QR code orsent via Push Message . The user then logs into the PC/Browser session which was associated with the provided Access Number although the actual authentication is done on the Mobile Device.
 accessNumber is the Access Number obtained out-of-band.
@@ -384,10 +382,9 @@ switch (status.StatusCode)
         break;
 }
 ```
-
+___
 ## CanLogout
-
-### Description
+___
 
 This method checks if a user's logout information was provided by the RPA, and the remote (Browser) session can be terminated from a mobile device. It is used after authentiction with an Access Number, through the FinishAuthenticationAN method. It will return true if the user can be logged-out from the remote session, and false otherwise.
 
@@ -426,10 +423,9 @@ if (sdk.CanLogout(user))
     sdk.Logout(user);
 }
 ```
-
+___
 ## Logout
-
-### Description
+___
 
 This method tries to log the user out of a remote (Browser) session after successfully authenticating them via the FinishAuthenticationAN method. Before calling this method, ensure that logout data was provided by the RPA and that the logout operation can be actually performed. The method returns true if the logged-out request to the RPA is successful, and false otherwise.
 
@@ -438,7 +434,7 @@ This method tries to log the user out of a remote (Browser) session after succes
 Bool Logout(User user)
 ```
 
-###Parameters
+### Parameters
 
 | Parameter Name     | Parameter Type     | Required? | Description |
 | :------------- | :------------- |:------------- |:------------- |

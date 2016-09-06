@@ -4,12 +4,9 @@ currentMenu: milagro-mfa-quick-install
 
 <div id="generated-toc" class="generate_from_h2"></div>
 
+# Developer Guide - Milagro Multi-Factor Authentication
 
-# Milagro MFA Server
-___
-## General
-___
-Milagro MFA Server is an authentication server which you can use to replace usernames and passwords on any website, by integrating a simple restful API.
+Milagro MFA Servers is an authentication server which you can use to replace usernames and passwords on any website, by integrating a simple restful API.
 
 This document describes the process of building and running the services on your **Ubuntu** machine.
 For other Linux distributions the process would be similar, while some steps as installation of
@@ -53,14 +50,13 @@ Before running any Milagro Services, you should obtain your *Credentials*.
 This is done with the following script:
 ```
 cd <mpin-backend>
-python scripts/getCommunityCredentials.py .
+python scripts/getCommunityCredentials.py
 ```
 
 **NOTE:** Make sure you don't miss the dot (.) at the end of the above command.
 
 **Important:** During the above process you will be asked to enter your e-mail address. While this is not mandatory, it is recommended so we can later contact you in case of any problems with the service.
 The above script will download a `credentials.json` file into the `<milagro-backend>` directory.
-</br></br>
 ___
 ## Configuring the Services
 ___
@@ -70,7 +66,7 @@ The installation, and the source code itself include a *Demo RPA*, which should 
 The initial configuration allows the Demo RPA and the Milagro MFA Services to be access from any machine on the local network.
 Further details about configuration options might be found in the [Documentation](http://docs.miracl.com/m-pin-core-configuration).
 </br></br>
-#### Configuring the D-TA
+### Configuring the D-TA
 
 The source includes a "default" D-TA configuration file that should serve as a template for the actual one.
 
@@ -107,7 +103,7 @@ backup_file = "<milagro-backend>/backup_dta.json"
 **8.** Save the file and exit the editor
 </br></br>
 
-#### Configuring the RPS
+### Configuring the RPS
 
 The source includes a "default" RPS configuration file that should serve as a template for the actual one.
 
@@ -125,8 +121,8 @@ To configure the RPS perform the following steps:
 credentialsFile = "<milagro-backend>/credentials.json"
 ```
 **4.** Save the file and exit the editor
-</br></br>
-#### Configuring the Demo RPA
+<br /><br />
+### Configuring the Demo RPA
 
 The source includes a "default" Demo RPA configuration file.
 
@@ -154,9 +150,9 @@ cookieSecret = "nju31zsOvxg+a0U4aCVrIOXf/VH/GC7/6oWK+8eEBM3OzNbbGOaL0mtne2g68O78
 mpinJSURL = "http://mpin.miracl.com/v4/mpin.js"
 ```
 **6.** Save the file and exit the editor
-</br></br>
+</br>
 ___
-##Running and Testing the Services
+## Running and Testing the Services
 ___
 For development purposes you might run the services from command line. Open 3 terminals and set the following two environment variables as shown below:
 ```

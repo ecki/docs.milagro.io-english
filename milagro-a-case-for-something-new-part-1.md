@@ -4,8 +4,9 @@ currentMenu: milagro-a-case-for-something-new-part-1
 
 <div id="generated-toc" class="generate_from_h2"></div>
 
-# Trust in the Internet is at an all time low.
-## It's time for action.
+# A Case for Something New - Part I
+
+**Trust in the Internet is at an all-time low – it's time for action**
 
 From its earliest days, one of the building blocks of trust and security on the Internet was cryptography. Unfortunately with the technology then available, the only solution to secure web services was the highly centralised concept called PKI, i.e., Public Key Infrastructure.
 
@@ -41,7 +42,7 @@ You, the reader, have no doubt done this yourself (hopefully).
 
 Now answer this question:
 
-When was the last time you checked for green text or a green lock when using your favourite app on your mobile device?
+**When was the last time you checked for green text or a green lock when using your favourite app on your mobile device?**
 
 The answer is, most likely, you never have.
 
@@ -85,4 +86,4 @@ It's time for action. It's time for something new.
 
 Next Section: [A Case for Something New - Part II](milagro-a-case-for-something-new-part-2.html)
 
-## REFERENCES
+## References

@@ -1,9 +1,11 @@
 ---
 currentMenu: milagro-mfa-mobile-sdk-registration-methods-wp
 ---
-## StartRegistration
 
-### Description
+# Registration methods
+___
+## StartRegistration
+___
 
 This method initializes the registration for a User that has already been created. The SDK starts the M-Pin Setup flow, sending the necessary requests to the back-end service. The State of the User instance will change to StartedRegistration. The status will indicate whether the operation was successful or not. During this call, an M-Pin ID for the end-user will be issued by the RPS and stored within the user object. The RPA can also start a user identity verification procedure, by sending a verification e-mail.
 
@@ -74,10 +76,9 @@ if (status.StatusCode != Status.Code.OK)
     // Handle error
 }
 ```
-
+___
 ## RestartRegistration
-
-### Description
+___
 
 The RestartRegistration method re-initializes the registration process for a User for which the registration process has already started. The method causes the RPA to re-start the User identity verification procedure (like sending a verification email, for instance).
 
@@ -146,10 +147,9 @@ if (user.UserState == User.State.StartedRegistration)
         // Handle error
     }
 ```
-
+___
 ## ConfirmRegistration
-
-### Description
+___
 
 This method allows the application to check whether the user identity verification process has been finalized or not. The user object should be either in the StartedRegistration or the Activated state. The latter is possible if the RPA activated the user immediately with the call to StartRegistration and no verification process is started.
 
@@ -212,10 +212,9 @@ if (status.StatusCode != Status.Code.OK)
     // Handle error
 }
 ```
-
+___
 ## FinishRegistration
-
-### Description
+___
 
 This method finalizes the user registration process. It extracts the M-Pin Token from the Client Key for the provided pin (secret), and then stores the token in the secure storage. On successful completion, the User state will be set to Registered and the method will return status OK.
 

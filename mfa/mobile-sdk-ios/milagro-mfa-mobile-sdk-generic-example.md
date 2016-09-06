@@ -3,11 +3,8 @@ currentMenu: milagro-mfa-mobile-sdk-generic-example-ios
 ---
 # Generic App Code Example
 
-## Overview
-
 This page provides a generic code example of an app for iOS to help you get started with the SDK. It demonstrates the full M-Pin User registration/authentication cycle in its correct succession: initialization, User creation and verification, and then User verification. You can use this example as a “skeleton” on which to further build your specific use cases and functionalities.
 
-## Example
 ```
 * Initializing the SDK
 */

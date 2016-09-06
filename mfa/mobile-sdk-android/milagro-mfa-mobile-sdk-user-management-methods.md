@@ -3,11 +3,11 @@ currentMenu: milagro-mfa-mobile-sdk-user-management-methods-android
 ---
 
 # User Management Methods
-## Overview
-This page provides a list and brief description of the User Management methods used in the Milagro MFA Mobile SDK for Android. They relate to user management operations like creating, retrieving and deleting users.<br>To view a list of all methods, refer to the [API Reference](milagro-mfa-mobile-sdk-api-reference.html) page.
 
-# <pre>MakeNewUser</pre>
-## Description
+This page provides a list and brief description of the User Management methods used in the Milagro MFA Mobile SDK for Android. They relate to user management operations like creating, retrieving and deleting users.<br>To view a list of all methods, refer to the [API Reference](milagro-mfa-mobile-sdk-api-reference.html) page.
+___
+# MakeNewUser
+___
 The `MakeNewUser` method creates a new `User` object where the `User` object represents an end-user of the Milagro MFA authentication. The User has its own unique identity which is passed as the id parameter to this method. You can also specify an optional `deviceName` as a User can have multiple devices. The `deviceId` is passed to the RPA which stores it and uses it later to determine which M-Pin ID is associated with this device. The return value is a reference to the newly created user.<br>
 The newly created User is in an INVALID state.<br>
 For a description of the User class, see [Understanding User States](milagro-mfa-mobile-sdk-user-states.html)<br>
@@ -84,9 +84,9 @@ if (status.getStatusCode() != Status.Code.OK) {
    // handle error
 }
 ```
-
-# <pre>ListUsers</pre>
-## Description
+___
+# ListUsers
+___
 The `ListUsers` method populates a list with all current Users, irrespective of their state. The SDK's Users List contains a list of users in various states, which reflects their registration statuses.
 
 ## Definition
@@ -116,8 +116,10 @@ if (selectedUser) {
     sdk.DeleteUser(selectedUser);
     }
 ```
-# <pre>DeleteUser</pre>
-## Description
+___
+# DeleteUser
+___
+
 The `DeleteUser` method deletes a User from the Users List maintained by the SDK and all the data related to this User, such as the User’s M-Pin ID, State and M-Pin Token.
 
 As the `DeleteUser` method deletes all the data related to the User, a new User with the same identity can be created after that with the MakeNewUser method.

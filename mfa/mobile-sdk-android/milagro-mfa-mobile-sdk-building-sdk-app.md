@@ -2,19 +2,17 @@
 currentMenu: milagro-mfa-mobile-sdk-building-sdk-app-android
 ---
 
-# Building the Milagro MFA Mobile SDK and App for Android
-
-## Overview
+# Building the SDK & App
 
 This page explains how to build the Milagro MFA Mobile SDK and the app for Android with _Android Studio_.
 
 ## Prerequisites
 
-Download and install Android Studio or higher with Android SDK 16 or higher
+Download and install Android Studio or higher with Android SDK 16 or higher.
 
 ## Building the mobile SDK
 
-Download or Clone the project [`milagro-mfa-sdk-android`](https://github.com/miracl/milagro-mfa-sdk-android) with its submodules
+Download or Clone the project [`milagro-mfa-sdk-android`](https://github.com/miracl/milagro-mfa-sdk-android) with its submodules.
 
 ### From Android Studio
 

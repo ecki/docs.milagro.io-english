@@ -2,27 +2,14 @@
 currentMenu: milagro-crypto-library-white-paper
 ---
 <div id="generated-toc" class="generate_from_h2"></div>
+# White Paper - Milagro Crypto Library
 
-<header class="col-span">
-  <h1 class="title counter-skip"><em>Apache Milagro Crypto Library White Paper</em></h1>
-  <div class="authors col-1">
-    <div class="author">
-      <div>Mike Scott</div>
-      <div><a href="http://www.miracl.com/miracl-crypto-labs" target="_blank">MIRACL Labs</a></div>
-      <div>Dublin, Ireland</div>
-    </div>
-    <div class="author">
-      <div>-</div>
-      <div>-</div>
-      <div>-</div>
-    </div>
-</header>
+*Mike Scott*, <a href="http://www.miracl.com/miracl-crypto-labs">MIRACL Labs</a>
+Dublin, Ireland.
 
-<div class="abstract">
-  <p><em>Abstract</em> — We introduce a new multi-lingual crypto library, specifically designed to support the Internet of Things.
-  <br></br>
-  <br></br>NOTE: This original Latex authored PDF version of this document is available for download <a href=https://s3.amazonaws.com/docs.milagro.io/amcl.pdf">here</a> </p>
-</div>
+*Abstract* — We introduce a new multi-lingual crypto library, specifically designed to support the Internet of Things.
+
+NOTE: This original Latex authored PDF version of this document is available for download <a href="https://s3.amazonaws.com/docs.milagro.io/amcl.pdf">here</a>.
 
 ## 1 Introduction
 One of the major mysteries in the real-world of crypto is resistance to the exploitation of new research ideas. Its not that cryptographic research has failed to throw up new ideas that have the potential for commercial exploitation -- far from it. But in the real-world, 1970's crypto rules supreme, and very little happens that isn't PKI/RSA based. The reasons for this are many and varied. However one part of the puzzle might be the non-availability of easy-to-use open source cryptographic tools, that do not require in depth cryptographic expertise to deploy.

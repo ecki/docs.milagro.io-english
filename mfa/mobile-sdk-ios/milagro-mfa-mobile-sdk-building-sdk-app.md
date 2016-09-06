@@ -3,8 +3,6 @@ currentMenu: milagro-mfa-mobile-sdk-building-sdk-app-ios
 ---
 # Building the Milagro MFA Mobile SDK and the app for iOS
 
-## Summary
-
 This page explains how to build the Milagro MFA Mobile SDK and the app for iOS with XCode
 
 ## Prerequisites

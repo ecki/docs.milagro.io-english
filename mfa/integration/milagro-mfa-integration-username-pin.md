@@ -2,9 +2,12 @@
 currentMenu: milagro-mfa-integration-username-pin
 ---
 
-<h1>Integrating Milagro MFA in a web app</h1>
+# Integrating Milagro MFA in a web app
+
 This page describes how to create a simple username and password Relying Party Application (RPA) website using Python and then shows you how to convert this application to use Milagro MFA aunthentication.
-<h2>Pre-requisites</h2>
+
+## Pre-requisites
+
 This example was built using Ubuntu 14 but should work similarly on any modern Linux or Mac OS X machine with Python 2.7. However, there are some pre-requisites that you need to install:
 
 PIP (Python Package Installer):
@@ -195,7 +198,7 @@ Finally we create the protected page that tells the user that they are logged in
 </html>
 ```
 
-###Running the Username & Password RPA
+### Running the Username & Password RPA
 
 We can start the RPA from the directory into which it has been saved by making rpa.py executable and running it as follows:
 ```
@@ -224,10 +227,12 @@ If the username and password are valid, you will be redirected to the protected 
 
 ![image4](https://trecugggine.files.wordpress.com/2016/05/2015_01_05_17_19_064.png)
 
-&nbsp;
-<h2>Converting the RPA to use M-Pin</h2>
+
+## Converting the RPA to use M-Pin
+
 Now we have a fully working username and password RPA, we can convert it to use Milagro MFA instead.
-<h3>New Login Page (loginform.html)</h3>
+
+### New Login Page (loginform.html)
 
 First we need to edit loginform.html and add a reference in the header of the login page to the Javascript that runs the PIN pad.
 
@@ -255,7 +260,7 @@ Next we can remove the code for the username and password form and replace it wi
             </div>
 ```
 
-<h3>Milagro MFA Enabled RPA</h3>
+### Milagro MFA Enabled RPA
 
 Now we can update the Python RPA (rpa.py) by inserting the following code snippets before the validate user function. First we add an endpoint to verify that the user is authorized to register with Milagro MFA. We extract the userID from the request and display it at the console. Finally we return “forceActivate” to allow the user to create their PIN immediately. (In a production deployment, you would typically lookup the userID in your own directory to check that they are authorised in which case the user would be sent an email with a verification link allowing them to prove that they are who they claim to be).
 ```
@@ -395,7 +400,6 @@ def serveRPSSettings():
 
 return requests.get("http://127.0.0.1:8011/rps/clientSettings").text
 ```
-
 
 ## Running the Milagro-Enabled RPA
 

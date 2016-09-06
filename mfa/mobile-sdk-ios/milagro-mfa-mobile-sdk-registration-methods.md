@@ -1,15 +1,14 @@
 ---
 currentMenu: milagro-mfa-mobile-sdk-registration-methods-ios
 ---
-## Overview
+# Registration Methods
 
 This page provides a list, along with brief descriptions, of the Registration methods used in the Milagro MFA Mobile SDK for iOS. They describe the procedures involved in registering a new user.
 
-To view the other methods, refer to the API Reference page.
-
+To view the other methods, refer to the [API Reference](milagro-mfa-mobile-sdk-api-reference.html) page.
+___
 ## StartRegistration
-
-### Description
+___
 
 This method initializes the registration for a User that has already been created. The server starts the registration flow, sending the necessary requests to the back-end service. The State of the User instance will change to STARTED_REGISTRATION. The status will indicate whether the operation was successful or not. During this call, an M-Pin ID for the end-user will be issued by the RPS and stored within the user object. The RPA can also start a user identity verification procedure, by sending a verification e-mail.
 
@@ -53,10 +52,9 @@ The following code snippet creates a new User and handles its registration proce
     if(mpinStatus.status != OK) {
         // Handle error
     }
-
-### RestartRegistration
-
-Description
+___
+## RestartRegistration
+___
 
 The RestartRegistration method re-initializes the registration process for a User whose registration process has already started. The method causes the RPA to re-start the User identity verification procedure by sending a verification email. The User’s status remains at STARTED_REGISTRATION until the ConfirmRegistration method has been executed successfully.
 
@@ -79,7 +77,6 @@ The StartRegistration method generates a new M-Pin ID while RestartRegistration 
 |----------------|----------------|-----------|-------------------------------------------------------------------------------------------------------|
 | user           | IUser          | Yes       | The user to be registered                                                                             |
 | userData       | NSString       | No        | Optional application specific user data that might be needed by the RPA in order to register the user |
-
 
 ### Return Values
 
@@ -128,34 +125,33 @@ if ([iuser getState] == STARTED_REGISTRATION)
     }
 }
 ```
-
-### Confirm Registration
-
-#### Description
+___
+## Confirm Registration
+___
 
 The ConfirmRegistration method allows the application to check whether the user identity verification process has been finalized or not. The user object should be either in the STARTED_REGISTRATION or the ACTIVATED state. The latter is possible if the RPA activated the user immediately with the call to StartRegistration and no verification process is started. During the call to ConfirmRegistration, the SDK will try to retrieve a Client Key for the user, which will succeed if the user has already been verified/activated, but will fail otherwise. The method returns status OK if the Client Key is successfully retrieved and IDENTITY_NOT_VERIFIED if the identity is not verified. If the method is successful, the application will get the desired PIN/secret from the end-user and then call FinishRegistration to provide the PIN.
 
 Note The application can provide a platform specific identifier for sending push messages to the device by using the optional parameter pushMessageIdentifier. The push messages can be used as an alternative to the Access Number, as part of the authentication flow.
 
-#### Definition
+### Definition
 
     + (MpinStatus*) ConfirmRegistration: (const id<IUser>) user;
 
     + (MpinStatus*) ConfirmRegistration: (const id<IUser>) user pushNotificationIdentifier: (NSString*) pushNotificationIdentifier;
 
-#### Parameters
+### Parameters
 
 | Parameter Name             | Parameter Type | Required? | Description                                                                                                                                       |
 |----------------------------|----------------|-----------|---------------------------------------------------------------------------------------------------------------------------------------------------|
 | user                       | IUser          | Yes       | The user that is being registered                                                                                                                 |
 | pushNotificationIdentifier | NSString*      | No        | An application instance specific Push Message Identifier/Token, which could later be used by the server to send Push Messages to the application. |
 
-#### Return Values
+### Return Values
 
 **OK:** if the client key is successfully retrieved   
 **IDENTITY_NOT_VERIFIED:** if the user identity is not verified   
 
-#### Example
+### Example
 
     id iuser = [MPin MakeNewUser:@"me@MIRACL.org" deviceName:@"My Smartphone"];
     MpinStatus* mpinStatus = [MPin StartRegistration:iuser];
@@ -191,14 +187,13 @@ Note The application can provide a platform specific identifier for sending push
             // Handle error
         }
     }
-
-### FinishRegistration
-
-#### Description
+___
+## FinishRegistration
+___
 
 This method finalizes the user registration process. It extracts the M-Pin Token from the Client Key for the provided pin (secret), and then stores the token in the secure storage. On successful completion, the User state will be set to REGISTERED and the method will return status OK.
 
-#### Definition
+### Definition
 
     + (MpinStatus*) FinishRegistration: (const id<IUser>) user pin: (NSString*) pin;
 
@@ -207,13 +202,13 @@ This method finalizes the user registration process. It extracts the M-Pin Token
 | user           | IUser          | Yes       | The User ID                         |
 | pin            | NSString*      | Yes       | The pin that is entered by the user |
 
-#### Return Status
+### Return Status
 
 **OK:** User registered successfully and its status set to REGISTERED
 
 **FLOW_ERROR:** the User object is in an incorrect state (see the 'User States' page in this section of the menu)
 
-#### Example
+### Example
 
 The following code snippet creates a new User identity for a particular device and if the registration process is successful, finalizes it.
 
