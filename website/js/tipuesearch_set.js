@@ -29,7 +29,7 @@ var tipuesearch_replace = {'words': [
 
 // Pages to index
 var tipuesearch_pages = [
-    "http://docs.snipeitapp.com/index.html",
+    "http://docs.milagro.io/en/index.html",
     "http://docs.snipeitapp.com/security.html",
     "http://docs.snipeitapp.com/requirements.html",
     "http://docs.snipeitapp.com/installation/index.html",
@@ -46,8 +46,8 @@ var tipuesearch_pages = [
     "http://docs.snipeitapp.com/manual/index.html",
     "http://docs.snipeitapp.com/manual/importing-assets.html",
     "http://docs.snipeitapp.com/manual/alerts.html",
-    "http://docs.snipeitapp.com/common-issues.html",
-    "http://docs.snipeitapp.com/getting-help.html",
+    "http://docs.milagro.io/en/common-issues.html",
+    "http://docs.milagro.io/en/getting-help.html",
     "http://docs.snipeitapp.com/upgrading.html",
     "http://docs.snipeitapp.com/contributing.html",
     "http://docs.snipeitapp.com/translations.html",
