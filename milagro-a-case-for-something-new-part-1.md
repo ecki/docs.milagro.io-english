@@ -1,10 +1,10 @@
 ---
-currentMenu: milagro-a-case-for-something-new-part-1
+currentMenu: milagro-a-case-for-something-new
 ---
 
 <div id="generated-toc" class="generate_from_h2"></div>
 
-# A Case for Something New - Part I
+# A Case for Something New
 
 **Trust in the Internet is at an all-time low – it's time for action**
 
@@ -84,6 +84,5 @@ There is no initiative or technical development currently under development in t
 
 It's time for action. It's time for something new.
 
-Next Section: [A Case for Something New - Part II](milagro-a-case-for-something-new-part-2.html)
 
 ## References
