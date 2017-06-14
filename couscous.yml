@@ -29,15 +29,9 @@ menu:
         Why Milagro:
             name: '<i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Why Milagro'
             items:
-                milagro-a-case-for-something-new-part-1:
-                    text: A Case for Something New - Part I
+                milagro-a-case-for-something-new:
+                    text: A Case for Something New
                     relativeUrl: milagro-a-case-for-something-new-part-1.html
-                milagro-a-case-for-something-new-part-2:
-                    text: A Case for Something New - Part II
-                    relativeUrl: milagro-a-case-for-something-new-part-2.html
-                milagro-distributed-trust-proposal:
-                    text: Distributed Trust Ecosystem Proposal
-                    relativeUrl: milagro-distributed-trust-proposal.html
                 milagro-roadmap:
                     text: Milagro Roadmap
                     relativeUrl: milagro-roadmap.html
@@ -54,9 +48,7 @@ menu:
                 pairing-crypto-protocols:
                     text: Pairing Crypto Protocols
                     relativeUrl: pairing-crypto-protocols.html
-                protocol-extensions:
-                    text: Protocol Extensions
-                    relativeUrl: protocol-extensions.html
+
 
         Milagro Crypto Library:
             name: '<i class="fa fa-key" aria-hidden="true"></i> Milagro Crypto Library'
