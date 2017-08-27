@@ -63,7 +63,7 @@ Clearly for Java and Javascript we are completely at the mercy of the efficiency
 
 <p></p>
 <div class="references">
-  <cite id="AMCL-on-GitHub"><a href="https://www.github.com">Milagro Crypto Library on GitHub</a></cite>
+  <cite id="AMCL-on-GitHub"><a href="https://github.com/apache/incubator-milagro-crypto">Milagro Crypto Library on GitHub</a></cite>
   <cite id="m-n-l">Miele and Lenstra, A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68–73.</cite>
   <cite id="barreto-naehrig">P.S.L.M. Barreto and M. Naehrig, <q>Fine particles, thin films and exchange anisotropy,</q> in Magnetism, vol. III, G. T. Rado and H. Suhl, Eds. New York: Academic, 1963, pp. 271–350.</cite>
   <cite id="mpin">K. Elissa, <q>Title of paper if known,</q> unpublished.</cite>
