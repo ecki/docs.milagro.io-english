@@ -7,7 +7,7 @@ currentMenu: milagro-mfa-email-verification
 **1.** Stop all the M-Pin services by running the following command in the M-Pin installation directory (default is /opt/mpin):
 </br></br>
 ```
-sudo ./mpin stop all</div>
+sudo ./mpin stop all
 ```
 
 You need to edit /opt/mpin/config_demo.py
